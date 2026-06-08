@@ -96,10 +96,9 @@ The first draft was generated using Claude AI and existing .xlsx/ .csv schema. I
 ## Schema metadata / schema header / provenance metadata / schema level metadata
 In LinkML specifically it is called **schema metadata** or **schema header** — it is the metadata describing the schema itself, as opposed to the schema content (types, enums, slots, classes). **More broadly in the semantic web and data management world** this kind of self-describing metadata is called **provenance metadata** or **schema-level metadata**.
 
-id, name, title, description, version, license, see_also, prefixes, default_prefix, default_range, imports
--> In LinkML itself they are just documentation/configuration fields on the SchemaDefinition object. They do not generate slots or classes.When compiled to RDF/OWL (via gen-owl or gen-rdf), LinkML maps them to standard vocabulary terms:
+*id, name, title, description, version, license, see_also, prefixes, default_prefix, default_range, imports*
+-> In LinkML itself they are just documentation/configuration fields on the SchemaDefinition object. They do not generate slots or classes. When compiled to RDF/OWL (via gen-owl or gen-rdf), LinkML maps them to standard vocabulary terms:
 
-rdfs:seeAlso on the ontology
 
 Field | rdf Translation
 ------|----------------
@@ -110,3 +109,178 @@ description | dcterms:description on the ontology
 version | owl:versionInfo on the ontology
 license | dcterms:license on the ontology
 see_also | rdfs:seeAlso on the ontology
+
+When the LinkML OWL generator (gen-owl) is run on the schema, it reads the header fields and automatically produces the Turtle output.
+
+The **id** is particularly important — it becomes the namespace base URI that all classes, slots, and enums in schema are minted under (combined with default_prefix: cenvo). So for example the Project class would resolve to https://w3id.org/chemicalExposome/schema/chemicals-outdoor/Project in RDF output. This means the id URI should be stable and ideally dereferenceable.
+
+LinkML has **a built-in SchemaDefinition meta-model** that defines these fields and their mappings. They are part of the LinkML metamodel itself — defined at https://w3id.org/linkml/ — so the LinkML generators know precisely how to translate each one without the developer having to declare anything. 
+
+There are three layers:
+1. The schema (md_env_outdoor_linkml.yaml) — describes the domain
+2. The LinkML metamodel (linkml:SchemaDefinition) — describes what fields a schema can have and what they mean
+3. The generators (gen-owl, gen-shacl, gen-jsonld, etc.) — read the metamodel mappings and produce the target format
+
+So when a developer writes "license: https://creativecommons.org/licenses/by/4.0/", she is not inventing anything — she is filling in a field that LinkML already knows maps to dcterms:license in RDF output, "license" in JSON-LD context, and so on.
+This is also why the prefixes section matters for the data level but these top-level fields don't need it — the metamodel already knows which external vocabulary each field corresponds to. The prefixes a developer declares are for their own classes, slots, and ontology mappings within the schema body.
+
+The **default prefix** is a developer's choice. A few things worth considering when choosing:
+
+- Uniqueness — ideally not already used in major prefix registries like prefix.cc or Bioregistry
+- Stability — the URI should be something you control and can keep stable long-term, since it becomes the base for all your class and slot URIs in RDF
+- Readability — short prefixes are conventional (2–5 characters)
+- The w3id.org base URI — that part is also a choice; w3id.org is a persistent URI service maintained by the W3C community and is a good option for research schemas, but you could use your own institution's domain instead if you have one
+
+**default_range: string** means that any slot or attribute that does not explicitly declare a range: will be assumed to be of type string.
+It is a convenience default — it means a developer does not have to write range: string on every simple text field. LinkML itself ships with this as a common default in many schemas. However it is worth asking whether it is the right choice for this schema specifically. A few considerations:
+
+**Arguments for keeping it:**
+- Most of the fields that lack an explicit range are indeed free-text strings (names, descriptions, identifiers as text)
+- It is the most common convention in LinkML schemas in the wild
+
+**Arguments for reconsidering:**
+- It is implicit, which can hide mistakes — if a developer forgets to declare a range on a field that should be an enum or a float, it silently becomes a string with no validation
+- A stricter alternative would be to remove default_range entirely, which forces the developer to be explicit on every field and makes the schema self-documenting
+- Some teams prefer default_range: uri for schemas that are heavily RDF-oriented
+
+In practice for a complex schema and with multiple domain experts involved, being explicit on every field might actually be better discipline — it makes the schema easier to review and reduces the risk of silent errors slipping through during collaborative editing.
+
+*A YAML list can be written in two ways:*
+
+*Block style (multi-line):*
+yamlimports:
+ - linkml:types*
+
+*Flow style (inline):*
+yamlimports: [linkml:types]
+Both me*
+
+*There is no semantic difference — it is entirely about readability and convention. Most LinkML schemas in the wild use the block style for anything that might grow into a longer list, and inline or single-line style for things that are unlikely to change.*
+
+**imports: - linkml:types** imports the LinkML built-in types module, which defines the primitive data types that the schema relies on.
+Concretely, it is what makes these type names available in the schema:
+
+LinkML type | Maps to
+----------|--------
+string | xsd:string
+integer | xsd:integer
+float | xsd:float
+boolean | xsd:boolean
+date | xsd:date
+time | xsd:time
+uri | xsd:anyURI
+
+So when a developer writes range: date or range: float anywhere in the schema, LinkML knows what those mean because of this import. Without it, those names would be undefined.
+
+More broadly, the imports mechanism in LinkML works like imports in a programming language — it lets a developer reuse and build on other schemas. One could for example import:
+- Another schema (e.g. a shared controlled vocabulary)
+- A community standard schema
+- A domain-specific LinkML module
+
+There are **several categories of things one can import:**
+
+1. LinkML built-in modules
+These are maintained by the LinkML project itself:
+yamlimports:
+  - linkml:types        # primitive types (string, integer, date, etc.)
+  - linkml:annotations  # adds annotation capabilities to schema elements
+
+2. Other LinkML schemas developed by the same team:
+A large schema can be split into modules and the modules are imported:
+yamlimports:
+  - linkml:types
+  - ./compounds         # a local file compounds.yaml in the same folder
+  - ./sites             # a local file sites.yaml
+  - ./measurements      # a local file measurements.yaml
+
+This is actually something worth considering for this schema — it is getting large and splitting it into domain-focused modules (compounds, sites, samples, measurements) would make collaborative editing easier, since different domain experts could own different files.
+
+3. Remote schemas by URI
+yamlimports:
+  - linkml:types
+  - https://example.org/schemas/some-community-schema
+
+4. Community and standard schemas
+Several real-world schemas exist that one could potentially import from: BioLink Model; NMDC; MIxS; SOSA/SSN  
+
+## Subsets
+inkML are a way to tag or group fields without changing the structure of the schema. They are essentially labels one can attach to slots or attributes to indicate they belong to a particular category or compliance level.
+
+In this schema there are three:
+yamlsubsets:
+  mandatory:
+    description: Fields that are mandatory for all record types
+  mandatory_for_monitoring:
+    description: Fields mandatory only for monitoring programmes (optional for projects)
+  mandatory_if_exists:
+    description: Fields mandatory if the entity exists (e.g. campaign)
+
+And then throughout the schema fields are tagged with them:
+yamlcompound_name:
+  range: string
+  required: true
+  in_subset:
+    - mandatory
+
+They do not enforce anything by themselves in LinkML. The required: true is what actually enforces validation. The subset tag is metadata about the field, not a constraint. They are useful for:
+- Documentation — immediately clear to a reader which fields are core vs. optional
+- Generating views — one can use LinkML generators to produce a filtered version of the schema showing only mandatory fields, which is useful for producing data entry templates or documentation for different audiences
+- Driving tooling — downstream tools or validators can read subset membership and apply different rules for different submission profiles (e.g. a monitoring programme submission vs. a research project submission)
+
+So in this case they are a lightweight way of encoding the tiered metadata requirements that the domain experts presumably defined — without having to maintain multiple separate schemas for different submission types.
+
+## Types 
+
+There are two levels here — LinkML's built-in types and custom types defined in the schema.
+
+**Built-in types (come from imports: - linkml:types)**
+These are the primitives like string, integer, float, date, time, boolean. They are defined by LinkML and map directly to XSD types. One just uses them as range: values without defining anything.
+
+**Custom types (defined in the types: section of your schema)**
+These are restrictions or refinements of the built-in types. Here, six have been defined:
+
+yamltypes:
+  EmailAddress:
+    uri: xsd:string
+    base: str
+    pattern: "^[\\w.+-]+@[\\w-]+\\.[\\w.]+$"                  
+
+Each one has:
+- uri — the XSD type it is based on in RDF
+- base — the Python base type used when generating code
+- attern — an optional regex that restricts valid values
+
+So the custom types are essentially named, validated strings. They are still strings underneath but with extra constraints and a meaningful name. The ones in this schema are:
+
+Type | Based on | Constraint
+------ |---------| -----------
+EmailAddres | sxsd:string | regex for email format
+URIorCURIE | xsd:anyURI | any URI
+OrcidIdentifier | xsd:string | regex for ORCID format
+RorIdentifier | xsd:string | regex for ROR format
+DecimalDegree | xsd:decimal | used for lat/lon 
+YearValue | xsd:gYear | year in YYYY format
+
+Three reasons to define custom types:
+- Validation — the pattern is checked when data is validated against the schema
+- Reuse — instead of repeating the same regex pattern on every email field across the schema, it is defined once and just range is written: EmailAddress
+- Semantics — range: OrcidIdentifier is far more informative to a reader than range: string
+
+**Regex** stands for Regular Expression. It is a formal language for describing text patterns — a way of saying "a valid value must look like this" in a precise, machine-readable way. One does not need to write them from scratch. The best approach is:
+- Describing the format in plain English — e.g. "4 digits, hyphen, 4 digits, hyphen, 4 digits, hyphen, 3 digits and either a digit or X" and Using a tool like regex101.com — one pastes a pattern, tests it against example values, and it explains each part in plain English.
+- Looking up existing patterns — for standard identifiers like ORCID, DOI, email, CAS numbers, well-tested patterns already exist online.
+
+## Enums (enumerations)
+Enums (enumerations) are the LinkML way of representing controlled vocabularies or codelists — fields where the value must be one of a fixed set of options. Enums are defined and then a field uses it as its range:
+yamlwater_type:
+  range: WaterType
+  required: false
+
+The key difference from a plain string field:
+| String | Enum
+---|----|----
+Accepted values | Anything | Only listed values
+Validation | Format only (if pattern set) |Rejects anything not in the list
+Machine readability | Low | High
+Interoperability | Low | High
+
