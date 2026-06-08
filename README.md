@@ -447,4 +447,55 @@ Whereas matrix is a local attribute because each sample type has its own version
 In RDF terms: Classes become owl:Class; Slots become owl:ObjectProperty or owl:DatatypeProperty.
 So the distinction maps cleanly onto standard ontology concepts.
 
+A concrete minimal example from this schema:
+# ---------------------------------------------------------------------------
+# SLOTS (shared - defined once, reusable across classes)
+# ---------------------------------------------------------------------------
+slots:
+
+  sample_id:
+    description: Unique identifier for the sample
+    range: string
+    required: true
+    identifier: true
+
+  sampling_date_start:
+    description: Start date of sampling in format YYYY-MM-DD
+    range: date
+    required: true
+
+# ---------------------------------------------------------------------------
+# CLASSES
+# ---------------------------------------------------------------------------
+classes:
+
+  SampleAtmospheric:
+    description: A sample from the atmospheric domain
+    slots:
+      - sample_id            # reusing the shared slot as-is
+      - sampling_date_start  # reusing the shared slot as-is
+    attributes:
+      matrix:                # local attribute - specific to this class only
+        description: Matrix type for atmospheric samples
+        range: AtmosphericMatrix
+        required: true
+      sampling_method:       # local attribute - specific to this class only
+        description: Sampling method for atmospheric samples
+        range: AtmosphericSamplingMethod
+        required: true
+
+  SampleAquatic:
+    description: A sample from the aquatic domain
+    slots:
+      - sample_id            # same shared slot reused
+      - sampling_date_start  # same shared slot reused
+    attributes:
+      matrix:                # local attribute - different range than atmospheric
+        description: Matrix type for aquatic samples
+        range: AquaticMatrix
+        required: true
+      fraction:              # local attribute - only aquatic has this
+        description: Sample fraction
+        range: AquaticFraction
+        required: false
 
