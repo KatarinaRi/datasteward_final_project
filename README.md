@@ -304,7 +304,7 @@ yamlAnalysisMethod:
       description: Liquid chromatography–tandem mass spectrometry
     ICP_MS:
       description: Inductively coupled plasma mass spectrometry
-    # ... etc.
+    *... etc.*
 
 2. Option B — Referencing an external vocabulary (recommended if it lives separately)
 If the vocabulary is maintained separately (e.g. as its own file, registry, or LinkML schema), one has two cleaner approaches:
@@ -331,9 +331,9 @@ If the vocabulary exists but is not yet ready to integrate, the cleanest way is:
 yamlAnalysisMethod:
   description: >-
     Analytical method used to determine the analyte in the sample.
-  # TODO: Replace permissible_values below with the final PARC WP9
-  # analytical methods vocabulary once published.
-  # Draft vocabulary available at: [link if you have one]
+    *TODO: Replace permissible_values below with the final PARC WP9*
+    *analytical methods vocabulary once published.*
+    *Draft vocabulary available at: [link if available]*
   permissible_values:
     PLACEHOLDER:
       description: Placeholder — do not use in production.
