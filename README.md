@@ -277,7 +277,7 @@ yamlwater_type:
   required: false
 
 The key difference from a plain string field:
-| String | Enum
+.| String | Enum
 ---|----|----
 Accepted values | Anything | Only listed values
 Validation | Format only (if pattern set) |Rejects anything not in the list
