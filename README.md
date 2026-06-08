@@ -5,6 +5,7 @@
 ## 2026
 
 **Author: Katarína Řiháčková** 
+
 **Supervisor: Mag. (FH) Mag. Monika Bargmann** 
  
 ## Literature and resources
