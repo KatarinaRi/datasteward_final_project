@@ -85,3 +85,28 @@ This step is outside the scope of this project; however, comprehensive documenta
 3.	Review #1
 4.	GitHub repository to follow progress, discuss issues… 
 5.	Meeting?
+
+
+# Developing the schema
+
+## First draft 
+
+The first draft was generated using Claude AI and existing .xlsx/ .csv schema. I have then reviewed the schema and edited manualy where necessary. Also, to learn and understand the LinkML, I was consulting with Claude and asked for explanation to make sure I understand all solutions or could propose a new one. The information that I found useful or further decision and editing is below:
+
+## Schema metadata / schema header / provenance metadata / schema level metadata
+In LinkML specifically it is called **schema metadata** or **schema header** — it is the metadata describing the schema itself, as opposed to the schema content (types, enums, slots, classes). **More broadly in the semantic web and data management world** this kind of self-describing metadata is called **provenance metadata** or **schema-level metadata**.
+
+id, name, title, description, version, license, see_also, prefixes, default_prefix, default_range, imports
+-> In LinkML itself they are just documentation/configuration fields on the SchemaDefinition object. They do not generate slots or classes.When compiled to RDF/OWL (via gen-owl or gen-rdf), LinkML maps them to standard vocabulary terms:
+
+rdfs:seeAlso on the ontology
+
+Field | rdf Translation
+------|----------------
+id | Becomes the base URI of the ontology — owl:Ontology subject, e.g. <https://w3id.org/chemicalExposome/schema/chemicals-outdoor> 
+name | rdfs:label on the ontology
+title | dcterms:title on the ontology
+description | dcterms:description on the ontology
+version | owl:versionInfo on the ontology
+license | dcterms:license on the ontology
+see_also | rdfs:seeAlso on the ontology
