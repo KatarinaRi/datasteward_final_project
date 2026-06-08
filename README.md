@@ -131,6 +131,14 @@ The **default prefix** is a developer's choice. A few things worth considering w
 - Readability — short prefixes are conventional (2–5 characters)
 - The w3id.org base URI — that part is also a choice; w3id.org is a persistent URI service maintained by the W3C community and is a good option for research schemas, but you could use your own institution's domain instead if you have one
 
+LinkML will auto-generate URIs for everything based on the default_prefix and the element name. So Project becomes cenvo:Project, sample_id becomes cenvo:sample_id etc. 
+
+If a developer defines a class_uri or slot_uri — it uses that external URI. If one does not define one — LinkML mints a URI automatically using your default_prefix.
+
+The decision one needs to make for each class and slot is: 
+- Does a suitable URI already exist in an external ontology? → use class_uri/slot_uri to map to it
+- Is this concept specific to your schema with no good external match? → leave it unmapped and it gets a ceo: URI automatically
+
 **default_range: string** means that any slot or attribute that does not explicitly declare a range: will be assumed to be of type string.
 It is a convenience default — it means a developer does not have to write range: string on every simple text field. LinkML itself ships with this as a common default in many schemas. However it is worth asking whether it is the right choice for this schema specifically. A few considerations:
 
@@ -283,4 +291,160 @@ Accepted values | Anything | Only listed values
 Validation | Format only (if pattern set) |Rejects anything not in the list
 Machine readability | Low | High
 Interoperability | Low | High
+
+## Integrating external vocabularies
+1. Option A — Embed directly in the schema
+If the vocabulary is agreed and stable, just replacing the placeholder enum values with the real ones:
+yamlAnalysisMethod:
+  description: Analytical method used to determine the analyte in the sample.
+  permissible_values:
+    GC_MS:
+      description: Gas chromatography–mass spectrometry
+    LC_MS_MS:
+      description: Liquid chromatography–tandem mass spectrometry
+    ICP_MS:
+      description: Inductively coupled plasma mass spectrometry
+    # ... etc.
+
+2. Option B — Referencing an external vocabulary (recommended if it lives separately)
+If the vocabulary is maintained separately (e.g. as its own file, registry, or LinkML schema), one has two cleaner approaches:
+    1. B1 — Importing it as a LinkML schema (if it is published as LinkML):
+yamlimports:
+  - linkml:types
+  - https://w3id.org/parc/wp9/analytical-methods  # or a local path
+And then remove your local AnalysisMethod enum entirely — it comes from the import.
+    2. B2 — Referencing it via from_schema or see_also (if it is not LinkML but exists as a published vocabulary):
+yamlAnalysisMethod:
+  description: >-
+    Analytical method used to determine the analyte in the sample.
+    Source: PARC WP9 analytical methods vocabulary.
+  see_also:
+    - https://w3id.org/parc/wp9/analytical-methods
+  permissible_values:
+    GC_MS:
+      description: Gas chromatography–mass spectrometry
+      meaning: https://w3id.org/parc/wp9/analytical-methods/GC_MS
+Here meaning links each value to its URI in the external vocabulary, which is the standard LinkML way of saying "this local term is the same as that external concept."
+
+3. Option C — Indicating a placeholder with a comment and todos
+If the vocabulary exists but is not yet ready to integrate, the cleanest way is:
+yamlAnalysisMethod:
+  description: >-
+    Analytical method used to determine the analyte in the sample.
+  # TODO: Replace permissible_values below with the final PARC WP9
+  # analytical methods vocabulary once published.
+  # Draft vocabulary available at: [link if you have one]
+  permissible_values:
+    PLACEHOLDER:
+      description: Placeholder — do not use in production.
+
+Which to choose?
+It depends on a practical question — who owns and maintains the vocabulary? 
+- If it lives inside this schema → Option A
+- If someone else owns it and maintains it separately → Option B, so changes propagate automatically without one having to manually sync
+- If it is still being finalised → Option C for now, then migrate to A or B once stable
+
+Now there is an external vocabulary where all matrices live together. The question is how to slice it per domain in this schema.
+Two main options:
+
+1. Option A — Keeping separate enums, adding meaning: to link to the vocabulary
+Each enum stays domain-specific but each value points to its URI in the external vocabulary:
+yamlAtmosphericMatrix:
+  permissible_values:
+    ambient_air:
+      meaning: https://[vocabulary-uri]/ambient_air
+    precipitation:
+      meaning: https://[vocabulary-uri]/precipitation
+
+AquaticMatrix:
+  permissible_values:
+    water:
+      meaning: https://[vocabulary-uri]/water
+    sediment:
+      meaning: https://[vocabulary-uri]/sediment
+This keeps the domain constraint enforced by the schema structure, while linking to the shared external vocabulary. This is probably the most practical option for your case.
+
+2. Option B — One enum for all matrices, constrain per class using rules
+One could have a single MatrixType enum with all values, and then use LinkML rules to restrict which values are valid per sample type:
+yamlMatrixType:
+  permissible_values:
+    ambient_air:
+    precipitation:
+    water:
+    sediment:
+    soil:
+
+SampleAtmospheric:
+  attributes:
+    matrix:
+      range: MatrixType
+  rules:
+    - preconditions:
+        slot_conditions:
+          matrix:
+            any_of:
+              - equals_string: water
+              - equals_string: sediment
+              - equals_string: soil
+      postconditions:
+        slot_conditions:
+          matrix:
+            value_presence: ABSENT
+      description: Atmospheric samples cannot have aquatic or terrestrial matrices
+This is more complex and harder to read — not recommended unless one has a specific reason to keep all matrices in one enum.
+Recommendation - Sticking with Option A — separating enums per domain with meaning: linking to the external vocabulary. It is:
+- Cleaner and easier to read
+- Self-documenting — the constraint is obvious from the structure
+- Easier to validate
+- Already the pattern the schema uses
+
+The external vocabulary is the source of truth for what the concepts mean, but the schema is the source of truth for which concepts are valid in which context. Those are two different concerns and it is fine for them to live in different places.
+
+The vocabulary defines what the concepts are — their definitions, identifiers, relationships between terms.
+The schema defines how the concepts are used — which terms are valid in which context, what is mandatory, what the structure looks like.
+This is actually a well established pattern in the semantic web world — vocabularies and application profiles working together. This schema is essentially acting as an application profile of the vocabulary, which is exactly what DCAT-AP is to DCAT, or what INSPIRE profiles are to ISO 19115. 
+
+If the vocabulary is published as an OWL ontology, the relationship between the vocabulary and this schema can be stated explicitly using standard OWL/RDF constructs. THis schema (when compiled to OWL) would reference the vocabulary ontology, and a machine could understand the dependency formally, not just from a human-readable note.
+
+## Slots and classes
+**Classes** are the entities — the things one is describing. In this schema:
+
+Project
+Sample
+ChemicalCompound
+MeasurementConcentration
+SiteGIS
+
+Each class corresponds to a real-world object or concept that has its own identity and a set of properties describing it.
+
+**Slots** are the properties — the fields that describe those entities. **They can be defined in two ways:**
+**Shared slots** (defined in the top-level slots: section):
+yamlslots:
+  sample_id:
+    range: string
+    required: true
+These are reusable across multiple classes. Any class can use them.
+
+**Local attributes** (defined inside a class under attributes:):
+yamlclasses:
+  Sample:
+    attributes:
+      matrix:
+        range: AtmosphericMatrix
+        required: true
+These belong to that class only.
+
+The key difference is reuse:
+. | Shared slot | Local attribute
+---|------------|-------------
+Defined at | Top level | Inside the class
+Reusable across classes | Yes | No 
+Use when | Same field appears in multiple classes | Field is specific to one class
+
+In this schema for example sample_id is a shared slot because it is used across SampleAtmospheric, SampleAquatic, SampleTerrestrial and SampleBiota — and also in MeasurementConcentration and MeasurementParameter to link measurements back to samples. Defining it once as a shared slot ensures it is consistent everywhere.
+Whereas matrix is a local attribute because each sample type has its own version with a different range (AtmosphericMatrix, AquaticMatrix etc.) — they are not truly the same field.
+
+In RDF terms: Classes become owl:Class; Slots become owl:ObjectProperty or owl:DatatypeProperty.
+So the distinction maps cleanly onto standard ontology concepts.
+
 
