@@ -285,12 +285,12 @@ yamlwater_type:
   required: false
 
 The key difference from a plain string field:
-.| String | Enum
----|----|----
-Accepted values | Anything | Only listed values
-Validation | Format only (if pattern set) |Rejects anything not in the list
-Machine readability | Low | High
-Interoperability | Low | High
+| | String | Enum |
+|---|---|---|
+| Accepted values | Anything | Only listed values |
+| Validation | Format only (if pattern set) | Rejects anything not in the list |
+| Machine readability | Low | High |
+| Interoperability | Low | High |
 
 ## Integrating external vocabularies
 1. Option A — Embed directly in the schema
