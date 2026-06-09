@@ -53,12 +53,12 @@ Formalizing the PARC community-agreed metadata schema for environmental chemical
 -	A public GitHub repository bringing together all of the above as a citable, reusable resource
 
 ## Methodology
-The semantic model development steps as defined by Alexopoulos P. (2020)**REF** will be followed. 
+The semantic model development steps as defined by **Alexopoulos P. (2020) ADD REF** will be followed. 
 
-1.	### SETTING THE STAGE
+1.	### Setting the stage
 Reflexion on the following questions: What are we building? Why are we building it? How are we building it? Who is building it? Who cares?
 
-2.	### DECIDING WHAT TO BUILD
+2.	### Deciding what to build
 lthough some of the questions from stages 1 and 2 have already been addressed by the PARC community, they will be re-evaluated here in the context of semantic model building to determine the required level of expressivity, the scope, which serialisations should be produced to make the schema available for both machines and humans, and what information should be included in the documentation.
 
 **The following approach will be taken:**
@@ -67,25 +67,17 @@ lthough some of the questions from stages 1 and 2 have already been addressed by
 - Input into a SKOS or ontology editor for manual processing, testing and correction, with optional LLM assistance for applying specific SKOS quality metrics such as blank node detection, completeness, consistency in labelling and naming, logical coherence, and other relevant criteria
 - This reflects the approach currently taken by knowledge engineers in the field (Pellegrini (2020), personal communication).
 
-3.	### BUILDING IT
+3.	### Building it
 Selecting, defining and assembling the modelling elements that best satisfy the requirements from step 2 (entities, properties, etc.), and building the model and selected serialisations (with the help of LLM to produce the first graph – even this will require knowledge on model elements, as it is crucial to design effective prompts.  
 
-4.	### ENSURING IT IS GOOD
+4.	### Ensuring it is good
 Defining and checking quality indicators such as semantic accuracy, completeness, consistency and understandability. 
 
-5.	### MAKING IT USEFUL
+5.	### Making it useful
 This step is partially outside the scope of this project. It concerns ensuring that the model is actually used by real users. To some extent this will be supported by producing comprehensible documentation with a clearly defined scope and usage guidelines, which will be reviewed project supervisor and consultants, and later by PARC domain experts.
 
-6.	### MAKING IT LAST
+6.	### Making it last
 This step is outside the scope of this project; however, comprehensive documentation may contribute to long-term sustainability.
-
-## Next Steps:
-1.	More detailed analysis of step 1 and 2 information
-2.	Generating first draft of the schema
-3.	Review #1
-4.	GitHub repository to follow progress, discuss issues… 
-5.	Meeting?
-
 
 # Developing the schema
 
@@ -93,7 +85,7 @@ This step is outside the scope of this project; however, comprehensive documenta
 
 The first draft was generated using Claude AI and existing .xlsx/ .csv schema. I have then reviewed the schema and edited manualy where necessary. Also, to learn and understand the LinkML, I was consulting with Claude and asked for explanation to make sure I understand all solutions or could propose a new one. The information that I found useful or further decision and editing is below:
 
-## Schema metadata / schema header / provenance metadata / schema level metadata
+## Schema level metadata
 In LinkML specifically it is called **schema metadata** or **schema header** — it is the metadata describing the schema itself, as opposed to the schema content (types, enums, slots, classes). **More broadly in the semantic web and data management world** this kind of self-describing metadata is called **provenance metadata** or **schema-level metadata**.
 
 *id, name, title, description, version, license, see_also, prefixes, default_prefix, default_range, imports*
@@ -103,12 +95,12 @@ In LinkML specifically it is called **schema metadata** or **schema header** —
 Field | rdf Translation
 ------|----------------
 id | Becomes the base URI of the ontology — owl:Ontology subject, e.g. <https://w3id.org/chemicalExposome/schema/chemicals-outdoor> 
-name | rdfs:label on the ontology
-title | dcterms:title on the ontology
-description | dcterms:description on the ontology
-version | owl:versionInfo on the ontology
-license | dcterms:license on the ontology
-see_also | rdfs:seeAlso on the ontology
+name | rdfs:label 
+title | dcterms:title 
+description | dcterms:description 
+version | owl:versionInfo 
+license | dcterms:license 
+see_also | rdfs:seeAlso 
 
 When the LinkML OWL generator (gen-owl) is run on the schema, it reads the header fields and automatically produces the Turtle output.
 
@@ -117,19 +109,19 @@ The **id** is particularly important — it becomes the namespace base URI that 
 LinkML has **a built-in SchemaDefinition meta-model** that defines these fields and their mappings. They are part of the LinkML metamodel itself — defined at https://w3id.org/linkml/ — so the LinkML generators know precisely how to translate each one without the developer having to declare anything. 
 
 There are three layers:
-1. The schema (md_env_outdoor_linkml.yaml) — describes the domain
-2. The LinkML metamodel (linkml:SchemaDefinition) — describes what fields a schema can have and what they mean
-3. The generators (gen-owl, gen-shacl, gen-jsonld, etc.) — read the metamodel mappings and produce the target format
+1. **The schema** (md_env_outdoor_linkml.yaml) — describes the domain
+2. **The LinkML metamodel** (linkml:SchemaDefinition) — describes what fields a schema can have and what they mean
+3. **The generators** (gen-owl, gen-shacl, gen-jsonld, etc.) — read the metamodel mappings and produce the target format
 
 So when a developer writes "license: https://creativecommons.org/licenses/by/4.0/", she is not inventing anything — she is filling in a field that LinkML already knows maps to dcterms:license in RDF output, "license" in JSON-LD context, and so on.
 This is also why the prefixes section matters for the data level but these top-level fields don't need it — the metamodel already knows which external vocabulary each field corresponds to. The prefixes a developer declares are for their own classes, slots, and ontology mappings within the schema body.
 
 The **default prefix** is a developer's choice. A few things worth considering when choosing:
 
-- Uniqueness — ideally not already used in major prefix registries like prefix.cc or Bioregistry
-- Stability — the URI should be something you control and can keep stable long-term, since it becomes the base for all your class and slot URIs in RDF
-- Readability — short prefixes are conventional (2–5 characters)
-- The w3id.org base URI — that part is also a choice; w3id.org is a persistent URI service maintained by the W3C community and is a good option for research schemas, but you could use your own institution's domain instead if you have one
+- **Uniqueness** — ideally not already used in major prefix registries like prefix.cc or Bioregistry
+- **Stability** — the URI should be something you control and can keep stable long-term, since it becomes the base for all your class and slot URIs in RDF
+- **Readability** — short prefixes are conventional (2–5 characters)
+- **The w3id.org base URI** — that part is also a choice; w3id.org is a persistent URI service maintained by the W3C community and is a good option for research schemas, but you could use your own institution's domain instead if you have one
 
 LinkML will auto-generate URIs for everything based on the default_prefix and the element name. So Project becomes cenvo:Project, sample_id becomes cenvo:sample_id etc. 
 
@@ -153,19 +145,7 @@ It is a convenience default — it means a developer does not have to write rang
 
 In practice for a complex schema and with multiple domain experts involved, being explicit on every field might actually be better discipline — it makes the schema easier to review and reduces the risk of silent errors slipping through during collaborative editing.
 
-*A YAML list can be written in two ways:*
-
-*Block style (multi-line):*
-yamlimports:
- - linkml:types*
-
-*Flow style (inline):*
-yamlimports: [linkml:types]
-Both me*
-
-*There is no semantic difference — it is entirely about readability and convention. Most LinkML schemas in the wild use the block style for anything that might grow into a longer list, and inline or single-line style for things that are unlikely to change.*
-
-**imports: - linkml:types** imports the LinkML built-in types module, which defines the primitive data types that the schema relies on.
+**imports:** - linkml:types imports the LinkML built-in types module, which defines the primitive data types that the schema relies on.
 Concretely, it is what makes these type names available in the schema:
 
 LinkML type | Maps to
@@ -187,28 +167,27 @@ More broadly, the imports mechanism in LinkML works like imports in a programmin
 
 There are **several categories of things one can import:**
 
-1. LinkML built-in modules
-These are maintained by the LinkML project itself:
+1. **LinkML built-in modules.** These are maintained by the LinkML project itself:
 yamlimports:
+
   - linkml:types        # primitive types (string, integer, date, etc.)
   - linkml:annotations  # adds annotation capabilities to schema elements
 
-2. Other LinkML schemas developed by the same team:
-A large schema can be split into modules and the modules are imported:
+2. **Other LinkML schemas developed by the same team.** A large schema can be split into modules and the modules are imported:
 yamlimports:
   - linkml:types
-  - ./compounds         # a local file compounds.yaml in the same folder
-  - ./sites             # a local file sites.yaml
-  - ./measurements      # a local file measurements.yaml
+    * ./compounds         # a local file compounds.yaml in the same folder
+    * ./sites             # a local file sites.yaml
+    * ./measurements      # a local file measurements.yaml
 
 This is actually something worth considering for this schema — it is getting large and splitting it into domain-focused modules (compounds, sites, samples, measurements) would make collaborative editing easier, since different domain experts could own different files.
 
-3. Remote schemas by URI
+3. **Remote schemas by URI:**
 yamlimports:
   - linkml:types
-  - https://example.org/schemas/some-community-schema
+    * https://example.org/schemas/some-community-schema
 
-4. Community and standard schemas
+4. **Community and standard schemas**
 Several real-world schemas exist that one could potentially import from: BioLink Model; NMDC; MIxS; SOSA/SSN  
 
 ## Subsets
