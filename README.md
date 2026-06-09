@@ -169,24 +169,26 @@ There are **several categories of things one can import:**
 
 1. **LinkML built-in modules.** These are maintained by the LinkML project itself:
 ```
-yamlimports:
+imports:
   linkml:types        # primitive types (string, integer, date, etc.)
   linkml:annotations  # adds annotation capabilities to schema elements
 ```
 2. **Other LinkML schemas developed by the same team.** A large schema can be split into modules and the modules are imported:
 ```
-yamlimports:
+imports:
   linkml:types
-    ./compounds         # a local file compounds.yaml in the same folder
-    ./sites             # a local file sites.yaml
-    ./measurements      # a local file measurements.yaml
+  ./compounds         # a local file compounds.yaml in the same folder
+  ./sites             # a local file sites.yaml
+  ./measurements      # a local file measurements.yaml
 ```
 This is actually something worth considering for this schema — it is getting large and splitting it into domain-focused modules (compounds, sites, samples, measurements) would make collaborative editing easier, since different domain experts could own different files.
 
 3. **Remote schemas by URI:**
-yamlimports:
-  - linkml:types
-    * https://example.org/schemas/some-community-schema
+```
+imports:
+  linkml:types
+  https://example.org/schemas/some-community-schema
+```
 
 4. **Community and standard schemas**
 Several real-world schemas exist that one could potentially import from: BioLink Model; NMDC; MIxS; SOSA/SSN  
@@ -195,20 +197,24 @@ Several real-world schemas exist that one could potentially import from: BioLink
 inkML are a way to tag or group fields without changing the structure of the schema. They are essentially labels one can attach to slots or attributes to indicate they belong to a particular category or compliance level.
 
 In this schema there are three:
-yamlsubsets:
+```
+subsets:
   mandatory:
     description: Fields that are mandatory for all record types
   mandatory_for_monitoring:
     description: Fields mandatory only for monitoring programmes (optional for projects)
   mandatory_if_exists:
     description: Fields mandatory if the entity exists (e.g. campaign)
+```
 
 And then throughout the schema fields are tagged with them:
-yamlcompound_name:
+```
+compound_name:
   range: string
   required: true
   in_subset:
     - mandatory
+```
 
 They do not enforce anything by themselves in LinkML. The required: true is what actually enforces validation. The subset tag is metadata about the field, not a constraint. They are useful for:
 - Documentation — immediately clear to a reader which fields are core vs. optional
@@ -221,24 +227,25 @@ So in this case they are a lightweight way of encoding the tiered metadata requi
 
 There are two levels here — LinkML's built-in types and custom types defined in the schema.
 
-**Built-in types (come from imports: - linkml:types)**
+1. **Built-in types (come from imports: - linkml:types)**
 These are the primitives like string, integer, float, date, time, boolean. They are defined by LinkML and map directly to XSD types. One just uses them as range: values without defining anything.
 
-**Custom types (defined in the types: section of your schema)**
+2. **Custom types (defined in the types: section of your schema)**
 These are restrictions or refinements of the built-in types. Here, six have been defined:
-
-yamltypes:
+```
+types:
   EmailAddress:
     uri: xsd:string
     base: str
-    pattern: "^[\\w.+-]+@[\\w-]+\\.[\\w.]+$"                  
+    pattern: "^[\\w.+-]+@[\\w-]+\\.[\\w.]+$"        
+```          
 
 Each one has:
 - uri — the XSD type it is based on in RDF
 - base — the Python base type used when generating code
 - attern — an optional regex that restricts valid values
 
-So the custom types are essentially named, validated strings. They are still strings underneath but with extra constraints and a meaningful name. The ones in this schema are:
+The custom types are essentially named, validated strings. They are still strings underneath but with extra constraints and a meaningful name. The ones in this schema are:
 
 Type | Based on | Constraint
 ------ |---------| -----------
@@ -249,13 +256,13 @@ RorIdentifier | xsd:string | regex for ROR format
 DecimalDegree | xsd:decimal | used for lat/lon 
 YearValue | xsd:gYear | year in YYYY format
 
-Three reasons to define custom types:
-- Validation — the pattern is checked when data is validated against the schema
-- Reuse — instead of repeating the same regex pattern on every email field across the schema, it is defined once and just range is written: EmailAddress
-- Semantics — range: OrcidIdentifier is far more informative to a reader than range: string
+Three **reasons to define custom types:**
+- **Validation** — the pattern is checked when data is validated against the schema
+- **Reuse** — instead of repeating the same regex pattern on every email field across the schema, it is defined once and just range is written: EmailAddress
+- **Semantics — range** - OrcidIdentifier is far more informative to a reader than range: string
 
-**Regex** stands for Regular Expression. It is a formal language for describing text patterns — a way of saying "a valid value must look like this" in a precise, machine-readable way. One does not need to write them from scratch. The best approach is:
-- Describing the format in plain English — e.g. "4 digits, hyphen, 4 digits, hyphen, 4 digits, hyphen, 3 digits and either a digit or X" and Using a tool like regex101.com — one pastes a pattern, tests it against example values, and it explains each part in plain English.
+**Regex** stands for **Regular Expression**. It is a formal language for describing text patterns — a way of saying "a valid value must look like this" in a precise, machine-readable way. One does not need to write them from scratch. The best approach is:
+- Describing the format in plain English — e.g. "4 digits, hyphen, 4 digits, hyphen, 4 digits, hyphen, 3 digits and either a digit or X" and using a tool like regex101.com — one pastes a pattern, tests it against example values, and it explains each part in plain English.
 - Looking up existing patterns — for standard identifiers like ORCID, DOI, email, CAS numbers, well-tested patterns already exist online.
 
 ## Enums (enumerations)
@@ -273,9 +280,10 @@ The key difference from a plain string field:
 | Interoperability | Low | High |
 
 ## Integrating external vocabularies
-1. Option A — Embed directly in the schema
+1. Option A — **Embed directly in the schema**
 If the vocabulary is agreed and stable, just replacing the placeholder enum values with the real ones:
-yamlAnalysisMethod:
+```
+AnalysisMethod:
   description: Analytical method used to determine the analyte in the sample.
   permissible_values:
     GC_MS:
@@ -284,17 +292,21 @@ yamlAnalysisMethod:
       description: Liquid chromatography–tandem mass spectrometry
     ICP_MS:
       description: Inductively coupled plasma mass spectrometry
-    *... etc.*
-
-2. Option B — Referencing an external vocabulary (recommended if it lives separately)
+```
+2. Option B — **Referencing an external vocabulary (recommended if it lives separately)**
 If the vocabulary is maintained separately (e.g. as its own file, registry, or LinkML schema), one has two cleaner approaches:
     1. B1 — Importing it as a LinkML schema (if it is published as LinkML):
-yamlimports:
+```
+imports:
   - linkml:types
   - https://w3id.org/parc/wp9/analytical-methods  # or a local path
+```
+
 And then remove your local AnalysisMethod enum entirely — it comes from the import.
-    2. B2 — Referencing it via from_schema or see_also (if it is not LinkML but exists as a published vocabulary):
-yamlAnalysisMethod:
+
+    2. B2 — **Referencing it via from_schema or see_also** (if it is not LinkML but exists as a published vocabulary):
+```
+AnalysisMethod:
   description: >-
     Analytical method used to determine the analyte in the sample.
     Source: PARC WP9 analytical methods vocabulary.
@@ -304,19 +316,22 @@ yamlAnalysisMethod:
     GC_MS:
       description: Gas chromatography–mass spectrometry
       meaning: https://w3id.org/parc/wp9/analytical-methods/GC_MS
+```
 Here meaning links each value to its URI in the external vocabulary, which is the standard LinkML way of saying "this local term is the same as that external concept."
 
-3. Option C — Indicating a placeholder with a comment and todos
+3. Option C — **Indicating a placeholder with a comment and todos**
 If the vocabulary exists but is not yet ready to integrate, the cleanest way is:
-yamlAnalysisMethod:
+```
+AnalysisMethod:
   description: >-
     Analytical method used to determine the analyte in the sample.
-    *TODO: Replace permissible_values below with the final PARC WP9*
-    *analytical methods vocabulary once published.*
-    *Draft vocabulary available at: [link if available]*
+    # TODO: Replace permissible_values below with the final PARC WP9
+    # analytical methods vocabulary once published.
+    # Draft vocabulary available at: [link if available]
   permissible_values:
     PLACEHOLDER:
       description: Placeholder — do not use in production.
+```
 
 Which to choose?
 It depends on a practical question — who owns and maintains the vocabulary? 
@@ -324,12 +339,13 @@ It depends on a practical question — who owns and maintains the vocabulary?
 - If someone else owns it and maintains it separately → Option B, so changes propagate automatically without one having to manually sync
 - If it is still being finalised → Option C for now, then migrate to A or B once stable
 
-Now there is an external vocabulary where all matrices live together. The question is how to slice it per domain in this schema.
+Now there is an **external vocabulary** where all matrices live together. The question is **how to slice it per domain in this schema.**
 Two main options:
 
-1. Option A — Keeping separate enums, adding meaning: to link to the vocabulary
+1. Option A — **Keeping separate enums, adding meaning: to link to the vocabulary.**
 Each enum stays domain-specific but each value points to its URI in the external vocabulary:
-yamlAtmosphericMatrix:
+```
+AtmosphericMatrix:
   permissible_values:
     ambient_air:
       meaning: https://[vocabulary-uri]/ambient_air
@@ -342,11 +358,14 @@ AquaticMatrix:
       meaning: https://[vocabulary-uri]/water
     sediment:
       meaning: https://[vocabulary-uri]/sediment
-This keeps the domain constraint enforced by the schema structure, while linking to the shared external vocabulary. This is probably the most practical option for your case.
+```
 
-2. Option B — One enum for all matrices, constrain per class using rules
+This keeps the domain constraint enforced by the schema structure, while linking to the shared external vocabulary. This is probably the most practical option for this schema case.
+
+2. Option B — **One enum for all matrices, constrain per class using rules.**
 One could have a single MatrixType enum with all values, and then use LinkML rules to restrict which values are valid per sample type:
-yamlMatrixType:
+```
+MatrixType:
   permissible_values:
     ambient_air:
     precipitation:
@@ -371,6 +390,7 @@ SampleAtmospheric:
           matrix:
             value_presence: ABSENT
       description: Atmospheric samples cannot have aquatic or terrestrial matrices
+```
 This is more complex and harder to read — not recommended unless one has a specific reason to keep all matrices in one enum.
 Recommendation - Sticking with Option A — separating enums per domain with meaning: linking to the external vocabulary. It is:
 - Cleaner and easier to read
@@ -378,43 +398,46 @@ Recommendation - Sticking with Option A — separating enums per domain with mea
 - Easier to validate
 - Already the pattern the schema uses
 
-The external vocabulary is the source of truth for what the concepts mean, but the schema is the source of truth for which concepts are valid in which context. Those are two different concerns and it is fine for them to live in different places.
+**The external vocabulary is the source of truth for what the concepts mean, but the schema is the source of truth for which concepts are valid in which context.** Those are two different concerns and it is fine for them to live in different places.
 
 The vocabulary defines what the concepts are — their definitions, identifiers, relationships between terms.
 The schema defines how the concepts are used — which terms are valid in which context, what is mandatory, what the structure looks like.
 This is actually a well established pattern in the semantic web world — vocabularies and application profiles working together. This schema is essentially acting as an application profile of the vocabulary, which is exactly what DCAT-AP is to DCAT, or what INSPIRE profiles are to ISO 19115. 
 
-If the vocabulary is published as an OWL ontology, the relationship between the vocabulary and this schema can be stated explicitly using standard OWL/RDF constructs. THis schema (when compiled to OWL) would reference the vocabulary ontology, and a machine could understand the dependency formally, not just from a human-readable note.
+If the vocabulary is published as an OWL ontology, the relationship between the vocabulary and this schema can be stated explicitly using standard OWL/RDF constructs. This schema (when compiled to OWL) would reference the vocabulary ontology, and a machine could understand the dependency formally, not just from a human-readable note.
 
 ## Slots and classes
 **Classes** are the entities — the things one is describing. In this schema:
-
-Project
-Sample
-ChemicalCompound
-MeasurementConcentration
-SiteGIS
+- Project
+- Sample
+- ChemicalCompound
+- MeasurementConcentration
+- SiteGIS
 
 Each class corresponds to a real-world object or concept that has its own identity and a set of properties describing it.
 
 **Slots** are the properties — the fields that describe those entities. **They can be defined in two ways:**
 **Shared slots** (defined in the top-level slots: section):
-yamlslots:
+```
+slots:
   sample_id:
     range: string
     required: true
+```
 These are reusable across multiple classes. Any class can use them.
 
 **Local attributes** (defined inside a class under attributes:):
-yamlclasses:
+```
+classes:
   Sample:
     attributes:
       matrix:
         range: AtmosphericMatrix
         required: true
+```
 These belong to that class only.
 
-The key difference is reuse:
+**The key difference is reuse:**
 . | Shared slot | Local attribute
 ---|------------|-------------
 Defined at | Top level | Inside the class
@@ -428,9 +451,8 @@ In RDF terms: Classes become owl:Class; Slots become owl:ObjectProperty or owl:D
 So the distinction maps cleanly onto standard ontology concepts.
 
 A concrete minimal example from this schema:
-# ---------------------------------------------------------------------------
-# SLOTS (shared - defined once, reusable across classes)
-# ---------------------------------------------------------------------------
+**Slots:**
+```
 slots:
 
   sample_id:
@@ -443,10 +465,9 @@ slots:
     description: Start date of sampling in format YYYY-MM-DD
     range: date
     required: true
-
-# ---------------------------------------------------------------------------
-# CLASSES
-# ---------------------------------------------------------------------------
+```
+**Classes:**
+```
 classes:
 
   SampleAtmospheric:
@@ -479,3 +500,4 @@ classes:
         range: AquaticFraction
         required: false
 
+```
