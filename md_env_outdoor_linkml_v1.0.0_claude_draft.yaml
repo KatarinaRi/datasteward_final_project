@@ -1,0 +1,1687 @@
+id: https://w3id.org/chemicalExposome/schema/chemicals-outdoor
+name: chemicals-outdoor-schema
+title: Metadata Schema for Data Concerning Chemicals in the Outdoor Environment
+description: >-
+  This schema defines metadata for describing collections of environmental
+  samples and parameters measured in these samples, focusing on the occurrence
+  of chemicals in the outdoor environment. Developed in PARC WP7 (P7.2.2a).
+version: "1.3"
+license: https://creativecommons.org/licenses/by/4.0/
+see_also:
+  - https://doi.org/10.5281/zenodo.17175075
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ceo: https://w3id.org/chemicalExposome/schema/chemicals-outdoor/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: ceo
+default_range: string
+
+imports:
+  - linkml:types
+
+# ---------------------------------------------------------------------------
+# SUBSETS
+# ---------------------------------------------------------------------------
+subsets:
+  mandatory:
+    description: Fields that are mandatory for all record types
+  mandatory_for_monitoring:
+    description: Fields mandatory only for monitoring programmes (optional for projects)
+  mandatory_if_exists:
+    description: Fields mandatory if the entity exists (e.g. campaign)
+
+# ---------------------------------------------------------------------------
+# TYPES
+# ---------------------------------------------------------------------------
+types:
+  EmailAddress:
+    uri: xsd:string
+    base: str
+    pattern: "^[\\w.+-]+@[\\w-]+\\.[\\w.]+$"
+    description: A valid email address
+
+  URIorCURIE:
+    uri: xsd:anyURI
+    base: str
+    description: A URI or CURIE reference
+
+  OrcidIdentifier:
+    uri: xsd:string
+    base: str
+    pattern: "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+    description: An ORCID identifier in the format 0000-0000-0000-0000
+
+  RorIdentifier:
+    uri: xsd:string
+    base: str
+    # TODO: tighten this pattern — ROR IDs have a fixed 9-character alphanumeric
+    # format (e.g. ror.org/02mhbdp94). Current regex allows any length.
+    pattern: "^ror\\.org/[a-z0-9]+"
+    description: A ROR identifier in the format ror.org/xxxxxxxx
+
+  DecimalDegree:
+    uri: xsd:decimal
+    base: float
+    description: A decimal degree coordinate value
+
+  YearValue:
+    uri: xsd:gYear
+    base: int
+    description: A year value in YYYY format
+
+# ---------------------------------------------------------------------------
+# ENUMS
+# ---------------------------------------------------------------------------
+enums:
+
+  MonitoringActivityType:
+    description: Type of monitoring activity
+    permissible_values:
+      scientific_project:
+        description: >-
+          A time-limited initiative focused on collection, analysis, and
+          interpretation of data to answer specific scientific questions.
+      monitoring_programme:
+        description: >-
+          A systematic and long-term observation of specific parameters,
+          organized based on legislative requirements.
+
+  ImplementationLevel:
+    description: The implementation level of coverage
+    permissible_values:
+      international:
+      national:
+      regional:
+      local:
+
+  ContactRole:
+    description: >-
+      Role of a contact person. Source: ISO 19115:2003/19139 and
+      EC Regulation No 1205/2008 (INSPIRE).
+    permissible_values:
+      resourceProvider:
+        description: Party that supplies the resource
+      custodian:
+        description: >-
+          Party that accepts accountability and responsibility for the data
+          and ensures appropriate care and maintenance of the resource
+      owner:
+        description: Party that owns the resource
+      user:
+        description: Party who uses the resource
+      distributor:
+        description: Party who distributes the resource
+      originator:
+        description: Party who created the resource
+      pointOfContact:
+        description: >-
+          Party who can be contacted for acquiring knowledge about or
+          acquisition of the resource
+      principalInvestigator:
+        description: >-
+          Key party responsible for gathering information and conducting research
+      processor:
+        description: >-
+          Party who has processed the data in a manner such that the resource
+          has been modified
+      publisher:
+        description: Party who published the resource
+      author:
+        description: Party who authored the resource
+
+  # TODO: This enum is a full placeholder. The final controlled vocabulary
+  # for analytical methods is being developed separately within the PARC
+  # project. Replace this stub once the PARC analytical methods vocabulary
+  # is finalized.
+  AnalysisMethod:
+    description: >-
+      Analytical method used to determine the analyte in the sample.
+      NOTE: Placeholder only — final vocabulary pending.
+    permissible_values:
+      PLACEHOLDER:
+        description: >-
+          Placeholder value — final vocabulary pending.
+          Do not use in production data.
+
+  ConcentrationUnit:
+    description: Units used for chemical concentration measurements
+    # TODO: Review whether non-concentration units (m, cm, g, celsius,
+    # m_s1, degrees, kPa, Qv_kg_kg, percent, unitless, meq_kg1, minus)
+    # belong here or in a separate general UnitEnum. The current enum
+    # mixes chemical concentration units with physical/meteorological units.
+    permissible_values:
+      ug_m3:
+        description: Micrograms per cubic meter (µg m⁻³)
+      ng_m3:
+        description: Nanograms per cubic meter (ng m⁻³)
+      mg_m3:
+        description: Milligrams per cubic meter (mg m⁻³)
+      pg_m3:
+        description: Picograms per cubic meter (pg m⁻³)
+      ng_m2:
+        description: Nanograms per square meter (ng m⁻²)
+      ug_m2:
+        description: Micrograms per square meter (µg m⁻²)
+      ng_mg1:
+        description: Nanograms per milligram (ng mg⁻¹)
+      ug_mg1:
+        description: Micrograms per milligram (µg mg⁻¹)
+      mg_kg1:
+        description: Milligrams per kilogram (mg kg⁻¹)
+      ng_g1:
+        description: Nanograms per gram (ng g⁻¹)
+      ug_g1:
+        description: Micrograms per gram (µg g⁻¹)
+      pg_g1:
+        description: Picograms per gram (pg g⁻¹)
+      ng_sample1:
+        description: Nanograms per sample (ng sample⁻¹)
+      pg_sample1:
+        description: Picograms per sample (pg sample⁻¹)
+      g_l1:
+        description: Grams per liter (g l⁻¹)
+      mg_l1:
+        description: Milligrams per liter (mg l⁻¹)
+      ug_l1:
+        description: Micrograms per liter (µg l⁻¹)
+      ng_l1:
+        description: Nanograms per liter (ng l⁻¹)
+      pg_l1:
+        description: Picograms per liter (pg l⁻¹)
+      ng_m2_d1:
+        description: Nanograms per square meter per day (ng m⁻² d⁻¹)
+      pg_m2_d1:
+        description: Picograms per square meter per day (pg m⁻² d⁻¹)
+      g_cm3:
+        description: Grams per cubic centimeter (g cm⁻³)
+      mg_dl:
+        description: Milligrams per deciliter (mg/dl)
+      ppb:
+        description: Parts per billion
+      ppm:
+        description: Parts per million
+      psu:
+        description: Practical Salinity Units
+      m3:
+        description: Cubic meter
+      m:
+        description: Meter
+      cm:
+        description: Centimeter
+      g:
+        description: Gram
+      celsius:
+        description: Degrees Celsius (°C)
+      m_s1:
+        description: Meters per second (m/s)
+      degrees:
+        description: Degrees (wind direction)
+      kPa:
+        description: Kilopascal
+      Qv_kg_kg:
+        description: Water vapor mixing ratio (Qv, kg/kg)
+      percent:
+        description: Percentage (%)
+      unitless:
+        description: Dimensionless / unitless
+      meq_kg1:
+        description: Milliequivalents per kilogram (meq kg⁻¹)
+      minus:
+        description: Dimensionless ratio (-)
+
+  CompoundGroup:
+    description: >-
+      Chemical group classification as used in the PARC WP9 compound list.
+      Groups are based on chemical structure and/or regulatory relevance.
+      # TODO: Future alignment planned with ChemFOnt functional ontology
+      # (https://www.chemfont.ca/) and NORMAN SusDat groupings.
+    permissible_values:
+      PFAS:
+        description: Per- and polyfluoroalkyl substances
+      PCBs:
+        description: Polychlorinated biphenyls
+      PBDEs:
+        description: Polybrominated diphenyl ethers
+      PAHs:
+        description: Polycyclic aromatic hydrocarbons
+      OCPs:
+        description: Organochlorine pesticides
+      biocides:
+        description: Biocidal substances
+      pharmaceuticals:
+        description: Pharmaceutical compounds and metabolites
+      hormones:
+        description: Natural and synthetic hormones
+      heavy_metals:
+        description: Heavy metals and metalloids
+      dioxins_furans:
+        description: Dioxins and furans (PCDD/PCDF)
+      HBCDs:
+        description: Hexabromocyclododecanes
+      PFRs:
+        description: Phosphorus flame retardants
+      UV_filters:
+        description: UV filters and stabilizers
+      plasticizers:
+        description: Plasticizers including phthalates
+      siloxanes:
+        description: Siloxanes and silicones
+      musks:
+        description: Synthetic and natural musks
+      pesticides_other:
+        description: Other pesticides not covered above
+      other:
+        description: Other compounds not classified above
+
+  CoordinateSystem:
+    description: Coordinate reference system used for geographic coordinates
+    permissible_values:
+      WGS84:
+        description: Global coordinate system widely used for GPS navigation. EPSG:4326.
+
+  WaterType:
+    description: Type of water body
+    permissible_values:
+      salt_marine:
+        description: Salt or marine water
+      transitional_brackish:
+        description: Transitional or brackish water
+      fresh_surface:
+        description: Fresh or surface water
+      ground:
+        description: Groundwater
+      sludge_waste:
+        description: Sludge or waste water
+
+  WaterGeographicalFeature:
+    description: Geographical water feature type
+    # TODO: river_stream_canal and lake_pond_pool_reservoir had the same
+    # ENVO ID in the original — verify the correct distinction here and
+    # decide whether a controlled vocabulary or free-text better serves this.
+    permissible_values:
+      not_relevant:
+      not_reported:
+      river_stream_canal:
+      lake_pond_pool_reservoir:
+      ocean_sea_territorial_waters:
+      coastal_fjord:
+      drainage_sewer_artificial:
+      swamp_wetland:
+      groundwater_aquifer:
+      other:
+
+  WaterTreatment:
+    description: Water treatment status
+    permissible_values:
+      pre_treatment:
+      post_treatment:
+
+  GeographicRegion:
+    description: >-
+      UN M49 geographic region.
+      Source: https://unstats.un.org/unsd/methodology/m49/
+    permissible_values:
+      Africa:
+      Americas:
+      Asia:
+      Europe:
+      Oceania:
+
+  UNRegionalGroup:
+    description: Regional groups of United Nations member states
+    permissible_values:
+      African:
+      Asia_Pacific:
+      Eastern_European:
+      GRULAC:
+      WEOG:
+
+  # --- Environmental and biota matrix enums ---
+  # NOTE: These enums are placeholders aligned with the PARC community
+  # matrix vocabulary (currently in development). Only environmental matrices
+  # (atmospheric, aquatic, terrestrial) and biota matrices (plant, animal)
+  # are included. Human biomonitoring matrices are excluded from scope.
+
+  AtmosphericMatrix:
+    description: >-
+      Matrix type for atmospheric samples.
+      Restricted to environmental outdoor matrices only.
+    permissible_values:
+      ambient_air:
+        description: Ambient outdoor air
+      precipitation:
+        description: Precipitation (rain, snow, etc.)
+
+  AtmosphericSubMatrix:
+    description: >-
+      Sub-matrix for atmospheric samples.
+      # TODO: Final vocabulary pending PARC community agreement.
+    permissible_values:
+      Precipitation_Total:
+      Precipitation_Wet:
+      Air_Gas_phase:
+      Air_TSP:
+        description: Total Suspended Particles
+      Air_PM10:
+        description: Particulate Matter ≤10 µm
+      Air_PM25:
+        description: Particulate Matter ≤2.5 µm
+      Air_Passive:
+      Air_Total:
+
+  AtmosphericSamplingMethod:
+    description: >-
+      Sampling method for atmospheric samples.
+      # TODO: Final vocabulary pending PARC community agreement.
+    permissible_values:
+      Active_HiVol:
+        description: Active high-volume sampler
+      Active_LowVol:
+        description: Active low-volume sampler
+      Passive_PUF:
+        description: Passive polyurethane foam sampler
+      Passive_XAD:
+        description: Passive XAD resin sampler
+      Passive_SIP:
+        description: Passive SIP sampler
+      Wet_only_collector:
+        description: Wet-only precipitation collector
+      Bulk_collector:
+        description: Bulk (wet+dry) precipitation collector
+
+  AquaticMatrix:
+    description: >-
+      Matrix type for aquatic samples.
+      Restricted to environmental outdoor matrices only.
+    permissible_values:
+      water:
+        description: Water (surface, ground, marine)
+      sediment:
+        description: Aquatic sediment
+
+  AquaticSubMatrix:
+    description: >-
+      Sub-matrix for aquatic samples.
+      # TODO: Final vocabulary pending PARC community agreement.
+    permissible_values:
+      Water_Total:
+      Water_Passive:
+      Sediment_Total:
+
+  AquaticSamplingMethod:
+    description: >-
+      Sampling method for aquatic samples.
+      # TODO: Final vocabulary pending PARC community agreement.
+    permissible_values:
+      Bulk_Grab:
+      Passive_SPMD:
+        description: Semipermeable membrane device
+      Passive_POCIS:
+        description: Polar organic chemical integrative sampler
+      Passive_EMPORE:
+        description: Empore disk passive sampler
+      Passive_SILICONE:
+        description: Silicone passive sampler
+
+  AquaticFraction:
+    description: Sample fraction for aquatic samples
+    permissible_values:
+      Water_SPM:
+        description: Suspended particulate matter
+      Water_DOM:
+        description: Dissolved organic matter
+      Water_C_free:
+        description: Colloid-free fraction
+      Water_DOM_C_free:
+        description: DOM + colloid-free fraction
+      Water_Colloidal_fraction:
+      Sediment_Solid_phase:
+      Sediment_Pore_water:
+      Sediment_Colloidal_fraction:
+
+  TerrestrialMatrix:
+    description: >-
+      Matrix type for terrestrial samples.
+      Restricted to environmental outdoor matrices only.
+    permissible_values:
+      soil:
+        description: Soil
+
+  TerrestrialSubMatrix:
+    description: >-
+      Sub-matrix for terrestrial (soil) samples.
+      # TODO: Final vocabulary pending PARC community agreement.
+    permissible_values:
+      Soil_O_Horizon_Organic:
+        description: Soil O Horizon (Organic)
+      Soil_A_Horizon_Topsoil:
+        description: Soil A Horizon (Topsoil)
+      Soil_E_Horizon_Eluviation:
+        description: Soil E Horizon (Eluviation)
+      Soil_B_Horizon_Subsoil:
+        description: Soil B Horizon (Subsoil)
+      Soil_C_Horizon_Parent_Material:
+        description: Soil C Horizon (Parent Material)
+      Soil_R_Horizon_Bedrock:
+        description: Soil R Horizon (Bedrock)
+      Soil_S_Horizon_Mineral:
+        description: Soil S Horizon (Mineral)
+      Soil_H_Horizon_Peat:
+        description: Soil H Horizon (Peat)
+      Soil_Horizon_other:
+      Soil_Horizon_not_specified:
+
+  BiotaMatrix:
+    description: >-
+      Matrix type for biota samples.
+      Restricted to plant and animal matrices only (environmental monitoring scope).
+      Human biomonitoring matrices are excluded.
+    permissible_values:
+      plant:
+        description: Plant tissue
+      animal:
+        description: Animal tissue
+
+  BiotaSubMatrix:
+    description: >-
+      Sub-matrix for biota samples (plant and animal tissues).
+      # TODO: Final vocabulary pending PARC community agreement.
+    permissible_values:
+      Plant_Seed:
+      Plant_Whole_Plant:
+      Plant_Leaves_Needles:
+      Plant_Roots:
+      Plant_Fruits:
+      Plant_Bark:
+      Plant_Wood:
+      Animal_Blood:
+      Animal_Liver_Tissue:
+      Animal_Kidney_Tissue:
+      Animal_Muscle_Tissue:
+      Animal_Fat_Tissue:
+      Animal_Hair_and_Fur:
+      Animal_Eggs:
+      Animal_Bone:
+
+  AirParameter:
+    description: Additional parameters measured in atmospheric samples
+    permissible_values:
+      volume: {description: "Volume of sample collected (m³)"}
+      weight: {description: "Weight of sample collected (µg m⁻³)"}
+      height: {description: "Height of measurement (m)"}
+      PM10: {description: "Particulate Matter 10 (µg m⁻³)"}
+      PM10_2m: {description: "Particulate Matter 10 at 2m height (µg m⁻³)"}
+      PM25: {description: "Particulate Matter 2.5 (µg m⁻³)"}
+      temperature: {description: "Air temperature (°C)"}
+      wind_speed: {description: "Wind speed (m/s)"}
+      wind_direction: {description: "Wind direction (degrees)"}
+      sea_level_pressure: {description: "Sea level pressure (kPa)"}
+      dew_point_temperature: {description: "Dew point temperature (°C)"}
+      water_vapor_mixing_ratio: {description: "Water vapor mixing ratio (Qv, kg/kg)"}
+      meteorological_information_source: {description: "Source of meteorological information"}
+      NO2: {description: "NO₂ concentration — height not specified"}
+      NO2_1_5m: {description: "NO₂ measured at 1.5m height"}
+
+  WaterParameter:
+    description: Additional parameters measured in aquatic samples
+    permissible_values:
+      depth_from: {description: "Depth from (m)"}
+      depth_to: {description: "Depth to (m)"}
+      depth: {description: "Depth (m)"}
+      salinity: {description: "Salinity (PSU)"}
+      temperature: {description: "Water temperature (°C)"}
+      pH: {description: "pH (dimensionless)"}
+      weight: {description: "Weight (g l⁻¹)"}
+      dissolved_inorganic_carbon: {description: "Dissolved inorganic carbon (ng l⁻¹)"}
+      dissolved_organic_carbon: {description: "Dissolved organic carbon (ng l⁻¹)"}
+      total_inorganic_carbon: {description: "Total inorganic carbon (ng l⁻¹)"}
+      total_organic_carbon: {description: "Total organic carbon (ng l⁻¹)"}
+      total_dissolved_solids: {description: "Total dissolved solids (mg l⁻¹)"}
+      ions_chlorides: {description: "Chloride ions (mg l⁻¹)"}
+      ions_hydrogencarbonates: {description: "Hydrogencarbonate ions (mg l⁻¹)"}
+      ions_sulphates: {description: "Sulphate ions (mg l⁻¹)"}
+      ions_Al: {description: "Aluminium cation (µg l⁻¹)"}
+      ions_Ba: {description: "Barium cation (µg l⁻¹)"}
+      ions_Ca: {description: "Calcium cation (mg l⁻¹)"}
+      ions_Fe: {description: "Iron cation (µg l⁻¹)"}
+      ions_K: {description: "Potassium cation (mg l⁻¹)"}
+      ions_Mg: {description: "Magnesium cation (mg l⁻¹)"}
+      ions_Mn: {description: "Manganese cation (µg l⁻¹)"}
+      ions_Na: {description: "Sodium cation (mg l⁻¹)"}
+
+  SedimentParameter:
+    description: Additional parameters measured in sediment samples
+    permissible_values:
+      sample_depth_from: {description: "Sample depth from (cm)"}
+      sample_depth_to: {description: "Sample depth to (cm)"}
+      dry_mass: {description: "Dry mass (%)"}
+      total_organic_carbon: {description: "Total organic carbon (%)"}
+      cec_Meh_Ca: {description: "CEC Mehlich Ca (meq kg⁻¹)"}
+      cec_Meh_H: {description: "CEC Mehlich H (meq kg⁻¹)"}
+      cec_Meh_K: {description: "CEC Mehlich K (meq kg⁻¹)"}
+      cec_Meh_Mg: {description: "CEC Mehlich Mg (meq kg⁻¹)"}
+      sil_Al2O3: {description: "Silicate Al₂O₃ (%)"}
+      sil_CaO: {description: "Silicate CaO (%)"}
+      sil_Co2: {description: "Silicate CO₂ (%)"}
+      sil_Fe2O3: {description: "Silicate Fe₂O₃ (%)"}
+      sil_K2O: {description: "Silicate K₂O (%)"}
+      sil_Li2O: {description: "Silicate Li₂O (%)"}
+      sil_MgO: {description: "Silicate MgO (%)"}
+      sil_MnO: {description: "Silicate MnO (%)"}
+      sil_Na2O: {description: "Silicate Na₂O (%)"}
+      sil_P2O5: {description: "Silicate P₂O₅ (%)"}
+      sil_SiO2: {description: "Silicate SiO₂ (%)"}
+      sil_SO3: {description: "Silicate SO₃ (%)"}
+      sil_TiO2: {description: "Silicate TiO₂ (%)"}
+      sil_combined_water: {description: "Silicate combined water (%)"}
+      sil_ignition_loss: {description: "Silicate ignition loss (%)"}
+
+  SoilParameter:
+    description: Additional parameters measured in soil samples
+    permissible_values:
+      sample_depth_from: {description: "Sample depth from (cm)"}
+      sample_depth_to: {description: "Sample depth to (cm)"}
+      absorbency: {description: "Absorbency (%)"}
+      airiness: {description: "Airiness (%)"}
+      capillar_capacity: {description: "Capillar capacity (%)"}
+      density: {description: "Density (g cm⁻³)"}
+      humidity: {description: "Humidity (%)"}
+      minimum_air_capacity: {description: "Minimum air capacity (%)"}
+      porosity: {description: "Porosity (%)"}
+      volume_mass: {description: "Volume mass (g cm⁻³)"}
+      volume_mass_reduced: {description: "Volume mass reduced (g cm⁻³)"}
+      dissolved_organic_compounds: {description: "Dissolved organic compounds (%)"}
+      fulvic_acids: {description: "Fulvic acids (%)"}
+      humic_acids: {description: "Humic acids (%)"}
+      HA_FA: {description: "HA/FA ratio (%)"}
+      Q4_6: {description: "Q4/6 ratio (%)"}
+      saturation: {description: "Saturation (%)"}
+      total_organic_carbon: {description: "Total organic carbon (%)"}
+      total_carbonates: {description: "Total carbonates (%)"}
+      total_nitrogen: {description: "Total nitrogen (%)"}
+      granularity_clay_1_10um: {description: "Granularity clay 1–10 µm (%)"}
+      granularity_clay_lt1um: {description: "Granularity clay < 1 µm (%)"}
+      granularity_clay_lt2um: {description: "Granularity clay < 2 µm (%)"}
+      granularity_clay_lt6um: {description: "Granularity clay < 6 µm (%)"}
+      granularity_clay_lt10um: {description: "Granularity clay < 10 µm (%)"}
+      granularity_silt_10_50um: {description: "Granularity silt 10–50 µm (%)"}
+      granularity_sand_50_100um: {description: "Granularity sand 50–100 µm (%)"}
+      granularity_sand_100_2000um: {description: "Granularity sand 100–2000 µm (%)"}
+      granularity_sand_50_250um: {description: "Granularity sand 50–250 µm (%)"}
+      granularity_sand_250_2000um: {description: "Granularity sand 250–2000 µm (%)"}
+      cec_exchange_Al: {description: "CEC exchange Al (meq kg⁻¹)"}
+      cec_exchange_Ca: {description: "CEC exchange Ca (meq kg⁻¹)"}
+      cec_exchange_Fe: {description: "CEC exchange Fe (meq kg⁻¹)"}
+      cec_exchange_K: {description: "CEC exchange K (meq kg⁻¹)"}
+      cec: {description: "CEC (meq kg⁻¹)"}
+      cec_t: {description: "CEC t (meq kg⁻¹)"}
+      cec_Meh_Ca: {description: "CEC Mehlich Ca (meq kg⁻¹)"}
+      cec_Meh_H: {description: "CEC Mehlich H (meq kg⁻¹)"}
+      cec_Meh_K: {description: "CEC Mehlich K (meq kg⁻¹)"}
+      cec_Meh_Mg: {description: "CEC Mehlich Mg (meq kg⁻¹)"}
+      cec_Meh_P: {description: "CEC Mehlich P (meq kg⁻¹)"}
+      cec_exchange_Mg: {description: "CEC exchange Mg (meq kg⁻¹)"}
+      cec_exchange_Mn: {description: "CEC exchange Mn (meq kg⁻¹)"}
+      cec_exchange_Na: {description: "CEC exchange Na (meq kg⁻¹)"}
+      pH_CaCl2: {description: "pH in CaCl₂ solution (-)"}
+      pH_H2O: {description: "pH in water (-)"}
+      pH_KCl: {description: "pH in KCl solution (-)"}
+
+  BiotaParameter:
+    description: Additional parameters measured in biota samples
+    permissible_values:
+      creatinine: {description: "Creatinine (mg/dl)"}
+      specific_gravity: {description: "Specific Gravity (dimensionless)"}
+      dry_weight: {description: "Dry Weight (g)"}
+      wet_weight: {description: "Wet Weight (g)"}
+      lipid_weight: {description: "Lipid Weight — tissue lipid content (g)"}
+
+  BiotaCompartment:
+    description: Environmental compartment where a biota organism was sampled
+    permissible_values:
+      aquatic:
+      atmospheric:
+      terrestrial:
+
+  Gender:
+    description: Biological sex of a sampled organism
+    permissible_values:
+      male:
+      female:
+      hermaphrodite:
+      not_specified:
+      not_relevant:
+
+# ---------------------------------------------------------------------------
+# SLOTS (shared)
+# ---------------------------------------------------------------------------
+slots:
+
+  acronym:
+    description: Short name or acronym of the project/monitoring programme
+    range: string
+    required: true
+    identifier: true
+    in_subset:
+      - mandatory
+
+  site_name:
+    description: Name or designation of place where a sample was collected
+    range: string
+    required: true
+
+  sample_id:
+    description: Unique identifier for the sample
+    range: string
+    required: true
+    identifier: true
+
+  start_date:
+    description: Start date in format YYYY-MM-DD
+    range: date
+    required: true
+
+  end_date:
+    description: End date in format YYYY-MM-DD
+    range: date
+    required: false
+
+  sampling_date_start:
+    description: >-
+      The date of a one-time sample collection; for sampling occurring over
+      a longer period, specify the starting day of the sampling period.
+      Format YYYY-MM-DD.
+    range: date
+    required: true
+
+  sampling_date_end:
+    description: >-
+      For sampling occurring over a longer period, specify the ending date
+      of the sampling period. Format YYYY-MM-DD.
+    range: date
+    required: false
+
+  sampling_time_start:
+    description: >-
+      Sampling start time according to ISO 8601, 24-hour clock.
+      Format T[hh][mm][ss].
+    range: time
+    required: false
+
+  sampling_time_end:
+    description: Sampling end time according to ISO 8601.
+    range: time
+    required: false
+
+  email:
+    description: >-
+      Email address of the project contact point.
+      Institutional email is recommended.
+    range: EmailAddress
+    required: true
+
+  orcid:
+    description: ORCID identifier of the contact person
+    range: OrcidIdentifier
+    required: false
+
+  ror:
+    description: ROR identifier of the institution (format ror.org/xxxxxxxx)
+    range: RorIdentifier
+    required: false
+
+  institution_name:
+    description: >-
+      The name of the institution responsible for implementing the
+      project/monitoring programme
+    range: string
+    required: true
+
+  institution_abbreviation:
+    description: Abbreviation of the institution name
+    range: string
+    required: false
+
+  institution_link:
+    description: URL with information about the institution
+    range: URIorCURIE
+    required: false
+
+  country:
+    description: >-
+      Country code according to UN M49 standard.
+      Source: https://unstats.un.org/unsd/methodology/m49/
+    range: string
+    required: true
+
+  unit:
+    # TODO: Decide whether this shared slot should be typed to ConcentrationUnit
+    # enum or remain free-text. MeasurementConcentration already references
+    # ConcentrationUnit — keeping this as string allows broader use in
+    # MeasurementParameter but loses validation on concentration records.
+    description: Unit of measurement
+    range: string
+    required: true
+
+  uncertainty:
+    description: Measurement uncertainty
+    range: float
+    required: false
+
+  water_type:
+    description: Type of water body at the site
+    range: WaterType
+    required: false
+
+  water_geographical_feature:
+    description: Geographical water feature type
+    range: WaterGeographicalFeature
+    required: false
+
+  water_treatment:
+    description: Water treatment status
+    range: WaterTreatment
+    required: false
+
+# ---------------------------------------------------------------------------
+# CLASSES
+# ---------------------------------------------------------------------------
+classes:
+
+  # ---------------------------------------------------------------------------
+  # CHEMICAL COMPOUND (codelist entity)
+  # ---------------------------------------------------------------------------
+  ChemicalCompound:
+    description: >-
+      A chemical compound monitored in environmental samples.
+      The compound list (1500+ substances) was developed in PARC WP9
+      in collaboration with other WPs. Each compound is identified by
+      multiple persistent identifiers and assigned to a compound group.
+      See: https://doi.org/10.5281/zenodo.17175075
+    see_also:
+      - https://doi.org/10.1186/s13321-025-01092-3
+    attributes:
+
+      wp9_id:
+        description: >-
+          Internal PARC WP9 identifier for the compound.
+          Unique within the PARC compound list.
+        range: integer
+        required: true
+        identifier: true
+
+      compound_name:
+        description: >-
+          Common or abbreviated name of the compound
+          as used in the PARC community (e.g. PFOS, triclosan).
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      compound_group:
+        description: >-
+          Chemical group classification of the compound
+          as defined in the PARC WP9 compound list
+          (e.g. PFAS, biocides, PCBs, PAHs).
+          # TODO: Future alignment planned with ChemFOnt functional classes
+          # and/or C3PO (ChEBI Chemical Class Program Ontology)
+        range: CompoundGroup
+        required: false
+
+      cas_number:
+        description: >-
+          CAS Registry Number — unique numerical identifier
+          assigned by the Chemical Abstracts Service.
+          Format: NNNNNN-NN-N
+        range: string
+        required: false
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
+
+      ec_number:
+        description: >-
+          EC Number (European Community Number) — identifier used
+          in the ECHA substance inventory (EINECS, ELINCS, NLP).
+          Format: NNN-NNN-N
+        range: string
+        required: false
+        pattern: "^\\d{3}-\\d{3}-\\d$"
+
+      inchi:
+        description: >-
+          IUPAC International Chemical Identifier (InChI) —
+          a standard textual representation of the molecular structure.
+          Begins with 'InChI=1S/'.
+        range: string
+        required: false
+        pattern: "^InChI=1S/"
+
+      inchikey:
+        description: >-
+          InChIKey — a fixed-length (27-character) hash of the InChI string.
+          Used as a compact, web-searchable identifier.
+          Format: XXXXXXXXXXXXXX-XXXXXXXXXX-X
+        range: string
+        required: false
+        pattern: "^[A-Z]{14}-[A-Z]{10}-[A-Z]$"
+
+      chebi_id:
+        description: >-
+          ChEBI identifier for the compound.
+          To be populated by mapping from InChIKey to ChEBI.
+          Format: CHEBI:NNNNN
+        range: URIorCURIE
+        required: false
+
+      pubchem_cid:
+        description: >-
+          PubChem Compound ID (CID).
+          To be populated by mapping from InChIKey to PubChem.
+        range: integer
+        required: false
+
+      norman_id:
+        description: >-
+          NORMAN substance identifier.
+          Source: NORMAN EMPODAT / SusDat database.
+        range: string
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # PROJECT
+  # ---------------------------------------------------------------------------
+  Project:
+    description: >-
+      A research project or monitoring programme collecting environmental
+      data on chemicals in the outdoor environment.
+    slots:
+      - acronym
+    attributes:
+
+      activity_type:
+        description: Type of monitoring activity
+        range: MonitoringActivityType
+        required: true
+        in_subset:
+          - mandatory
+
+      name_english:
+        description: Name of the project/monitoring programme in English
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      name_original:
+        description: >-
+          Name of the project/monitoring programme in its original language.
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      description:
+        description: >-
+          A brief summary with the most important details summarising the
+          project (objectives, scope, target group, key aspects, design,
+          methods).
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      identifier:
+        description: >-
+          Project/monitoring programme identifier provided as URL (GUPRI).
+          At least one identifier required.
+        range: URIorCURIE
+        required: false
+        multivalued: true
+
+      monitoring_reasons:
+        description: >-
+          Primary reasons for performing monitoring. Mandatory for
+          monitoring programmes; optional for projects if relevant.
+        range: string
+        required: false
+        in_subset:
+          - mandatory_for_monitoring
+
+      legislation_policy:
+        description: >-
+          Link to policy, convention, or legislation. Mandatory for
+          monitoring programmes; optional for projects if relevant.
+        range: URIorCURIE
+        required: false
+        multivalued: true
+        in_subset:
+          - mandatory_for_monitoring
+
+      implementation_level:
+        description: The implementation level of coverage
+        range: ImplementationLevel
+        required: false
+
+      language:
+        description: >-
+          Language(s) used, as 2-letter codes according to ISO 639-1.
+        range: string
+        required: false
+        multivalued: true
+
+      start_date:
+        description: >-
+          The beginning (or previewed starting) date of the monitoring
+          programme/project.
+        range: date
+        required: true
+        in_subset:
+          - mandatory
+
+      end_date:
+        description: End date of the project/monitoring programme.
+        range: date
+        required: false
+
+      # --- Institution (primary) ---
+      institution_name:
+        range: string
+        required: true
+
+      institution_abbreviation:
+        range: string
+        required: false
+
+      institution_ror:
+        description: ROR identifier (format ror.org/xxxxxxxx).
+        range: RorIdentifier
+        required: false
+
+      country_of_institution:
+        description: Country of institution according to UN M49
+        range: string
+        required: true
+
+      institution_link:
+        range: URIorCURIE
+        required: false
+
+      # --- Contact (primary) ---
+      contact_email:
+        description: Email address of the project contact point.
+        range: EmailAddress
+        required: true
+
+      contact_role:
+        description: >-
+          Role of the contact person.
+          Source: ISO 19115:2003/19139 and INSPIRE.
+        range: ContactRole
+        required: false
+
+      contact_orcid:
+        description: ORCID identifier of the contact.
+        range: OrcidIdentifier
+        required: false
+
+      # --- Funder (primary) ---
+      funder_name:
+        description: Name of the funding entity.
+        range: string
+        required: false
+
+      funder_uri:
+        description: ROR identifier or website URL of the funding entity.
+        range: URIorCURIE
+        required: false
+
+      # --- Access and rights ---
+      access_procedures:
+        description: Information on procedure to obtain access to the dataset.
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      acknowledgement:
+        description: >-
+          Text for acknowledgement which should be reported when
+          using/re-using the data.
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      license:
+        description: License or terms for data reuse.
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      disclaimer:
+        description: Text for disclaimer when using/re-using the data.
+        range: string
+        required: false
+
+      version:
+        description: Version of the dataset.
+        range: string
+        required: false
+
+      publication_year:
+        description: Year when the dataset was or will be made publicly available.
+        range: integer
+        required: false
+
+      provenance:
+        description: A statement about the lineage of the dataset.
+        range: string
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # CAMPAIGN
+  # ---------------------------------------------------------------------------
+  Campaign:
+    description: >-
+      A time-bounded data collection period within a project or monitoring
+      programme. Mandatory if the campaign exists.
+    slots:
+      - acronym
+    attributes:
+
+      campaign_name:
+        description: Name of the campaign
+        range: string
+        required: true
+        in_subset:
+          - mandatory_if_exists
+
+      start_date:
+        description: Start date of the campaign
+        range: date
+        required: true
+        in_subset:
+          - mandatory_if_exists
+
+      end_date:
+        description: End date of the campaign
+        range: date
+        required: true
+        in_subset:
+          - mandatory_if_exists
+
+      campaign_description:
+        description: Description of the campaign
+        range: string
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # INSTITUTION (additional)
+  # ---------------------------------------------------------------------------
+  Institution:
+    description: >-
+      An institution involved in the project/monitoring programme.
+      Used for additional institutions beyond the primary one in Project.
+    slots:
+      - acronym
+    attributes:
+
+      name:
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      name_abbreviation:
+        range: string
+        required: false
+
+      institutional_ror:
+        range: RorIdentifier
+        required: false
+
+      country:
+        description: Country of institution according to UN M49
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      link:
+        range: URIorCURIE
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # CONTACT (additional)
+  # ---------------------------------------------------------------------------
+  Contact:
+    description: >-
+      A contact person associated with the project/monitoring programme.
+      Used for additional contacts beyond the primary one in Project.
+    slots:
+      - acronym
+      - email
+      - orcid
+    attributes:
+
+      role:
+        description: Role of the contact person
+        range: ContactRole
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # FUNDER (additional)
+  # ---------------------------------------------------------------------------
+  Funder:
+    description: >-
+      A funding entity for the project/monitoring programme.
+      Used for additional funders beyond the primary one in Project.
+    slots:
+      - acronym
+    attributes:
+
+      funder_name:
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      funder_uri:
+        description: ROR identifier or website URL of the funding entity.
+        range: URIorCURIE
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # SITE GIS
+  # ---------------------------------------------------------------------------
+  SiteGIS:
+    description: >-
+      A sampling site defined by geographic coordinates (latitude and
+      longitude), allowing automatic retrieval of site parameters via
+      GIS layers.
+    slots:
+      - acronym
+      - site_name
+      - water_type
+      - water_geographical_feature
+      - water_treatment
+    attributes:
+
+      site_name_acronym:
+        description: Short acronym for the site name. Max 10 characters, no spaces.
+        range: string
+        required: false
+
+      latitude:
+        description: >-
+          Latitude in signed decimal degrees, format 0.000000,
+          range -90 to 90. South latitude with minus sign.
+        range: DecimalDegree
+        required: true
+        in_subset:
+          - mandatory
+        minimum_value: -90
+        maximum_value: 90
+
+      longitude:
+        description: >-
+          Longitude in signed decimal degrees, format 0.000000,
+          range -180 to 180. West longitude with minus sign.
+        range: DecimalDegree
+        required: true
+        in_subset:
+          - mandatory
+        minimum_value: -180
+        maximum_value: 180
+
+      coordinate_system:
+        description: Coordinate reference system
+        range: CoordinateSystem
+        required: true
+        in_subset:
+          - mandatory
+
+      year_established:
+        description: Year of establishment of the station (YYYY)
+        range: YearValue
+        required: false
+
+      site_id:
+        description: Persistent identifier for the site
+        range: string
+        required: false
+
+      reference_to_site:
+        description: URL or other reference to description of sampling site
+        range: URIorCURIE
+        required: false
+
+      description:
+        description: >-
+          Describe in English the site where a sample was collected.
+          Provide all important information about the site that cannot
+          be entered in the other fields.
+        range: string
+        required: false
+
+      managing_instance:
+        description: The institution that manages the sampling site
+        range: string
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # SITE EXPERT
+  # ---------------------------------------------------------------------------
+  SiteExpert:
+    description: >-
+      A sampling site described by expert knowledge, for cases where
+      coordinates are unavailable.
+    slots:
+      - acronym
+      - site_name
+      - water_type
+      - water_geographical_feature
+      - water_treatment
+    attributes:
+
+      site_name_acronym:
+        range: string
+        required: false
+
+      year_established:
+        range: YearValue
+        required: false
+
+      site_id:
+        range: string
+        required: false
+
+      reference_to_site:
+        range: URIorCURIE
+        required: false
+
+      description:
+        range: string
+        required: false
+
+      managing_instance:
+        range: string
+        required: false
+
+      country:
+        description: >-
+          Country code(s) according to UN M49. Extended with
+          'International waters' and 'Unknown or unspecified country'.
+        range: string
+        required: true
+        multivalued: true
+        in_subset:
+          - mandatory
+
+      geographic_region:
+        description: UN M49 geographic region
+        range: GeographicRegion
+        required: true
+        in_subset:
+          - mandatory
+
+      regional_group:
+        description: Regional group of United Nations member states
+        range: UNRegionalGroup
+        required: true
+        in_subset:
+          - mandatory
+
+      nuts3:
+        description: >-
+          NUTS3 classification. If not available, use alternative
+          classification (e.g. US Counties).
+          Source: https://ec.europa.eu/eurostat/web/nuts
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      altitude:
+        description: >-
+          Altitude in meters above sea level (MSL). Use positive values
+          for above and negative for below sea level.
+        range: float
+        required: false
+
+      land_use:
+        description: >-
+          Land use classification according to Corine Land Cover
+          Nomenclature. https://www.w3.org/2015/03/corine
+        range: string
+        required: false
+
+      river_basin:
+        description: >-
+          River basin code. Based on EEA system.
+          https://www.eea.europa.eu
+        range: string
+        required: false
+
+      sea:
+        description: >-
+          Sea name. Based on Marine Regions system.
+          https://www.marineregions.org
+        range: string
+        required: false
+
+      wrb:
+        description: >-
+          World Reference Base for Soil Resources classification.
+          https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue
+        range: string
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # SAMPLE (abstract base)
+  # ---------------------------------------------------------------------------
+  Sample:
+    description: Abstract base class for all sample types
+    abstract: true
+    slots:
+      - site_name
+      - sample_id
+      - sampling_date_start
+      - sampling_date_end
+      - sampling_time_start
+      - sampling_time_end
+
+  # ---------------------------------------------------------------------------
+  # SAMPLE ATMOSPHERIC
+  # ---------------------------------------------------------------------------
+  SampleAtmospheric:
+    is_a: Sample
+    description: A sample from the atmospheric domain (ambient air or precipitation)
+    attributes:
+
+      matrix:
+        range: AtmosphericMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sub_matrix:
+        range: AtmosphericSubMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sampling_method:
+        range: AtmosphericSamplingMethod
+        required: true
+        in_subset:
+          - mandatory
+
+  # ---------------------------------------------------------------------------
+  # SAMPLE AQUATIC
+  # ---------------------------------------------------------------------------
+  SampleAquatic:
+    is_a: Sample
+    description: A sample from the aquatic domain (water or sediment)
+    attributes:
+
+      matrix:
+        range: AquaticMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sub_matrix:
+        range: AquaticSubMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sampling_method:
+        range: AquaticSamplingMethod
+        required: true
+        in_subset:
+          - mandatory
+
+      fraction:
+        description: >-
+          If the collected sample is divided into multiple fractions for
+          separate analysis, this field identifies each subsample.
+        range: AquaticFraction
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # SAMPLE TERRESTRIAL
+  # ---------------------------------------------------------------------------
+  SampleTerrestrial:
+    is_a: Sample
+    description: A sample from the terrestrial domain (soil)
+    attributes:
+
+      matrix:
+        range: TerrestrialMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sub_matrix:
+        range: TerrestrialSubMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sampling_method:
+        # TODO: sampling_method for terrestrial samples is currently free-text
+        # (range: string) unlike the atmospheric and aquatic counterparts which
+        # use typed enums. A TerrestrialSamplingMethod enum should be defined
+        # once the PARC community agrees on a controlled vocabulary.
+        description: Sampling method for terrestrial samples
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+  # ---------------------------------------------------------------------------
+  # SAMPLE BIOTA
+  # ---------------------------------------------------------------------------
+  SampleBiota:
+    is_a: Sample
+    description: A sample from the biota domain (plant or animal)
+    attributes:
+
+      matrix:
+        range: BiotaMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sub_matrix:
+        range: BiotaSubMatrix
+        required: true
+        in_subset:
+          - mandatory
+
+      sampling_method:
+        # TODO: Biota sampling method vocabulary to be discussed and agreed
+        # with the PARC community. Currently free-text.
+        description: Sampling method for biota samples (to be discussed)
+        range: string
+        required: false
+
+      taxonomic_classification:
+        description: >-
+          Taxonomic classification of the organism.
+          Source: https://www.ncbi.nlm.nih.gov/Taxonomy/
+        range: string
+        required: false
+
+      compartment:
+        description: >-
+          The environmental compartment where the organism was sampled from.
+        range: BiotaCompartment
+        required: false
+        multivalued: true
+
+      gender:
+        range: Gender
+        required: false
+
+      life_stage_age:
+        description: Life stage or age of the organism
+        range: string
+        required: false
+
+  # ---------------------------------------------------------------------------
+  # MEASUREMENT CONCENTRATION
+  # ---------------------------------------------------------------------------
+  MeasurementConcentration:
+    description: >-
+      A measured concentration of a chemical compound in a sample.
+      At least one of concentration, LOQ, or LOD must be provided.
+    slots:
+      - sample_id
+      - unit
+      - uncertainty
+    attributes:
+
+      laboratory:
+        description: Name of the laboratory performing the analysis
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      batch:
+        description: >-
+          Internal laboratory designation of the group of samples
+          analyzed together
+        range: string
+        required: false
+
+      analysis_date:
+        description: The date on which the concentration was determined
+        range: date
+        required: false
+
+      compound:
+        description: >-
+          Chemical compound measured in the sample.
+          Reference to the PARC WP9 compound list entry (ChemicalCompound class).
+          Identified by WP9_id, name, CAS, EC, InChI, and InChIKey.
+          Mappable to ChEBI, PubChem, and NORMAN identifiers.
+          # TODO: Decide whether multivalued: true is correct here.
+          # A single measurement record should typically correspond to one compound.
+          # Multivalued may be intentional for mixture records — confirm with domain experts.
+        range: ChemicalCompound
+        required: true
+        multivalued: true
+        in_subset:
+          - mandatory
+
+      sample_preparation_method:
+        description: >-
+          Description of the process from sample collection to chemical
+          analysis (e.g., extraction, cleanup, fractionation).
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      sample_preparation_method_link:
+        description: >-
+          GUPRI (e.g. DOI) linking to a public SOP, article, or other
+          document describing the method.
+        range: URIorCURIE
+        required: false
+
+      analysis_method:
+        description: Analytical method used to determine the analyte
+        range: AnalysisMethod
+        required: true
+        in_subset:
+          - mandatory
+
+      analysis_method_link:
+        description: GUPRI linking to a public SOP or document describing the method
+        range: URIorCURIE
+        required: false
+
+      data_handling_procedure:
+        description: >-
+          Steps taken after chemical analysis (e.g., blank correction,
+          quality control, calibration, recovery, standardization,
+          recalculations).
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      data_handling_procedure_link:
+        description: GUPRI linking to a document describing the data handling procedure
+        range: URIorCURIE
+        required: false
+
+      concentration:
+        description: >-
+          Measured concentration value. At least one of concentration,
+          LOQ, or LOD must be provided.
+        range: float
+        required: false
+
+      loq:
+        description: Limit of quantification
+        range: float
+        required: false
+
+      lod:
+        description: Limit of detection
+        range: float
+        required: false
+
+    rules:
+      - preconditions:
+          slot_conditions:
+            concentration:
+              value_presence: ABSENT
+            loq:
+              value_presence: ABSENT
+            lod:
+              value_presence: ABSENT
+        postconditions:
+          slot_conditions:
+            concentration:
+              value_presence: PRESENT
+        description: >-
+          At least one of concentration, LOQ, or LOD must be provided.
+
+  # ---------------------------------------------------------------------------
+  # MEASUREMENT PARAMETER
+  # ---------------------------------------------------------------------------
+  MeasurementParameter:
+    description: >-
+      An additional parameter measured in the sample
+      (e.g. pH, temperature, TOC). Depends on matrix type.
+    slots:
+      - sample_id
+      - unit
+      - uncertainty
+    attributes:
+
+      parameter:
+        description: >-
+          Name of the parameter measured. Refer to the
+          codelist-parameter tab for the list.
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      value:
+        description: Measured value of the parameter
+        range: float
+        required: true
+        in_subset:
+          - mandatory
