@@ -46,11 +46,11 @@ Formalizing the PARC community-agreed metadata schema for environmental chemical
 -	Publication as nanopublication — this is planned, but since the final product must be approved by PARC partners, it is not included in the scope of this project. However, if approval is obtained before the project ends, it may be included.
 
 ## Project Outcomes
--	A formalised metadata schema in LinkML, serving as the canonical machine-actionable representation of the PARC community standard
--	Serialisations generated from the LinkML schema: (eg. OWL/SKOS graph)
--	Validation of the schema report using the LinkML validator
--	Schema documentation including scope, field definitions, usage guidelines and examples[KŘ2.1]
--	A public GitHub repository bringing together all of the above as a citable, reusable resource
+-	A formalised metadata schema in LinkML, serving as the canonical machine-actionable representation of the PARC community standard.
+-	Serialisations generated from the LinkML schema: (eg. OWL/SKOS graph).
+-	Validation of the schema report using the LinkML validator.
+-	Schema documentation including scope, field definitions, usage guidelines and examples.
+-	A public GitHub repository bringing together all of the above as a citable, reusable resource.
 
 ## Methodology
 The semantic model development steps as defined by **Alexopoulos P. (2020) ADD REF** will be followed. 
@@ -68,7 +68,7 @@ lthough some of the questions from stages 1 and 2 have already been addressed by
 - This reflects the approach currently taken by knowledge engineers in the field (Pellegrini (2020), personal communication).
 
 3.	### Building it
-Selecting, defining and assembling the modelling elements that best satisfy the requirements from step 2 (entities, properties, etc.), and building the model and selected serialisations (with the help of LLM to produce the first graph – even this will require knowledge on model elements, as it is crucial to design effective prompts.  
+Selecting, defining and assembling the modelling elements that best satisfy the requirements from step 2 (entities, properties, etc.), and building the model and selected serialisations (with the help of LLM to produce the first graph – even this will require knowledge on model elements, as it is crucial to design effective prompt).  
 
 4.	### Ensuring it is good
 Defining and checking quality indicators such as semantic accuracy, completeness, consistency and understandability. 
@@ -168,18 +168,19 @@ More broadly, the imports mechanism in LinkML works like imports in a programmin
 There are **several categories of things one can import:**
 
 1. **LinkML built-in modules.** These are maintained by the LinkML project itself:
+```
 yamlimports:
-
   linkml:types        # primitive types (string, integer, date, etc.)
   linkml:annotations  # adds annotation capabilities to schema elements
-
+```
 2. **Other LinkML schemas developed by the same team.** A large schema can be split into modules and the modules are imported:
+```
 yamlimports:
   linkml:types
     ./compounds         # a local file compounds.yaml in the same folder
     ./sites             # a local file sites.yaml
     ./measurements      # a local file measurements.yaml
-
+```
 This is actually something worth considering for this schema — it is getting large and splitting it into domain-focused modules (compounds, sites, samples, measurements) would make collaborative editing easier, since different domain experts could own different files.
 
 3. **Remote schemas by URI:**
