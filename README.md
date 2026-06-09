@@ -170,15 +170,15 @@ There are **several categories of things one can import:**
 1. **LinkML built-in modules.** These are maintained by the LinkML project itself:
 yamlimports:
 
-  - linkml:types        # primitive types (string, integer, date, etc.)
-  - linkml:annotations  # adds annotation capabilities to schema elements
+  linkml:types        # primitive types (string, integer, date, etc.)
+  linkml:annotations  # adds annotation capabilities to schema elements
 
 2. **Other LinkML schemas developed by the same team.** A large schema can be split into modules and the modules are imported:
 yamlimports:
-  - linkml:types
-    * ./compounds         # a local file compounds.yaml in the same folder
-    * ./sites             # a local file sites.yaml
-    * ./measurements      # a local file measurements.yaml
+  linkml:types
+    ./compounds         # a local file compounds.yaml in the same folder
+    ./sites             # a local file sites.yaml
+    ./measurements      # a local file measurements.yaml
 
 This is actually something worth considering for this schema — it is getting large and splitting it into domain-focused modules (compounds, sites, samples, measurements) would make collaborative editing easier, since different domain experts could own different files.
 
