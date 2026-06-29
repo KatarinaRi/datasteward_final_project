@@ -194,7 +194,7 @@ imports:
 Several real-world schemas exist that one could potentially import from: BioLink Model; NMDC; MIxS; SOSA/SSN  
 
 ## Subsets
-inkML are a way to tag or group fields without changing the structure of the schema. They are essentially labels one can attach to slots or attributes to indicate they belong to a particular category or compliance level.
+Subsets in LinkML are labels/tags attached to slots to group them by purpose without changing the structure of the schema. They e.g. indicate that slots belong to a particular category or compliance level. They don't enforce validation by themselves — they're metadata that downstream tools or applications can use to decide what to do.
 
 In this schema there are three:
 ```
@@ -223,12 +223,31 @@ They do not enforce anything by themselves in LinkML. The required: true is what
 
 So in this case they are a lightweight way of encoding the tiered metadata requirements that the domain experts presumably defined — without having to maintain multiple separate schemas for different submission types.
 
+### Practical examples of what one can do with subsets
+
+1. Generate separate documentation: E.g. extract all mandatory fields automatically for a data submission guide.
+2. Drive validation logic. E.g. a custom validator could check: "if record_type = monitoring, then all mandatory_for_monitoring slots must be filled".
+3. Generate different forms/templates: E.g. a minimal Excel template with only mandatory fields/
+A full template with everything.
+4. Filter fields in a data portal - e.g. show only required fields by default, hide optional ones.
+
 ## Types 
 
 There are two levels here — LinkML's built-in types and custom types defined in the schema.
 
 1. **Built-in types (come from imports: - linkml:types)**
 These are the primitives like string, integer, float, date, time, boolean. They are defined by LinkML and map directly to XSD types. One just uses them as range: values without defining anything.
+
+Eg. date type:
+
+Built-in date types
+
+Type | Format | Example
+-----|--------|--------
+date | YYYY-MM-DD | 2024-03_15
+datetime | YYYY-MM-DDThh:mm:ss | 2024-03-15T10:30:00
+time | hh:mm:ss | 10:30:00
+date_or_datetime | either of the above | 024-03-15 or 2024-03-15T10:30:00
 
 2. **Custom types (defined in the types: section of your schema)**
 These are restrictions or refinements of the built-in types. Here, six have been defined:
@@ -280,46 +299,67 @@ The key difference from a plain string field:
 | Interoperability | Low | High |
 
 ## Integrating external vocabularies
-1. Option A — **Embed directly in the schema**
-If the vocabulary is agreed and stable, just replacing the placeholder enum values with the real ones:
+
+1. Option: Reference external vocabulary. Don't redefine the codelist — just point to it:
+
 ```
-AnalysisMethod:
-  description: Analytical method used to determine the analyte in the sample.
-  permissible_values:
-    GC_MS:
-      description: Gas chromatography–mass spectrometry
-    LC_MS_MS:
-      description: Liquid chromatography–tandem mass spectrometry
-    ICP_MS:
-      description: Inductively coupled plasma mass spectrometry
+slots:
+  language:
+    range: string
+    pattern: "^[a-z]{2}$"
+    description: >-
+      Language code according to ISO 639-1 (2-letter lowercase code, e.g. 'en', 'cs').
+      See http://id.loc.gov/vocabulary/iso639-1
+    multivalued: true
 ```
-2. Option B — **Referencing an external vocabulary (recommended if it lives separately)**
-If the vocabulary is maintained separately (e.g. as its own file, registry, or LinkML schema), one has two cleaner approaches:
-    1. B1 — Importing it as a LinkML schema (if it is published as LinkML):
+Pros:
+  - Lightweight — no need to list all 180+ languages
+  - Always up to date
+Cons:
+  - No validation against the actual list — just format check via pattern
+
+2. Option: Define as enum with external URIs
+```
+enums:
+  LanguageEnum:
+    description: Language codes according to ISO 639-1
+    reachable_from:
+      source_ontology_id: http://id.loc.gov/vocabulary/iso639-1
+```
+Or with explicit values if you want to restrict to a subset:
+```
+enums:
+  LanguageEnum:
+    see_also: 
+    - http://id.loc.gov/vocabulary/iso639-1
+    permissible_values:
+      en:
+        description: English
+        meaning: http://id.loc.gov/vocabulary/iso639-1/en
+      cs:
+        description: Czech
+        meaning: http://id.loc.gov/vocabulary/iso639-1/cs
+      de:
+        description: German
+        meaning: http://id.loc.gov/vocabulary/iso639-1/de
+```
+Selecting option 1 or 2 depends on use case:
+
+Situation | Use
+-----------|----
+Users can submit any ISO 639-1 language | Option 1 — pattern only
+Need to restrict to specific languages relevant to the domain | Option 2 — explicit enum
+Need for full SKOS integration and semantic linking | Option 2 with meaning: URIs
+
+3. Option Importing it as a LinkML schema (if it is published as LinkML):
 ```
 imports:
   - linkml:types
   - https://w3id.org/parc/wp9/analytical-methods  # or a local path
 ```
 
-And then remove your local AnalysisMethod enum entirely — it comes from the import.
 
-    2. B2 — **Referencing it via from_schema or see_also** (if it is not LinkML but exists as a published vocabulary):
-```
-AnalysisMethod:
-  description: >-
-    Analytical method used to determine the analyte in the sample.
-    Source: PARC WP9 analytical methods vocabulary.
-  see_also:
-    - https://w3id.org/parc/wp9/analytical-methods
-  permissible_values:
-    GC_MS:
-      description: Gas chromatography–mass spectrometry
-      meaning: https://w3id.org/parc/wp9/analytical-methods/GC_MS
-```
-Here meaning links each value to its URI in the external vocabulary, which is the standard LinkML way of saying "this local term is the same as that external concept."
-
-3. Option C — **Indicating a placeholder with a comment and todos**
+4. Option - Indicating a placeholder with a comment and todos
 If the vocabulary exists but is not yet ready to integrate, the cleanest way is:
 ```
 AnalysisMethod:
@@ -339,7 +379,8 @@ It depends on a practical question — who owns and maintains the vocabulary?
 - If someone else owns it and maintains it separately → Option B, so changes propagate automatically without one having to manually sync
 - If it is still being finalised → Option C for now, then migrate to A or B once stable
 
-Now there is an **external vocabulary** where all matrices live together. The question is **how to slice it per domain in this schema.**
+### Slicing a vocabulary per domain
+Now there is an **external vocabulary** example of matrices, where all matrices live together. The question is **how to slice it per domain in this schema.**
 Two main options:
 
 1. Option A — **Keeping separate enums, adding meaning: to link to the vocabulary.**
@@ -501,3 +542,137 @@ classes:
         required: false
 
 ```
+
+## Rules
+
+Rules follow this structure:
+
+```
+classes:
+  MyClass:
+    rules:
+      - preconditions:
+          slot_conditions:
+            TRIGGER_SLOT:
+              value_presence: PRESENT   # or ABSENT
+        postconditions:
+          slot_conditions:
+            REQUIRED_SLOT_1:
+              required: true
+            REQUIRED_SLOT_2:
+              required: true
+```
+
+Think of it as: IF → THEN logic.
+
+### The three patterns you'll likely need
+1. Pattern 1 — IF entity exists (your mandatory_if_exists)
+yaml# IF campaign_id is present → THEN these slots are required
+
+```
+rules:
+  - preconditions:
+      slot_conditions:
+        campaign_id:
+          value_presence: PRESENT
+    postconditions:
+      slot_conditions:
+        campaign_name:
+          required: true
+        start_date:
+          required: true
+```
+
+2. Pattern 2 — IF record type is monitoring (your mandatory_for_monitoring)
+yaml# IF record_type = "monitoring" → THEN these slots are required
+```
+rules:
+  - preconditions:
+      slot_conditions:
+        record_type:
+          equals_string: "monitoring"
+    postconditions:
+      slot_conditions:
+        sampling_method:
+          required: true
+        matrix:
+          required: true
+```
+3. Pattern 3 — Multiple triggers
+yaml# IF slot A is present AND slot B is present → THEN slot C is required
+```
+rules:
+  - preconditions:
+      slot_conditions:
+        slot_a:
+          value_presence: PRESENT
+        slot_b:
+          value_presence: PRESENT
+    postconditions:
+      slot_conditions:
+        slot_c:
+          required: true
+```
+
+Go through each class and ask:
+
+- Does this class have optional sub-entities? → use Pattern 1
+- Does this class behave differently based on a type/category field? → use Pattern 2
+- Do multiple conditions need to be true together? → use Pattern 3
+
+**Where rules live in the schema**
+Rules are always on the class, not on the slot:
+```
+classes:
+  Campaign:        # <-- rules go here
+    slots:
+      - campaign_id
+      - campaign_name
+      - start_date
+    rules:         # <-- here
+      - preconditions:
+          ...
+```
+## Handling "not relevant" and "not reported" values at schema level
+
+The problem with putting them in every enum is that it gets messy and mixes **two different concepts — what something is vs whether it was reported.**
+
+**How to handle it at schema level**
+1. Option: **ifabsent** on the slot
+```
+slots:
+  water_type:
+    range: WaterType
+    ifabsent: "not_reported"
+    description: Type of water body
+```
+Sets a default value when nothing is provided.
+
+2. Option: Make the slot optional (default in LinkML)
+```
+slots:
+  water_type:
+    range: WaterType
+    required: false    # already the default
+```
+If water_type is empty/null, it simply wasn't reported. No need for a special value.
+
+3. Option: none_of or annotations
+
+More advanced — flag at the class level that absence is meaningful.
+
+Value | Better handled as
+-------|----------
+not_reported | Slot is optional — absence = not reported
+not_relevant | Slot has a condition — only required for certain record types
+
+Practical outcome:
+not_relevant → remove from enum, handle via rules
+not_reported → keep in enum OR make slot optional and treat null as not reported
+
+This keeps the enum semantically clean — it only contains actual permitted values, not metadata about reporting status.
+
+**But there's a catch**
+Some data systems and databases cannot distinguish between "field was left empty" and "field doesn't exist". In that case, having explicit not_relevant and not_reported values is actually safer for data quality.
+So the question is — how will the data be stored and used? Database, CSV, RDF triples?
+

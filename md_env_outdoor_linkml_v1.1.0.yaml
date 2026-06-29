@@ -26,14 +26,14 @@ imports:
 
 # ---------------------------------------------------------------------------
 # SUBSETS
+# Subsets have been changed to mandatory (optional are default by link-ML unless required: true)
+# and mandatory_if - fields required conditionally (further specified by rules).
 # ---------------------------------------------------------------------------
 subsets:
   mandatory:
-    description: Fields that are mandatory for all record types
-  mandatory_for_monitoring:
-    description: Fields mandatory only for monitoring programmes (optional for projects)
-  mandatory_if_exists:
-    description: Fields mandatory if the entity exists (e.g. campaign)
+    description: Fields that are required for all record types.
+  mandatory_if:
+    description: Fields that are required conditionally - see class rules for details
 
 # ---------------------------------------------------------------------------
 # TYPES
@@ -45,10 +45,10 @@ types:
     pattern: "^[\\w.+-]+@[\\w-]+\\.[\\w.]+$"
     description: A valid email address
 
-  URIorCURIE:
-    uri: xsd:anyURI
+  IRI:
+    uri: xsd:anyURI # xsd:anyURI is echnically defined for URIs (ASCII only) per XML Schema spec, but in practice, most tools (including LinkML, RDF, OWL) treat xsd:anyURI as accepting IRIs too.
     base: str
-    description: A URI or CURIE reference
+    description: An Internationalized Resource Identifier (IRI). All URIs are valid IRIs, so both URI and IRI values are accepted.
 
   OrcidIdentifier:
     uri: xsd:string
@@ -59,14 +59,12 @@ types:
   RorIdentifier:
     uri: xsd:string
     base: str
-    # TODO: tighten this pattern — ROR IDs have a fixed 9-character alphanumeric
-    # format (e.g. ror.org/02mhbdp94). Current regex allows any length.
-    pattern: "^ror\\.org/[a-z0-9]+"
-    description: A ROR identifier in the format ror.org/xxxxxxxx
+    pattern: "^ror\\.org/[a-z0-9]{9}$"
+    description: A ROR identifier in the format ror.org/xxxxxxxxx
 
   DecimalDegree:
     uri: xsd:decimal
-    base: float
+    base: double
     description: A decimal degree coordinate value
 
   YearValue:
@@ -84,61 +82,1942 @@ enums:
     permissible_values:
       scientific_project:
         description: >-
-          A time-limited initiative focused on collection, analysis, and
-          interpretation of data to answer specific scientific questions.
+          Usually a time-limited initiative focused on the collection, 
+          analysis, and interpretation of data to answer specific scientific 
+          questions in the field of environmental studies. These projects are 
+          led by scientists and aim at advancing knowledge, verifying hypotheses, 
+          or testing new methodologies. Data collected in research projects 
+          are driven by the pursuit of scientific understanding rather than 
+          by legislative requirements.
       monitoring_programme:
         description: >-
-          A systematic and long-term observation of specific parameters,
-          organized based on legislative requirements.
+          A systematic and long-term observation of specific parameters, 
+          organized based on legislative requirements. The purpose 
+          of a monitoring programme is to collect data necessary for assessing 
+          the state or trends of the environment and to ensure compliance with 
+          regulatory standards. Its primary motivation is fulfilling obligations 
+          set by laws, directives, or international agreements.
 
   ImplementationLevel:
-    description: The implementation level of coverage
+    description: >-
+      The geographic scale of the monitoring coverage 
+      (e.g. international, national, regional, or local).
     permissible_values:
       international:
       national:
       regional:
       local:
 
-  ContactRole:
+  Language:
     description: >-
-      Role of a contact person. Source: ISO 19115:2003/19139 and
+      Language codes according to ISO 639-1 (two-letter lowercase codes).
+    see_also:
+      - http://id.loc.gov/vocabulary/iso639-1
+    permissible_values:
+      aa:
+        description: Afar
+        meaning: http://id.loc.gov/vocabulary/iso639-1/aa
+      af:
+        description: Afrikaans
+        meaning: http://id.loc.gov/vocabulary/iso639-1/af
+      ak:
+        description: Akan
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ak
+      sq:
+        description: Albanian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sq
+      am:
+        description: Amharic
+        meaning: http://id.loc.gov/vocabulary/iso639-1/am
+      ar:
+        description: Arabic
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ar
+      an:
+        description: Aragonese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/an
+      hy:
+        description: Armenian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/hy
+      as:
+        description: Assamese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/as
+      av:
+        description: Avaric
+        meaning: http://id.loc.gov/vocabulary/iso639-1/av
+      ae:
+        description: Avestan
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ae
+      ay:
+        description: Aymara
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ay
+      az:
+        description: Azerbaijani
+        meaning: http://id.loc.gov/vocabulary/iso639-1/az
+      bm:
+        description: Bambara
+        meaning: http://id.loc.gov/vocabulary/iso639-1/bm
+      ba:
+        description: Bashkir
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ba
+      eu:
+        description: Basque
+        meaning: http://id.loc.gov/vocabulary/iso639-1/eu
+      be:
+        description: Belarusian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/be
+      bn:
+        description: Bengali
+        meaning: http://id.loc.gov/vocabulary/iso639-1/bn
+      bh:
+        description: Bihari
+        meaning: http://id.loc.gov/vocabulary/iso639-1/bh
+      bi:
+        description: Bislama
+        meaning: http://id.loc.gov/vocabulary/iso639-1/bi
+      bs:
+        description: Bosnian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/bs
+      br:
+        description: Breton
+        meaning: http://id.loc.gov/vocabulary/iso639-1/br
+      bg:
+        description: Bulgarian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/bg
+      my:
+        description: Burmese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/my
+      ca:
+        description: Catalan
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ca
+      ch:
+        description: Chamorro
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ch
+      ce:
+        description: Chechen
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ce
+      ny:
+        description: Chichewa
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ny
+      zh:
+        description: Chinese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/zh
+      cv:
+        description: Chuvash
+        meaning: http://id.loc.gov/vocabulary/iso639-1/cv
+      kw:
+        description: Cornish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kw
+      co:
+        description: Corsican
+        meaning: http://id.loc.gov/vocabulary/iso639-1/co
+      cr:
+        description: Cree
+        meaning: http://id.loc.gov/vocabulary/iso639-1/cr
+      hr:
+        description: Croatian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/hr
+      cs:
+        description: Czech
+        meaning: http://id.loc.gov/vocabulary/iso639-1/cs
+      da:
+        description: Danish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/da
+      dv:
+        description: Divehi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/dv
+      nl:
+        description: Dutch
+        meaning: http://id.loc.gov/vocabulary/iso639-1/nl
+      dz:
+        description: Dzongkha
+        meaning: http://id.loc.gov/vocabulary/iso639-1/dz
+      en:
+        description: English
+        meaning: http://id.loc.gov/vocabulary/iso639-1/en
+      eo:
+        description: Esperanto
+        meaning: http://id.loc.gov/vocabulary/iso639-1/eo
+      et:
+        description: Estonian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/et
+      ee:
+        description: Ewe
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ee
+      fo:
+        description: Faroese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/fo
+      fj:
+        description: Fijian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/fj
+      fi:
+        description: Finnish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/fi
+      fr:
+        description: French
+        meaning: http://id.loc.gov/vocabulary/iso639-1/fr
+      ff:
+        description: Fula
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ff
+      gl:
+        description: Galician
+        meaning: http://id.loc.gov/vocabulary/iso639-1/gl
+      gd:
+        description: Scottish Gaelic
+        meaning: http://id.loc.gov/vocabulary/iso639-1/gd
+      gv:
+        description: Manx
+        meaning: http://id.loc.gov/vocabulary/iso639-1/gv
+      ka:
+        description: Georgian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ka
+      de:
+        description: German
+        meaning: http://id.loc.gov/vocabulary/iso639-1/de
+      el:
+        description: Greek
+        meaning: http://id.loc.gov/vocabulary/iso639-1/el
+      kl:
+        description: Greenlandic
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kl
+      gn:
+        description: Guaraní
+        meaning: http://id.loc.gov/vocabulary/iso639-1/gn
+      gu:
+        description: Gujarati
+        meaning: http://id.loc.gov/vocabulary/iso639-1/gu
+      ht:
+        description: Haitian Creole
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ht
+      ha:
+        description: Hausa
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ha
+      he:
+        description: Hebrew
+        meaning: http://id.loc.gov/vocabulary/iso639-1/he
+      hz:
+        description: Herero
+        meaning: http://id.loc.gov/vocabulary/iso639-1/hz
+      hi:
+        description: Hindi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/hi
+      ho:
+        description: Hiri Motu
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ho
+      hu:
+        description: Hungarian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/hu
+      is:
+        description: Icelandic
+        meaning: http://id.loc.gov/vocabulary/iso639-1/is
+      io:
+        description: Ido
+        meaning: http://id.loc.gov/vocabulary/iso639-1/io
+      ig:
+        description: Igbo
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ig
+      id:
+        description: Indonesian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/id
+      ia:
+        description: Interlingua
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ia
+      ie:
+        description: Interlingue
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ie
+      iu:
+        description: Inuktitut
+        meaning: http://id.loc.gov/vocabulary/iso639-1/iu
+      ik:
+        description: Inupiaq
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ik
+      ga:
+        description: Irish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ga
+      it:
+        description: Italian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/it
+      ja:
+        description: Japanese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ja
+      jv:
+        description: Javanese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/jv
+      kn:
+        description: Kannada
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kn
+      kr:
+        description: Kanuri
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kr
+      ks:
+        description: Kashmiri
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ks
+      kk:
+        description: Kazakh
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kk
+      km:
+        description: Khmer
+        meaning: http://id.loc.gov/vocabulary/iso639-1/km
+      ki:
+        description: Kikuyu
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ki
+      rw:
+        description: Kinyarwanda
+        meaning: http://id.loc.gov/vocabulary/iso639-1/rw
+      rn:
+        description: Kirundi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/rn
+      ky:
+        description: Kyrgyz
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ky
+      kv:
+        description: Komi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kv
+      kg:
+        description: Kongo
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kg
+      ko:
+        description: Korean
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ko
+      ku:
+        description: Kurdish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ku
+      kj:
+        description: Kwanyama
+        meaning: http://id.loc.gov/vocabulary/iso639-1/kj
+      lo:
+        description: Lao
+        meaning: http://id.loc.gov/vocabulary/iso639-1/lo
+      la:
+        description: Latin
+        meaning: http://id.loc.gov/vocabulary/iso639-1/la
+      lv:
+        description: Latvian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/lv
+      li:
+        description: Limburgish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/li
+      ln:
+        description: Lingala
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ln
+      lt:
+        description: Lithuanian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/lt
+      lu:
+        description: Luba-Katanga
+        meaning: http://id.loc.gov/vocabulary/iso639-1/lu
+      lg:
+        description: Luganda
+        meaning: http://id.loc.gov/vocabulary/iso639-1/lg
+      lb:
+        description: Luxembourgish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/lb
+      mk:
+        description: Macedonian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/mk
+      mg:
+        description: Malagasy
+        meaning: http://id.loc.gov/vocabulary/iso639-1/mg
+      ms:
+        description: Malay
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ms
+      ml:
+        description: Malayalam
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ml
+      mt:
+        description: Maltese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/mt
+      mi:
+        description: Māori
+        meaning: http://id.loc.gov/vocabulary/iso639-1/mi
+      mr:
+        description: Marathi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/mr
+      mh:
+        description: Marshallese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/mh
+      mn:
+        description: Mongolian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/mn
+      na:
+        description: Nauru
+        meaning: http://id.loc.gov/vocabulary/iso639-1/na
+      nv:
+        description: Navajo
+        meaning: http://id.loc.gov/vocabulary/iso639-1/nv
+      ng:
+        description: Ndonga
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ng
+      nd:
+        description: Northern Ndebele
+        meaning: http://id.loc.gov/vocabulary/iso639-1/nd
+      ne:
+        description: Nepali
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ne
+      no:
+        description: Norwegian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/no
+      nb:
+        description: Norwegian Bokmål
+        meaning: http://id.loc.gov/vocabulary/iso639-1/nb
+      nn:
+        description: Norwegian Nynorsk
+        meaning: http://id.loc.gov/vocabulary/iso639-1/nn
+      ii:
+        description: Nuosu
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ii
+      oc:
+        description: Occitan
+        meaning: http://id.loc.gov/vocabulary/iso639-1/oc
+      oj:
+        description: Ojibwe
+        meaning: http://id.loc.gov/vocabulary/iso639-1/oj
+      cu:
+        description: Old Church Slavonic
+        meaning: http://id.loc.gov/vocabulary/iso639-1/cu
+      or:
+        description: Odia
+        meaning: http://id.loc.gov/vocabulary/iso639-1/or
+      om:
+        description: Oromo
+        meaning: http://id.loc.gov/vocabulary/iso639-1/om
+      os:
+        description: Ossetian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/os
+      pi:
+        description: Pali
+        meaning: http://id.loc.gov/vocabulary/iso639-1/pi
+      ps:
+        description: Pashto
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ps
+      fa:
+        description: Persian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/fa
+      pl:
+        description: Polish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/pl
+      pt:
+        description: Portuguese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/pt
+      pa:
+        description: Punjabi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/pa
+      qu:
+        description: Quechua
+        meaning: http://id.loc.gov/vocabulary/iso639-1/qu
+      rm:
+        description: Romansh
+        meaning: http://id.loc.gov/vocabulary/iso639-1/rm
+      ro:
+        description: Romanian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ro
+      ru:
+        description: Russian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ru
+      se:
+        description: Northern Sami
+        meaning: http://id.loc.gov/vocabulary/iso639-1/se
+      sm:
+        description: Samoan
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sm
+      sg:
+        description: Sango
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sg
+      sa:
+        description: Sanskrit
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sa
+      sr:
+        description: Serbian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sr
+      sh:
+        description: Serbo-Croatian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sh
+      st:
+        description: Southern Sotho
+        meaning: http://id.loc.gov/vocabulary/iso639-1/st
+      tn:
+        description: Tswana
+        meaning: http://id.loc.gov/vocabulary/iso639-1/tn
+      sn:
+        description: Shona
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sn
+      sd:
+        description: Sindhi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sd
+      si:
+        description: Sinhala
+        meaning: http://id.loc.gov/vocabulary/iso639-1/si
+      ss:
+        description: Swati
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ss
+      sk:
+        description: Slovak
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sk
+      sl:
+        description: Slovenian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sl
+      so:
+        description: Somali
+        meaning: http://id.loc.gov/vocabulary/iso639-1/so
+      nr:
+        description: Southern Ndebele
+        meaning: http://id.loc.gov/vocabulary/iso639-1/nr
+      es:
+        description: Spanish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/es
+      su:
+        description: Sundanese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/su
+      sw:
+        description: Swahili
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sw
+      sv:
+        description: Swedish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/sv
+      tl:
+        description: Tagalog
+        meaning: http://id.loc.gov/vocabulary/iso639-1/tl
+      ty:
+        description: Tahitian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ty
+      tg:
+        description: Tajik
+        meaning: http://id.loc.gov/vocabulary/iso639-1/tg
+      ta:
+        description: Tamil
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ta
+      tt:
+        description: Tatar
+        meaning: http://id.loc.gov/vocabulary/iso639-1/tt
+      te:
+        description: Telugu
+        meaning: http://id.loc.gov/vocabulary/iso639-1/te
+      th:
+        description: Thai
+        meaning: http://id.loc.gov/vocabulary/iso639-1/th
+      bo:
+        description: Tibetan
+        meaning: http://id.loc.gov/vocabulary/iso639-1/bo
+      ti:
+        description: Tigrinya
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ti
+      to:
+        description: Tonga
+        meaning: http://id.loc.gov/vocabulary/iso639-1/to
+      ts:
+        description: Tsonga
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ts
+      tk:
+        description: Turkmen
+        meaning: http://id.loc.gov/vocabulary/iso639-1/tk
+      tw:
+        description: Twi
+        meaning: http://id.loc.gov/vocabulary/iso639-1/tw
+      ug:
+        description: Uyghur
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ug
+      uk:
+        description: Ukrainian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/uk
+      ur:
+        description: Urdu
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ur
+      uz:
+        description: Uzbek
+        meaning: http://id.loc.gov/vocabulary/iso639-1/uz
+      ve:
+        description: Venda
+        meaning: http://id.loc.gov/vocabulary/iso639-1/ve
+      vi:
+        description: Vietnamese
+        meaning: http://id.loc.gov/vocabulary/iso639-1/vi
+      vo:
+        description: Volapük
+        meaning: http://id.loc.gov/vocabulary/iso639-1/vo
+      wa:
+        description: Walloon
+        meaning: http://id.loc.gov/vocabulary/iso639-1/wa
+      cy:
+        description: Welsh
+        meaning: http://id.loc.gov/vocabulary/iso639-1/cy
+      wo:
+        description: Wolof
+        meaning: http://id.loc.gov/vocabulary/iso639-1/wo
+      fy:
+        description: Western Frisian
+        meaning: http://id.loc.gov/vocabulary/iso639-1/fy
+      xh:
+        description: Xhosa
+        meaning: http://id.loc.gov/vocabulary/iso639-1/xh
+      yi:
+        description: Yiddish
+        meaning: http://id.loc.gov/vocabulary/iso639-1/yi
+      yo:
+        description: Yoruba
+        meaning: http://id.loc.gov/vocabulary/iso639-1/yo
+      za:
+        description: Zhuang
+        meaning: http://id.loc.gov/vocabulary/iso639-1/za
+      zu:
+        description: Zulu
+        meaning: http://id.loc.gov/vocabulary/iso639-1/zu
+  
+  Country:
+    description: >-
+      Country codes according to ISO 3166-1 alpha-2 (two-letter uppercase codes).
+    see_also:
+      - https://www.iso.org/iso-3166-country-codes.html
+    permissible_values:
+      AF:
+        description: Afghanistan
+        meaning: http://id.loc.gov/vocabulary/countries/af
+      AX:
+        description: Aland Islands
+        meaning: http://id.loc.gov/vocabulary/countries/fi
+      AL:
+        description: Albania
+        meaning: http://id.loc.gov/vocabulary/countries/al
+      DZ:
+        description: Algeria
+        meaning: http://id.loc.gov/vocabulary/countries/ae
+      AS:
+        description: American Samoa
+        meaning: http://id.loc.gov/vocabulary/countries/as
+      AD:
+        description: Andorra
+        meaning: http://id.loc.gov/vocabulary/countries/an
+      AO:
+        description: Angola
+        meaning: http://id.loc.gov/vocabulary/countries/ao
+      AI:
+        description: Anguilla
+        meaning: http://id.loc.gov/vocabulary/countries/am
+      AQ:
+        description: Antarctica
+        meaning: http://id.loc.gov/vocabulary/countries/ay
+      AG:
+        description: Antigua and Barbuda
+        meaning: http://id.loc.gov/vocabulary/countries/aq
+      AR:
+        description: Argentina
+        meaning: http://id.loc.gov/vocabulary/countries/ag
+      AM:
+        description: Armenia
+        meaning: http://id.loc.gov/vocabulary/countries/ai
+      AW:
+        description: Aruba
+        meaning: http://id.loc.gov/vocabulary/countries/aw
+      AU:
+        description: Australia
+        meaning: http://id.loc.gov/vocabulary/countries/at
+      AT:
+        description: Austria
+        meaning: http://id.loc.gov/vocabulary/countries/au
+      AZ:
+        description: Azerbaijan
+        meaning: http://id.loc.gov/vocabulary/countries/aj
+      BS:
+        description: Bahamas
+        meaning: http://id.loc.gov/vocabulary/countries/bf
+      BH:
+        description: Bahrain
+        meaning: http://id.loc.gov/vocabulary/countries/ba
+      BD:
+        description: Bangladesh
+        meaning: http://id.loc.gov/vocabulary/countries/bg
+      BB:
+        description: Barbados
+        meaning: http://id.loc.gov/vocabulary/countries/bb
+      BY:
+        description: Belarus
+        meaning: http://id.loc.gov/vocabulary/countries/bw
+      BE:
+        description: Belgium
+        meaning: http://id.loc.gov/vocabulary/countries/be
+      BZ:
+        description: Belize
+        meaning: http://id.loc.gov/vocabulary/countries/bh
+      BJ:
+        description: Benin
+        meaning: http://id.loc.gov/vocabulary/countries/dm
+      BM:
+        description: Bermuda
+        meaning: http://id.loc.gov/vocabulary/countries/bm
+      BT:
+        description: Bhutan
+        meaning: http://id.loc.gov/vocabulary/countries/bt
+      BO:
+        description: Bolivia
+        meaning: http://id.loc.gov/vocabulary/countries/bo
+      BA:
+        description: Bosnia and Herzegovina
+        meaning: http://id.loc.gov/vocabulary/countries/bn
+      BW:
+        description: Botswana
+        meaning: http://id.loc.gov/vocabulary/countries/bs
+      BV:
+        description: Bouvet Island
+      BR:
+        description: Brazil
+        meaning: http://id.loc.gov/vocabulary/countries/bl
+      IO:
+        description: British Indian Ocean Territory
+        meaning: http://id.loc.gov/vocabulary/countries/bi
+      BN:
+        description: Brunei Darussalam
+        meaning: http://id.loc.gov/vocabulary/countries/bx
+      BG:
+        description: Bulgaria
+        meaning: http://id.loc.gov/vocabulary/countries/bu
+      BF:
+        description: Burkina Faso
+        meaning: http://id.loc.gov/vocabulary/countries/uv
+      BI:
+        description: Burundi
+        meaning: http://id.loc.gov/vocabulary/countries/bd
+      KH:
+        description: Cambodia
+        meaning: http://id.loc.gov/vocabulary/countries/cb
+      CM:
+        description: Cameroon
+        meaning: http://id.loc.gov/vocabulary/countries/cm
+      CA:
+        description: Canada
+        meaning: http://id.loc.gov/vocabulary/countries/xxc
+      CV:
+        description: Cape Verde
+        meaning: http://id.loc.gov/vocabulary/countries/cv
+      KY:
+        description: Cayman Islands
+        meaning: http://id.loc.gov/vocabulary/countries/cj
+      CF:
+        description: Central African Republic
+        meaning: http://id.loc.gov/vocabulary/countries/cx
+      TD:
+        description: Chad
+        meaning: http://id.loc.gov/vocabulary/countries/cd
+      CL:
+        description: Chile
+        meaning: http://id.loc.gov/vocabulary/countries/cl
+      CN:
+        description: China
+        meaning: http://id.loc.gov/vocabulary/countries/cc
+      CX:
+        description: Christmas Island
+        meaning: http://id.loc.gov/vocabulary/countries/xa
+      CC:
+        description: Cocos (Keeling) Islands
+        meaning: http://id.loc.gov/vocabulary/countries/xb
+      CO:
+        description: Colombia
+        meaning: http://id.loc.gov/vocabulary/countries/ck
+      KM:
+        description: Comoros
+        meaning: http://id.loc.gov/vocabulary/countries/cq
+      CG:
+        description: Congo
+        meaning: http://id.loc.gov/vocabulary/countries/cf
+      CD:
+        description: Congo, The Democratic Republic Of The
+        meaning: http://id.loc.gov/vocabulary/countries/cg
+      CK:
+        description: Cook Islands
+        meaning: http://id.loc.gov/vocabulary/countries/cw
+      CR:
+        description: Costa Rica
+        meaning: http://id.loc.gov/vocabulary/countries/cr
+      CI:
+        description: Côte d'Ivoire
+        meaning: http://id.loc.gov/vocabulary/countries/iv
+      HR:
+        description: Croatia
+        meaning: http://id.loc.gov/vocabulary/countries/ci
+      CU:
+        description: Cuba
+        meaning: http://id.loc.gov/vocabulary/countries/cu
+      CY:
+        description: Cyprus
+        meaning: http://id.loc.gov/vocabulary/countries/cy
+      CZ:
+        description: Czech Republic
+        meaning: http://id.loc.gov/vocabulary/countries/xr
+      DK:
+        description: Denmark
+        meaning: http://id.loc.gov/vocabulary/countries/dk
+      DJ:
+        description: Djibouti
+        meaning: http://id.loc.gov/vocabulary/countries/ft
+      DM:
+        description: Dominica
+        meaning: http://id.loc.gov/vocabulary/countries/dq
+      DO:
+        description: Dominican Republic
+        meaning: http://id.loc.gov/vocabulary/countries/dr
+      EC:
+        description: Ecuador
+        meaning: http://id.loc.gov/vocabulary/countries/ec
+      EG:
+        description: Egypt
+        meaning: http://id.loc.gov/vocabulary/countries/ua
+      SV:
+        description: El Salvador
+        meaning: http://id.loc.gov/vocabulary/countries/es
+      GQ:
+        description: Equatorial Guinea
+        meaning: http://id.loc.gov/vocabulary/countries/eg
+      ER:
+        description: Eritrea
+        meaning: http://id.loc.gov/vocabulary/countries/ea
+      EE:
+        description: Estonia
+        meaning: http://id.loc.gov/vocabulary/countries/er
+      ET:
+        description: Ethiopia
+        meaning: http://id.loc.gov/vocabulary/countries/et
+      FK:
+        description: Falkland Islands (Malvinas)
+        meaning: http://id.loc.gov/vocabulary/countries/fk
+      FO:
+        description: Faroe Islands
+        meaning: http://id.loc.gov/vocabulary/countries/fa
+      FJ:
+        description: Fiji
+        meaning: http://id.loc.gov/vocabulary/countries/fj
+      FI:
+        description: Finland
+        meaning: http://id.loc.gov/vocabulary/countries/fi
+      FR:
+        description: France
+        meaning: http://id.loc.gov/vocabulary/countries/fr
+      GF:
+        description: French Guiana
+        meaning: http://id.loc.gov/vocabulary/countries/fg
+      PF:
+        description: French Polynesia
+        meaning: http://id.loc.gov/vocabulary/countries/fp
+      TF:
+        description: French Southern Territories
+        meaning: http://id.loc.gov/vocabulary/countries/fs
+      GA:
+        description: Gabon
+        meaning: http://id.loc.gov/vocabulary/countries/go
+      GM:
+        description: Gambia
+        meaning: http://id.loc.gov/vocabulary/countries/gm
+      GE:
+        description: Georgia
+        meaning: http://id.loc.gov/vocabulary/countries/gs
+      DE:
+        description: Germany
+        meaning: http://id.loc.gov/vocabulary/countries/gw
+      GH:
+        description: Ghana
+        meaning: http://id.loc.gov/vocabulary/countries/gh
+      GI:
+        description: Gibraltar
+        meaning: http://id.loc.gov/vocabulary/countries/gi
+      GR:
+        description: Greece
+        meaning: http://id.loc.gov/vocabulary/countries/gr
+      GL:
+        description: Greenland
+        meaning: http://id.loc.gov/vocabulary/countries/gl
+      GD:
+        description: Grenada
+        meaning: http://id.loc.gov/vocabulary/countries/gd
+      GP:
+        description: Guadeloupe
+        meaning: http://id.loc.gov/vocabulary/countries/gp
+      GU:
+        description: Guam
+        meaning: http://id.loc.gov/vocabulary/countries/gu
+      GT:
+        description: Guatemala
+        meaning: http://id.loc.gov/vocabulary/countries/gt
+      GG:
+        description: Guernsey
+      GN:
+        description: Guinea
+        meaning: http://id.loc.gov/vocabulary/countries/gv
+      GW:
+        description: Guinea-Bissau
+        meaning: http://id.loc.gov/vocabulary/countries/pg
+      GY:
+        description: Guyana
+        meaning: http://id.loc.gov/vocabulary/countries/gy
+      HT:
+        description: Haiti
+        meaning: http://id.loc.gov/vocabulary/countries/ht
+      HM:
+        description: Heard Island and Mcdonald Islands
+        meaning: http://id.loc.gov/vocabulary/countries/hm
+      VA:
+        description: Holy See (Vatican City State)
+        meaning: http://id.loc.gov/vocabulary/countries/vc
+      HN:
+        description: Honduras
+        meaning: http://id.loc.gov/vocabulary/countries/ho
+      HK:
+        description: Hong Kong
+        meaning: http://id.loc.gov/vocabulary/countries/hk
+      HU:
+        description: Hungary
+        meaning: http://id.loc.gov/vocabulary/countries/hu
+      IS:
+        description: Iceland
+        meaning: http://id.loc.gov/vocabulary/countries/ic
+      IN:
+        description: India
+        meaning: http://id.loc.gov/vocabulary/countries/ii
+      ID:
+        description: Indonesia
+        meaning: http://id.loc.gov/vocabulary/countries/io
+      IR:
+        description: Iran, Islamic Republic Of
+        meaning: http://id.loc.gov/vocabulary/countries/ir
+      IQ:
+        description: Iraq
+        meaning: http://id.loc.gov/vocabulary/countries/iq
+      IE:
+        description: Ireland
+        meaning: http://id.loc.gov/vocabulary/countries/ie
+      IM:
+        description: Isle Of Man
+      IL:
+        description: Israel
+        meaning: http://id.loc.gov/vocabulary/countries/is
+      IT:
+        description: Italy
+        meaning: http://id.loc.gov/vocabulary/countries/it
+      JM:
+        description: Jamaica
+        meaning: http://id.loc.gov/vocabulary/countries/jm
+      JP:
+        description: Japan
+        meaning: http://id.loc.gov/vocabulary/countries/ja
+      JE:
+        description: Jersey
+      JO:
+        description: Jordan
+        meaning: http://id.loc.gov/vocabulary/countries/jo
+      KZ:
+        description: Kazakhstan
+        meaning: http://id.loc.gov/vocabulary/countries/kz
+      KE:
+        description: Kenya
+        meaning: http://id.loc.gov/vocabulary/countries/ke
+      KI:
+        description: Kiribati
+        meaning: http://id.loc.gov/vocabulary/countries/gb
+      KP:
+        description: Korea, Democratic People's Republic Of
+        meaning: http://id.loc.gov/vocabulary/countries/kn
+      KR:
+        description: Korea, Republic Of
+        meaning: http://id.loc.gov/vocabulary/countries/ko
+      KW:
+        description: Kuwait
+        meaning: http://id.loc.gov/vocabulary/countries/ku
+      KG:
+        description: Kyrgyzstan
+        meaning: http://id.loc.gov/vocabulary/countries/kg
+      LA:
+        description: Lao People's Democratic Republic
+        meaning: http://id.loc.gov/vocabulary/countries/ls
+      LV:
+        description: Latvia
+        meaning: http://id.loc.gov/vocabulary/countries/lv
+      LB:
+        description: Lebanon
+        meaning: http://id.loc.gov/vocabulary/countries/le
+      LS:
+        description: Lesotho
+        meaning: http://id.loc.gov/vocabulary/countries/lo
+      LR:
+        description: Liberia
+        meaning: http://id.loc.gov/vocabulary/countries/lb
+      LY:
+        description: Libyan Arab Jamahiriya
+        meaning: http://id.loc.gov/vocabulary/countries/ly
+      LI:
+        description: Liechtenstein
+        meaning: http://id.loc.gov/vocabulary/countries/lh
+      LT:
+        description: Lithuania
+        meaning: http://id.loc.gov/vocabulary/countries/li
+      LU:
+        description: Luxembourg
+        meaning: http://id.loc.gov/vocabulary/countries/lu
+      MO:
+        description: Macao
+        meaning: http://id.loc.gov/vocabulary/countries/ch
+      MK:
+        description: Macedonia, The Former Yugoslav Republic Of
+        meaning: http://id.loc.gov/vocabulary/countries/xn
+      MG:
+        description: Madagascar
+        meaning: http://id.loc.gov/vocabulary/countries/mg
+      MW:
+        description: Malawi
+        meaning: http://id.loc.gov/vocabulary/countries/mw
+      MY:
+        description: Malaysia
+        meaning: http://id.loc.gov/vocabulary/countries/my
+      MV:
+        description: Maldives
+        meaning: http://id.loc.gov/vocabulary/countries/xc
+      ML:
+        description: Mali
+        meaning: http://id.loc.gov/vocabulary/countries/ml
+      MT:
+        description: Malta
+        meaning: http://id.loc.gov/vocabulary/countries/mm
+      MH:
+        description: Marshall Islands
+        meaning: http://id.loc.gov/vocabulary/countries/xe
+      MQ:
+        description: Martinique
+        meaning: http://id.loc.gov/vocabulary/countries/mq
+      MR:
+        description: Mauritania
+        meaning: http://id.loc.gov/vocabulary/countries/mu
+      MU:
+        description: Mauritius
+        meaning: http://id.loc.gov/vocabulary/countries/mf
+      YT:
+        description: Mayotte
+        meaning: http://id.loc.gov/vocabulary/countries/ot
+      MX:
+        description: Mexico
+        meaning: http://id.loc.gov/vocabulary/countries/mx
+      FM:
+        description: Micronesia, Federated States Of
+        meaning: http://id.loc.gov/vocabulary/countries/fm
+      MD:
+        description: Moldova, Republic Of
+        meaning: http://id.loc.gov/vocabulary/countries/mv
+      MC:
+        description: Monaco
+        meaning: http://id.loc.gov/vocabulary/countries/mc
+      MN:
+        description: Mongolia
+        meaning: http://id.loc.gov/vocabulary/countries/mp
+      ME:
+        description: Montenegro
+        meaning: http://id.loc.gov/vocabulary/countries/mo
+      MS:
+        description: Montserrat
+        meaning: http://id.loc.gov/vocabulary/countries/mj
+      MA:
+        description: Morocco
+        meaning: http://id.loc.gov/vocabulary/countries/mr
+      MZ:
+        description: Mozambique
+        meaning: http://id.loc.gov/vocabulary/countries/mz
+      MM:
+        description: Myanmar
+        meaning: http://id.loc.gov/vocabulary/countries/br
+      NA:
+        description: Namibia
+        meaning: http://id.loc.gov/vocabulary/countries/sx
+      NR:
+        description: Nauru
+        meaning: http://id.loc.gov/vocabulary/countries/nu
+      NP:
+        description: Nepal
+        meaning: http://id.loc.gov/vocabulary/countries/np
+      NL:
+        description: Netherlands
+        meaning: http://id.loc.gov/vocabulary/countries/ne
+      AN:
+        description: Netherlands Antilles
+        meaning: http://id.loc.gov/vocabulary/countries/na
+      NC:
+        description: New Caledonia
+        meaning: http://id.loc.gov/vocabulary/countries/nl
+      NZ:
+        description: New Zealand
+        meaning: http://id.loc.gov/vocabulary/countries/nz
+      NI:
+        description: Nicaragua
+        meaning: http://id.loc.gov/vocabulary/countries/nq
+      NE:
+        description: Niger
+        meaning: http://id.loc.gov/vocabulary/countries/ng
+      NG:
+        description: Nigeria
+        meaning: http://id.loc.gov/vocabulary/countries/nr
+      NU:
+        description: Niue
+        meaning: http://id.loc.gov/vocabulary/countries/xd
+      NF:
+        description: Norfolk Island
+        meaning: http://id.loc.gov/vocabulary/countries/nx
+      MP:
+        description: Northern Mariana Islands
+        meaning: http://id.loc.gov/vocabulary/countries/nw
+      NO:
+        description: Norway
+        meaning: http://id.loc.gov/vocabulary/countries/no
+      OM:
+        description: Oman
+        meaning: http://id.loc.gov/vocabulary/countries/mk
+      PK:
+        description: Pakistan
+        meaning: http://id.loc.gov/vocabulary/countries/pk
+      PW:
+        description: Palau
+        meaning: http://id.loc.gov/vocabulary/countries/pw
+      PS:
+        description: Palestinian Territory, Occupied
+        meaning: http://id.loc.gov/vocabulary/countries/gz
+      PA:
+        description: Panama
+        meaning: http://id.loc.gov/vocabulary/countries/pn
+      PG:
+        description: Papua New Guinea
+        meaning: http://id.loc.gov/vocabulary/countries/pp
+      PY:
+        description: Paraguay
+        meaning: http://id.loc.gov/vocabulary/countries/py
+      PE:
+        description: Peru
+        meaning: http://id.loc.gov/vocabulary/countries/pe
+      PH:
+        description: Philippines
+        meaning: http://id.loc.gov/vocabulary/countries/ph
+      PN:
+        description: Pitcairn
+        meaning: http://id.loc.gov/vocabulary/countries/pc
+      PL:
+        description: Poland
+        meaning: http://id.loc.gov/vocabulary/countries/pl
+      PT:
+        description: Portugal
+        meaning: http://id.loc.gov/vocabulary/countries/po
+      PR:
+        description: Puerto Rico
+        meaning: http://id.loc.gov/vocabulary/countries/pr
+      QA:
+        description: Qatar
+        meaning: http://id.loc.gov/vocabulary/countries/qa
+      RE:
+        description: Réunion
+        meaning: http://id.loc.gov/vocabulary/countries/re
+      RO:
+        description: Romania
+        meaning: http://id.loc.gov/vocabulary/countries/rm
+      RU:
+        description: Russian Federation
+        meaning: http://id.loc.gov/vocabulary/countries/ru
+      RW:
+        description: Rwanda
+        meaning: http://id.loc.gov/vocabulary/countries/rw
+      SH:
+        description: Saint Helena
+        meaning: http://id.loc.gov/vocabulary/countries/sh
+      KN:
+        description: Saint Kitts and Nevis
+        meaning: http://id.loc.gov/vocabulary/countries/xd
+      LC:
+        description: Saint Lucia
+        meaning: http://id.loc.gov/vocabulary/countries/xj
+      PM:
+        description: Saint Pierre and Miquelon
+        meaning: http://id.loc.gov/vocabulary/countries/xl
+      VC:
+        description: Saint Vincent and The Grenadines
+        meaning: http://id.loc.gov/vocabulary/countries/xm
+      WS:
+        description: Samoa
+        meaning: http://id.loc.gov/vocabulary/countries/ws
+      SM:
+        description: San Marino
+        meaning: http://id.loc.gov/vocabulary/countries/sm
+      ST:
+        description: Sao Tome and Principe
+        meaning: http://id.loc.gov/vocabulary/countries/sf
+      SA:
+        description: Saudi Arabia
+        meaning: http://id.loc.gov/vocabulary/countries/su
+      SN:
+        description: Senegal
+        meaning: http://id.loc.gov/vocabulary/countries/sg
+      RS:
+        description: Serbia
+        meaning: http://id.loc.gov/vocabulary/countries/rb
+      SC:
+        description: Seychelles
+        meaning: http://id.loc.gov/vocabulary/countries/se
+      SL:
+        description: Sierra Leone
+        meaning: http://id.loc.gov/vocabulary/countries/sl
+      SG:
+        description: Singapore
+        meaning: http://id.loc.gov/vocabulary/countries/si
+      SK:
+        description: Slovakia
+        meaning: http://id.loc.gov/vocabulary/countries/xo
+      SI:
+        description: Slovenia
+        meaning: http://id.loc.gov/vocabulary/countries/xv
+      SB:
+        description: Solomon Islands
+        meaning: http://id.loc.gov/vocabulary/countries/bp
+      SO:
+        description: Somalia
+        meaning: http://id.loc.gov/vocabulary/countries/so
+      ZA:
+        description: South Africa
+        meaning: http://id.loc.gov/vocabulary/countries/sa
+      GS:
+        description: South Georgia and The South Sandwich Islands
+        meaning: http://id.loc.gov/vocabulary/countries/xk
+      ES:
+        description: Spain
+        meaning: http://id.loc.gov/vocabulary/countries/sp
+      LK:
+        description: Sri Lanka
+        meaning: http://id.loc.gov/vocabulary/countries/ce
+      SD:
+        description: Sudan
+        meaning: http://id.loc.gov/vocabulary/countries/sj
+      SR:
+        description: Suriname
+        meaning: http://id.loc.gov/vocabulary/countries/sr
+      SJ:
+        description: Svalbard and Jan Mayen
+        meaning: http://id.loc.gov/vocabulary/countries/sv
+      SZ:
+        description: Swaziland
+        meaning: http://id.loc.gov/vocabulary/countries/sq
+      SE:
+        description: Sweden
+        meaning: http://id.loc.gov/vocabulary/countries/sw
+      CH:
+        description: Switzerland
+        meaning: http://id.loc.gov/vocabulary/countries/sz
+      SY:
+        description: Syrian Arab Republic
+        meaning: http://id.loc.gov/vocabulary/countries/sy
+      TW:
+        description: Taiwan, Province Of China
+        meaning: http://id.loc.gov/vocabulary/countries/ch
+      TJ:
+        description: Tajikistan
+        meaning: http://id.loc.gov/vocabulary/countries/ta
+      TZ:
+        description: Tanzania, United Republic Of
+        meaning: http://id.loc.gov/vocabulary/countries/tz
+      TH:
+        description: Thailand
+        meaning: http://id.loc.gov/vocabulary/countries/th
+      TL:
+        description: Timor-Leste
+        meaning: http://id.loc.gov/vocabulary/countries/em
+      TG:
+        description: Togo
+        meaning: http://id.loc.gov/vocabulary/countries/tg
+      TK:
+        description: Tokelau
+        meaning: http://id.loc.gov/vocabulary/countries/tl
+      TO:
+        description: Tonga
+        meaning: http://id.loc.gov/vocabulary/countries/to
+      TT:
+        description: Trinidad and Tobago
+        meaning: http://id.loc.gov/vocabulary/countries/tr
+      TN:
+        description: Tunisia
+        meaning: http://id.loc.gov/vocabulary/countries/ti
+      TR:
+        description: Turkey
+        meaning: http://id.loc.gov/vocabulary/countries/tu
+      TM:
+        description: Turkmenistan
+        meaning: http://id.loc.gov/vocabulary/countries/tk
+      TC:
+        description: Turks and Caicos Islands
+        meaning: http://id.loc.gov/vocabulary/countries/tc
+      TV:
+        description: Tuvalu
+        meaning: http://id.loc.gov/vocabulary/countries/tv
+      UG:
+        description: Uganda
+        meaning: http://id.loc.gov/vocabulary/countries/ug
+      UA:
+        description: Ukraine
+        meaning: http://id.loc.gov/vocabulary/countries/un
+      AE:
+        description: United Arab Emirates
+        meaning: http://id.loc.gov/vocabulary/countries/ts
+      GB:
+        description: United Kingdom
+        meaning: http://id.loc.gov/vocabulary/countries/xxk
+      US:
+        description: United States
+        meaning: http://id.loc.gov/vocabulary/countries/xxu
+      UM:
+        description: United States Minor Outlying Islands
+        meaning: http://id.loc.gov/vocabulary/countries/ji
+      UY:
+        description: Uruguay
+        meaning: http://id.loc.gov/vocabulary/countries/uy
+      UZ:
+        description: Uzbekistan
+        meaning: http://id.loc.gov/vocabulary/countries/uz
+      VU:
+        description: Vanuatu
+        meaning: http://id.loc.gov/vocabulary/countries/nn
+      VE:
+        description: Venezuela
+        meaning: http://id.loc.gov/vocabulary/countries/ve
+      VN:
+        description: Viet Nam
+        meaning: http://id.loc.gov/vocabulary/countries/vm
+      VG:
+        description: Virgin Islands, British
+        meaning: http://id.loc.gov/vocabulary/countries/vb
+      VI:
+        description: Virgin Islands, U.S.
+        meaning: http://id.loc.gov/vocabulary/countries/vi
+      WF:
+        description: Wallis and Futuna
+        meaning: http://id.loc.gov/vocabulary/countries/wf
+      EH:
+        description: Western Sahara
+        meaning: http://id.loc.gov/vocabulary/countries/ss
+      YE:
+        description: Yemen
+        meaning: http://id.loc.gov/vocabulary/countries/ye
+      ZM:
+        description: Zambia
+        meaning: http://id.loc.gov/vocabulary/countries/za
+      ZW:
+        description: Zimbabwe
+        meaning: http://id.loc.gov/vocabulary/countries/rh
+      XX:
+        description: Unspecified or unknown country
+      XZ:
+        description: International waters
+
+  # Role possible values: the labels are adapted from ISO 19115 standard (icluding the camelCase)
+  Role:
+    description: >-
+      Role/function performed by the contact person. Source: ISO 19115:2003/19139 and
       EC Regulation No 1205/2008 (INSPIRE).
+    see_also:
+      - http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode
     permissible_values:
       resourceProvider:
         description: Party that supplies the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-resourceProvider
       custodian:
         description: >-
           Party that accepts accountability and responsibility for the data
-          and ensures appropriate care and maintenance of the resource
+          and ensures appropriate care and maintenance
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-custodian
       owner:
         description: Party that owns the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-owner
       user:
-        description: Party who uses the resource
+        description: Party that uses the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-user
       distributor:
-        description: Party who distributes the resource
+        description: Party involved in the distribution of the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-distributor
       originator:
         description: Party who created the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-originator
       pointOfContact:
         description: >-
-          Party who can be contacted for acquiring knowledge about or
-          acquisition of the resource
+          Party who can be contacted for acquiring knowledge about
+          or acquisition of the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-pointOfContact
       principalInvestigator:
-        description: >-
-          Key party responsible for gathering information and conducting research
+        description: Key party responsible for gathering information and conducting research
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-principalInvestigator
       processor:
         description: >-
-          Party who has processed the data in a manner such that the resource
-          has been modified
+          Party who has processed the data in a manner such that
+          the resource has been modified
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-processor
       publisher:
         description: Party who published the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-publisher
       author:
         description: Party who authored the resource
+        meaning: http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode-author
 
-  # TODO: This enum is a full placeholder. The final controlled vocabulary
+  CoordinateSystem:
+    description: Coordinate reference system used for geographic coordinates
+    permissible_values:
+      WGS84:
+        description: World Geodetic System 1984. Global coordinate system widely used for GPS navigation.
+
+  WaterType:
+    description: Type of water body
+    permissible_values:
+      salt_marine:
+        description: Salt or marine water
+      transitional_brackish:
+        description: Transitional or brackish water
+      fresh_surface:
+        description: Fresh or surface water
+      ground:
+        description: Groundwater
+      sludge_waste:
+        description: Sludge or waste water
+      liquid_growth_medium:
+        description: Liquid growth medium
+      stormwater:
+        description: Stormwater
+      leachate:
+        description: A liquid that is created when water percolates through permeable materials like soil, waste, or compost
+      not_relevant:
+        description: Water type is not relevant for this record
+      not_reported:
+        description: Water type was not reported
+
+  WaterTreatment:
+    description: Water treatment status
+    permissible_values:
+      pre_treatment:
+      post_treatment:
+
+  WaterGeographicalFeature:
+    description: Geographical water feature type
+    # TODO: river_stream_canal and lake_pond_pool_reservoir had the same
+    # ENVO ID in the original — verify the correct distinction here and
+    # decide whether a controlled vocabulary or free-text better serves this.
+    permissible_values:
+      not_relevant:
+        description: Geographical water feature type is not relevant for this record
+      not_reported:
+        description: Geographical water feature type was not reported
+      river_stream_canal:
+        description: River, stream or canal
+      lake_pond_pool_reservoir:
+        description: Lake, pond, pool or reservoir
+      ocean_sea_territorial_waters:
+        description: Ocean, sea and/or territorial waters
+      coastal_fjord:
+        description: Coastal waters or fjords
+      drainage_sewer_artificial_water:
+        description: Drainage, sewer or artificial water
+      swamp_wetland:
+        description: Swamp or wetland
+      groundwater_aquifer:
+        description: Groundwater or aquifer
+      other:
+        description: Other feature
+
+  GeographicRegion:
+    description: >-
+      UN M49 geographic region.
+      Source: https://unstats.un.org/unsd/methodology/m49/
+    see_also: https://unstats.un.org/unsd/methodology/m49/
+    permissible_values:
+      Africa:
+      Americas:
+      Asia:
+      Europe:
+      Oceania:
+
+  UNRegionalGroup:
+    description: Regional groups of United Nations member states
+    permissible_values:
+      African:
+      Asia_Pacific:
+      Eastern_European:
+      GRULAC:
+        description: Group of Latin American and Caribbean Countries
+      WEOG:
+        description: Western European and Others Group
+
+  # Nut3: This is a placeholder. For now, nuts3 has been included as slot, as it is a very 
+  # large list of values. It must be decided whether we include it as enum. 
+  NUTS3:
+    description:
+    permissible_values:
+      PLACEHOLDER:
+
+  LandUse:
+    description: >-
+      CORINE Land Cover (CLC) land use classification.
+      Coordination of Information on the Environment Land Cover inventory,
+      coordinated by the European Environment Agency (EEA).
+    see_also:
+      - https://www.w3.org/2015/03/corine
+      - https://land.copernicus.eu/pan-european/corine-land-cover
+    permissible_values:
+      continuous_urban_fabric:
+        description: Continuous urban fabric (CLC 111)
+        meaning: http://www.w3.org/2015/03/corine#clc111
+      discontinuous_urban_fabric:
+        description: Discontinuous urban fabric (CLC 112)
+        meaning: http://www.w3.org/2015/03/corine#clc112
+      industrial_or_commercial_units:
+        description: Industrial or commercial units (CLC 121)
+        meaning: http://www.w3.org/2015/03/corine#clc121
+      road_and_rail_networks:
+        description: Road and rail networks and associated land (CLC 122)
+        meaning: http://www.w3.org/2015/03/corine#clc122
+      port_areas:
+        description: Port areas (CLC 123)
+        meaning: http://www.w3.org/2015/03/corine#clc123
+      airports:
+        description: Airports (CLC 124)
+        meaning: http://www.w3.org/2015/03/corine#clc124
+      mineral_extraction_sites:
+        description: Mineral extraction sites (CLC 131)
+        meaning: http://www.w3.org/2015/03/corine#clc131
+      dump_sites:
+        description: Dump sites (CLC 132)
+        meaning: http://www.w3.org/2015/03/corine#clc132
+      construction_sites:
+        description: Construction sites (CLC 133)
+        meaning: http://www.w3.org/2015/03/corine#clc133
+      green_urban_areas:
+        description: Green urban areas (CLC 141)
+        meaning: http://www.w3.org/2015/03/corine#clc141
+      sport_and_leisure_facilities:
+        description: Sport and leisure facilities (CLC 142)
+        meaning: http://www.w3.org/2015/03/corine#clc142
+      non_irrigated_arable_land:
+        description: Non-irrigated arable land (CLC 211)
+        meaning: http://www.w3.org/2015/03/corine#clc211
+      permanently_irrigated_land:
+        description: Permanently irrigated land (CLC 212)
+        meaning: http://www.w3.org/2015/03/corine#clc212
+      fruit_trees_and_berry_plantations:
+        description: Fruit trees and berry plantations (CLC 222)
+        meaning: http://www.w3.org/2015/03/corine#clc222
+      olive_groves:
+        description: Olive groves (CLC 223)
+        meaning: http://www.w3.org/2015/03/corine#clc223
+      pastures:
+        description: Pastures (CLC 231)
+        meaning: http://www.w3.org/2015/03/corine#clc231
+      annual_crops_associated_with_permanent_crops:
+        description: Annual crops associated with permanent crops (CLC 241)
+        meaning: http://www.w3.org/2015/03/corine#clc241
+      complex_cultivation_patterns:
+        description: Complex cultivation patterns (CLC 242)
+        meaning: http://www.w3.org/2015/03/corine#clc242
+      land_principally_occupied_by_agriculture:
+        description: >-
+          Land principally occupied by agriculture, with significant
+          areas of natural vegetation (CLC 243)
+        meaning: http://www.w3.org/2015/03/corine#clc243
+      agro_forestry_areas:
+        description: Agro-forestry areas (CLC 244)
+        meaning: http://www.w3.org/2015/03/corine#clc244
+      broad_leaved_forest:
+        description: Broad-leaved forest (CLC 311)
+        meaning: http://www.w3.org/2015/03/corine#clc311
+      coniferous_forest:
+        description: Coniferous forest (CLC 312)
+        meaning: http://www.w3.org/2015/03/corine#clc312
+      mixed_forest:
+        description: Mixed forest (CLC 313)
+        meaning: http://www.w3.org/2015/03/corine#clc313
+      natural_grasslands:
+        description: Natural grasslands (CLC 321)
+        meaning: http://www.w3.org/2015/03/corine#clc321
+      moors_and_heathland:
+        description: Moors and heathland (CLC 322)
+        meaning: http://www.w3.org/2015/03/corine#clc322
+      sclerophyllous_vegetation:
+        description: Sclerophyllous vegetation (CLC 323)
+        meaning: http://www.w3.org/2015/03/corine#clc323
+      transitional_woodland_shrub:
+        description: Transitional woodland-shrub (CLC 324)
+        meaning: http://www.w3.org/2015/03/corine#clc324
+      beaches_dunes_sands:
+        description: Beaches, dunes, sands (CLC 331)
+        meaning: http://www.w3.org/2015/03/corine#clc331
+      bare_rocks:
+        description: Bare rocks (CLC 332)
+        meaning: http://www.w3.org/2015/03/corine#clc332
+      sparsely_vegetated_areas:
+        description: Sparsely vegetated areas (CLC 333)
+        meaning: http://www.w3.org/2015/03/corine#clc333
+      burnt_areas:
+        description: Burnt areas (CLC 334)
+        meaning: http://www.w3.org/2015/03/corine#clc334
+      glaciers_and_perpetual_snow:
+        description: Glaciers and perpetual snow (CLC 335)
+        meaning: http://www.w3.org/2015/03/corine#clc335
+      inland_marshes:
+        description: Inland marshes (CLC 411)
+        meaning: http://www.w3.org/2015/03/corine#clc411
+      peat_bogs:
+        description: Peat bogs (CLC 412)
+        meaning: http://www.w3.org/2015/03/corine#clc412
+      salt_marshes:
+        description: Salt marshes (CLC 421)
+        meaning: http://www.w3.org/2015/03/corine#clc421
+      salines:
+        description: Salines (CLC 422)
+        meaning: http://www.w3.org/2015/03/corine#clc422
+      intertidal_flats:
+        description: Intertidal flats (CLC 423)
+        meaning: http://www.w3.org/2015/03/corine#clc423
+      water_courses:
+        description: Water courses (CLC 511)
+        meaning: http://www.w3.org/2015/03/corine#clc511
+      water_bodies:
+        description: Water bodies (CLC 512)
+        meaning: http://www.w3.org/2015/03/corine#clc512
+      coastal_lagoons:
+        description: Coastal lagoons (CLC 521)
+        meaning: http://www.w3.org/2015/03/corine#clc521
+      estuaries:
+        description: Estuaries (CLC 522)
+        meaning: http://www.w3.org/2015/03/corine#clc522
+      sea_and_ocean:
+        description: Sea and ocean (CLC 523)
+        meaning: http://www.w3.org/2015/03/corine#clc523
+      unclassified_land_surface:
+        description: Unclassified land surface (CLC 990)
+      unclassified_water_bodies:
+        description: Unclassified water bodies (CLC 995)
+      no_data:
+        description: No data (CLC 999)
+
+  RiverBasin:
+    description: >-
+      Major European river basins. Based on the EEA river basin districts
+      dataset. Only the most significant river basins have been included.
+      Additional entries may be added to the code list if needed.
+    see_also:
+      - https://www.eea.europa.eu/en/datahub/datahubitem-view/dc1b1cdf-5fa0-4535-8c89-10cc051e00db
+    permissible_values:
+      danube:
+        description: Danube river basin
+      rhine:
+        description: Rhine river basin
+      elbe:
+        description: Elbe river basin
+      oder:
+        description: Oder river basin
+      vistula:
+        description: Vistula river basin
+      neman:
+        description: Neman river basin
+      dnieper:
+        description: Dnieper river basin
+      po:
+        description: Po river basin
+      ebro:
+        description: Ebro river basin
+      loire:
+        description: Loire river basin
+      thames:
+        description: Thames river basin
+      seine:
+        description: Seine river basin
+      tagus:
+        description: Tagus river basin
+      garonne:
+        description: Garonne river basin
+      daugava:
+        description: Daugava river basin
+      tisza:
+        description: Tisza river basin
+      maritsa:
+        description: Maritsa river basin
+      sava:
+        description: Sava river basin
+      morava:
+        description: Morava river basin
+      drava:
+        description: Drava river basin
+  
+  Sea:
+    description: >-
+      Major seas and oceans. Based on the Marine Regions Gazetteer
+      (marineregions.org). Only the most significant items have been included.
+      Additional entries may be added to the code list if needed.
+    see_also:
+      - https://www.marineregions.org
+    permissible_values:
+      pacific_ocean:
+        description: Pacific Ocean
+      atlantic_ocean:
+        description: Atlantic Ocean
+      indian_ocean:
+        description: Indian Ocean
+      arctic_ocean:
+        description: Arctic Ocean
+      southern_ocean:
+        description: Southern Ocean
+      caribbean_sea:
+        description: Caribbean Sea
+      south_china_sea:
+        description: South China Sea
+      arabian_sea:
+        description: Arabian Sea
+      bering_sea:
+        description: Bering Sea
+      red_sea:
+        description: Red Sea
+      mediterranean_sea:
+        description: Mediterranean Sea
+      alboran_sea:
+        description: Alboran Sea
+      balearic_sea:
+        description: Balearic Sea
+      ligurian_sea:
+        description: Ligurian Sea
+      tyrrhenian_sea:
+        description: Tyrrhenian Sea
+      adriatic_sea:
+        description: Adriatic Sea
+      ionian_sea:
+        description: Ionian Sea
+      aegean_sea:
+        description: Aegean Sea
+      cretan_sea:
+        description: Cretan Sea
+      black_sea:
+        description: Black Sea
+      sea_of_azov:
+        description: Sea of Azov
+      baltic_sea:
+        description: Baltic Sea
+      north_sea:
+        description: North Sea
+      norwegian_sea:
+        description: Norwegian Sea
+      barents_sea:
+        description: Barents Sea
+      white_sea:
+        description: White Sea
+      irish_sea:
+        description: Irish Sea
+      celtic_sea:
+        description: Celtic Sea
+
+  SoilTypeWRB:
+    description: >-
+      World Reference Base for Soil Resources (WRB) 2006/2007 Reference Soil Groups (RSGs).
+      The WRB is the international standard for soil classification endorsed by the
+      International Union of Soil Sciences (IUSS). The 2006/2007 edition is the version
+      legally binding under INSPIRE.
+    see_also:
+      - https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
+      - https://www.isric.org/explore/wrb
+    permissible_values:
+      albeluvisols:
+        description: >-
+          Albeluvisols — soils with a clay-enriched subsoil and
+          albic material intruding into the argic horizon.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Albeluvisols
+      acrisols:
+        description: >-
+          Acrisols — strongly weathered soils with a clay-enriched subsoil
+          and low base saturation.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Acrisols
+      alisols:
+        description: >-
+          Alisols — strongly weathered soils with a clay-enriched subsoil,
+          high aluminium saturation and high-activity clay.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Alisols
+      andosols:
+        description: >-
+          Andosols — soils formed from volcanic materials with
+          andic soil properties.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Andosols
+      arenosols:
+        description: >-
+          Arenosols — sandy soils with little profile development.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Arenosols
+      anthrosols:
+        description: >-
+          Anthrosols — soils profoundly modified by long-term human activities
+          such as irrigation, addition of organic materials or deep cultivation.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Anthrosols
+      calcisols:
+        description: >-
+          Calcisols — soils with substantial secondary accumulation of calcium carbonate.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Calcisols
+      cambisols:
+        description: >-
+          Cambisols — moderately developed soils showing evidence of alteration
+          in the subsoil.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Cambisols
+      cryosols:
+        description: >-
+          Cryosols — soils affected by permafrost.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Cryosols
+      durisols:
+        description: >-
+          Durisols — soils with substantial secondary accumulation of silica.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Durisols
+      fluvisols:
+        description: >-
+          Fluvisols — young soils in fluvial, marine or lacustrine deposits.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Fluvisols
+      ferralsols:
+        description: >-
+          Ferralsols — highly weathered soils dominated by kaolinite, oxides
+          and hydroxides of iron and aluminium.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Ferralsols
+      gleysols:
+        description: >-
+          Gleysols — soils with permanent or temporary waterlogging
+          at shallow depth.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Gleysols
+      gypsisols:
+        description: >-
+          Gypsisols — soils with substantial secondary accumulation of gypsum.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Gypsisols
+      histosols:
+        description: >-
+          Histosols — organic soils (peat soils and mucks).
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Histosols
+      chernozems:
+        description: >-
+          Chernozems — soils with a thick, dark, humus-rich topsoil
+          and high base saturation.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Chernozems
+      kastanozems:
+        description: >-
+          Kastanozems — soils with a dark brown, humus-rich topsoil
+          and secondary carbonate accumulation in drier conditions than Chernozems.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Kastanozems
+      leptosols:
+        description: >-
+          Leptosols — very shallow soils over hard rock or with
+          extremely gravelly material.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Leptosols
+      luvisols:
+        description: >-
+          Luvisols — soils with a clay-enriched subsoil and
+          high base saturation with high-activity clay.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Luvisols
+      lixisols:
+        description: >-
+          Lixisols — soils with a clay-enriched subsoil and
+          high base saturation with low-activity clay.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Lixisols
+      nitisols:
+        description: >-
+          Nitisols — deep, well-drained, red, tropical soils with
+          a nitic horizon.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Nitisols
+      phaeozems:
+        description: >-
+          Phaeozems — soils with a dark, humus-rich topsoil and
+          high base saturation in more humid conditions than Chernozems.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Phaeozems
+      planosols:
+        description: >-
+          Planosols — soils with an abrupt textural change to a slowly
+          permeable subsoil causing periodic waterlogging.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Planosols
+      plinthosols:
+        description: >-
+          Plinthosols — soils with plinthite, petroplinthite or pisoplinthite
+          near the surface.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Plinthosols
+      podzols:
+        description: >-
+          Podzols — soils with a subsoil accumulation of organic matter
+          and aluminium and/or iron.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Podzols
+      regosols:
+        description: >-
+          Regosols — soils with no significant profile development
+          other than an ochric topsoil.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Regosols
+      solonchaks:
+        description: >-
+          Solonchaks — soils with a high concentration of soluble salts.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Solonchaks
+      solonetz:
+        description: >-
+          Solonetz — soils with a natric horizon with high sodium saturation.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Solonetz
+      stagnosols:
+        description: >-
+          Stagnosols — soils with periodic surface waterlogging due to
+          a slowly permeable layer.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Stagnosols
+      technosols:
+        description: >-
+          Technosols — soils whose properties and pedogenesis are dominated
+          by technical material of human origin.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Technosols
+      umbrisols:
+        description: >-
+          Umbrisols — soils with a dark, acidic, humus-rich topsoil
+          and low base saturation.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Umbrisols
+      vertisols:
+        description: >-
+          Vertisols — clay-rich soils with high shrink-swell capacity,
+          forming wide cracks when dry.
+        meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Vertisols
+ 
+  # Matrix: This enum is a full placeholder. The final controlled vocabulary is being developed
+  #  separately within the PARC project. Replace this stub once the PARC vocabulary is finalized.
+  Matrix:
+    description:
+    permissible_values:
+      PLACEHOLDER:
+
+  # SamplingMethod: This enum is a full placeholder. The final controlled vocabulary is being developed
+  #  separately within the PARC project. Replace this stub once the PARC vocabulary is finalized.
+  SamplingMethod:
+    description:
+    permissible_values:
+      PLACEHOLDER:
+
+  # AquaticMatrixFraction: To consider whether this needs to be included as separate enum, or included 
+  # in the matrix enum.
+  AquaticMatrixFraction:
+    description:
+    permissible_values:
+      PLACEHOLDER:
+      water_spm:
+        description: Water - Suspended Particulate Matter
+      water_dom:
+        description: Water - Dissolved Organic Matter
+      water_cfree: 
+        description: Water - Colloid-free
+      water_dom+cfree: 
+        description: water - Dissolved Organic Matter that is also colloid-free
+      water_colloidal_fraction: 
+        description: Water - Colloidal fraction
+      sediment_solid_phase: 
+        description: Sediment - Solid phase
+      sediment_pore_water: 
+        description: Sediment - pore water
+      sediment_colloidal_fraction:
+        description: Sediment - Colloidal fraction
+
+  BiotaCompartment:
+    description: Environmental compartment where a biota organism was sampled
+    permissible_values:
+      aquatic:
+      atmospheric:
+      terrestrial:
+
+  Gender:
+    description: Biological sex of a sampled organism
+    permissible_values:
+      male:
+      female:
+      hermaphrodite:
+      not_specified:
+      not_relevant:
+    
+  # AnalyticalMethod This enum is a full placeholder. The final controlled vocabulary
   # for analytical methods is being developed separately within the PARC
-  # project. Replace this stub once the PARC analytical methods vocabulary
-  # is finalized.
-  AnalysisMethod:
+  # project. Replace this stub once the PARC analytical methods vocabulary is finalized.
+  AnalyticalMethod:
     description: >-
       Analytical method used to determine the analyte in the sample.
       NOTE: Placeholder only — final vocabulary pending.
@@ -148,57 +2027,54 @@ enums:
           Placeholder value — final vocabulary pending.
           Do not use in production data.
 
-  ConcentrationUnit:
-    description: Units used for chemical concentration measurements
-    # TODO: Review whether non-concentration units (m, cm, g, celsius,
-    # m_s1, degrees, kPa, Qv_kg_kg, percent, unitless, meq_kg1, minus)
-    # belong here or in a separate general UnitEnum. The current enum
-    # mixes chemical concentration units with physical/meteorological units.
+  # Unit: To be mapped to QUDT
+  Unit:
+    description: Units used for chemical concentration and other parameter measurements
     permissible_values:
       ug_m3:
-        description: Micrograms per cubic meter (µg m⁻³)
+        description: Micrograms per cubic meter (ug/m3)
       ng_m3:
-        description: Nanograms per cubic meter (ng m⁻³)
+        description: Nanograms per cubic meter (ng/m3)
       mg_m3:
-        description: Milligrams per cubic meter (mg m⁻³)
+        description: Milligrams per cubic meter (mg/m3)
       pg_m3:
-        description: Picograms per cubic meter (pg m⁻³)
+        description: Picograms per cubic meter (pg/m3)
       ng_m2:
-        description: Nanograms per square meter (ng m⁻²)
+        description: Nanograms per square meter (ng/m2)
       ug_m2:
-        description: Micrograms per square meter (µg m⁻²)
+        description: Micrograms per square meter (ug/m2)
       ng_mg1:
-        description: Nanograms per milligram (ng mg⁻¹)
+        description: Nanograms per milligram (ng/mg)
       ug_mg1:
-        description: Micrograms per milligram (µg mg⁻¹)
+        description: Micrograms per milligram (ug/mg)
       mg_kg1:
-        description: Milligrams per kilogram (mg kg⁻¹)
+        description: Milligrams per kilogram (mg/kg)
       ng_g1:
-        description: Nanograms per gram (ng g⁻¹)
+        description: Nanograms per gram (ng/g)
       ug_g1:
-        description: Micrograms per gram (µg g⁻¹)
+        description: Micrograms per gram (ug/g)
       pg_g1:
-        description: Picograms per gram (pg g⁻¹)
+        description: Picograms per gram (pg/g)
       ng_sample1:
-        description: Nanograms per sample (ng sample⁻¹)
+        description: Nanograms per sample (ng/sample)
       pg_sample1:
-        description: Picograms per sample (pg sample⁻¹)
+        description: Picograms per sample (pg/sample)
       g_l1:
-        description: Grams per liter (g l⁻¹)
+        description: Grams per liter (g/l)
       mg_l1:
-        description: Milligrams per liter (mg l⁻¹)
+        description: Milligrams per liter (mg/l)
       ug_l1:
-        description: Micrograms per liter (µg l⁻¹)
+        description: Micrograms per liter (ug/l)
       ng_l1:
-        description: Nanograms per liter (ng l⁻¹)
+        description: Nanograms per liter (ng/l)
       pg_l1:
-        description: Picograms per liter (pg l⁻¹)
+        description: Picograms per liter (pg/l)
       ng_m2_d1:
-        description: Nanograms per square meter per day (ng m⁻² d⁻¹)
+        description: Nanograms per square meter per day (ng/m2/d)
       pg_m2_d1:
-        description: Picograms per square meter per day (pg m⁻² d⁻¹)
+        description: Picograms per square meter per day (pg/m2/d)
       g_cm3:
-        description: Grams per cubic centimeter (g cm⁻³)
+        description: Grams per cubic centimeter (g/cm3)
       mg_dl:
         description: Milligrams per deciliter (mg/dl)
       ppb:
@@ -208,38 +2084,42 @@ enums:
       psu:
         description: Practical Salinity Units
       m3:
-        description: Cubic meter
+        description: Cubic meter (m3)
       m:
-        description: Meter
+        description: Meter (m)
       cm:
-        description: Centimeter
+        description: Centimeter (cm)
       g:
-        description: Gram
+        description: Gram (g)
       celsius:
-        description: Degrees Celsius (°C)
+        description: Degrees Celsius (deg C)
       m_s1:
         description: Meters per second (m/s)
       degrees:
         description: Degrees (wind direction)
       kPa:
-        description: Kilopascal
+        description: Kilopascal (kPa)
       Qv_kg_kg:
         description: Water vapor mixing ratio (Qv, kg/kg)
       percent:
         description: Percentage (%)
       unitless:
-        description: Dimensionless / unitless
+        description: Dimensionless or unitless
       meq_kg1:
-        description: Milliequivalents per kilogram (meq kg⁻¹)
+        description: Milliequivalents per kilogram (meq/kg)
       minus:
         description: Dimensionless ratio (-)
+      kg_kg:
+        description: Kilograms per kilogram — water vapor mixing ratio (kg/kg)
+      um:
+        description: Micrometer (um) — used for particle size granularity
 
   CompoundGroup:
     description: >-
       Chemical group classification as used in the PARC WP9 compound list.
       Groups are based on chemical structure and/or regulatory relevance.
       # TODO: Future alignment planned with ChemFOnt functional ontology
-      # (https://www.chemfont.ca/) and NORMAN SusDat groupings.
+      # (https://www.chemfont.ca/). Also check with OECD recommendation for grouping of chemicals.
     permissible_values:
       PFAS:
         description: Per- and polyfluoroalkyl substances
@@ -278,389 +2158,270 @@ enums:
       other:
         description: Other compounds not classified above
 
-  CoordinateSystem:
-    description: Coordinate reference system used for geographic coordinates
-    permissible_values:
-      WGS84:
-        description: Global coordinate system widely used for GPS navigation. EPSG:4326.
-
-  WaterType:
-    description: Type of water body
-    permissible_values:
-      salt_marine:
-        description: Salt or marine water
-      transitional_brackish:
-        description: Transitional or brackish water
-      fresh_surface:
-        description: Fresh or surface water
-      ground:
-        description: Groundwater
-      sludge_waste:
-        description: Sludge or waste water
-
-  WaterGeographicalFeature:
-    description: Geographical water feature type
-    # TODO: river_stream_canal and lake_pond_pool_reservoir had the same
-    # ENVO ID in the original — verify the correct distinction here and
-    # decide whether a controlled vocabulary or free-text better serves this.
-    permissible_values:
-      not_relevant:
-      not_reported:
-      river_stream_canal:
-      lake_pond_pool_reservoir:
-      ocean_sea_territorial_waters:
-      coastal_fjord:
-      drainage_sewer_artificial:
-      swamp_wetland:
-      groundwater_aquifer:
-      other:
-
-  WaterTreatment:
-    description: Water treatment status
-    permissible_values:
-      pre_treatment:
-      post_treatment:
-
-  GeographicRegion:
+  Parameter:
     description: >-
-      UN M49 geographic region.
-      Source: https://unstats.un.org/unsd/methodology/m49/
+      Parameters measured alongside chemical concentrations in environmental
+      samples or at site. Covers air, water, sediment, soil and biota matrices.
+      The applicable environment is indicated in each parameter description.
     permissible_values:
-      Africa:
-      Americas:
-      Asia:
-      Europe:
-      Oceania:
+      # --- Air parameters ---
+      volume:
+        description: Volume of sample collected (air; m3)
+      height:
+        description: Height of measurement (air; m)
+      PM10:
+        description: Particulate Matter 10 (air; ug/m3)
+      PM10_2m:
+        description: Particulate Matter 10 at 2m height (air; ug/m3)
+      PM25:
+        description: Particulate Matter 2.5 (air; ug/m3)
+      NO2:
+        description: NO2 concentration — height not specified (air; ug/m3)
+      NO2_1_5m:
+        description: NO2 measured at 1.5m height (air; ug/m3)
+      wind_speed:
+        description: Wind speed (air; m/s)
+      wind_direction:
+        description: Wind direction (air; degrees)
+      sea_level_pressure:
+        description: Sea level pressure (air; kPa)
+      dew_point_temperature:
+        description: Dew point temperature (air; deg C)
+      water_vapor_mixing_ratio:
+        description: Water vapor mixing ratio (air; kg/kg)
+      # --- Water parameters ---
+      depth_from:
+        description: Depth from which the sample was collected (water; m)
+      depth_to:
+        description: Depth to which the sample was collected (water; m)
+      depth:
+        description: Depth of the sample (water; m)
+      salinity:
+        description: Salinity (water; PSU)
+      pH:
+        description: pH (water, soil, sediment; dimensionless)
+      dissolved_inorganic_carbon:
+        description: Dissolved inorganic carbon (water; ng/l)
+      dissolved_organic_carbon:
+        description: Dissolved organic carbon (water; ng/l)
+      total_inorganic_carbon:
+        description: Total inorganic carbon (water; ng/l)
+      total_dissolved_solids:
+        description: Total dissolved solids (water; mg/l)
+      ions_chlorides:
+        description: Chloride ions (water; mg/l)
+      ions_hydrogencarbonates:
+        description: Hydrogencarbonate ions (water; mg/l)
+      ions_sulphates:
+        description: Sulphate ions (water; mg/l)
+      ions_Al:
+        description: Aluminium cation (water; ug/l)
+      ions_Ba:
+        description: Barium cation (water; ug/l)
+      ions_Ca:
+        description: Calcium cation (water; mg/l)
+      ions_Fe:
+        description: Iron cation (water; ug/l)
+      ions_K:
+        description: Potassium cation (water; mg/l)
+      ions_Mg:
+        description: Magnesium cation (water; mg/l)
+      ions_Mn:
+        description: Manganese cation (water; ug/l)
+      ions_Na:
+        description: Sodium cation (water; mg/l)
+      # --- Sediment parameters ---
+      sample_depth_from:
+        description: Sample depth from (sediment, soil; cm)
+      sample_depth_to:
+        description: Sample depth to (sediment, soil; cm)
+      dry_mass:
+        description: Dry mass (sediment; %)
+      sil_Al2O3:
+        description: Silicate Al2O3 (sediment; %)
+      sil_CaO:
+        description: Silicate CaO (sediment; %)
+      sil_Co2:
+        description: Silicate CO2 (sediment; %)
+      sil_Fe2O3:
+        description: Silicate Fe2O3 (sediment; %)
+      sil_K2O:
+        description: Silicate K2O (sediment; %)
+      sil_Li2O:
+        description: Silicate Li2O (sediment; %)
+      sil_MgO:
+        description: Silicate MgO (sediment; %)
+      sil_MnO:
+        description: Silicate MnO (sediment; %)
+      sil_Na2O:
+        description: Silicate Na2O (sediment; %)
+      sil_P2O5:
+        description: Silicate P2O5 (sediment; %)
+      sil_SiO2:
+        description: Silicate SiO2 (sediment; %)
+      sil_SO3:
+        description: Silicate SO3 (sediment; %)
+      sil_TiO2:
+        description: Silicate TiO2 (sediment; %)
+      sil_combined_water:
+        description: Silicate combined water (sediment; %)
+      sil_ignition_loss:
+        description: Silicate ignition loss (sediment; %)
+      # --- Soil parameters ---
+      absorbency:
+        description: Absorbency (soil; %)
+      airiness:
+        description: Airiness (soil; %)
+      capillar_capacity:
+        description: Capillar capacity (soil; %)
+      humidity:
+        description: Humidity (soil; %)
+      minimum_air_capacity:
+        description: Minimum air capacity (soil; %)
+      porosity:
+        description: Porosity (soil; %)
+      volume_mass:
+        description: Volume mass (soil; g/cm3)
+      volume_mass_reduced:
+        description: Volume mass reduced (soil; g/cm3)
+      dissolved_organic_compounds:
+        description: Dissolved organic compounds (soil; %)
+      fulvic_acids:
+        description: Fulvic acids (soil; %)
+      humic_acids:
+        description: Humic acids (soil; %)
+      HA_FA:
+        description: HA/FA ratio (soil; dimensionless)
+      Q4_6:
+        description: Q4/6 ratio (soil; dimensionless)
+      saturation:
+        description: Saturation (soil; %)
+      total_carbonates:
+        description: Total carbonates (soil; %)
+      total_nitrogen:
+        description: Total nitrogen (soil; %)
+      granularity_clay_1_10um:
+        description: Granularity clay 1-10 um (soil; %)
+      granularity_clay_lt1um:
+        description: Granularity clay < 1 um (soil; %)
+      granularity_clay_lt2um:
+        description: Granularity clay < 2 um (soil; %)
+      granularity_clay_lt6um:
+        description: Granularity clay < 6 um (soil; %)
+      granularity_clay_lt10um:
+        description: Granularity clay < 10 um (soil; %)
+      granularity_silt_10_50um:
+        description: Granularity silt 10-50 um (soil; %)
+      granularity_sand_50_100um:
+        description: Granularity sand 50-100 um (soil; %)
+      granularity_sand_100_2000um:
+        description: Granularity sand 100-2000 um (soil; %)
+      granularity_sand_50_250um:
+        description: Granularity sand 50-250 um (soil; %)
+      granularity_sand_250_2000um:
+        description: Granularity sand 250-2000 um (soil; %)
+      pH_CaCl2:
+        description: pH in CaCl2 solution (soil; dimensionless)
+      pH_H2O:
+        description: pH in water (soil; dimensionless)
+      pH_KCl:
+        description: pH in KCl solution (soil; dimensionless)
+      # --- Shared sediment and soil parameters ---
+      total_organic_carbon:
+        description: Total organic carbon (sediment, soil; %)
+      cec:
+        description: Cation exchange capacity (CEC) (sediment, soil; meq/kg)
+      cec_t:
+        description: Total (Effective) Cation Exchange Capacity (CEC) (soil; meq/kg)
+      cec_Meh_Ca:
+        description: Exchangeable calcium extracted by Mehlich method (sediment, soil; meq/kg)
+      cec_Meh_H:
+        description: Exchangeable hydrogen extracted by Mehlich method (sediment, soil; meq/kg)
+      cec_Meh_K:
+        description: Exchangeable potassium extracted by Mehlich method (sediment, soil; meq/kg)
+      cec_Meh_Mg:
+        description: Exchangeable magnesium extracted by Mehlich method (sediment, soil; meq/kg)
+      cec_Meh_P:
+        description: Extractable phosphorus extracted by Mehlich method (soil; meq/kg)
+      cec_exchange_Al:
+        description: Exchangeable aluminium fraction of cation exchange capacity (soil; meq/kg)
+      cec_exchange_Ca:
+        description: Exchangeable calcium fraction of cation exchange capacity (soil; meq/kg)
+      cec_exchange_Fe:
+        description: Exchangeable iron fraction of cation exchange capacity (soil; meq/kg)
+      cec_exchange_K:
+        description: Exchangeable potassium fraction of cation exchange capacity (soil; meq/kg)
+      cec_exchange_Mg:
+        description: Exchangeable magnesium fraction of cation exchange capacity (soil; meq/kg)
+      cec_exchange_Mn:
+        description: Exchangeable manganese fraction of cation exchange capacity (soil; meq/kg)
+      cec_exchange_Na:
+        description: Exchangeable sodium fraction of cation exchange capacity (soil; meq/kg)
+      # --- Shared air and water parameters ---
+      temperature:
+        description: Temperature (air, water; deg C)
+      sample_weight:
+        description: Weight of sample (air ug/m3; water g/l)
+      # --- Biota parameters ---
+      creatinine:
+        description: Creatinine (biota; mg/dl)
+      specific_gravity:
+        description: Specific gravity (biota; dimensionless)
+      dry_weight:
+        description: Dry weight (biota; g)
+      wet_weight:
+        description: Wet weight (biota; g)
+      lipid_weight:
+        description: Lipid weight — tissue lipid content (biota; g)
+      # --- Density ---
+      density:
+        description: Density (soil; g/cm3)
 
-  UNRegionalGroup:
-    description: Regional groups of United Nations member states
-    permissible_values:
-      African:
-      Asia_Pacific:
-      Eastern_European:
-      GRULAC:
-      WEOG:
-
-  # --- Environmental and biota matrix enums ---
-  # NOTE: These enums are placeholders aligned with the PARC community
-  # matrix vocabulary (currently in development). Only environmental matrices
-  # (atmospheric, aquatic, terrestrial) and biota matrices (plant, animal)
-  # are included. Human biomonitoring matrices are excluded from scope.
-
-  AtmosphericMatrix:
-    description: >-
-      Matrix type for atmospheric samples.
-      Restricted to environmental outdoor matrices only.
-    permissible_values:
-      ambient_air:
-        description: Ambient outdoor air
-      precipitation:
-        description: Precipitation (rain, snow, etc.)
-
-  AtmosphericSubMatrix:
-    description: >-
-      Sub-matrix for atmospheric samples.
-      # TODO: Final vocabulary pending PARC community agreement.
-    permissible_values:
-      Precipitation_Total:
-      Precipitation_Wet:
-      Air_Gas_phase:
-      Air_TSP:
-        description: Total Suspended Particles
-      Air_PM10:
-        description: Particulate Matter ≤10 µm
-      Air_PM25:
-        description: Particulate Matter ≤2.5 µm
-      Air_Passive:
-      Air_Total:
-
-  AtmosphericSamplingMethod:
-    description: >-
-      Sampling method for atmospheric samples.
-      # TODO: Final vocabulary pending PARC community agreement.
-    permissible_values:
-      Active_HiVol:
-        description: Active high-volume sampler
-      Active_LowVol:
-        description: Active low-volume sampler
-      Passive_PUF:
-        description: Passive polyurethane foam sampler
-      Passive_XAD:
-        description: Passive XAD resin sampler
-      Passive_SIP:
-        description: Passive SIP sampler
-      Wet_only_collector:
-        description: Wet-only precipitation collector
-      Bulk_collector:
-        description: Bulk (wet+dry) precipitation collector
-
-  AquaticMatrix:
-    description: >-
-      Matrix type for aquatic samples.
-      Restricted to environmental outdoor matrices only.
-    permissible_values:
-      water:
-        description: Water (surface, ground, marine)
-      sediment:
-        description: Aquatic sediment
-
-  AquaticSubMatrix:
-    description: >-
-      Sub-matrix for aquatic samples.
-      # TODO: Final vocabulary pending PARC community agreement.
-    permissible_values:
-      Water_Total:
-      Water_Passive:
-      Sediment_Total:
-
-  AquaticSamplingMethod:
-    description: >-
-      Sampling method for aquatic samples.
-      # TODO: Final vocabulary pending PARC community agreement.
-    permissible_values:
-      Bulk_Grab:
-      Passive_SPMD:
-        description: Semipermeable membrane device
-      Passive_POCIS:
-        description: Polar organic chemical integrative sampler
-      Passive_EMPORE:
-        description: Empore disk passive sampler
-      Passive_SILICONE:
-        description: Silicone passive sampler
-
-  AquaticFraction:
-    description: Sample fraction for aquatic samples
-    permissible_values:
-      Water_SPM:
-        description: Suspended particulate matter
-      Water_DOM:
-        description: Dissolved organic matter
-      Water_C_free:
-        description: Colloid-free fraction
-      Water_DOM_C_free:
-        description: DOM + colloid-free fraction
-      Water_Colloidal_fraction:
-      Sediment_Solid_phase:
-      Sediment_Pore_water:
-      Sediment_Colloidal_fraction:
-
-  TerrestrialMatrix:
-    description: >-
-      Matrix type for terrestrial samples.
-      Restricted to environmental outdoor matrices only.
-    permissible_values:
-      soil:
-        description: Soil
-
-  TerrestrialSubMatrix:
-    description: >-
-      Sub-matrix for terrestrial (soil) samples.
-      # TODO: Final vocabulary pending PARC community agreement.
-    permissible_values:
-      Soil_O_Horizon_Organic:
-        description: Soil O Horizon (Organic)
-      Soil_A_Horizon_Topsoil:
-        description: Soil A Horizon (Topsoil)
-      Soil_E_Horizon_Eluviation:
-        description: Soil E Horizon (Eluviation)
-      Soil_B_Horizon_Subsoil:
-        description: Soil B Horizon (Subsoil)
-      Soil_C_Horizon_Parent_Material:
-        description: Soil C Horizon (Parent Material)
-      Soil_R_Horizon_Bedrock:
-        description: Soil R Horizon (Bedrock)
-      Soil_S_Horizon_Mineral:
-        description: Soil S Horizon (Mineral)
-      Soil_H_Horizon_Peat:
-        description: Soil H Horizon (Peat)
-      Soil_Horizon_other:
-      Soil_Horizon_not_specified:
-
-  BiotaMatrix:
-    description: >-
-      Matrix type for biota samples.
-      Restricted to plant and animal matrices only (environmental monitoring scope).
-      Human biomonitoring matrices are excluded.
-    permissible_values:
-      plant:
-        description: Plant tissue
-      animal:
-        description: Animal tissue
-
-  BiotaSubMatrix:
-    description: >-
-      Sub-matrix for biota samples (plant and animal tissues).
-      # TODO: Final vocabulary pending PARC community agreement.
-    permissible_values:
-      Plant_Seed:
-      Plant_Whole_Plant:
-      Plant_Leaves_Needles:
-      Plant_Roots:
-      Plant_Fruits:
-      Plant_Bark:
-      Plant_Wood:
-      Animal_Blood:
-      Animal_Liver_Tissue:
-      Animal_Kidney_Tissue:
-      Animal_Muscle_Tissue:
-      Animal_Fat_Tissue:
-      Animal_Hair_and_Fur:
-      Animal_Eggs:
-      Animal_Bone:
-
-  AirParameter:
-    description: Additional parameters measured in atmospheric samples
-    permissible_values:
-      volume: {description: "Volume of sample collected (m³)"}
-      weight: {description: "Weight of sample collected (µg m⁻³)"}
-      height: {description: "Height of measurement (m)"}
-      PM10: {description: "Particulate Matter 10 (µg m⁻³)"}
-      PM10_2m: {description: "Particulate Matter 10 at 2m height (µg m⁻³)"}
-      PM25: {description: "Particulate Matter 2.5 (µg m⁻³)"}
-      temperature: {description: "Air temperature (°C)"}
-      wind_speed: {description: "Wind speed (m/s)"}
-      wind_direction: {description: "Wind direction (degrees)"}
-      sea_level_pressure: {description: "Sea level pressure (kPa)"}
-      dew_point_temperature: {description: "Dew point temperature (°C)"}
-      water_vapor_mixing_ratio: {description: "Water vapor mixing ratio (Qv, kg/kg)"}
-      meteorological_information_source: {description: "Source of meteorological information"}
-      NO2: {description: "NO₂ concentration — height not specified"}
-      NO2_1_5m: {description: "NO₂ measured at 1.5m height"}
-
-  WaterParameter:
-    description: Additional parameters measured in aquatic samples
-    permissible_values:
-      depth_from: {description: "Depth from (m)"}
-      depth_to: {description: "Depth to (m)"}
-      depth: {description: "Depth (m)"}
-      salinity: {description: "Salinity (PSU)"}
-      temperature: {description: "Water temperature (°C)"}
-      pH: {description: "pH (dimensionless)"}
-      weight: {description: "Weight (g l⁻¹)"}
-      dissolved_inorganic_carbon: {description: "Dissolved inorganic carbon (ng l⁻¹)"}
-      dissolved_organic_carbon: {description: "Dissolved organic carbon (ng l⁻¹)"}
-      total_inorganic_carbon: {description: "Total inorganic carbon (ng l⁻¹)"}
-      total_organic_carbon: {description: "Total organic carbon (ng l⁻¹)"}
-      total_dissolved_solids: {description: "Total dissolved solids (mg l⁻¹)"}
-      ions_chlorides: {description: "Chloride ions (mg l⁻¹)"}
-      ions_hydrogencarbonates: {description: "Hydrogencarbonate ions (mg l⁻¹)"}
-      ions_sulphates: {description: "Sulphate ions (mg l⁻¹)"}
-      ions_Al: {description: "Aluminium cation (µg l⁻¹)"}
-      ions_Ba: {description: "Barium cation (µg l⁻¹)"}
-      ions_Ca: {description: "Calcium cation (mg l⁻¹)"}
-      ions_Fe: {description: "Iron cation (µg l⁻¹)"}
-      ions_K: {description: "Potassium cation (mg l⁻¹)"}
-      ions_Mg: {description: "Magnesium cation (mg l⁻¹)"}
-      ions_Mn: {description: "Manganese cation (µg l⁻¹)"}
-      ions_Na: {description: "Sodium cation (mg l⁻¹)"}
-
-  SedimentParameter:
-    description: Additional parameters measured in sediment samples
-    permissible_values:
-      sample_depth_from: {description: "Sample depth from (cm)"}
-      sample_depth_to: {description: "Sample depth to (cm)"}
-      dry_mass: {description: "Dry mass (%)"}
-      total_organic_carbon: {description: "Total organic carbon (%)"}
-      cec_Meh_Ca: {description: "CEC Mehlich Ca (meq kg⁻¹)"}
-      cec_Meh_H: {description: "CEC Mehlich H (meq kg⁻¹)"}
-      cec_Meh_K: {description: "CEC Mehlich K (meq kg⁻¹)"}
-      cec_Meh_Mg: {description: "CEC Mehlich Mg (meq kg⁻¹)"}
-      sil_Al2O3: {description: "Silicate Al₂O₃ (%)"}
-      sil_CaO: {description: "Silicate CaO (%)"}
-      sil_Co2: {description: "Silicate CO₂ (%)"}
-      sil_Fe2O3: {description: "Silicate Fe₂O₃ (%)"}
-      sil_K2O: {description: "Silicate K₂O (%)"}
-      sil_Li2O: {description: "Silicate Li₂O (%)"}
-      sil_MgO: {description: "Silicate MgO (%)"}
-      sil_MnO: {description: "Silicate MnO (%)"}
-      sil_Na2O: {description: "Silicate Na₂O (%)"}
-      sil_P2O5: {description: "Silicate P₂O₅ (%)"}
-      sil_SiO2: {description: "Silicate SiO₂ (%)"}
-      sil_SO3: {description: "Silicate SO₃ (%)"}
-      sil_TiO2: {description: "Silicate TiO₂ (%)"}
-      sil_combined_water: {description: "Silicate combined water (%)"}
-      sil_ignition_loss: {description: "Silicate ignition loss (%)"}
-
-  SoilParameter:
-    description: Additional parameters measured in soil samples
-    permissible_values:
-      sample_depth_from: {description: "Sample depth from (cm)"}
-      sample_depth_to: {description: "Sample depth to (cm)"}
-      absorbency: {description: "Absorbency (%)"}
-      airiness: {description: "Airiness (%)"}
-      capillar_capacity: {description: "Capillar capacity (%)"}
-      density: {description: "Density (g cm⁻³)"}
-      humidity: {description: "Humidity (%)"}
-      minimum_air_capacity: {description: "Minimum air capacity (%)"}
-      porosity: {description: "Porosity (%)"}
-      volume_mass: {description: "Volume mass (g cm⁻³)"}
-      volume_mass_reduced: {description: "Volume mass reduced (g cm⁻³)"}
-      dissolved_organic_compounds: {description: "Dissolved organic compounds (%)"}
-      fulvic_acids: {description: "Fulvic acids (%)"}
-      humic_acids: {description: "Humic acids (%)"}
-      HA_FA: {description: "HA/FA ratio (%)"}
-      Q4_6: {description: "Q4/6 ratio (%)"}
-      saturation: {description: "Saturation (%)"}
-      total_organic_carbon: {description: "Total organic carbon (%)"}
-      total_carbonates: {description: "Total carbonates (%)"}
-      total_nitrogen: {description: "Total nitrogen (%)"}
-      granularity_clay_1_10um: {description: "Granularity clay 1–10 µm (%)"}
-      granularity_clay_lt1um: {description: "Granularity clay < 1 µm (%)"}
-      granularity_clay_lt2um: {description: "Granularity clay < 2 µm (%)"}
-      granularity_clay_lt6um: {description: "Granularity clay < 6 µm (%)"}
-      granularity_clay_lt10um: {description: "Granularity clay < 10 µm (%)"}
-      granularity_silt_10_50um: {description: "Granularity silt 10–50 µm (%)"}
-      granularity_sand_50_100um: {description: "Granularity sand 50–100 µm (%)"}
-      granularity_sand_100_2000um: {description: "Granularity sand 100–2000 µm (%)"}
-      granularity_sand_50_250um: {description: "Granularity sand 50–250 µm (%)"}
-      granularity_sand_250_2000um: {description: "Granularity sand 250–2000 µm (%)"}
-      cec_exchange_Al: {description: "CEC exchange Al (meq kg⁻¹)"}
-      cec_exchange_Ca: {description: "CEC exchange Ca (meq kg⁻¹)"}
-      cec_exchange_Fe: {description: "CEC exchange Fe (meq kg⁻¹)"}
-      cec_exchange_K: {description: "CEC exchange K (meq kg⁻¹)"}
-      cec: {description: "CEC (meq kg⁻¹)"}
-      cec_t: {description: "CEC t (meq kg⁻¹)"}
-      cec_Meh_Ca: {description: "CEC Mehlich Ca (meq kg⁻¹)"}
-      cec_Meh_H: {description: "CEC Mehlich H (meq kg⁻¹)"}
-      cec_Meh_K: {description: "CEC Mehlich K (meq kg⁻¹)"}
-      cec_Meh_Mg: {description: "CEC Mehlich Mg (meq kg⁻¹)"}
-      cec_Meh_P: {description: "CEC Mehlich P (meq kg⁻¹)"}
-      cec_exchange_Mg: {description: "CEC exchange Mg (meq kg⁻¹)"}
-      cec_exchange_Mn: {description: "CEC exchange Mn (meq kg⁻¹)"}
-      cec_exchange_Na: {description: "CEC exchange Na (meq kg⁻¹)"}
-      pH_CaCl2: {description: "pH in CaCl₂ solution (-)"}
-      pH_H2O: {description: "pH in water (-)"}
-      pH_KCl: {description: "pH in KCl solution (-)"}
-
-  BiotaParameter:
-    description: Additional parameters measured in biota samples
-    permissible_values:
-      creatinine: {description: "Creatinine (mg/dl)"}
-      specific_gravity: {description: "Specific Gravity (dimensionless)"}
-      dry_weight: {description: "Dry Weight (g)"}
-      wet_weight: {description: "Wet Weight (g)"}
-      lipid_weight: {description: "Lipid Weight — tissue lipid content (g)"}
-
-  BiotaCompartment:
-    description: Environmental compartment where a biota organism was sampled
-    permissible_values:
-      aquatic:
-      atmospheric:
-      terrestrial:
-
-  Gender:
-    description: Biological sex of a sampled organism
-    permissible_values:
-      male:
-      female:
-      hermaphrodite:
-      not_specified:
-      not_relevant:
+  # ChemicalCompound: Placeholder. The list of 1500 compounds will be held separately and 
+  # this schema will point to it.
+  ChemicalCompound:
+      description:
+      permissible_values:
+        PLACEHOLDER:
 
 # ---------------------------------------------------------------------------
 # SLOTS (shared)
 # ---------------------------------------------------------------------------
+
 slots:
+
+  taxon_name:
+    range: string
+    description: >-
+      Scientific name of the taxon (genus, species or higher rank)
+      as accepted in the GBIF Backbone Taxonomy.
+    see_also:
+      - https://www.gbif.org/species/search
+
+  taxon_id:
+    range: integer
+    description: >-
+      GBIF species key (integer). Resolves to
+      https://www.gbif.org/species/{taxon_id}
+    see_also:
+      - https://www.gbif.org/species/search
+
+  taxon_rank:
+    range: TaxonRankEnum
+    description: Taxonomic rank of the identified taxon.
+    see_also:
+      - https://www.gbif.org/developer/species#rank
+  nuts3:
+    range: string
+    pattern: "^[A-Z]{2}[A-Z0-9]{3,4}$"
+    description: >-
+      NUTS3 region code according to the Eurostat NUTS classification 
+      (Nomenclature of Territorial Units for Statistics), level 3.
+      Example: CZ080 (Moravskoslezský kraj), DE300 (Berlin).
+    see_also:
+      - http://data.europa.eu/nuts/
+    in_subset:
+      - optional
 
   acronym:
     description: Short name or acronym of the project/monitoring programme
@@ -770,7 +2531,7 @@ slots:
 
   uncertainty:
     description: Measurement uncertainty
-    range: float
+    range: double
     required: false
 
   water_type:
@@ -796,6 +2557,39 @@ classes:
   # ---------------------------------------------------------------------------
   # CHEMICAL COMPOUND (codelist entity)
   # ---------------------------------------------------------------------------
+  
+  classes:
+  ParameterMeasurement:
+    description: >-
+      A single parameter measurement associated with a sample.
+    attributes:
+      parameter:
+        range: AirParameter   # or whichever enum
+        required: true
+      value:
+        range: double
+        required: true
+      unit:
+        range: UnitEnum
+        required: true
+      meteorological_information_source:
+        range: string
+        required: false
+        description: >-
+          Source of meteorological information 
+          (e.g. nearest weather station, model name, dataset reference).
+    rules:
+      - preconditions:
+          slot_conditions:
+            parameter:
+              equals_string: meteorological_information_source
+        postconditions:
+          slot_conditions:
+            meteorological_information_source:
+              required: true
+  
+  
+  
   ChemicalCompound:
     description: >-
       A chemical compound monitored in environmental samples.
@@ -987,6 +2781,21 @@ classes:
         description: End date of the project/monitoring programme.
         range: date
         required: false
+
+        classes:
+
+  Campaign:
+    rules:
+      - preconditions:
+          slot_conditions:
+            campaign_id:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            campaign_name:
+              required: true
+            start_date:
+              required: true
 
       # --- Institution (primary) ---
       institution_name:
@@ -1352,7 +3161,7 @@ classes:
         description: >-
           Altitude in meters above sea level (MSL). Use positive values
           for above and negative for below sea level.
-        range: float
+        range: double
         required: false
 
       land_use:
@@ -1631,17 +3440,17 @@ classes:
         description: >-
           Measured concentration value. At least one of concentration,
           LOQ, or LOD must be provided.
-        range: float
+        range: double
         required: false
 
       loq:
         description: Limit of quantification
-        range: float
+        range: double
         required: false
 
       lod:
         description: Limit of detection
-        range: float
+        range: double
         required: false
 
     rules:
@@ -1684,7 +3493,7 @@ classes:
 
       value:
         description: Measured value of the parameter
-        range: float
+        range: double
         required: true
         in_subset:
           - mandatory

@@ -1,0 +1,21 @@
+TO DO
+- Change type URI to IRI
+- LinkML (and XSD) cannot enforce significant figures natively. There is no built-in constraint for this. It is possibleto document in the description, e.g. "Report to a maximum of 4 significant figures (e.g. 0.04216)". Significant figures are a reporting convention, not really a data type constraint.
+- to decide whether we only want European countries, languages or global. So far, only European have been included.
+- AnalysisMethod to AnalyticalMethod
+- Commit - subsets, types, enums defined
+- Handling not_relevant and not_reported values in the schema?
+- consider if including NUTS3 as enum, since it is a large list. For now, it has been included as slot. 
+But this solution does not enable full validation.
+-  AquaticMatrixFraction -  To consider whether this needs to be included as separate enum, or included 
+  in the matrix enum.
+- Taxons are as slots now - include as enum? Which level?
+- NUTS3 are as slots now - include as enum?
+- Make the measurement class with attributes including compound name and compound id (Inchi?) 
+and make the schema point to the externally held list of (1500) chemicals 
+- chemical grouping - to be discussed
+- other placeholders - solve
+- fix the encoding issue to be able to use eg. greek mi, superscripts, etc.
+- parameter - rule on which parameter to which site type/ matri type?
+- Vocabularies developed separately in PARC - add/reference 
+- 
