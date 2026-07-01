@@ -9,9 +9,52 @@ description: >-
   concentration and other parameters, and the associated codelists. Atmospheric, terrestrial, and aquatic environments, 
   as well as in biota, are covered.
 version: "1.1.0"
-license: https://creativecommons.org/licenses/by/4.0/ # TBC
-see_also: 
+license: https://creativecommons.org/licenses/by/4.0/ 
+
+created_by: http://orcid.org/0000-0003-0222-801x # Katarina Rihackova
+created_on: "2026-07-15"  # To be updated
+last_updated_on: "2025-06-30" # To be updated
+modified_by: http://orcid.org/0000-0003-0222-801x # Katarina Rihackova
+contributors:
+  # TBC -> see readme.
+  # Placeholder:
+  comments:
+  - >-
+    CRediT contributor roles (https://credit.niso.org/contributor-roles/):
+    Conceptualization: [Name] (https://orcid.org/XXXX-XXXX-XXXX-XXXX);
+    Data curation: [Name] (https://orcid.org/XXXX-XXXX-XXXX-XXXX);
+    Methodology: [Name], [Name] (https://orcid.org/XXXX-XXXX-XXXX-XXXX);
+    Software: [Name] (https://orcid.org/XXXX-XXXX-XXXX-XXXX);
+    Validation: [Name] (https://orcid.org/XXXX-XXXX-XXXX-XXXX);
+    Writing - original draft: [Name] (https://orcid.org/XXXX-XXXX-XXXX-XXXX)
+
+annotations:
+  credit_ontology:
+    tag: credit_ontology
+    value: "https://credit.niso.org/contributor-roles/"
+  contributor_conceptualization:
+    tag: contributor_conceptualization
+    value: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  contributor_data_curation:
+    tag: contributor_data_curation
+    value: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  contributor_methodology:
+    tag: contributor_methodology
+    value: "https://orcid.org/XXXX-XXXX-XXXX-XXXX https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  contributor_software:
+    tag: contributor_software
+    value: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  contributor_validation:
+    tag: contributor_validation
+    value: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  contributor_writing_original_draft:
+    tag: contributor_writing_original_draft
+    value: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  
+
+see_also:
   - https://doi.org/10.5281/zenodo.17175075 # yaml list syntax
+  - https://www.parc-project.eu
 
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -661,744 +704,760 @@ enums:
         description: Zulu
         meaning: http://id.loc.gov/vocabulary/iso639-1/zu
   
+  # Country: Map to: https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/country
+  # UN Stats does not publish countries vocabulary as linked data.
+  # The UN Statistics Division publishes M49 only as a webpage, CSV/Excel downloads, and PDF
+  # not as an RDF/SKOS vocabulary with persistent URIs. This is explicitly noted in the 
+  # OMG LCC specification: the ISO and UN codes have not been published by those organizations as RDF vocabularies to date.
+  # But there's a gap-filler: The Object Management Group (OMG) Languages, Countries and Codes (LCC)
+  #  standard was specifically designed to fill this gap. It publishes both ISO 3166 and UN M49 as proper OWL ontologies with persistent URIs.
   Country:
     description: >-
       Country codes according to ISO 3166-1 alpha-2 (two-letter uppercase codes).
+      URIs from OMG Languages, Countries and Codes (LCC) ontology, which provides
+      the authoritative linked data representation of ISO 3166-1 since neither
+      ISO nor UN Statistics Division publish official RDF vocabularies.
     see_also:
       - https://www.iso.org/iso-3166-country-codes.html
+      - https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/
+      - https://unstats.un.org/unsd/methodology/m49/
     permissible_values:
       AF:
         description: Afghanistan
-        meaning: http://id.loc.gov/vocabulary/countries/af
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AF
       AX:
         description: Aland Islands
-        meaning: http://id.loc.gov/vocabulary/countries/fi
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AX
       AL:
         description: Albania
-        meaning: http://id.loc.gov/vocabulary/countries/al
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AL
       DZ:
         description: Algeria
-        meaning: http://id.loc.gov/vocabulary/countries/ae
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DZ
       AS:
         description: American Samoa
-        meaning: http://id.loc.gov/vocabulary/countries/as
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AS
       AD:
         description: Andorra
-        meaning: http://id.loc.gov/vocabulary/countries/an
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AD
       AO:
         description: Angola
-        meaning: http://id.loc.gov/vocabulary/countries/ao
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AO
       AI:
         description: Anguilla
-        meaning: http://id.loc.gov/vocabulary/countries/am
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AI
       AQ:
         description: Antarctica
-        meaning: http://id.loc.gov/vocabulary/countries/ay
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AQ
       AG:
         description: Antigua and Barbuda
-        meaning: http://id.loc.gov/vocabulary/countries/aq
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AG
       AR:
         description: Argentina
-        meaning: http://id.loc.gov/vocabulary/countries/ag
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AR
       AM:
         description: Armenia
-        meaning: http://id.loc.gov/vocabulary/countries/ai
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AM
       AW:
         description: Aruba
-        meaning: http://id.loc.gov/vocabulary/countries/aw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AW
       AU:
         description: Australia
-        meaning: http://id.loc.gov/vocabulary/countries/at
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AU
       AT:
         description: Austria
-        meaning: http://id.loc.gov/vocabulary/countries/au
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AT
       AZ:
         description: Azerbaijan
-        meaning: http://id.loc.gov/vocabulary/countries/aj
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AZ
       BS:
         description: Bahamas
-        meaning: http://id.loc.gov/vocabulary/countries/bf
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BS
       BH:
         description: Bahrain
-        meaning: http://id.loc.gov/vocabulary/countries/ba
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BH
       BD:
         description: Bangladesh
-        meaning: http://id.loc.gov/vocabulary/countries/bg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BD
       BB:
         description: Barbados
-        meaning: http://id.loc.gov/vocabulary/countries/bb
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BB
       BY:
         description: Belarus
-        meaning: http://id.loc.gov/vocabulary/countries/bw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BY
       BE:
         description: Belgium
-        meaning: http://id.loc.gov/vocabulary/countries/be
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BE
       BZ:
         description: Belize
-        meaning: http://id.loc.gov/vocabulary/countries/bh
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BZ
       BJ:
         description: Benin
-        meaning: http://id.loc.gov/vocabulary/countries/dm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BJ
       BM:
         description: Bermuda
-        meaning: http://id.loc.gov/vocabulary/countries/bm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BM
       BT:
         description: Bhutan
-        meaning: http://id.loc.gov/vocabulary/countries/bt
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BT
       BO:
         description: Bolivia
-        meaning: http://id.loc.gov/vocabulary/countries/bo
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BO
       BA:
         description: Bosnia and Herzegovina
-        meaning: http://id.loc.gov/vocabulary/countries/bn
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BA
       BW:
         description: Botswana
-        meaning: http://id.loc.gov/vocabulary/countries/bs
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BW
       BV:
         description: Bouvet Island
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BV
       BR:
         description: Brazil
-        meaning: http://id.loc.gov/vocabulary/countries/bl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BR
       IO:
         description: British Indian Ocean Territory
-        meaning: http://id.loc.gov/vocabulary/countries/bi
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IO
       BN:
         description: Brunei Darussalam
-        meaning: http://id.loc.gov/vocabulary/countries/bx
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BN
       BG:
         description: Bulgaria
-        meaning: http://id.loc.gov/vocabulary/countries/bu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BG
       BF:
         description: Burkina Faso
-        meaning: http://id.loc.gov/vocabulary/countries/uv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BF
       BI:
         description: Burundi
-        meaning: http://id.loc.gov/vocabulary/countries/bd
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BI
       KH:
         description: Cambodia
-        meaning: http://id.loc.gov/vocabulary/countries/cb
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KH
       CM:
         description: Cameroon
-        meaning: http://id.loc.gov/vocabulary/countries/cm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CM
       CA:
         description: Canada
-        meaning: http://id.loc.gov/vocabulary/countries/xxc
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CA
       CV:
         description: Cape Verde
-        meaning: http://id.loc.gov/vocabulary/countries/cv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CV
       KY:
         description: Cayman Islands
-        meaning: http://id.loc.gov/vocabulary/countries/cj
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KY
       CF:
         description: Central African Republic
-        meaning: http://id.loc.gov/vocabulary/countries/cx
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CF
       TD:
         description: Chad
-        meaning: http://id.loc.gov/vocabulary/countries/cd
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TD
       CL:
         description: Chile
-        meaning: http://id.loc.gov/vocabulary/countries/cl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CL
       CN:
         description: China
-        meaning: http://id.loc.gov/vocabulary/countries/cc
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CN
       CX:
         description: Christmas Island
-        meaning: http://id.loc.gov/vocabulary/countries/xa
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CX
       CC:
         description: Cocos (Keeling) Islands
-        meaning: http://id.loc.gov/vocabulary/countries/xb
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CC
       CO:
         description: Colombia
-        meaning: http://id.loc.gov/vocabulary/countries/ck
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CO
       KM:
         description: Comoros
-        meaning: http://id.loc.gov/vocabulary/countries/cq
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KM
       CG:
         description: Congo
-        meaning: http://id.loc.gov/vocabulary/countries/cf
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CG
       CD:
         description: Congo, The Democratic Republic Of The
-        meaning: http://id.loc.gov/vocabulary/countries/cg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CD
       CK:
         description: Cook Islands
-        meaning: http://id.loc.gov/vocabulary/countries/cw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CK
       CR:
         description: Costa Rica
-        meaning: http://id.loc.gov/vocabulary/countries/cr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CR
       CI:
-        description: Côte d'Ivoire
-        meaning: http://id.loc.gov/vocabulary/countries/iv
+        description: Cote d'Ivoire
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CI
       HR:
         description: Croatia
-        meaning: http://id.loc.gov/vocabulary/countries/ci
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HR
       CU:
         description: Cuba
-        meaning: http://id.loc.gov/vocabulary/countries/cu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CU
       CY:
         description: Cyprus
-        meaning: http://id.loc.gov/vocabulary/countries/cy
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CY
       CZ:
         description: Czech Republic
-        meaning: http://id.loc.gov/vocabulary/countries/xr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CZ
       DK:
         description: Denmark
-        meaning: http://id.loc.gov/vocabulary/countries/dk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DK
       DJ:
         description: Djibouti
-        meaning: http://id.loc.gov/vocabulary/countries/ft
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DJ
       DM:
         description: Dominica
-        meaning: http://id.loc.gov/vocabulary/countries/dq
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DM
       DO:
         description: Dominican Republic
-        meaning: http://id.loc.gov/vocabulary/countries/dr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DO
       EC:
         description: Ecuador
-        meaning: http://id.loc.gov/vocabulary/countries/ec
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EC
       EG:
         description: Egypt
-        meaning: http://id.loc.gov/vocabulary/countries/ua
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EG
       SV:
         description: El Salvador
-        meaning: http://id.loc.gov/vocabulary/countries/es
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SV
       GQ:
         description: Equatorial Guinea
-        meaning: http://id.loc.gov/vocabulary/countries/eg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GQ
       ER:
         description: Eritrea
-        meaning: http://id.loc.gov/vocabulary/countries/ea
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ER
       EE:
         description: Estonia
-        meaning: http://id.loc.gov/vocabulary/countries/er
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EE
       ET:
         description: Ethiopia
-        meaning: http://id.loc.gov/vocabulary/countries/et
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ET
       FK:
         description: Falkland Islands (Malvinas)
-        meaning: http://id.loc.gov/vocabulary/countries/fk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FK
       FO:
         description: Faroe Islands
-        meaning: http://id.loc.gov/vocabulary/countries/fa
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FO
       FJ:
         description: Fiji
-        meaning: http://id.loc.gov/vocabulary/countries/fj
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FJ
       FI:
         description: Finland
-        meaning: http://id.loc.gov/vocabulary/countries/fi
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FI
       FR:
         description: France
-        meaning: http://id.loc.gov/vocabulary/countries/fr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FR
       GF:
         description: French Guiana
-        meaning: http://id.loc.gov/vocabulary/countries/fg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GF
       PF:
         description: French Polynesia
-        meaning: http://id.loc.gov/vocabulary/countries/fp
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PF
       TF:
         description: French Southern Territories
-        meaning: http://id.loc.gov/vocabulary/countries/fs
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TF
       GA:
         description: Gabon
-        meaning: http://id.loc.gov/vocabulary/countries/go
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GA
       GM:
         description: Gambia
-        meaning: http://id.loc.gov/vocabulary/countries/gm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GM
       GE:
         description: Georgia
-        meaning: http://id.loc.gov/vocabulary/countries/gs
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GE
       DE:
         description: Germany
-        meaning: http://id.loc.gov/vocabulary/countries/gw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DE
       GH:
         description: Ghana
-        meaning: http://id.loc.gov/vocabulary/countries/gh
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GH
       GI:
         description: Gibraltar
-        meaning: http://id.loc.gov/vocabulary/countries/gi
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GI
       GR:
         description: Greece
-        meaning: http://id.loc.gov/vocabulary/countries/gr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GR
       GL:
         description: Greenland
-        meaning: http://id.loc.gov/vocabulary/countries/gl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GL
       GD:
         description: Grenada
-        meaning: http://id.loc.gov/vocabulary/countries/gd
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GD
       GP:
         description: Guadeloupe
-        meaning: http://id.loc.gov/vocabulary/countries/gp
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GP
       GU:
         description: Guam
-        meaning: http://id.loc.gov/vocabulary/countries/gu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GU
       GT:
         description: Guatemala
-        meaning: http://id.loc.gov/vocabulary/countries/gt
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GT
       GG:
         description: Guernsey
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GG
       GN:
         description: Guinea
-        meaning: http://id.loc.gov/vocabulary/countries/gv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GN
       GW:
         description: Guinea-Bissau
-        meaning: http://id.loc.gov/vocabulary/countries/pg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GW
       GY:
         description: Guyana
-        meaning: http://id.loc.gov/vocabulary/countries/gy
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GY
       HT:
         description: Haiti
-        meaning: http://id.loc.gov/vocabulary/countries/ht
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HT
       HM:
         description: Heard Island and Mcdonald Islands
-        meaning: http://id.loc.gov/vocabulary/countries/hm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HM
       VA:
         description: Holy See (Vatican City State)
-        meaning: http://id.loc.gov/vocabulary/countries/vc
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VA
       HN:
         description: Honduras
-        meaning: http://id.loc.gov/vocabulary/countries/ho
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HN
       HK:
         description: Hong Kong
-        meaning: http://id.loc.gov/vocabulary/countries/hk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HK
       HU:
         description: Hungary
-        meaning: http://id.loc.gov/vocabulary/countries/hu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HU
       IS:
         description: Iceland
-        meaning: http://id.loc.gov/vocabulary/countries/ic
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IS
       IN:
         description: India
-        meaning: http://id.loc.gov/vocabulary/countries/ii
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IN
       ID:
         description: Indonesia
-        meaning: http://id.loc.gov/vocabulary/countries/io
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ID
       IR:
         description: Iran, Islamic Republic Of
-        meaning: http://id.loc.gov/vocabulary/countries/ir
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IR
       IQ:
         description: Iraq
-        meaning: http://id.loc.gov/vocabulary/countries/iq
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IQ
       IE:
         description: Ireland
-        meaning: http://id.loc.gov/vocabulary/countries/ie
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IE
       IM:
         description: Isle Of Man
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IM
       IL:
         description: Israel
-        meaning: http://id.loc.gov/vocabulary/countries/is
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IL
       IT:
         description: Italy
-        meaning: http://id.loc.gov/vocabulary/countries/it
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IT
       JM:
         description: Jamaica
-        meaning: http://id.loc.gov/vocabulary/countries/jm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JM
       JP:
         description: Japan
-        meaning: http://id.loc.gov/vocabulary/countries/ja
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JP
       JE:
         description: Jersey
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JE
       JO:
         description: Jordan
-        meaning: http://id.loc.gov/vocabulary/countries/jo
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JO
       KZ:
         description: Kazakhstan
-        meaning: http://id.loc.gov/vocabulary/countries/kz
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KZ
       KE:
         description: Kenya
-        meaning: http://id.loc.gov/vocabulary/countries/ke
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KE
       KI:
         description: Kiribati
-        meaning: http://id.loc.gov/vocabulary/countries/gb
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KI
       KP:
         description: Korea, Democratic People's Republic Of
-        meaning: http://id.loc.gov/vocabulary/countries/kn
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KP
       KR:
         description: Korea, Republic Of
-        meaning: http://id.loc.gov/vocabulary/countries/ko
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KR
       KW:
         description: Kuwait
-        meaning: http://id.loc.gov/vocabulary/countries/ku
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KW
       KG:
         description: Kyrgyzstan
-        meaning: http://id.loc.gov/vocabulary/countries/kg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KG
       LA:
         description: Lao People's Democratic Republic
-        meaning: http://id.loc.gov/vocabulary/countries/ls
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LA
       LV:
         description: Latvia
-        meaning: http://id.loc.gov/vocabulary/countries/lv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LV
       LB:
         description: Lebanon
-        meaning: http://id.loc.gov/vocabulary/countries/le
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LB
       LS:
         description: Lesotho
-        meaning: http://id.loc.gov/vocabulary/countries/lo
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LS
       LR:
         description: Liberia
-        meaning: http://id.loc.gov/vocabulary/countries/lb
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LR
       LY:
         description: Libyan Arab Jamahiriya
-        meaning: http://id.loc.gov/vocabulary/countries/ly
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LY
       LI:
         description: Liechtenstein
-        meaning: http://id.loc.gov/vocabulary/countries/lh
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LI
       LT:
         description: Lithuania
-        meaning: http://id.loc.gov/vocabulary/countries/li
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LT
       LU:
         description: Luxembourg
-        meaning: http://id.loc.gov/vocabulary/countries/lu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LU
       MO:
         description: Macao
-        meaning: http://id.loc.gov/vocabulary/countries/ch
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MO
       MK:
-        description: Macedonia, The Former Yugoslav Republic Of
-        meaning: http://id.loc.gov/vocabulary/countries/xn
+        description: North Macedonia
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MK
       MG:
         description: Madagascar
-        meaning: http://id.loc.gov/vocabulary/countries/mg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MG
       MW:
         description: Malawi
-        meaning: http://id.loc.gov/vocabulary/countries/mw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MW
       MY:
         description: Malaysia
-        meaning: http://id.loc.gov/vocabulary/countries/my
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MY
       MV:
         description: Maldives
-        meaning: http://id.loc.gov/vocabulary/countries/xc
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MV
       ML:
         description: Mali
-        meaning: http://id.loc.gov/vocabulary/countries/ml
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ML
       MT:
         description: Malta
-        meaning: http://id.loc.gov/vocabulary/countries/mm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MT
       MH:
         description: Marshall Islands
-        meaning: http://id.loc.gov/vocabulary/countries/xe
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MH
       MQ:
         description: Martinique
-        meaning: http://id.loc.gov/vocabulary/countries/mq
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MQ
       MR:
         description: Mauritania
-        meaning: http://id.loc.gov/vocabulary/countries/mu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MR
       MU:
         description: Mauritius
-        meaning: http://id.loc.gov/vocabulary/countries/mf
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MU
       YT:
         description: Mayotte
-        meaning: http://id.loc.gov/vocabulary/countries/ot
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/YT
       MX:
         description: Mexico
-        meaning: http://id.loc.gov/vocabulary/countries/mx
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MX
       FM:
         description: Micronesia, Federated States Of
-        meaning: http://id.loc.gov/vocabulary/countries/fm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FM
       MD:
         description: Moldova, Republic Of
-        meaning: http://id.loc.gov/vocabulary/countries/mv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MD
       MC:
         description: Monaco
-        meaning: http://id.loc.gov/vocabulary/countries/mc
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MC
       MN:
         description: Mongolia
-        meaning: http://id.loc.gov/vocabulary/countries/mp
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MN
       ME:
         description: Montenegro
-        meaning: http://id.loc.gov/vocabulary/countries/mo
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ME
       MS:
         description: Montserrat
-        meaning: http://id.loc.gov/vocabulary/countries/mj
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MS
       MA:
         description: Morocco
-        meaning: http://id.loc.gov/vocabulary/countries/mr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MA
       MZ:
         description: Mozambique
-        meaning: http://id.loc.gov/vocabulary/countries/mz
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MZ
       MM:
         description: Myanmar
-        meaning: http://id.loc.gov/vocabulary/countries/br
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MM
       NA:
         description: Namibia
-        meaning: http://id.loc.gov/vocabulary/countries/sx
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NA
       NR:
         description: Nauru
-        meaning: http://id.loc.gov/vocabulary/countries/nu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NR
       NP:
         description: Nepal
-        meaning: http://id.loc.gov/vocabulary/countries/np
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NP
       NL:
         description: Netherlands
-        meaning: http://id.loc.gov/vocabulary/countries/ne
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NL
       AN:
-        description: Netherlands Antilles
-        meaning: http://id.loc.gov/vocabulary/countries/na
+        description: Netherlands Antilles (dissolved 2010)
       NC:
         description: New Caledonia
-        meaning: http://id.loc.gov/vocabulary/countries/nl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NC
       NZ:
         description: New Zealand
-        meaning: http://id.loc.gov/vocabulary/countries/nz
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NZ
       NI:
         description: Nicaragua
-        meaning: http://id.loc.gov/vocabulary/countries/nq
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NI
       NE:
         description: Niger
-        meaning: http://id.loc.gov/vocabulary/countries/ng
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NE
       NG:
         description: Nigeria
-        meaning: http://id.loc.gov/vocabulary/countries/nr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NG
       NU:
         description: Niue
-        meaning: http://id.loc.gov/vocabulary/countries/xd
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NU
       NF:
         description: Norfolk Island
-        meaning: http://id.loc.gov/vocabulary/countries/nx
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NF
       MP:
         description: Northern Mariana Islands
-        meaning: http://id.loc.gov/vocabulary/countries/nw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MP
       NO:
         description: Norway
-        meaning: http://id.loc.gov/vocabulary/countries/no
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NO
       OM:
         description: Oman
-        meaning: http://id.loc.gov/vocabulary/countries/mk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/OM
       PK:
         description: Pakistan
-        meaning: http://id.loc.gov/vocabulary/countries/pk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PK
       PW:
         description: Palau
-        meaning: http://id.loc.gov/vocabulary/countries/pw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PW
       PS:
         description: Palestinian Territory, Occupied
-        meaning: http://id.loc.gov/vocabulary/countries/gz
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PS
       PA:
         description: Panama
-        meaning: http://id.loc.gov/vocabulary/countries/pn
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PA
       PG:
         description: Papua New Guinea
-        meaning: http://id.loc.gov/vocabulary/countries/pp
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PG
       PY:
         description: Paraguay
-        meaning: http://id.loc.gov/vocabulary/countries/py
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PY
       PE:
         description: Peru
-        meaning: http://id.loc.gov/vocabulary/countries/pe
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PE
       PH:
         description: Philippines
-        meaning: http://id.loc.gov/vocabulary/countries/ph
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PH
       PN:
         description: Pitcairn
-        meaning: http://id.loc.gov/vocabulary/countries/pc
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PN
       PL:
         description: Poland
-        meaning: http://id.loc.gov/vocabulary/countries/pl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PL
       PT:
         description: Portugal
-        meaning: http://id.loc.gov/vocabulary/countries/po
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PT
       PR:
         description: Puerto Rico
-        meaning: http://id.loc.gov/vocabulary/countries/pr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PR
       QA:
         description: Qatar
-        meaning: http://id.loc.gov/vocabulary/countries/qa
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/QA
       RE:
-        description: Réunion
-        meaning: http://id.loc.gov/vocabulary/countries/re
+        description: Reunion
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RE
       RO:
         description: Romania
-        meaning: http://id.loc.gov/vocabulary/countries/rm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RO
       RU:
         description: Russian Federation
-        meaning: http://id.loc.gov/vocabulary/countries/ru
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RU
       RW:
         description: Rwanda
-        meaning: http://id.loc.gov/vocabulary/countries/rw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RW
       SH:
         description: Saint Helena
-        meaning: http://id.loc.gov/vocabulary/countries/sh
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SH
       KN:
         description: Saint Kitts and Nevis
-        meaning: http://id.loc.gov/vocabulary/countries/xd
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KN
       LC:
         description: Saint Lucia
-        meaning: http://id.loc.gov/vocabulary/countries/xj
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LC
       PM:
         description: Saint Pierre and Miquelon
-        meaning: http://id.loc.gov/vocabulary/countries/xl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PM
       VC:
         description: Saint Vincent and The Grenadines
-        meaning: http://id.loc.gov/vocabulary/countries/xm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VC
       WS:
         description: Samoa
-        meaning: http://id.loc.gov/vocabulary/countries/ws
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/WS
       SM:
         description: San Marino
-        meaning: http://id.loc.gov/vocabulary/countries/sm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SM
       ST:
         description: Sao Tome and Principe
-        meaning: http://id.loc.gov/vocabulary/countries/sf
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ST
       SA:
         description: Saudi Arabia
-        meaning: http://id.loc.gov/vocabulary/countries/su
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SA
       SN:
         description: Senegal
-        meaning: http://id.loc.gov/vocabulary/countries/sg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SN
       RS:
         description: Serbia
-        meaning: http://id.loc.gov/vocabulary/countries/rb
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RS
       SC:
         description: Seychelles
-        meaning: http://id.loc.gov/vocabulary/countries/se
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SC
       SL:
         description: Sierra Leone
-        meaning: http://id.loc.gov/vocabulary/countries/sl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SL
       SG:
         description: Singapore
-        meaning: http://id.loc.gov/vocabulary/countries/si
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SG
       SK:
         description: Slovakia
-        meaning: http://id.loc.gov/vocabulary/countries/xo
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SK
       SI:
         description: Slovenia
-        meaning: http://id.loc.gov/vocabulary/countries/xv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SI
       SB:
         description: Solomon Islands
-        meaning: http://id.loc.gov/vocabulary/countries/bp
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SB
       SO:
         description: Somalia
-        meaning: http://id.loc.gov/vocabulary/countries/so
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SO
       ZA:
         description: South Africa
-        meaning: http://id.loc.gov/vocabulary/countries/sa
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZA
       GS:
         description: South Georgia and The South Sandwich Islands
-        meaning: http://id.loc.gov/vocabulary/countries/xk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GS
       ES:
         description: Spain
-        meaning: http://id.loc.gov/vocabulary/countries/sp
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ES
       LK:
         description: Sri Lanka
-        meaning: http://id.loc.gov/vocabulary/countries/ce
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LK
       SD:
         description: Sudan
-        meaning: http://id.loc.gov/vocabulary/countries/sj
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SD
       SR:
         description: Suriname
-        meaning: http://id.loc.gov/vocabulary/countries/sr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SR
       SJ:
         description: Svalbard and Jan Mayen
-        meaning: http://id.loc.gov/vocabulary/countries/sv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SJ
       SZ:
         description: Swaziland
-        meaning: http://id.loc.gov/vocabulary/countries/sq
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SZ
       SE:
         description: Sweden
-        meaning: http://id.loc.gov/vocabulary/countries/sw
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SE
       CH:
         description: Switzerland
-        meaning: http://id.loc.gov/vocabulary/countries/sz
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CH
       SY:
         description: Syrian Arab Republic
-        meaning: http://id.loc.gov/vocabulary/countries/sy
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SY
       TW:
         description: Taiwan, Province Of China
-        meaning: http://id.loc.gov/vocabulary/countries/ch
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TW
       TJ:
         description: Tajikistan
-        meaning: http://id.loc.gov/vocabulary/countries/ta
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TJ
       TZ:
         description: Tanzania, United Republic Of
-        meaning: http://id.loc.gov/vocabulary/countries/tz
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TZ
       TH:
         description: Thailand
-        meaning: http://id.loc.gov/vocabulary/countries/th
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TH
       TL:
         description: Timor-Leste
-        meaning: http://id.loc.gov/vocabulary/countries/em
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TL
       TG:
         description: Togo
-        meaning: http://id.loc.gov/vocabulary/countries/tg
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TG
       TK:
         description: Tokelau
-        meaning: http://id.loc.gov/vocabulary/countries/tl
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TK
       TO:
         description: Tonga
-        meaning: http://id.loc.gov/vocabulary/countries/to
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TO
       TT:
         description: Trinidad and Tobago
-        meaning: http://id.loc.gov/vocabulary/countries/tr
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TT
       TN:
         description: Tunisia
-        meaning: http://id.loc.gov/vocabulary/countries/ti
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TN
       TR:
         description: Turkey
-        meaning: http://id.loc.gov/vocabulary/countries/tu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TR
       TM:
         description: Turkmenistan
-        meaning: http://id.loc.gov/vocabulary/countries/tk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TM
       TC:
         description: Turks and Caicos Islands
-        meaning: http://id.loc.gov/vocabulary/countries/tc
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TC
       TV:
         description: Tuvalu
-        meaning: http://id.loc.gov/vocabulary/countries/tv
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TV
       UG:
         description: Uganda
-        meaning: http://id.loc.gov/vocabulary/countries/ug
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UG
       UA:
         description: Ukraine
-        meaning: http://id.loc.gov/vocabulary/countries/un
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UA
       AE:
         description: United Arab Emirates
-        meaning: http://id.loc.gov/vocabulary/countries/ts
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AE
       GB:
         description: United Kingdom
-        meaning: http://id.loc.gov/vocabulary/countries/xxk
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GB
       US:
         description: United States
-        meaning: http://id.loc.gov/vocabulary/countries/xxu
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/US
       UM:
         description: United States Minor Outlying Islands
-        meaning: http://id.loc.gov/vocabulary/countries/ji
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UM
       UY:
         description: Uruguay
-        meaning: http://id.loc.gov/vocabulary/countries/uy
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UY
       UZ:
         description: Uzbekistan
-        meaning: http://id.loc.gov/vocabulary/countries/uz
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UZ
       VU:
         description: Vanuatu
-        meaning: http://id.loc.gov/vocabulary/countries/nn
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VU
       VE:
         description: Venezuela
-        meaning: http://id.loc.gov/vocabulary/countries/ve
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VE
       VN:
         description: Viet Nam
-        meaning: http://id.loc.gov/vocabulary/countries/vm
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VN
       VG:
         description: Virgin Islands, British
-        meaning: http://id.loc.gov/vocabulary/countries/vb
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VG
       VI:
         description: Virgin Islands, U.S.
-        meaning: http://id.loc.gov/vocabulary/countries/vi
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VI
       WF:
         description: Wallis and Futuna
-        meaning: http://id.loc.gov/vocabulary/countries/wf
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/WF
       EH:
         description: Western Sahara
-        meaning: http://id.loc.gov/vocabulary/countries/ss
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EH
       YE:
         description: Yemen
-        meaning: http://id.loc.gov/vocabulary/countries/ye
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/YE
       ZM:
         description: Zambia
-        meaning: http://id.loc.gov/vocabulary/countries/za
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZM
       ZW:
         description: Zimbabwe
-        meaning: http://id.loc.gov/vocabulary/countries/rh
+        meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZW
       XX:
-        description: Unspecified or unknown country
+        description: Unspecified or unknown country (user-assigned code, not an official ISO 3166-1 code)
       XZ:
-        description: International waters
+        description: International waters (user-assigned code from UN/LOCODE)
+        meaning: https://service.unece.org/trade/locode/xz.htm
 
   # Role possible values: the labels are adapted from ISO 19115 standard (icluding the camelCase)
   Role:
@@ -2411,6 +2470,7 @@ slots:
     description: Taxonomic rank of the identified taxon.
     see_also:
       - https://www.gbif.org/developer/species#rank
+  
   nuts3:
     range: string
     pattern: "^[A-Z]{2}[A-Z0-9]{3,4}$"

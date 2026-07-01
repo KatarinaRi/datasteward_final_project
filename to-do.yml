@@ -18,4 +18,10 @@ and make the schema point to the externally held list of (1500) chemicals
 - fix the encoding issue to be able to use eg. greek mi, superscripts, etc.
 - parameter - rule on which parameter to which site type/ matri type?
 - Vocabularies developed separately in PARC - add/reference 
-- 
+- The schema is in yaml from which it is possible automatically generate 
+validation schema (JSON schema), ontology (OWL), SHACL Shapes (rdf validation), 
+documentation (MarkDown), python classes and code. 
+-> check how this is done... 
+- decide on whether to map or to use meaning (and adopt external URIs)
+- check the adopted URIs - where do they resolve?
+- look at vocbaulary analysis by NTK and proposals of vocabularies to be reused. -> any inspiraiton?
