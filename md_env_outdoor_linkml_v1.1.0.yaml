@@ -56,6 +56,13 @@ see_also:
   - https://doi.org/10.5281/zenodo.17175075 # yaml list syntax
   - https://www.parc-project.eu
 
+funding: # TBC
+  tag: funding
+  value: >-
+    This work was supported by the European Partnership for the Assessment
+    of Risks from Chemicals (PARC), funded by the European Union under
+    Horizon Europe grant agreement No 101057014. 
+
 prefixes:
   linkml: https://w3id.org/linkml/
   cenvo: https://w3id.org/chemical-exposome/schema/chemicals-outdoor/ # as Chemical Exposome ENVironmental monitoring Outdoor

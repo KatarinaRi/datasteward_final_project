@@ -193,13 +193,20 @@ imports:
 4. **Community and standard schemas**
 Several real-world schemas exist that one could potentially import from: BioLink Model; NMDC; MIxS; SOSA/SSN  
 
+### Notes on individual fields in schema-level metadata
+
+- **`id`** — A globally unique, persistent IRI for the schema itself. Should use a persistent namespace (e.g. `w3id.org`, institutional domain) rather than a project website that may disappear.
+- **`version`** — Follow semantic versioning (`MAJOR.MINOR.PATCH`). Increment on every release.
+- **`license`** — A URI pointing to the licence text. Creative Commons URIs (e.g. `https://creativecommons.org/licenses/by/4.0/`) are preferred for open schemas.
+- **`created_by` / `modified_by`** — Use ORCID URIs for individuals (`https://orcid.org/XXXX-XXXX-XXXX-XXXX`) or ROR URIs for organisations (`https://ror.org/XXXXXXXX`). Avoid plain text names — they are not machine-resolvable.
+- **`contributors`** — A flat list of ORCID or ROR URIs. Does not natively support role attribution (see CRediT section below).
+- **`see_also`** — Links to related resources: the associated dataset, project website, published paper, or documentation. Use DOIs where available.
+
 ## Schema Provenance 
 
 Provenance metadata in a LinkML schema documents who created and contributed to the schema, when it was created and modified, under what license it is published, and how it relates to other resources. This information belongs in the **schema header** — the top-level block before `prefixes`, `types`, `slots`, `classes`, and `enums`.
 
----
-
-## Standard LinkML Header Provenance Fields
+### Standard LinkML Header Provenance Fields
 
 LinkML supports the following provenance-relevant fields natively at the schema level:
 
@@ -231,17 +238,6 @@ see_also:
   - https://www.parc-project.eu
 ```
 
-### Notes on individual fields
-
-- **`id`** — A globally unique, persistent IRI for the schema itself. Should use a persistent namespace (e.g. `w3id.org`, institutional domain) rather than a project website that may disappear.
-- **`version`** — Follow semantic versioning (`MAJOR.MINOR.PATCH`). Increment on every release.
-- **`license`** — A URI pointing to the licence text. Creative Commons URIs (e.g. `https://creativecommons.org/licenses/by/4.0/`) are preferred for open schemas.
-- **`created_by` / `modified_by`** — Use ORCID URIs for individuals (`https://orcid.org/XXXX-XXXX-XXXX-XXXX`) or ROR URIs for organisations (`https://ror.org/XXXXXXXX`). Avoid plain text names — they are not machine-resolvable.
-- **`contributors`** — A flat list of ORCID or ROR URIs. Does not natively support role attribution (see CRediT section below).
-- **`see_also`** — Links to related resources: the associated dataset, project website, published paper, or documentation. Use DOIs where available.
-
----
-
 ### CRediT Contributor Roles
 
 The **Contributor Roles Taxonomy (CRediT)** defines 14 standardised roles for research contributions, each with a persistent URI:
@@ -267,15 +263,13 @@ The **Contributor Roles Taxonomy (CRediT)** defines 14 standardised roles for re
 
 LinkML's built-in `contributors:` field is a **flat list of URIs** — it does not natively support role-typed contributions. CRediT roles must therefore be encoded using either `comments` (human-readable) or `annotations` (machine-readable), or both.
 
----
+### Encoding CRediT in LinkML
 
-## Encoding CRediT in LinkML
-
-### Option 1 — `comments` (human-readable)
+1. Option: `comments` (human-readable)
 
 Suitable for documentation generation and human readers. The `comments` field accepts a list of free-text strings.
 
-```yaml
+```
 comments:
   - >-
     CRediT contributor roles (https://credit.niso.org/contributor-roles/):
@@ -287,11 +281,11 @@ comments:
     Writing - original draft: Jane Smith
 ```
 
-### Option 2 — `annotations` (machine-readable)
+2. Option: `annotations` (machine-readable)
 
 Suitable for downstream tools that can parse structured annotations. Each annotation uses a `tag`/`value` pair.
 
-```yaml
+```
 annotations:
   contributor_conceptualization:
     tag: contributor_conceptualization
@@ -314,13 +308,11 @@ annotations:
 
 Use **both options together** — `comments` for human readability and documentation rendering, `annotations` for machine parseability. They are complementary, not alternatives.
 
----
-
-## Additional Provenance — Funding and Status
+### Additional Provenance — Funding and Status
 
 Funding acknowledgement and schema status are not natively supported LinkML fields but can be recorded as `annotations`:
 
-```yaml
+```
 annotations:
   funding:
     tag: funding
@@ -335,9 +327,7 @@ annotations:
 
 Common values for `schema_status`: `draft`, `review`, `stable`, `deprecated`.
 
----
-
-## Complete Recommended Header Template
+### Complete Recommended Header Template
 
 ```yaml
 id: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
@@ -408,10 +398,7 @@ annotations:
     tag: schema_status
     value: draft
 ```
-
----
-
-## Summary
+### Summary
 
 | Information | LinkML field | Format |
 |-------------|-------------|--------|
@@ -427,6 +414,8 @@ annotations:
 | Related resources | `see_also` | List of URIs or DOIs |
 | Funding | `annotations` | Free text or structured string |
 | Schema status | `annotations` | Controlled string |
+
+---
 
 ## Subsets
 Subsets in LinkML are labels/tags attached to slots to group them by purpose without changing the structure of the schema. They e.g. indicate that slots belong to a particular category or compliance level. They don't enforce validation by themselves — they're metadata that downstream tools or applications can use to decide what to do.
@@ -777,24 +766,20 @@ classes:
         required: false
 
 ```
+## Class vs Slot/Attribute — Modeling Decision Guide for LinkML
 
-
-# Class vs Slot/Attribute — Modeling Decision Guide for LinkML
-
-## The Core Question
+**The Core Question:**
 
 > **Does this thing have its own identity and multiple properties, or is it just a value that describes something else?**
 
 This is the fundamental question when deciding whether a concept should be modeled as a **class** or as a **slot/attribute** in a LinkML schema.
 
----
+### Model as a CLASS when
 
-## Model as a CLASS when
-
-### 1. The concept has multiple attributes of its own
+#### 1. The concept has multiple attributes of its own
 If more than one piece of information needs to be stored about a concept, it warrants a class:
 
-```yaml
+```
 # Site has id, name, country, coordinates, land use... → CLASS
 classes:
   Site:
@@ -806,10 +791,10 @@ classes:
       longitude:
 ```
 
-### 2. The concept is referenced by multiple other classes
+#### 2. The concept is referenced by multiple other classes
 If several classes need to point to the same concept, it should be a class:
 
-```yaml
+```
 # Multiple samples reference the same Site → CLASS
 classes:
   Sample:
@@ -823,10 +808,10 @@ classes:
         range: Site    # referenced from Campaign too
 ```
 
-### 3. The concept has its own persistent identifier
+#### 3. The concept has its own persistent identifier
 If a concept has an ID, URI, or code that exists independently of any other object, it should be a class:
 
-```yaml
+```
 # A chemical compound has CAS, InChI, WP9 ID... → CLASS
 classes:
   ChemicalCompound:
@@ -837,20 +822,20 @@ classes:
         identifier: true
 ```
 
-### 4. The concept can exist independently
+#### 4. The concept can exist independently
 If a concept makes sense to talk about outside the context of another object, it is a class. A `Site` exists independently of any `Sample`. A `Campaign` exists independently of any `Measurement`.
 
-### 5. The concept has relationships to other classes
+#### 5. The concept has relationships to other classes
 If a concept connects to other things in the domain model — especially bidirectionally — it should be a class.
 
 ---
 
-## Model as a SLOT/ATTRIBUTE when
+### Model as a SLOT/ATTRIBUTE when
 
-### 1. The concept is a simple value
+#### 1. The concept is a simple value
 A string, number, date, boolean, or enum value — not a structured object — is a slot:
 
-```yaml
+```
 attributes:
   temperature:      # just a number → slot
     range: double
@@ -860,29 +845,27 @@ attributes:
     range: CountryEnum
 ```
 
-### 2. The concept only makes sense in the context of its parent
+#### 2. The concept only makes sense in the context of its parent
 If a concept cannot exist independently and has no identity of its own, it is a slot:
 
-```yaml
+```
 # A concentration value has no meaning without its sample → slot
 attributes:
   concentration:
     range: double
 ```
 
-### 3. The concept has only one property
+#### 3. The concept has only one property
 If there is only one thing to say about a concept, it does not need to be a class:
 
-```yaml
+```
 # A unit is just a code → slot with enum range, not a class
 attributes:
   unit:
     range: UnitEnum
 ```
 
----
-
-## The Grey Zone — When It Could Be Either
+### The Grey Zone — When It Could Be Either
 
 Some concepts sit in the middle. The deciding factor is usually how much detail is needed:
 
@@ -896,9 +879,8 @@ Some concepts sit in the middle. The deciding factor is usually how much detail 
 
 When in doubt, start simple (slot) and promote to a class later if additional attributes become necessary. It is easier to promote a slot to a class than to demote a class to a slot.
 
----
 
-## Applied Example — Environmental Monitoring Schema
+### Applied Example — Environmental Monitoring Schema
 
 | Concept | Decision | Reason |
 |---------|----------|--------|
@@ -913,15 +895,13 @@ When in doubt, start simple (slot) and promote to a class later if additional at
 | `matrix` | ✅ Slot | A single code from MatrixEnum |
 | `analysis_method` | ⚠️ Either | If just a name/link → slot; if it has version, reference, parameters → class |
 
----
 
-## One-Sentence Rule of Thumb
+### One-Sentence Rule of Thumb
 
 > **If a concept would have its own database table, model it as a class. If it would be a column in a table, model it as a slot.**
 
----
 
-## Decision Flowchart
+### Decision Flowchart
 
 ```
 Does the concept have more than one property?
@@ -1067,7 +1047,7 @@ This keeps the enum semantically clean — it only contains actual permitted val
 Some data systems and databases cannot distinguish between "field was left empty" and "field doesn't exist". In that case, having explicit not_relevant and not_reported values is actually safer for data quality.
 So the question is — how will the data be stored and used? Database, CSV, RDF triples?
 
-## OWn URI and mapping, or meaning?
+## Own URI and mapping, or meaning?
 **What makes a URI persistent?**
 There are two separate things:
 
@@ -1076,7 +1056,7 @@ There are two separate things:
 
 Both can fail independently.
 
-# How to Assess URI Persistence and Maintenance
+### How to Assess URI Persistence and Maintenance
 
 When using third-party URIs in your schema, evaluate them against these five criteria:
 
@@ -1090,7 +1070,7 @@ When using third-party URIs in your schema, evaluate them against these five cri
 
 ---
 
-## Applied to the URI sources used in this schema
+#### Applied to the URI sources used in this schema
 
 | URI source | Persistence policy | Institutional backing | Regulatory mandate | Track record | Versioning | Overall trust |
 |------------|-------------------|----------------------|-------------------|--------------|------------|---------------|
@@ -1105,7 +1085,7 @@ When using third-party URIs in your schema, evaluate them against these five cri
 
 ---
 
-## Practical decision rule
+### Practical decision rule
 
 When choosing between URI sources for the same concept, prefer in this order:
 
@@ -1174,6 +1154,7 @@ narrow_mappings:  # narrower concept
 
 The right approach for the soil WRB case:
 Since all three (INSPIRE, GloSIS, AGROVOC) represent the same WRB concept, they are exact_mappings — semantically equivalent URIs for the same thing:
+
 ```
 albeluvisols:
   description: >-
@@ -1183,13 +1164,14 @@ albeluvisols:
   exact_mappings:
     - http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Albeluvisols
     - http://aims.fao.org/aos/agrovoc/c_{code}   # verify per term
-
+```
 
 Why this is better than just see_also
 AnnotationSemantic meaningMachine-readable?meaningThis IS the concept✅ Strongexact_mappingsThis concept is identical to these others✅ Strong — tools can infer owl:sameAssee_alsoRelated link, go look here⚠️ Weak — just a reference, no semantic claimclose_mappingsSimilar but not identical✅ Medium
 exact_mappings is semantically much stronger than see_also — it tells reasoning engines and linked data tools that these URIs refer to the same concept, enabling proper cross-vocabulary interoperability. This is exactly what the semantic web is designed for.
 
 Include all three, but structured properly
+
 ```
 albeluvisols:
   description: >-
@@ -1202,21 +1184,18 @@ albeluvisols:
   see_also:
     - https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
 ```
+
 This gives:
 
 meaning → primary semantic identity (INSPIRE — legally binding, EU-aligned)
 exact_mappings → cross-vocabulary alignment (GloSIS + AGROVOC — for global and multilingual interoperability)
 see_also → human-readable reference to the WRB source document
 
-
-
-
 # SOIL Existing standards and ontologies 
 ## WRB Soil Typology — URI Options and Soil Data Standards Landscape
 
 The World Reference Base for Soil Resources (WRB) is published by the IUSS Working Group as a **document/book** (currently 4th edition, 2022), not as a linked-data vocabulary with an official URI registry. There is no authoritative `https://wrb.iuss.org/...` concept scheme. As a result, all available URIs for WRB Reference Soil Groups come from **third-party re-publications** of the WRB content as linked data.
 
----
 
 ### Three Available URI Sources for WRB Reference Soil Groups
 
@@ -1240,8 +1219,6 @@ https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue/Albeluvisols
 | **Stability** | High — maintained as part of EU regulatory infrastructure |
 | **Scope** | EU-focused; EU member states are legally required to align with this |
 | **Limitation** | Based on 2006/2007 edition; does not reflect WRB 2022 changes |
-
----
 
 **2. GloSIS (Global Soil Information System)**
 
@@ -1325,15 +1302,12 @@ albeluvisols:
 - **Relevance to your schema:** SoilWise explicitly focuses on harmonising interoperability towards both INSPIRE and GloSIS — the exact two standards relevant to your soil typology URI decision. SoilWise is also exploring migration of soil models from O&M to the new OMS (Observations, Measurements & Samples) standard — the same transition relevant to your SensorThings/OMS work. It may also adopt soil health codelists from Envasso and Landmark projects into GloSIS or the INSPIRE registry.
 - **Website:** https://soilwise-he.eu
 
----
-
 ### EU Soil Monitoring Law (SML) — in progress
 
 - **What it is:** Proposed EU regulation to standardise soil health monitoring across all member states, covering soil degradation, contamination, and sustainable management. As of 2024, 69% of preparatory actions under the EU Soil Strategy were completed.
 - **Relevance to your schema:** The SML will likely mandate specific data collection standards and reporting formats across EU member states. Your schema, if aligned with INSPIRE now, is well-positioned for compliance when the SML enters into force. EUSO is actively building monitoring infrastructure in support of the SML.
 - **Key body:** European Commission / EUSO / ESDAC (JRC)
 
----
 
 ### EU Soil Observatory (EUSO) and ESDAC
 
@@ -1341,7 +1315,6 @@ albeluvisols:
 - **Relevance to your schema:** EUSO's Soil Degradation Dashboard (2023–2025) monitors 19 indicators relevant to the parameters in your schema (organic carbon, contamination, compaction, etc.). EUSO is the primary EU institutional entry point for soil data and may become a key data consumer/publisher for your schema.
 - **Website:** https://esdac.jrc.ec.europa.eu/euso
 
----
 
 ### LUCAS Soil Survey (Eurostat / JRC)
 
@@ -1349,7 +1322,6 @@ albeluvisols:
 - **Relevance to your schema:** If your data will ever be compared or integrated with LUCAS, harmonising your parameter names and units with LUCAS conventions avoids costly data transformation. The LUCAS dataset is also used as the reference for the EU Taxonomy regulation on soil fertility in construction.
 - **Website:** https://esdac.jrc.ec.europa.eu/projects/lucas
 
----
 
 ### WoSIS — World Soil Information Service (ISRIC, 2023 snapshot)
 
@@ -1357,21 +1329,18 @@ albeluvisols:
 - **Relevance to your schema:** WoSIS's new data model (conditioning analytical methods to the observation, aligned with GloSIS/O&M) is an example of the exact modeling pattern we discussed for your `ParameterMeasurement` class. If your national data is ever contributed to WoSIS, alignment with GloSIS concepts facilitates this.
 - **Reference:** Batjes et al., 2024 (ESSD)
 
----
 
 ### ISO 28258 — Soil Quality: Digital Exchange of Soil-Related Data
 
 - **What it is:** The ISO standard for digital exchange of soil data — used as the basis for both GloSIS and INSPIRE soil domain models. Both are designed to be interoperable with ISO 28258.
 - **Relevance to your schema:** If your national database (groundwater/surface water + soil) ever needs to exchange data internationally at a formal level, ISO 28258 is the underlying technical reference standard. GloSIS and INSPIRE are both ISO 28258-aligned, so choosing either for your `meaning:` URIs keeps you compatible.
 
----
 
 ### OMS Migration (OGC/ISO 19156:2023)
 
 - **What it is:** The update of Observations & Measurements (O&M) to Observations, Measurements & Samples (OMS), now ISO 19156:2023. Both GloSIS and INSPIRE soil are currently based on the older O&M model; migration to OMS is under active discussion (SoilWise is specifically identified as a potential contributor to this migration).
 - **Relevance to your schema:** If you design your class hierarchy now with SOSA concepts in mind (as discussed), you will be well-positioned for the OMS migration — since SOSA/SSN and OMS are being actively co-evolved and kept compatible. This is a forward-looking consideration rather than an immediate action item.
 
----
 
 ## Summary Table
 
@@ -1386,6 +1355,3 @@ albeluvisols:
 | WoSIS | Global DB | Ongoing | Modeling pattern reference; contribution pathway |
 | ISO 28258 | ISO standard | Background | Underpins both INSPIRE and GloSIS |
 | OMS (ISO 19156:2023) | ISO/OGC standard | Future | Migration target for your class hierarchy |
-
-
-
