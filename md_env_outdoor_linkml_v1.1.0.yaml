@@ -2456,95 +2456,57 @@ enums:
 
 slots:
 
-  taxon_name:
-    range: string
-    description: >-
-      Scientific name of the taxon (genus, species or higher rank)
-      as accepted in the GBIF Backbone Taxonomy.
-    see_also:
-      - https://www.gbif.org/species/search
-
-  taxon_id:
-    range: integer
-    description: >-
-      GBIF species key (integer). Resolves to
-      https://www.gbif.org/species/{taxon_id}
-    see_also:
-      - https://www.gbif.org/species/search
-
-  taxon_rank:
-    range: TaxonRankEnum
-    description: Taxonomic rank of the identified taxon.
-    see_also:
-      - https://www.gbif.org/developer/species#rank
-  
-  nuts3:
-    range: string
-    pattern: "^[A-Z]{2}[A-Z0-9]{3,4}$"
-    description: >-
-      NUTS3 region code according to the Eurostat NUTS classification 
-      (Nomenclature of Territorial Units for Statistics), level 3.
-      Example: CZ080 (Moravskoslezský kraj), DE300 (Berlin).
-    see_also:
-      - http://data.europa.eu/nuts/
-    in_subset:
-      - optional
-
   acronym:
-    description: Short name or acronym of the project/monitoring programme
+    description: Short name or acronym.
+    range: string
+    identifier: true # identifier: true means this slot is the primary key of the class
+    # — the unique identifier used to reference instances of that class from other classes.
+    # This is risky - uniqness is not guaranteed.
+    in_subset:
+      - mandatory_if # If acronym of project/programme. For site and institution it is optional.
+
+  name_en:
+    description: Name or designation in English
     range: string
     required: true
-    identifier: true
+    in_subset: mandatory_if # Mandatory for project/programme, institution, funder, site,
+    # Optional for managing instance
+
+  name_original:  
+    range: string
+    required: true
+    description: >-
+      Name of the entity in the original language of the 
+      institution/site/project. Use the local official name.
     in_subset:
       - mandatory
-
-  site_name:
-    description: Name or designation of place where a sample was collected
-    range: string
-    required: true
 
   sample_id:
     description: Unique identifier for the sample
     range: string
     required: true
     identifier: true
+    in_subset: mandatory
 
   start_date:
     description: Start date in format YYYY-MM-DD
     range: date
     required: true
+    in_subset: mandatory 
 
   end_date:
     description: End date in format YYYY-MM-DD
     range: date
-    required: false
-
-  sampling_date_start:
-    description: >-
-      The date of a one-time sample collection; for sampling occurring over
-      a longer period, specify the starting day of the sampling period.
-      Format YYYY-MM-DD.
-    range: date
-    required: true
-
-  sampling_date_end:
-    description: >-
-      For sampling occurring over a longer period, specify the ending date
-      of the sampling period. Format YYYY-MM-DD.
-    range: date
-    required: false
 
   sampling_time_start:
     description: >-
       Sampling start time according to ISO 8601, 24-hour clock.
       Format T[hh][mm][ss].
     range: time
-    required: false
 
   sampling_time_end:
     description: Sampling end time according to ISO 8601.
     range: time
-    required: false
 
   email:
     description: >-
@@ -2552,236 +2514,63 @@ slots:
       Institutional email is recommended.
     range: EmailAddress
     required: true
+    in_subset: mandatory 
 
   orcid:
     description: ORCID identifier of the contact person
     range: OrcidIdentifier
-    required: false
 
   ror:
     description: ROR identifier of the institution (format ror.org/xxxxxxxx)
     range: RorIdentifier
-    required: false
 
-  institution_name:
-    description: >-
-      The name of the institution responsible for implementing the
-      project/monitoring programme
-    range: string
-    required: true
-
-  institution_abbreviation:
-    description: Abbreviation of the institution name
-    range: string
-    required: false
-
-  institution_link:
+  link:
     description: URL with information about the institution
-    range: URIorCURIE
-    required: false
+    range: IRI
+  # Mandatory for Legislation/Policy; Optional for Project/Programme, Institution, Funder, Sample preparation method, analysis method, data handling procedure
 
   country:
+    range: Country
     description: >-
-      Country code according to UN M49 standard.
-      Source: https://unstats.un.org/unsd/methodology/m49/
-    range: string
+      Country where the site, institution or project is located,
+      according to ISO 3166-1 alpha-2 (two-letter uppercase code).
     required: true
+    in_subset: mandatory
 
   unit:
-    # TODO: Decide whether this shared slot should be typed to ConcentrationUnit
-    # enum or remain free-text. MeasurementConcentration already references
-    # ConcentrationUnit — keeping this as string allows broader use in
-    # MeasurementParameter but loses validation on concentration records.
     description: Unit of measurement
-    range: string
+    range: Unit
     required: true
+    in_subset: mandatory
 
-  uncertainty:
-    description: Measurement uncertainty
+  uncertainty: # TBC with domain experts 
+    description: >-
+      Measurement uncertainty of the concentration/paramter value,
+      expressed as a percentage (%) at 95% confidence level.  
     range: double
-    required: false
-
-  water_type:
-    description: Type of water body at the site
-    range: WaterType
-    required: false
-
-  water_geographical_feature:
-    description: Geographical water feature type
-    range: WaterGeographicalFeature
-    required: false
-
-  water_treatment:
-    description: Water treatment status
-    range: WaterTreatment
-    required: false
+    minimum_value: 0
 
 # ---------------------------------------------------------------------------
 # CLASSES
 # ---------------------------------------------------------------------------
 classes:
-
-  # ---------------------------------------------------------------------------
-  # CHEMICAL COMPOUND (codelist entity)
-  # ---------------------------------------------------------------------------
-  
-  classes:
-  ParameterMeasurement:
-    description: >-
-      A single parameter measurement associated with a sample.
-    attributes:
-      parameter:
-        range: AirParameter   # or whichever enum
-        required: true
-      value:
-        range: double
-        required: true
-      unit:
-        range: UnitEnum
-        required: true
-      meteorological_information_source:
-        range: string
-        required: false
-        description: >-
-          Source of meteorological information 
-          (e.g. nearest weather station, model name, dataset reference).
-    rules:
-      - preconditions:
-          slot_conditions:
-            parameter:
-              equals_string: meteorological_information_source
-        postconditions:
-          slot_conditions:
-            meteorological_information_source:
-              required: true
-  
-  
-  
-  ChemicalCompound:
-    description: >-
-      A chemical compound monitored in environmental samples.
-      The compound list (1500+ substances) was developed in PARC WP9
-      in collaboration with other WPs. Each compound is identified by
-      multiple persistent identifiers and assigned to a compound group.
-      See: https://doi.org/10.5281/zenodo.17175075
-    see_also:
-      - https://doi.org/10.1186/s13321-025-01092-3
-    attributes:
-
-      wp9_id:
-        description: >-
-          Internal PARC WP9 identifier for the compound.
-          Unique within the PARC compound list.
-        range: integer
-        required: true
-        identifier: true
-
-      compound_name:
-        description: >-
-          Common or abbreviated name of the compound
-          as used in the PARC community (e.g. PFOS, triclosan).
-        range: string
-        required: true
-        in_subset:
-          - mandatory
-
-      compound_group:
-        description: >-
-          Chemical group classification of the compound
-          as defined in the PARC WP9 compound list
-          (e.g. PFAS, biocides, PCBs, PAHs).
-          # TODO: Future alignment planned with ChemFOnt functional classes
-          # and/or C3PO (ChEBI Chemical Class Program Ontology)
-        range: CompoundGroup
-        required: false
-
-      cas_number:
-        description: >-
-          CAS Registry Number — unique numerical identifier
-          assigned by the Chemical Abstracts Service.
-          Format: NNNNNN-NN-N
-        range: string
-        required: false
-        pattern: "^\\d{2,7}-\\d{2}-\\d$"
-
-      ec_number:
-        description: >-
-          EC Number (European Community Number) — identifier used
-          in the ECHA substance inventory (EINECS, ELINCS, NLP).
-          Format: NNN-NNN-N
-        range: string
-        required: false
-        pattern: "^\\d{3}-\\d{3}-\\d$"
-
-      inchi:
-        description: >-
-          IUPAC International Chemical Identifier (InChI) —
-          a standard textual representation of the molecular structure.
-          Begins with 'InChI=1S/'.
-        range: string
-        required: false
-        pattern: "^InChI=1S/"
-
-      inchikey:
-        description: >-
-          InChIKey — a fixed-length (27-character) hash of the InChI string.
-          Used as a compact, web-searchable identifier.
-          Format: XXXXXXXXXXXXXX-XXXXXXXXXX-X
-        range: string
-        required: false
-        pattern: "^[A-Z]{14}-[A-Z]{10}-[A-Z]$"
-
-      chebi_id:
-        description: >-
-          ChEBI identifier for the compound.
-          To be populated by mapping from InChIKey to ChEBI.
-          Format: CHEBI:NNNNN
-        range: URIorCURIE
-        required: false
-
-      pubchem_cid:
-        description: >-
-          PubChem Compound ID (CID).
-          To be populated by mapping from InChIKey to PubChem.
-        range: integer
-        required: false
-
-      norman_id:
-        description: >-
-          NORMAN substance identifier.
-          Source: NORMAN EMPODAT / SusDat database.
-        range: string
-        required: false
-
   # ---------------------------------------------------------------------------
   # PROJECT
   # ---------------------------------------------------------------------------
-  Project:
+  MonitoringActivity: # Renamed from Project to Monitoring Activity to avoid ambiguity (as Project is type of monitoring activity)
     description: >-
       A research project or monitoring programme collecting environmental
-      data on chemicals in the outdoor environment.
+      data on chemicals in the outdoor environment (air, water, sediment, soil, biota)
     slots:
+      - name_en
+      - name_original
       - acronym
+    
     attributes:
 
-      activity_type:
+      type:
         description: Type of monitoring activity
         range: MonitoringActivityType
-        required: true
-        in_subset:
-          - mandatory
-
-      name_english:
-        description: Name of the project/monitoring programme in English
-        range: string
-        required: true
-        in_subset:
-          - mandatory
-
-      name_original:
-        description: >-
-          Name of the project/monitoring programme in its original language.
-        range: string
         required: true
         in_subset:
           - mandatory
@@ -2800,39 +2589,35 @@ classes:
         description: >-
           Project/monitoring programme identifier provided as URL (GUPRI).
           At least one identifier required.
-        range: URIorCURIE
-        required: false
+        range: IRI
         multivalued: true
 
       monitoring_reasons:
         description: >-
-          Primary reasons for performing monitoring. Mandatory for
+          Primary reasons for performing monitoring (e.g. regulatory requirements). Mandatory for
           monitoring programmes; optional for projects if relevant.
         range: string
-        required: false
         in_subset:
-          - mandatory_for_monitoring
+          - mandatory_if # See the rule. Mandatory for monitoring programmes.
 
       legislation_policy:
         description: >-
-          Link to policy, convention, or legislation. Mandatory for
-          monitoring programmes; optional for projects if relevant.
-        range: URIorCURIE
-        required: false
+          Link(s) to policy, convention, or legislation underpinning
+          the monitoring activity. Mandatory for
+          monitoring programmes; optional for projects if relevant. 
+        range: IRI
         multivalued: true
         in_subset:
-          - mandatory_for_monitoring
-
+          - mandatory_if # See the rule. Mandatory for monitoring programmes.
+           
       implementation_level:
-        description: The implementation level of coverage
+        description: The geographic scale of the monitoring coverage (international, national, regional, or local).
         range: ImplementationLevel
-        required: false
 
-      language:
+      language: # Means in data? Or for communication in monitoring activity?
         description: >-
           Language(s) used, as 2-letter codes according to ISO 639-1.
         range: string
-        required: false
         multivalued: true
 
       start_date:
@@ -2849,72 +2634,70 @@ classes:
         range: date
         required: false
 
-        classes:
+      campaigns:
+        range: Campaign      # Project HAS campaigns
+        description: >-
+          If an Environmental Monitoring Programme/Project has a long-term perspective of at least 
+          a few years, it may be necessary to input data at suitable time intervals. For this time period, 
+          is used the term "Campaign". A Campaign is defined by its start and end, and it is recommended 
+          to name it within the project using a consistent style.
+        multivalued: true    # 0..n
+        inlined_as_list: true
 
-  Campaign:
-    rules:
-      - preconditions:
-          slot_conditions:
-            campaign_id:
-              value_presence: PRESENT
-        postconditions:
-          slot_conditions:
-            campaign_name:
-              required: true
-            start_date:
-              required: true
-
-      # --- Institution (primary) ---
+      # --- Institution  ---  # Convert to class? -> what if multiple institutions?
       institution_name:
         range: string
+        description: The name of the institution responsible for implementing the project/monitoring program
         required: true
 
       institution_abbreviation:
         range: string
-        required: false
+        description: The acronym/abbreviation of the institution responsible for implementing the project/monitoring program
 
       institution_ror:
-        description: ROR identifier (format ror.org/xxxxxxxx).
+        description: ROR identifier (format ror.org/xxxxxxxx) of the institution responsible for implementing the project/monitoring program.
         range: RorIdentifier
-        required: false
 
       country_of_institution:
         description: Country of institution according to UN M49
-        range: string
+        range: Country
         required: true
+        in_subset: 
+          - mandatory 
 
       institution_link:
-        range: URIorCURIE
-        required: false
+        range: IRI
 
-      # --- Contact (primary) ---
+      # --- Contact (primary) --- # Convert to class? -> what if multiple contacts and roles?
       contact_email:
-        description: Email address of the project contact point.
+        description: Email address of the monitoring activity contact point.
         range: EmailAddress
         required: true
+        in_subset:
+          - mandatory
 
       contact_role:
         description: >-
           Role of the contact person.
           Source: ISO 19115:2003/19139 and INSPIRE.
         range: ContactRole
-        required: false
 
       contact_orcid:
         description: ORCID identifier of the contact.
         range: OrcidIdentifier
-        required: false
 
-      # --- Funder (primary) ---
+      # --- Funder (primary) --- # Convert to class? -> what if multiple funders?
       funder_name:
         description: Name of the funding entity.
         range: string
-        required: false
 
       funder_uri:
-        description: ROR identifier or website URL of the funding entity.
-        range: URIorCURIE
-        required: false
+        description: Website URL of the funding entity.
+        range: IRI
+
+      funder_ror:
+        description: ROR identifier of the funding entity.
+        range: RorIdentifier
 
       # --- Access and rights ---
       access_procedures:
@@ -2943,22 +2726,51 @@ classes:
       disclaimer:
         description: Text for disclaimer when using/re-using the data.
         range: string
-        required: false
 
-      version:
+      version:  # Not in the original schema
         description: Version of the dataset.
         range: string
         required: false
 
-      publication_year:
+      publication_year: # Not in the original schema
         description: Year when the dataset was or will be made publicly available.
         range: integer
         required: false
 
-      provenance:
+      provenance: # Not in the original schema
         description: A statement about the lineage of the dataset.
         range: string
         required: false
+
+  
+    rules:
+      - title: monitoring_reasons_required_for_monitoring_programme
+        description: >-
+          Monitoring reasons are mandatory when the monitoring activity type
+          is a monitoring programme, as it is driven by legislative
+          requirements that must be explicitly documented.
+        preconditions:
+          slot_conditions:
+            type:
+              equals_string: monitoring_programme
+        postconditions:
+          slot_conditions:
+            monitoring_reasons:
+              required: true
+      - title: legislation_policy_required_for_monitoring_programme
+        description: >-
+          At least one link to legislation or policy is mandatory
+          when the activity type is a monitoring programme.
+        preconditions:
+          slot_conditions:
+            type:
+              equals_string: monitoring_programme
+        postconditions:
+          slot_conditions:
+            legislation_policy:
+              required: true
+              minimum_cardinality: 1
+
 
   # ---------------------------------------------------------------------------
   # CAMPAIGN
@@ -2968,110 +2780,26 @@ classes:
       A time-bounded data collection period within a project or monitoring
       programme. Mandatory if the campaign exists.
     slots:
+      - name_en
       - acronym
+      - start_date
+      - end_date
+    slots_usage: 
+      name_en: 
+        required: true
+        in_subset: mandatory_if
+      acronym: 
+        required: true
+        in_subset: mandatory_if
+      end_date:
+        required: true
+        in_subset: mandatory_if
+
     attributes:
 
-      campaign_name:
-        description: Name of the campaign
-        range: string
-        required: true
-        in_subset:
-          - mandatory_if_exists
-
-      start_date:
-        description: Start date of the campaign
-        range: date
-        required: true
-        in_subset:
-          - mandatory_if_exists
-
-      end_date:
-        description: End date of the campaign
-        range: date
-        required: true
-        in_subset:
-          - mandatory_if_exists
-
-      campaign_description:
+      campaign_description:  # are there other description attributes? Make it a slot?
         description: Description of the campaign
         range: string
-        required: false
-
-  # ---------------------------------------------------------------------------
-  # INSTITUTION (additional)
-  # ---------------------------------------------------------------------------
-  Institution:
-    description: >-
-      An institution involved in the project/monitoring programme.
-      Used for additional institutions beyond the primary one in Project.
-    slots:
-      - acronym
-    attributes:
-
-      name:
-        range: string
-        required: true
-        in_subset:
-          - mandatory
-
-      name_abbreviation:
-        range: string
-        required: false
-
-      institutional_ror:
-        range: RorIdentifier
-        required: false
-
-      country:
-        description: Country of institution according to UN M49
-        range: string
-        required: true
-        in_subset:
-          - mandatory
-
-      link:
-        range: URIorCURIE
-        required: false
-
-  # ---------------------------------------------------------------------------
-  # CONTACT (additional)
-  # ---------------------------------------------------------------------------
-  Contact:
-    description: >-
-      A contact person associated with the project/monitoring programme.
-      Used for additional contacts beyond the primary one in Project.
-    slots:
-      - acronym
-      - email
-      - orcid
-    attributes:
-
-      role:
-        description: Role of the contact person
-        range: ContactRole
-        required: false
-
-  # ---------------------------------------------------------------------------
-  # FUNDER (additional)
-  # ---------------------------------------------------------------------------
-  Funder:
-    description: >-
-      A funding entity for the project/monitoring programme.
-      Used for additional funders beyond the primary one in Project.
-    slots:
-      - acronym
-    attributes:
-
-      funder_name:
-        range: string
-        required: true
-        in_subset:
-          - mandatory
-
-      funder_uri:
-        description: ROR identifier or website URL of the funding entity.
-        range: URIorCURIE
-        required: false
 
   # ---------------------------------------------------------------------------
   # SITE GIS
@@ -3151,6 +2879,21 @@ classes:
         range: string
         required: false
 
+        water_type:
+    description: Type of water body at the site
+    range: WaterType
+    required: false
+
+  water_geographical_feature:
+    description: Geographical water feature type
+    range: WaterGeographicalFeature
+    required: false
+
+  water_treatment:
+    description: Water treatment status
+    range: WaterTreatment
+    required: false
+
   # ---------------------------------------------------------------------------
   # SITE EXPERT
   # ---------------------------------------------------------------------------
@@ -3223,6 +2966,19 @@ classes:
         required: true
         in_subset:
           - mandatory
+
+        nuts3:
+    range: string
+    pattern: "^[A-Z]{2}[A-Z0-9]{3,4}$"
+    required: false
+    description: >-
+      NUTS3 region code according to the Eurostat NUTS classification 
+      (Nomenclature of Territorial Units for Statistics), level 3.
+      Example: CZ080 (Moravskoslezsky kraj), DE300 (Berlin).
+    see_also:
+      - http://data.europa.eu/nuts/
+    in_subset:
+      mandatory_if # Mandatory if coordinates are not provided.
 
       altitude:
         description: >-
@@ -3335,6 +3091,42 @@ classes:
   # ---------------------------------------------------------------------------
   # SAMPLE TERRESTRIAL
   # ---------------------------------------------------------------------------
+  
+  Taxon:
+    description: >-
+      A taxonomic entity identified in a biological sample,
+      referenced against the GBIF Backbone Taxonomy.
+    see_also:
+      - https://www.gbif.org/species/search
+    attributes:
+      taxon_id:
+        range: integer
+        identifier: true
+        description: >-
+          GBIF species key (integer). Resolves to
+          https://www.gbif.org/species/{taxon_id}
+        required: true
+        in_subset:
+          - mandatory
+        see_also:
+          - https://www.gbif.org/species/search
+      taxon_name:
+        range: string
+        required: true
+        description: >-
+          Scientific name of the taxon (genus, species or higher rank)
+          as accepted in the GBIF Backbone Taxonomy.
+        in_subset:
+          - mandatory
+        see_also:
+          - https://www.gbif.org/species/search
+      taxon_rank:
+        range: TaxonRankEnum
+        required: false
+        description: Taxonomic rank of the identified taxon.
+        see_also:
+          - https://www.gbif.org/developer/species#rank
+  
   SampleTerrestrial:
     is_a: Sample
     description: A sample from the terrestrial domain (soil)
@@ -3564,3 +3356,135 @@ classes:
         required: true
         in_subset:
           - mandatory
+
+  # ---------------------------------------------------------------------------
+  # CHEMICAL COMPOUND (codelist entity)
+  # ---------------------------------------------------------------------------
+  
+
+  ParameterMeasurement:
+    description: >-
+      A single parameter measurement associated with a sample.
+    attributes:
+      parameter:
+        range: AirParameter   # or whichever enum
+        required: true
+      value:
+        range: double
+        required: true
+      unit:
+        range: UnitEnum
+        required: true
+      meteorological_information_source:
+        range: string
+        required: false
+        description: >-
+          Source of meteorological information 
+          (e.g. nearest weather station, model name, dataset reference).
+    rules:
+      - preconditions:
+          slot_conditions:
+            parameter:
+              equals_string: meteorological_information_source
+        postconditions:
+          slot_conditions:
+            meteorological_information_source:
+              required: true
+  
+  
+  
+  ChemicalCompound:
+    description: >-
+      A chemical compound monitored in environmental samples.
+      The compound list (1500+ substances) was developed in PARC WP9
+      in collaboration with other WPs. Each compound is identified by
+      multiple persistent identifiers and assigned to a compound group.
+      See: https://doi.org/10.5281/zenodo.17175075
+    see_also:
+      - https://doi.org/10.1186/s13321-025-01092-3
+    attributes:
+
+      wp9_id:
+        description: >-
+          Internal PARC WP9 identifier for the compound.
+          Unique within the PARC compound list.
+        range: integer
+        required: true
+        identifier: true
+
+      compound_name:
+        description: >-
+          Common or abbreviated name of the compound
+          as used in the PARC community (e.g. PFOS, triclosan).
+        range: string
+        required: true
+        in_subset:
+          - mandatory
+
+      compound_group:
+        description: >-
+          Chemical group classification of the compound
+          as defined in the PARC WP9 compound list
+          (e.g. PFAS, biocides, PCBs, PAHs).
+          # TODO: Future alignment planned with ChemFOnt functional classes
+          # and/or C3PO (ChEBI Chemical Class Program Ontology)
+        range: CompoundGroup
+        required: false
+
+      cas_number:
+        description: >-
+          CAS Registry Number — unique numerical identifier
+          assigned by the Chemical Abstracts Service.
+          Format: NNNNNN-NN-N
+        range: string
+        required: false
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
+
+      ec_number:
+        description: >-
+          EC Number (European Community Number) — identifier used
+          in the ECHA substance inventory (EINECS, ELINCS, NLP).
+          Format: NNN-NNN-N
+        range: string
+        required: false
+        pattern: "^\\d{3}-\\d{3}-\\d$"
+
+      inchi:
+        description: >-
+          IUPAC International Chemical Identifier (InChI) —
+          a standard textual representation of the molecular structure.
+          Begins with 'InChI=1S/'.
+        range: string
+        required: false
+        pattern: "^InChI=1S/"
+
+      inchikey:
+        description: >-
+          InChIKey — a fixed-length (27-character) hash of the InChI string.
+          Used as a compact, web-searchable identifier.
+          Format: XXXXXXXXXXXXXX-XXXXXXXXXX-X
+        range: string
+        required: false
+        pattern: "^[A-Z]{14}-[A-Z]{10}-[A-Z]$"
+
+      chebi_id:
+        description: >-
+          ChEBI identifier for the compound.
+          To be populated by mapping from InChIKey to ChEBI.
+          Format: CHEBI:NNNNN
+        range: URIorCURIE
+        required: false
+
+      pubchem_cid:
+        description: >-
+          PubChem Compound ID (CID).
+          To be populated by mapping from InChIKey to PubChem.
+        range: integer
+        required: false
+
+      norman_id:
+        description: >-
+          NORMAN substance identifier.
+          Source: NORMAN EMPODAT / SusDat database.
+        range: string
+        required: false

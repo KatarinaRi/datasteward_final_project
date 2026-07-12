@@ -25,3 +25,6 @@ documentation (MarkDown), python classes and code.
 - decide on whether to map or to use meaning (and adopt external URIs)
 - check the adopted URIs - where do they resolve?
 - look at vocbaulary analysis by NTK and proposals of vocabularies to be reused. -> any inspiraiton?
+- To clarify how uncertainty should be expressed
+- Can we have multiple institutions, contact points, funders and roles for a project? Should we make these classes?
+- 

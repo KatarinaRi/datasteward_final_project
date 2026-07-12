@@ -914,6 +914,129 @@ Does the concept have more than one property?
 │                             └── NO  → SLOT
 └── NO  → SLOT
 ```
+
+
+## Using Classes as Controlled Vocabularies
+
+A class with `identifier: true` on one of its slots can serve as a controlled vocabulary — effectively behaving like an enum but with the ability to carry multiple attributes per entry. This pattern is sometimes called a **lookup table** or **nominal class**.
+
+### How it works
+
+The identifier slot value is used as the reference elsewhere in the schema, just like an enum permissible value key:
+
+```yaml
+classes:
+  SamplingMethod:
+    attributes:
+      method_id:
+        identifier: true
+        range: string
+      label:
+        range: string
+      description:
+        range: string
+      reference:
+        range: IRI
+
+  Sample:
+    attributes:
+      sampling_method:
+        range: SamplingMethod    # referenced by method_id
+```
+
+### When to use a class vs an enum
+
+| | Enum | Class as lookup table |
+|--|------|----------------------|
+| **Use when** | Simple controlled vocabulary with stable values | Rich codelist with multiple attributes per entry |
+| **Supports descriptions** | ✅ per value | ✅ per instance |
+| **Supports URIs (`meaning:`)** | ✅ | ✅ via slots |
+| **Supports additional attributes** | ❌ | ✅ label, reference, version, etc. |
+| **External identifiers** | ❌ | ✅ CAS, ORCID, ROR, etc. |
+| **Can be referenced by ID** | ✅ by permissible value key | ✅ by `identifier: true` slot |
+| **Suitable size** | Up to ~200 values | Better for large lists (1000+) |
+| **Validation** | Strict — only listed values allowed | Strict — only instances with valid IDs |
+
+### Example — ChemicalCompound as a lookup table
+
+`ChemicalCompound` is an example of this pattern. The schema defines the structure; the actual 1500+ compound instances live in a separate data file that validates against the schema:
+
+```yaml
+classes:
+  ChemicalCompound:
+    attributes:
+      wp9_id:
+        identifier: true    # this is what gets referenced
+        range: integer
+      compound_name:
+        range: string
+      cas_number:
+        range: string
+      inchikey:
+        range: string
+
+  ChemicalMeasurement:
+    attributes:
+      compound:
+        range: ChemicalCompound    # referenced by wp9_id
+        required: true
+      value:
+        range: double
+```
+
+### Key difference from enums
+
+With a real enum, permissible values are defined inside the schema itself. With a class-as-lookup-table, the actual instances live outside the schema in a separate data file. The schema defines only the structure and constraints. This makes the pattern well-suited for large codelists — such as compound lists or species registries — where embedding all entries in the schema would be impractical.
+
+## Cardinalities in LinkML
+
+Default values are indicated in the table — properties at their default value do not need to be explicitly stated in the schema.
+
+| Cardinality | Meaning | `required` | `multivalued` | `minimum_cardinality` | `maximum_cardinality` |
+|-------------|---------|-----------|---------------|----------------------|-----------------------|
+| `0..1` | Optional, single value | `false` *(default)* | `false` *(default)* | — | — |
+| `1..1` | Mandatory, single value | `true` | `false` *(default)* | — | — |
+| `0..n` | Optional, multiple values | `false` *(default)* | `true` | — | — |
+| `1..n` | Mandatory, at least one | `true` | `true` | `1` | — |
+| `2..n` | Mandatory, at least two | `true` | `true` | `2` | — |
+| `0..N` | Optional, at most N | `false` *(default)* | `true` | — | `N` |
+| `1..N` | Mandatory, at most N | `true` | `true` | `1` | `N` |
+| `N..N` | Exactly N | `true` | `true` | `N` | `N` |
+
+### Default values
+
+| Property | Default | Meaning |
+|----------|---------|---------|
+| `required` | `false` | slot is optional — omit unless `true` |
+| `multivalued` | `false` | single value only — omit unless `true` |
+| `minimum_cardinality` | none | no minimum enforced — omit unless needed |
+| `maximum_cardinality` | none | no maximum enforced — omit unless needed |
+
+### Rule of thumb — only write what differs from the default
+
+```yaml
+# 0..1 — nothing needed, all defaults
+my_slot:
+  range: string
+
+# 1..1 — only required: true
+my_slot:
+  range: string
+  required: true
+
+# 0..n — only multivalued: true
+my_slot:
+  range: string
+  multivalued: true
+
+# 1..n — required + multivalued + minimum_cardinality
+my_slot:
+  range: string
+  required: true
+  multivalued: true
+  minimum_cardinality: 1
+```
+
 ## Rules
 
 Rules follow this structure:
