@@ -1314,6 +1314,91 @@ meaning → primary semantic identity (INSPIRE — legally binding, EU-aligned)
 exact_mappings → cross-vocabulary alignment (GloSIS + AGROVOC — for global and multilingual interoperability)
 see_also → human-readable reference to the WRB source document
 
+## Schema validation
+Two steps validation was carried out:
+ ### 1. Validation using Claude
+ Checking the main issues and consistency before the actual LinkML validaiton
+ ### 2. LinkML validation:
+
+**Prerequisites**
+
+- Python installed
+- LinkML virtual environment set up (see LinkML installation guide)
+- Schema file in YAML format (`.yml` or `.yaml`)
+
+#### Step 1 — Open Git Bash
+
+Open Git Bash from the Start menu or from within your code editor.
+
+#### Step 2 — Activate the virtual environment
+
+```bash
+cd /path/to/your/virtualenv
+source linkml-env/Scripts/activate
+```
+
+The prompt will change to show `(linkml-env)` — this confirms the environment is active. The virtual environment stays active regardless of which folder you navigate to afterwards.
+
+#### Step 3 — Navigate to the schema file
+
+```bash
+cd /path/to/your/schema
+```
+
+If you are unsure of the exact filename, list the files first:
+
+```bash
+ls *.yml
+ls *.yaml
+```
+
+
+#### Step 4 — Run the linter
+
+The `PYTHONUTF8=1` prefix is required on Windows to handle Unicode characters in the schema (e.g. special characters in descriptions, language names, ontology URIs).
+
+```bash
+PYTHONUTF8=1 linkml-lint your-schema.yml # only file name (no path needed since I have already been in the path)
+```
+
+
+### Step 5 — Interpret the results
+
+The linter reports two levels of problems:
+
+| Level | Meaning | Action required |
+|-------|---------|-----------------|
+| `error` | Structural problem — schema will not work | Must fix before proceeding |
+| `warning` | Style or convention issue | Schema works fine — fix is optional |
+
+A valid schema has **zero errors**. Warnings do not prevent the schema from being used, loaded, or generating outputs.
+
+Common sources of `standard_naming` warnings that are safe to ignore:
+- Permissible values following external standards (e.g. ISO country codes, language codes)
+- Scientific abbreviations and acronyms used as enum values
+- CamelCase values sourced from external ontologies (e.g. ISO 19115 role codes)
+
+#### Step 6 — Deactivate the environment when done
+
+```bash
+deactivate
+```
+
+---
+
+### Common issues and fixes
+
+| Problem | Cause | Fix |
+|---------|-------|-----|
+| `UnicodeDecodeError` | Windows default encoding cannot handle Unicode | Always use `PYTHONUTF8=1` prefix |
+| `Path does not exist` | Wrong file extension (`.yaml` vs `.yml`) | Check exact filename with `ls *.yml` |
+| `date-time` validation error | Date-only format not accepted for datetime fields | Use full ISO 8601 datetime: `"2024-01-15T00:00:00Z"` |
+| `more than one identifier slot` | Two slots with `identifier: true` in the same class | Remove `identifier: true` from all but one slot per class |
+| Empty `description:` field | LinkML requires a value after `description:` | Add at least a short description text |
+| Invalid top-level keyword | Non-standard field used at schema root level | Move into `annotations:` block |
+| Permissible value named `False` | YAML interprets bare `no` or `NO` as boolean false | Quote the value: `"no":` or `"NO":` |
+
+
 # SOIL Existing standards and ontologies 
 ## WRB Soil Typology — URI Options and Soil Data Standards Landscape
 
