@@ -1398,6 +1398,145 @@ deactivate
 | Invalid top-level keyword | Non-standard field used at schema root level | Move into `annotations:` block |
 | Permissible value named `False` | YAML interprets bare `no` or `NO` as boolean false | Quote the value: `"no":` or `"NO":` |
 
+## LinkML Documentation Generation and GitHub Pages Deployment Guide
+
+This guide describes how to generate documentation from a LinkML schema and deploy it to GitHub Pages using MkDocs.
+
+**Prerequisites**
+
+- Python installed
+- LinkML virtual environment set up with LinkML and MkDocs installed
+- Schema file in YAML format (`.yml` or `.yaml`)
+- Git repository connected to GitHub
+
+### Part 1 — Installation
+
+Install MkDocs and the Material theme into your virtual environment:
+
+```bash
+pip install mkdocs mkdocs-material
+```
+
+This only needs to be done once.
+
+
+### Part 2 — Generate Markdown documentation
+
+#### Step 1 — Activate the virtual environment
+
+```bash
+cd /path/to/your/virtualenv
+source linkml-env/Scripts/activate
+```
+
+#### Step 2 — Navigate to your schema folder
+
+```bash
+cd /path/to/your/schema
+```
+
+#### Step 3 — Generate Markdown documentation
+
+```bash
+PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown
+```
+
+This generates one Markdown file per concept (class, slot, enum, type) in the `docs/` folder. The `index.md` file is the main entry point linking all concepts.
+
+### Part 3 — Set up MkDocs
+
+#### Step 4 — Initialise MkDocs (first time only)
+
+```bash
+mkdocs new .
+```
+
+This creates a `mkdocs.yml` configuration file and a `docs/` folder. If `docs/` already exists from Step 3, the existing files are preserved.
+
+#### Step 5 — Configure mkdocs.yml
+
+Open `mkdocs.yml` and replace its contents with:
+
+```yaml
+site_name: Your Schema Name
+site_url: https://yourusername.github.io/your-repo-name/
+theme:
+  name: material
+docs_dir: docs
+```
+
+Replace `Your Schema Name`, `yourusername`, and `your-repo-name` with your actual values.
+
+#### Step 6 — Preview locally (optional)
+
+```bash
+mkdocs serve
+```
+
+Open your browser at `http://localhost:8000` to preview the documentation site. Press `Ctrl+C` to stop the server.
+
+
+### Part 4 — Deploy to GitHub Pages
+
+#### Prerequisites for GitHub Pages
+
+- The GitHub repository must be **public**
+- Git must be configured with your GitHub credentials
+
+#### Step 7 — Deploy
+
+```bash
+mkdocs gh-deploy
+```
+
+This command automatically:
+- Builds the static HTML site
+- Creates or updates a `gh-pages` branch in your repository
+- Pushes the HTML files to GitHub
+
+#### Step 8 — Enable GitHub Pages in repository settings
+
+1. Go to your repository on GitHub
+2. Click **Settings** → **Pages**
+3. Under **Source**, select branch `gh-pages` and folder `/ (root)`
+4. Click **Save**
+
+Your documentation will be live at:
+```
+https://yourusername.github.io/your-repo-name/
+```
+
+It may take a minute or two to appear after the first deployment.
+
+### Part 5 — Update documentation after schema changes
+
+Whenever you update the schema, regenerate and redeploy:
+
+```bash
+# 1. Activate virtual environment
+source linkml-env/Scripts/activate
+
+# 2. Navigate to schema folder
+cd /path/to/your/schema
+
+# 3. Regenerate Markdown docs
+PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown
+
+# 4. Redeploy to GitHub Pages
+mkdocs gh-deploy
+```
+
+---
+
+### Summary of commands
+
+| Action | Command |
+|--------|---------|
+| Generate Markdown docs | `PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown` |
+| Preview locally | `mkdocs serve` |
+| Build static HTML | `mkdocs build` |
+| Deploy to GitHub Pages | `mkdocs gh-deploy` |
+
 
 # SOIL Existing standards and ontologies 
 ## WRB Soil Typology — URI Options and Soil Data Standards Landscape
