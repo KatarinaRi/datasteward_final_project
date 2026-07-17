@@ -1702,3 +1702,81 @@ albeluvisols:
 | WoSIS | Global DB | Ongoing | Modeling pattern reference; contribution pathway |
 | ISO 28258 | ISO standard | Background | Underpins both INSPIRE and GloSIS |
 | OMS (ISO 19156:2023) | ISO/OGC standard | Future | Migration target for your class hierarchy |
+
+
+# CHANGELOG
+
+A changelog is a file that documents all notable changes made to a project between versions — what was added, changed, fixed, or removed. It's essentially a human-readable history of the project's evolution.
+
+**Why it matters**
+- Users and collaborators can quickly see what changed between versions without reading the full schema
+- Required for FAIR data — provenance and versioning transparency
+- Standard practice for any versioned software or data standard
+- Makes it easy to communicate changes to the (PARC) community
+
+**Standard format — Keep a Changelog**
+The most widely adopted convention is Keep a Changelog (keepachangelog.com). A CHANGELOG.md file looks like this:
+```
+# Changelog
+
+All notable changes to this schema will be documented in this file.
+Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+### Added
+- Institution, Contact and Funder classes
+- Rules for conditional mandatory fields
+- CRediT contributor roles in schema header
+
+## [1.1.0] - 2026-07-15
+### Added
+- Full country enum with ISO 3166-1 alpha-2 codes and OMG LCC URIs
+- Full language enum with ISO 639-1 codes
+- WRB soil typology enum with INSPIRE URIs
+- CORINE Land Cover enum
+- Sea and river basin enums
+- Parameter enums for air, water, sediment, soil and biota
+- Concentration unit enum aligned with QUDT
+
+### Changed
+- MonitoringActivity class restructured with Campaign subclass
+- name attribute split into name_en and name_original
+
+### Fixed
+- Unicode superscript characters replaced with ASCII equivalents
+
+## [1.0.0] - 2024-01-15
+### Added
+- Initial schema release
+- MonitoringActivity class
+- Basic enums for matrix, sampling method
+
+``` 
+
+**The change categories**
+Category | Use for
+---------|--------
+Added | New classes, slots, enums, features
+Changed | Changes to existing classes, slots, enums
+Deprecated | Features that will be removed in future versions
+Removed | Features that were removed
+FixedBug | fixes, corrections
+Security | Security-related changes (less relevant for schemas)
+
+**How to produce it in practice**
+**Option 1 — Manual (simplest, recommended for now)**
+Create a CHANGELOG.md file in your repository root and update it manually every time you make a significant change or release a new version. This is what most data standards do.
+**Option 2 — From git commit messages**
+If you write meaningful git commit messages, tools like git-cliff or conventional-changelog can auto-generate a changelog from them. This requires following a commit message convention like:
+feat: add Institution class
+fix: correct unicode encoding in descriptions
+chore: update ORCID URIs to https
+
+**For your schema right now**
+Since you're still in active development, I'd suggest:
+
+Create CHANGELOG.md in your repo root now
+Add an [Unreleased] section and list everything you've done so far
+When you make your first formal release (v1.0.0), move [Unreleased] items to [1.0.0] with the date
+Keep updating as you go
