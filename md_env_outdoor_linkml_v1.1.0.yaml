@@ -2035,16 +2035,280 @@ enums:
           forming wide cracks when dry.
         meaning: http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Vertisols
  
-  # Matrix: This enum is a full placeholder. The final controlled vocabulary is being developed
-  #  separately within the PARC project. Replace this stub once the PARC vocabulary is finalized.
-  Matrix:
+# MATRIX ENUMS
+# ---------------------------------------------------------------------------
+# Matrix vocabulary structured as domain-specific enums for use with
+# LinkML is_a inheritance and designates_type pattern.
+#
+# The full matrix vocabulary is maintained externally (in PARC) as SKOS concept scheme.
+# The meaning: URIs below reference that external vocabulary.
+# Base URI: TBC — replace placeholder URIs once vocabulary is published.
+#
+# Structure:
+#   MatrixAtmospheric  — valid for SampleAtmospheric
+#   MatrixAquatic      — valid for SampleAquatic
+#   MatrixTerrestrial  — valid for SampleTerrestrial
+#   MatrixBiota        — valid for SampleBiota (Plant and Animal only)
+# ---------------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------------
+  # ATMOSPHERIC MATRIX
+  # All terms narrower than AtmosphericMatrix in the vocabulary hierarchy
+  # ---------------------------------------------------------------------------
+  MatrixAtmospheric:
     description: >-
-      Placeholder — do not use in production. The full codelist
-      is developed as a separate controlled vocabulary in PARC and will be adopted 
-      after completion and publication.
+      Matrix values valid for atmospheric samples (SampleAtmospheric).
+      All terms are narrower than AtmosphericMatrix in the PARC
+      environmental matrix vocabulary.
+    see_also:
+      - https://w3id.org/peh/terms/AtmosphericMatrix  
     permissible_values:
-      PLACEHOLDER: 
-        description: Placeholder — do not use in production.
+
+      # --- Air ---
+      AirTotal:
+        description: Total air — no phase separation applied
+        meaning: https://w3id.org/peh/matrices/AirTotal  
+
+      AirGasPhase:
+        description: Gas phase fraction of air
+        meaning: https://w3id.org/peh/matrices/AirGasPhase  
+
+      AirParticulatePhase:
+        description: Particulate phase fraction of air
+        meaning: https://w3id.org/peh/matrices/AirParticulatePhase  
+
+      TotalSuspendedParticles:
+        description: Total suspended particles (TSP) in air
+        meaning: https://w3id.org/peh/matrices/TotalSuspendedParticles  
+
+      PM10:
+        description: Particulate matter with aerodynamic diameter <= 10 um
+        meaning: https://w3id.org/peh/matrices/PM10  
+
+      PM2_5:
+        description: Particulate matter with aerodynamic diameter <= 2.5 um
+        meaning: https://w3id.org/peh/matrices/PM2_5  
+
+      InhalableFraction:
+        description: >-
+          Inhalable fraction of airborne particles — fraction deposited
+          in the nose, mouth, throat, and upper airways
+        meaning: https://w3id.org/peh/matrices/InhalableFraction  
+
+      RespirableFraction:
+        description: >-
+          Respirable fraction of airborne particles — fraction reaching
+          the alveolar region of the lung
+        meaning: https://w3id.org/peh/matrices/RespirableFraction  
+
+      PassiveSamplerFraction:
+        description: >-
+          Fraction collected by passive air sampler — integrates
+          gas and/or particulate phase over the deployment period
+        meaning: https://w3id.org/peh/matrices/PassiveSamplerFraction  
+
+      # --- Atmospheric Deposition ---
+      DepositionTotal:
+        description: Total atmospheric deposition (wet + dry combined)
+        meaning: https://w3id.org/peh/matrices/DepositionTotal  
+
+      DepositionWet:
+        description: Wet atmospheric deposition (rain, snow, fog)
+        meaning: https://w3id.org/peh/matrices/DepositionWet  
+
+      # --- Dust ---
+      Dust:
+        description: Dust — general, unspecified surface or airborne dust
+        meaning: https://w3id.org/peh/matrices/Dust  
+
+      SurfaceDust:
+        description: >-
+          Dust collected from surfaces (e.g. window sills, shelves)
+          by wiping or vacuuming
+        meaning: https://w3id.org/peh/matrices/SurfaceDust  
+
+      FloorDust:
+        description: Dust collected from floor surfaces
+        meaning: https://w3id.org/peh/matrices/FloorDust  
+
+
+  # ---------------------------------------------------------------------------
+  # AQUATIC MATRIX
+  # All terms narrower than AquaticMatrix in the vocabulary hierarchy
+  # ---------------------------------------------------------------------------
+  MatrixAquatic:
+    description: >-
+      Matrix values valid for aquatic samples (SampleAquatic).
+      All terms are narrower than AquaticMatrix in the PARC
+      environmental matrix vocabulary.
+    see_also:
+      - https://w3id.org/peh/terms/AquaticMatrix  
+    permissible_values:
+
+      # --- Water ---
+      WaterTotal:
+        description: Total water sample — no phase separation applied
+        meaning: https://w3id.org/peh/matrices/WaterTotal  
+
+      PassiveWaterSamplerFraction:
+        description: >-
+          Fraction collected by passive water sampler (e.g. POCIS, Chemcatcher)
+          — integrates freely dissolved fraction over the deployment period
+        meaning: https://w3id.org/peh/matrices/PassiveWaterSamplerFraction  
+
+      # --- Sediment ---
+      SedimentTotal:
+        description: Total sediment sample — bulk sediment
+        meaning: https://w3id.org/peh/matrices/SedimentTotal  
+
+
+  # ---------------------------------------------------------------------------
+  # TERRESTRIAL MATRIX
+  # All terms narrower than TerrestrialMatrix in the vocabulary hierarchy
+  # ---------------------------------------------------------------------------
+  MatrixTerrestrial:
+    description: >-
+      Matrix values valid for terrestrial samples (SampleTerrestrial).
+      All terms are narrower than TerrestrialMatrix in the PARC
+      environmental matrix vocabulary.
+    see_also:
+      - https://w3id.org/peh/terms/TerrestrialMatrix  
+    permissible_values:
+
+      # --- Soil ---
+      SoilProfile:
+        description: >-
+          Composite soil profile sample covering multiple horizons
+        meaning: https://w3id.org/peh/matrices/SoilProfile  
+
+      O_Horizon:
+        description: >-
+          O horizon — organic horizon above mineral soil,
+          dominated by organic material in various stages of decomposition
+        meaning: https://w3id.org/peh/matrices/O_Horizon  
+
+      A_Horizon:
+        description: >-
+          A horizon — topsoil mineral horizon with incorporated
+          organic matter, darkened by humus
+        meaning: https://w3id.org/peh/matrices/A_Horizon  
+
+      E_Horizon:
+        description: >-
+          E horizon — eluviation horizon, leached of clay,
+          iron and aluminium oxides
+        meaning: https://w3id.org/peh/matrices/E_Horizon  
+
+      B_Horizon:
+        description: >-
+          B horizon — illuviation horizon, enriched by materials
+          leached from above
+        meaning: https://w3id.org/peh/matrices/B_Horizon  
+
+      C_Horizon:
+        description: >-
+          C horizon — parent material horizon, unconsolidated
+          mineral material
+        meaning: https://w3id.org/peh/matrices/C_Horizon  
+
+      R_Horizon:
+        description: >-
+          R horizon — bedrock, consolidated hard rock
+        meaning: https://w3id.org/peh/matrices/R_Horizon  
+
+      S_Horizon:
+        description: >-
+          S horizon — salic horizon, enriched with soluble salts
+        meaning: https://w3id.org/peh/matrices/S_Horizon  
+
+      H_Horizon:
+        description: >-
+          H horizon — histic horizon, organic horizon that is
+          saturated with water for prolonged periods
+        meaning: https://w3id.org/peh/matrices/H_Horizon  
+
+
+  # ---------------------------------------------------------------------------
+  # BIOTA MATRIX
+  # All terms narrower than PlantMatrix or AnimalMatrix in the vocabulary.
+  # HumanMatrix and MaterialMatrix are out of scope for this schema.
+  # ---------------------------------------------------------------------------
+  MatrixBiota:
+    description: >-
+      Matrix values valid for biota samples (SampleBiota).
+      Covers plant and animal tissues only. HumanMatrix is out of scope
+      for this schema. All terms are narrower than PlantMatrix or
+      AnimalMatrix in the PARC environmental matrix vocabulary.
+    see_also:
+      - https://w3id.org/peh/terms/BioticMatrix  
+    permissible_values:
+
+      # --- Plant tissue ---
+      WholePlant:
+        description: Whole plant sample — no tissue separation
+        meaning: https://w3id.org/peh/matrices/WholePlant  
+
+      Seed:
+        description: Plant seed tissue
+        meaning: https://w3id.org/peh/matrices/Seed  
+
+      Leaves:
+        description: Plant leaf tissue
+        meaning: https://w3id.org/peh/matrices/Leaves  
+
+      Needles:
+        description: Conifer needle tissue
+        meaning: https://w3id.org/peh/matrices/Needles  
+
+      Root:
+        description: Plant root tissue
+        meaning: https://w3id.org/peh/matrices/Root  
+
+      Fruit:
+        description: Plant fruit tissue
+        meaning: https://w3id.org/peh/matrices/Fruit  
+
+      Bark:
+        description: Plant bark tissue
+        meaning: https://w3id.org/peh/matrices/Bark  
+
+      Wood:
+        description: Plant wood tissue
+        meaning: https://w3id.org/peh/matrices/Wood  
+
+      # --- Animal tissue ---
+      Blood:
+        description: Animal blood sample
+        meaning: https://w3id.org/peh/matrices/Blood  
+
+      Liver:
+        description: Animal liver tissue
+        meaning: https://w3id.org/peh/matrices/Liver  
+
+      Kidney:
+        description: Animal kidney tissue
+        meaning: https://w3id.org/peh/matrices/Kidney  
+
+      Muscle:
+        description: Animal muscle tissue
+        meaning: https://w3id.org/peh/matrices/Muscle  
+
+      Fat:
+        description: Animal fat/adipose tissue
+        meaning: https://w3id.org/peh/matrices/Fat  
+
+      Hair:
+        description: Animal hair or fur sample
+        meaning: https://w3id.org/peh/matrices/Hair  
+
+      Bone:
+        description: Animal bone tissue
+        meaning: https://w3id.org/peh/matrices/Bone  
+
+      Eggs:
+        description: Animal egg sample
+        meaning: https://w3id.org/peh/matrices/Eggs  
+
 
   # SamplingMethod: This enum is a full placeholder. The final controlled vocabulary is being developed
   #  separately within the PARC project. Replace this stub once the PARC vocabulary is finalized.
@@ -2617,6 +2881,13 @@ slots:
       expressed as a percentage (%) at 95% confidence level.  
     range: double
     minimum_value: 0
+  
+  value:  
+    description: Measured value of the chemical concentration or other parameter
+    range: double
+    required: true
+    in_subset:
+      - mandatory
 
 # ---------------------------------------------------------------------------
 # CLASSES
@@ -3191,13 +3462,13 @@ classes:
     is_a: Sample
     attributes: 
       matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix que pertenece in AtmosphericMatrix
-        range: AtmosphericMatrix
+        range: MatrixAtmospheric
         required: true
         in_subset:
           - mandatory
 
       sampling_method: # Conditional sampling_method selection based on the domain? Do we need specific for each matrix/ domain?
-        range: AtmosphericSamplingMethod
+        range: SamplingMethodAtmospheric
         required: true
         in_subset:
           - mandatory
@@ -3209,13 +3480,13 @@ classes:
     is_a: Sample
     attributes: 
       matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix que pertenece in AtmosphericMatrix
-        range: AquaticMatrix
+        range: MatrixAquatic
         required: true
         in_subset:
           - mandatory
 
       sampling_method: # Conditional sampling_method selection based on the domain? Do we need specific for each matrix/ domain?
-        range: AquaticSamplingMethod
+        range: SamplingMethodAquatic
         required: true
         in_subset:
           - mandatory
@@ -3236,13 +3507,7 @@ classes:
     attributes:
 
       matrix:
-        range: TerrestrialMatrix # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix que pertenece in AtmosphericMatrix
-        required: true
-        in_subset:
-          - mandatory
-
-      sub_matrix:
-        range: TerrestrialSubMatrix # Conditional sampling_method selection based on the domain? Do we need specific for each matrix/ domain?
+        range: MatrixTerrestrial # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix que pertenece in AtmosphericMatrix
         required: true
         in_subset:
           - mandatory
@@ -3266,7 +3531,7 @@ classes:
     attributes:
 
       matrix:
-        range: BioticMatrix
+        range: MatrixBiota
         required: true
         in_subset:
           - mandatory
@@ -3363,8 +3628,15 @@ classes:
       - sample_id
       - unit
       - uncertainty
+      - value
+    
+    slot_usage:
+      value:
+        required: true # This is by default. (Either LOQ, or LOD or value/concentration must be provided). But his way there is no control over whether concentration is not provided, cause all values were <LOD OR <LOQ, or because someone forgot to provide the concentration.
+        in_subset:
+          - mandatory_if 
+    
     attributes:
-
       laboratory:
         description: Name of the laboratory performing the analysis
         range: string
@@ -3390,12 +3662,9 @@ classes:
           Reference to the PARC WP9 compound list entry (ChemicalCompound class).
           Identified by WP9_id, name, CAS, EC, InChI, and InChIKey.
           Mappable to ChEBI, PubChem, and NORMAN identifiers.
-          # TODO: Decide whether multivalued: true is correct here.
-          # A single measurement record should typically correspond to one compound.
-          # Multivalued may be intentional for mixture records — confirm with domain experts.
+          A single measurement record should typically correspond to one compound.
         range: ChemicalCompound
         required: true
-        multivalued: true
         in_subset:
           - mandatory
 
@@ -3412,24 +3681,24 @@ classes:
         description: >-
           GUPRI (e.g. DOI) linking to a public SOP, article, or other
           document describing the method.
-        range: URIorCURIE
+        range: IRI
         required: false
 
-      analysis_method:
+      analytical_method:
         description: Analytical method used to determine the analyte
-        range: AnalysisMethod
+        range: AnalyticalMethod
         required: true
         in_subset:
           - mandatory
 
-      analysis_method_link:
+      analytical_method_link:
         description: GUPRI linking to a public SOP or document describing the method
-        range: URIorCURIE
+        range: IRI
         required: false
 
       data_handling_procedure:
         description: >-
-          Steps taken after chemical analysis (e.g., blank correction,
+          Description of steps taken after chemical analysis (e.g., blank correction,
           quality control, calibration, recovery, standardization,
           recalculations).
         range: string
@@ -3439,14 +3708,7 @@ classes:
 
       data_handling_procedure_link:
         description: GUPRI linking to a document describing the data handling procedure
-        range: URIorCURIE
-        required: false
-
-      concentration:
-        description: >-
-          Measured concentration value. At least one of concentration,
-          LOQ, or LOD must be provided.
-        range: double
+        range: IRI
         required: false
 
       loq:
@@ -3460,9 +3722,16 @@ classes:
         required: false
 
     rules:
-      - preconditions:
+      - title: at_least_one_measurement_value_required
+        description: >-
+          At least one of concentration value (value), LOQ, or LOD 
+          must be provided per measurement record. This rule creates
+          a logical contradiction when all three are absent, making
+          that state invalid. The postcondition on value is 
+          conventional — any of the three would work equivalently.
+        preconditions:
           slot_conditions:
-            concentration:
+            value:
               value_presence: ABSENT
             loq:
               value_presence: ABSENT
@@ -3470,10 +3739,8 @@ classes:
               value_presence: ABSENT
         postconditions:
           slot_conditions:
-            concentration:
+            value:
               value_presence: PRESENT
-        description: >-
-          At least one of concentration, LOQ, or LOD must be provided.
 
   # ---------------------------------------------------------------------------
   # MEASUREMENT PARAMETER
@@ -3481,66 +3748,29 @@ classes:
   MeasurementParameter:
     description: >-
       An additional parameter measured in the sample
-      (e.g. pH, temperature, TOC). Depends on matrix type.
+      (e.g. pH, temperature, TOC). Depends on matrix type. 
+      Gives context to the chemical concentration measurement.
     slots:
       - sample_id
       - unit
       - uncertainty
+      - value
     attributes:
 
-      parameter:
+      parameter: # Add rule about meteorological information source.. 
         description: >-
           Name of the parameter measured. Refer to the
           codelist-parameter tab for the list.
-        range: string
-        required: true
-        in_subset:
-          - mandatory
-
-      value:
-        description: Measured value of the parameter
-        range: double
+        range: Parameter
         required: true
         in_subset:
           - mandatory
 
   # ---------------------------------------------------------------------------
-  # CHEMICAL COMPOUND (codelist entity)
+  # CHEMICAL COMPOUND 
   # ---------------------------------------------------------------------------
   
-
-  ParameterMeasurement:
-    description: >-
-      A single parameter measurement associated with a sample.
-    attributes:
-      parameter:
-        range: AirParameter   # or whichever enum
-        required: true
-      value:
-        range: double
-        required: true
-      unit:
-        range: UnitEnum
-        required: true
-      meteorological_information_source:
-        range: string
-        required: false
-        description: >-
-          Source of meteorological information 
-          (e.g. nearest weather station, model name, dataset reference).
-    rules:
-      - preconditions:
-          slot_conditions:
-            parameter:
-              equals_string: meteorological_information_source
-        postconditions:
-          slot_conditions:
-            meteorological_information_source:
-              required: true
-  
-  
-  
-  ChemicalCompound:
+  ChemicalCompound: #Alternatively lin to external vocabulary if this published (eg. as PARC list of compounds monitored in the environment - see also the example of Biochem Entities for HBM)
     description: >-
       A chemical compound monitored in environmental samples.
       The compound list (1500+ substances) was developed in PARC WP9
@@ -3602,7 +3832,7 @@ classes:
           a standard textual representation of the molecular structure.
           Begins with 'InChI=1S/'.
         range: string
-        required: false
+        required: true
         pattern: "^InChI=1S/"
 
       inchikey:
@@ -3619,7 +3849,7 @@ classes:
           ChEBI identifier for the compound.
           To be populated by mapping from InChIKey to ChEBI.
           Format: CHEBI:NNNNN
-        range: URIorCURIE
+        range: IRI
         required: false
 
       pubchem_cid:

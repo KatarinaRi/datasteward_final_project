@@ -1780,3 +1780,9 @@ Create CHANGELOG.md in your repo root now
 Add an [Unreleased] section and list everything you've done so far
 When you make your first formal release (v1.0.0), move [Unreleased] items to [1.0.0] with the date
 Keep updating as you go
+
+
+
+
+# is_a vs mixins... 
+
