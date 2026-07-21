@@ -30,4 +30,5 @@ documentation (MarkDown), python classes and code.
 - What field to use as site identifier?
 - Align contacts, funders and institution, managing instance name with DCAT-AP Agent?
 - Indicate explicitly "required false", even if this by default
+- Figure out linking biota with compartment. Currently, we have BiotaCompartment and Domain - how to aling and link?
 - 

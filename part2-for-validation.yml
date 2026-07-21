@@ -3093,7 +3093,7 @@ classes:
         see_also:
           - https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue
 
-  rules:
+    rules:
     # IF privacy exception absent > false -> coordinates required
       - title: coordinates_required_when_no_privacy_exception
         description: >-
