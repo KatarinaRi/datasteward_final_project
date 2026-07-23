@@ -1786,3 +1786,260 @@ Keep updating as you go
 
 # is_a vs mixins... 
 
+## Inheritance, Abstract Classes and Mixins in LinkML
+
+### The core concept — is_a
+
+`is_a` expresses an **IS-A relationship** between two classes — a subclass inherits all slots, attributes, rules, and constraints from its parent class. It is the primary mechanism for class hierarchy in LinkML.
+
+```yaml
+classes:
+  Sample:
+    attributes:
+      sample_id:
+        identifier: true
+        range: string
+      site_id:
+        range: string
+      sampling_date:
+        range: date
+
+  SampleTerrestrial:
+    is_a: Sample          # inherits sample_id, site_id, sampling_date
+    attributes:
+      soil_horizon:       # adds its own domain-specific attribute
+        range: MatrixTerrestrial
+```
+
+Every instance of `SampleTerrestrial` is also a valid `Sample` — the relationship is permanent and hierarchical.
+
+---
+
+### Abstract classes — abstract: true
+
+Marking a class as `abstract: true` declares that it **cannot be instantiated directly** — no data record can be of that type alone. It exists only to be inherited from. Every actual instance must be one of its concrete subclasses.
+
+```yaml
+classes:
+  Sample:
+    abstract: true        # cannot create a plain Sample record
+    attributes:
+      sample_id:
+        identifier: true
+        range: string
+
+  SampleAtmospheric:
+    is_a: Sample          # concrete — can be instantiated
+    attributes:
+      matrix:
+        range: MatrixAtmospheric
+
+  SampleAquatic:
+    is_a: Sample          # concrete — can be instantiated
+    attributes:
+      matrix:
+        range: MatrixAquatic
+```
+
+Valid data:
+```json
+{"sample_id": "S001", "domain": "SampleAtmospheric", "matrix": "AirTotal"}
+```
+
+Invalid data — rejected because Sample is abstract:
+```json
+{"sample_id": "S001"}
+```
+
+#### Why use abstract classes
+
+- Prevents incomplete records — forces depositors to specify the concrete type
+- Documents that the class exists only as a structural concept, not a real entity
+- Enables type-safe polymorphism — a slot with `range: Sample` accepts any subclass instance
+
+---
+
+### What subclasses inherit
+
+A subclass defined with `is_a` automatically inherits **everything** from its parent:
+
+- All slots and attributes
+- All constraints (`required`, `pattern`, `minimum_value` etc.)
+- All rules
+- All annotations and metadata
+
+```yaml
+classes:
+  Sample:
+    abstract: true
+    attributes:
+      value:
+        range: double
+        minimum_value: 0    # inherited by ALL subclasses
+      unit:
+        range: UnitEnum
+        required: true      # inherited by ALL subclasses
+
+  SampleAtmospheric:
+    is_a: Sample
+    # automatically has: value (double, min 0), unit (required)
+    # adds its own:
+    attributes:
+      matrix:
+        range: MatrixAtmospheric
+        required: true
+```
+
+#### Overriding inherited slots with slot_usage
+
+A subclass can override an inherited slot to make it more specific using `slot_usage`:
+
+```yaml
+classes:
+  Sample:
+    abstract: true
+    slots:
+      - unit
+    # unit is optional at base level
+
+  SampleAtmospheric:
+    is_a: Sample
+    slot_usage:
+      unit:
+        required: true      # made mandatory in this subclass only
+```
+
+---
+
+### designates_type — linking enum values to subclasses
+
+When a parent class has a slot with `designates_type: true`, the value of that slot determines which subclass to instantiate and validate against. The enum values **must match the subclass names exactly**.
+
+```yaml
+enums:
+  Domain:
+    permissible_values:
+      SampleAtmospheric:    # must match class name exactly
+        description: Atmospheric domain
+      SampleAquatic:        # must match class name exactly
+        description: Aquatic domain
+
+classes:
+  Sample:
+    abstract: true
+    attributes:
+      domain:
+        range: Domain
+        required: true
+        designates_type: true   # this slot determines the subclass
+
+  SampleAtmospheric:
+    is_a: Sample
+
+  SampleAquatic:
+    is_a: Sample
+```
+
+In data, the `domain` value tells LinkML which subclass to validate against:
+```json
+{"sample_id": "S001", "domain": "SampleAtmospheric", "matrix": "AirTotal"}
+```
+
+---
+
+### Multiple levels of inheritance
+
+Abstract classes can themselves inherit from other abstract classes:
+
+```yaml
+classes:
+  Observation:
+    abstract: true          # top-level abstract
+    attributes:
+      value:
+        range: double
+
+  QuantitativeMeasurement:
+    is_a: Observation
+    abstract: true          # mid-level abstract — still not instantiable
+    attributes:
+      uncertainty:
+        range: double
+
+  MeasurementConcentration:
+    is_a: QuantitativeMeasurement   # concrete — inherits from both levels
+    attributes:
+      compound:
+        range: ChemicalCompound
+```
+
+---
+
+### Mixins — reusable bundles of slots
+
+Mixins are a complementary pattern to inheritance. A mixin is a reusable bundle of slots that can be added to any class without forming a strict IS-A hierarchy.
+
+```yaml
+classes:
+  Auditable:
+    mixin: true             # not abstract — but also not directly instantiable
+    attributes:
+      created_date:
+        range: date
+      created_by:
+        range: string
+
+  Sample:
+    mixins:
+      - Auditable           # gets created_date and created_by
+    attributes:
+      sample_id:
+        identifier: true
+
+  Institution:
+    mixins:
+      - Auditable           # same slots reused without inheritance relationship
+    attributes:
+      institution_id:
+        identifier: true
+```
+
+---
+
+### is_a vs mixins — key differences
+
+| | `is_a` | `mixins` |
+|--|--------|---------|
+| **Relationship** | IS-A (subclass — type hierarchy) | HAS-A (reusable behaviour) |
+| **Number of parents** | Only one parent class | Multiple mixins allowed |
+| **Semantics** | Strong type relationship | Shared slots without type claim |
+| **In OWL** | `rdfs:subClassOf` | No direct equivalent |
+| **Use when** | The subclass IS a type of the parent | Slots are shared across unrelated classes |
+| **Example** | SampleAtmospheric IS-A Sample | Auditable slots shared by Sample, Institution, Campaign |
+
+#### Combining both
+
+`is_a` and `mixins` can be used together:
+
+```yaml
+classes:
+  SampleAtmospheric:
+    is_a: Sample            # type hierarchy
+    mixins:
+      - Auditable           # reusable behaviour
+    attributes:
+      matrix:
+        range: MatrixAtmospheric
+```
+
+---
+
+### Summary
+
+| Concept | Purpose | Key property |
+|---------|---------|-------------|
+| `is_a` | Subclass inherits everything from parent | One parent only |
+| `abstract: true` | Class cannot be instantiated directly | Must be subclassed |
+| `designates_type: true` | Slot value determines which subclass to use | Enum values must match class names |
+| `slot_usage` | Override inherited slot properties per class | Overrides only — does not redefine |
+| `mixin: true` | Reusable slot bundle without type relationship | Multiple mixins allowed |

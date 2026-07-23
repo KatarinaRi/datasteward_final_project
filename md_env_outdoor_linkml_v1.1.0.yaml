@@ -11,10 +11,10 @@ description: >-
 version: "1.1.0"
 license: https://creativecommons.org/licenses/by/4.0/ 
 # Udate the created_by and last_updated_on
-created_by: http://orcid.org/0000-0003-0222-801x # Katarina Rihackova
-created_on: "2026-07-15T00:00:00Z"
-last_updated_on: "2025-06-30T00:00:00Z"
-modified_by: http://orcid.org/0000-0003-0222-801x # Katarina Rihackova
+created_by: https://orcid.org/0000-0003-0222-801x # Katarina Rihackova
+created_on: "2026-06-08T00:00:00Z"
+last_updated_on: "2026-07-24T00:00:00Z"
+modified_by: https://orcid.org/0000-0003-0222-801x # Katarina Rihackova
 # contributors - TBC. Placeholder.
 contributors:
   - https://orcid.org/XXXX-XXXX-XXXX-XXXX # TBC - list of ORCID URIs
@@ -167,9 +167,13 @@ enums:
       (e.g. international, national, regional, or local).
     permissible_values:
       international:
+        description: Covers international area. # Do we mean here global?
       national:
+        description: Covers national area
       regional:
+        description: Covers regional area # Do we mean here regional like in UN? Or like "kraj"?
       local:
+        description: Covers local area
 
   Language:
     description: >-
@@ -1561,8 +1565,10 @@ enums:
   WaterTreatment:
     description: Water treatment status
     permissible_values:
-      pre_treatment:
+      pre_treatment: 
+        description: # TBC
       post_treatment:
+        description: #TBC
 
   WaterGeographicalFeature:
     description: Geographical water feature type
@@ -1599,20 +1605,25 @@ enums:
       - https://unstats.un.org/unsd/methodology/m49/
     permissible_values:
       Africa:
+        description: Africa
       Americas:
+        description: Americas
       Asia:
+        description: Asia
       Europe:
+        description: Europe
       Oceania:
+        description: Oceania
 
   UNRegionalGroup:
     description: Regional groups of United Nations member states
     permissible_values:
-      African:
-      Asia_Pacific:
-      Eastern_European:
-      GRULAC:
+      african:
+      asia_pacific:
+      eastern_european:
+      grulac:
         description: Group of Latin American and Caribbean Countries
-      WEOG:
+      weog:
         description: Western European and Others Group
 
   LandUse:
@@ -2312,14 +2323,27 @@ enums:
 
   # SamplingMethod: This enum is a full placeholder. The final controlled vocabulary is being developed
   #  separately within the PARC project. Replace this stub once the PARC vocabulary is finalized.
-  SamplingMethod:
+
+  SamplingMethodAtmospheric:
     description: >-
-      Placeholder — do not use in production. The full codelist
-      is developed as a separate controlled vocabulary in PARC and will be adopted 
+      Sampling method used to collect atmospheric samples (air, deposition, dust).
+      Placeholder — do not use in production. The final controlled vocabulary is
+      being developed separately within the PARC project and will be adopted
       after completion and publication.
     permissible_values:
-      PLACEHOLDER: 
+      PLACEHOLDER:
         description: Placeholder — do not use in production.
+
+  SamplingMethodAquatic:
+    description: >-
+      Sampling method used to collect aquatic samples (water, sediment).
+      Placeholder — do not use in production. The final controlled vocabulary is
+      being developed separately within the PARC project and will be adopted
+      after completion and publication.
+    permissible_values:
+      PLACEHOLDER:
+        description: Placeholder — do not use in production.
+
 
   # AquaticMatrixFraction: To consider whether this needs to be included as separate enum, or included 
   # in the matrix enum.
@@ -2346,12 +2370,56 @@ enums:
       sediment_colloidal_fraction:
         description: Sediment - Colloidal fraction
 
-  BiotaCompartment:
-    description: Environmental compartment where a biota organism was sampled
+  TaxonRankEnum:
+    description: >-
+      Taxonomic rank of the identified taxon, aligned with
+      GBIF Backbone Taxonomy rank vocabulary.
+    see_also:
+      - https://www.gbif.org/developer/species#rank
     permissible_values:
-      aquatic:
-      atmospheric:
-      terrestrial:
+      KINGDOM:
+        description: Kingdom — highest taxonomic rank
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/KINGDOM
+      PHYLUM:
+        description: Phylum
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/PHYLUM
+      CLASS:
+        description: Class
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/CLASS
+      ORDER:
+        description: Order
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/ORDER
+      FAMILY:
+        description: Family
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/FAMILY
+      GENUS:
+        description: Genus
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/GENUS
+      SPECIES:
+        description: Species — most common rank for environmental monitoring
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/SPECIES
+      SUBSPECIES:
+        description: Subspecies
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/SUBSPECIES
+      VARIETY:
+        description: Variety — used for plants
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/VARIETY
+      FORM:
+        description: Form — lowest commonly used rank
+        meaning: https://api.gbif.org/v1/enumeration/basic/Rank/FORM
+
+
+  EnvironmentalCompartment:
+    description: >-
+      Environmental compartment where a biota organism was sampled from.
+      Excludes Biota since an organism cannot have Biota as its habitat.
+    permissible_values:
+      Atmospheric:
+        description: Atmospheric compartment — air, particles, deposition
+      Aquatic:
+        description: Aquatic compartment — water, sediment
+      Terrestrial:
+        description: Terrestrial compartment — soil
 
   Gender:
     description: Biological sex of a sampled organism
@@ -2725,17 +2793,6 @@ enums:
       density:
         description: Density (soil; g/cm3)
 
-  # ChemicalCompound: Placeholder. The list of 1500 compounds will be held separately and 
-  # this schema will point to it.
-  ChemicalCompound:
-      description: >-
-        Placeholder — do not use in production. The full codelist
-        is developed as a separate controlled vocabulary in PARC and will be adopted 
-        after completion and publication.
-      permissible_values:
-        PLACEHOLDER:
-          description: Placeholder — do not use in production.
-
   Domain:
     description: >-
       Environmental domain - sample type according to sampled matrix/ environmental compartment. 
@@ -2758,7 +2815,7 @@ enums:
       MeasurementConcentration:
         description: Chemical concentration in the environment or biota - main observation
       MeasurementParameter:
-        desscription: Other parameters giving context to the main measurement.
+        description: Other parameters giving context to the main measurement.
 
 # ---------------------------------------------------------------------------
 # SLOTS (shared)
@@ -2802,9 +2859,10 @@ slots:
       Unique identifier of the monitoring site where the sample
       was collected. References the site_id of a Site record.
     range: string
-    required: false
+    required: true
+    identifier: true
     in_subset:
-      - mandatory_if
+      - mandatory
 
   site_name:
     description: >-
@@ -2812,9 +2870,9 @@ slots:
       as the primary name. An English name may be added if available
       and commonly used. Multiple names in different languages are accepted.
     range: string
-    required: false
-    multivalued: true
-    slot_uri: schema:name
+    required: true
+    in_subset:
+      - mandatory
 
   start_date:
     description: Start date in format YYYY-MM-DD
@@ -2885,7 +2943,7 @@ slots:
   value:  
     description: Measured value of the chemical concentration or other parameter
     range: double
-    required: true
+    required: false
     in_subset:
       - mandatory
 
@@ -2924,7 +2982,7 @@ classes:
         in_subset:
           - mandatory
 
-      identifier:
+      activity_identifier:
         description: >-
           Project/monitoring programme identifier provided as URL (GUPRI).
           At least one identifier required.
@@ -2956,7 +3014,7 @@ classes:
       language: # Means in data? Or for communication in monitoring activity?
         description: >-
           Language(s) used, as 2-letter codes according to ISO 639-1.
-        range: string
+        range: Language
         multivalued: true
 
       start_date:
@@ -3119,21 +3177,29 @@ classes:
         description: Description of the campaign
         range: string
 
+# ---------------------------------------------------------------------------
+# ORGANISATION METADATA 
+# ---------------------------------------------------------------------------
+  OrganisationMetadata:
+    mixin: true
+    description: >-
+      Shared metadata for organisations — institutions and funders.
+    slots:
+      - name_en
+      - name_original
+      - ror
+      - link
 
   # ---------------------------------------------------------------------------
   # INSTITUTION
   # ---------------------------------------------------------------------------
+  
   Institution:
-    description: >-
-      An organisation or institution involved in the monitoring activity.
+    mixins:
+      - OrganisationMetadata
     slots:
-      - name_en
-      - name_original
       - acronym
-      - ror
       - country
-      - link
-
     attributes:
       institution_id: # Do we need it if ROR is used (in that case ROR must be made mandatory)?
         description: >-
@@ -3141,6 +3207,21 @@ classes:
         identifier: true
         range: string
         required: true
+
+# ---------------------------------------------------------------------------
+# FUNDER
+# ---------------------------------------------------------------------------
+
+  Funder:
+    mixins:
+      - OrganisationMetadata
+    attributes:
+      funder_id:
+        description: >-
+          Unique funder ID
+        identifier: true
+        range: string
+        required: tru
 
   # ---------------------------------------------------------------------------
   # CONTACT
@@ -3173,26 +3254,6 @@ classes:
         required: false
 
   # ---------------------------------------------------------------------------
-  # FUNDER
-  # ---------------------------------------------------------------------------
-  Funder:
-    description: >-
-      A funding entity supporting the monitoring activity.
-    slots:
-      - ror
-      - name_en
-      - name_original
-      - link
-    attributes:
-      funder_id:
-        description: >-
-          Unique funder ID
-        identifier: true
-        range: string
-        required: true
-
-  
-  # ---------------------------------------------------------------------------
   # SITE
   # ---------------------------------------------------------------------------
   
@@ -3212,11 +3273,6 @@ classes:
       - site_name
       - link
     slot_usage:
-      site_name: 
-        required: true 
-        identifier: true
-        in_subset:
-          - mandatory 
       country:
         multivalued: true
         description: >-
@@ -3461,7 +3517,7 @@ classes:
   Atmospheric:
     is_a: Sample
     attributes: 
-      matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix que pertenece in AtmosphericMatrix
+      matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix belonging to AtmosphericMatrix
         range: MatrixAtmospheric
         required: true
         in_subset:
@@ -3479,7 +3535,7 @@ classes:
   Aquatic:
     is_a: Sample
     attributes: 
-      matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix que pertenece in AtmosphericMatrix
+      matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix belonging to AtmosphericMatrix
         range: MatrixAquatic
         required: true
         in_subset:
@@ -3507,7 +3563,7 @@ classes:
     attributes:
 
       matrix:
-        range: MatrixTerrestrial # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix que pertenece in AtmosphericMatrix
+        range: MatrixTerrestrial # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix belonging to AtmosphericMatrix
         required: true
         in_subset:
           - mandatory
@@ -3546,7 +3602,7 @@ classes:
       compartment: # Doriesit, odkazuje na urcitu site a na domain (mame dvakrat definovane to iste - compartment a domain)
         description: >-
           The environmental compartment where the organism was sampled from.
-        range: BiotaCompartment
+        range: EnvironmentalCompartment
         required: false
         multivalued: true
 
@@ -3606,6 +3662,8 @@ classes:
   # MEASUREMENT CONCENTRATION
   # ---------------------------------------------------------------------------
   Observation:
+    abstract: true
+    slots: sample_id
     attributes:
       
       observation_type:
@@ -3619,25 +3677,24 @@ classes:
           - mandatory
         designates_type: true
   
-  
-  MeasurementConcentration:
+  MeasurementBase:
+    mixin: true
     description: >-
-      A measured concentration of a chemical compound in a sample.
-      At least one of concentration, LOQ, or LOD must be provided.
+      Shared measurement slots common to all observation types.
     slots:
-      - sample_id
       - unit
       - uncertainty
       - value
-    
-    slot_usage:
-      value:
-        required: true # This is by default. (Either LOQ, or LOD or value/concentration must be provided). But his way there is no control over whether concentration is not provided, cause all values were <LOD OR <LOQ, or because someone forgot to provide the concentration.
-        in_subset:
-          - mandatory_if 
-    
+
+  MeasurementConcentration:
+    is_a: Observation
+    description: >-
+      A measured concentration of a chemical compound in a sample.
+      At least one of concentration, LOQ, or LOD must be provided.
+    mixins: 
+      - MeasurementBase 
     attributes:
-      laboratory:
+      laboratory: # Link with the institution?
         description: Name of the laboratory performing the analysis
         range: string
         required: true
@@ -3745,16 +3802,15 @@ classes:
   # ---------------------------------------------------------------------------
   # MEASUREMENT PARAMETER
   # ---------------------------------------------------------------------------
+   
   MeasurementParameter:
+    is_a: Observation
     description: >-
       An additional parameter measured in the sample
       (e.g. pH, temperature, TOC). Depends on matrix type. 
       Gives context to the chemical concentration measurement.
-    slots:
-      - sample_id
-      - unit
-      - uncertainty
-      - value
+    mixins:
+      - MeasurementBase
     attributes:
 
       parameter: # Add rule about meteorological information source.. 
@@ -3770,7 +3826,7 @@ classes:
   # CHEMICAL COMPOUND 
   # ---------------------------------------------------------------------------
   
-  ChemicalCompound: #Alternatively lin to external vocabulary if this published (eg. as PARC list of compounds monitored in the environment - see also the example of Biochem Entities for HBM)
+  ChemicalCompound: #Alternatively, ad enum! link to external vocabulary if this published (eg. as PARC list of compounds monitored in the environment - see also the example of Biochem Entities for HBM)
     description: >-
       A chemical compound monitored in environmental samples.
       The compound list (1500+ substances) was developed in PARC WP9
