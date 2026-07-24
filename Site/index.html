@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/Site/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/Site/">
       
       
         <link rel="prev" href="../SamplingMethodAtmospheric/">
@@ -4703,10 +4703,9 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-
-<pre><code class="language-mermaid"> classDiagram
+<pre class="mermaid"><code> classDiagram
     class Site
-    click Site href &quot;../Site/&quot;
+    click Site href "../Site/"
       Site : acronym
 
       Site : altitude
@@ -4721,8 +4720,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; CoordinateSystem : coordinate_system
-        click CoordinateSystem href &quot;../CoordinateSystem/&quot;
+        Site --&gt; "0..1" CoordinateSystem : coordinate_system
+        click CoordinateSystem href "../CoordinateSystem/"
 
 
 
@@ -4732,8 +4731,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;1..*&quot; Country : country
-        click Country href &quot;../Country/&quot;
+        Site --&gt; "1..*" Country : country
+        click Country href "../Country/"
 
 
 
@@ -4743,8 +4742,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; GeographicRegion : geographic_region
-        click GeographicRegion href &quot;../GeographicRegion/&quot;
+        Site --&gt; "0..1" GeographicRegion : geographic_region
+        click GeographicRegion href "../GeographicRegion/"
 
 
 
@@ -4754,8 +4753,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; LandUse : land_use
-        click LandUse href &quot;../LandUse/&quot;
+        Site --&gt; "0..1" LandUse : land_use
+        click LandUse href "../LandUse/"
 
 
 
@@ -4771,8 +4770,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; Institution : managing_instance
-        click Institution href &quot;../Institution/&quot;
+        Site --&gt; "0..1" Institution : managing_instance
+        click Institution href "../Institution/"
 
 
 
@@ -4784,8 +4783,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; UNRegionalGroup : regional_group
-        click UNRegionalGroup href &quot;../UNRegionalGroup/&quot;
+        Site --&gt; "0..1" UNRegionalGroup : regional_group
+        click UNRegionalGroup href "../UNRegionalGroup/"
 
 
 
@@ -4795,8 +4794,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; RiverBasin : river_basin
-        click RiverBasin href &quot;../RiverBasin/&quot;
+        Site --&gt; "0..1" RiverBasin : river_basin
+        click RiverBasin href "../RiverBasin/"
 
 
 
@@ -4806,8 +4805,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; Sea : sea
-        click Sea href &quot;../Sea/&quot;
+        Site --&gt; "0..1" Sea : sea
+        click Sea href "../Sea/"
 
 
 
@@ -4823,8 +4822,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; SoilTypeWRB : soil_type
-        click SoilTypeWRB href &quot;../SoilTypeWRB/&quot;
+        Site --&gt; "0..1" SoilTypeWRB : soil_type
+        click SoilTypeWRB href "../SoilTypeWRB/"
 
 
 
@@ -4834,8 +4833,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; WaterGeographicalFeature : water_geographical_feature
-        click WaterGeographicalFeature href &quot;../WaterGeographicalFeature/&quot;
+        Site --&gt; "0..1" WaterGeographicalFeature : water_geographical_feature
+        click WaterGeographicalFeature href "../WaterGeographicalFeature/"
 
 
 
@@ -4845,8 +4844,8 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; WaterTreatment : water_treatment
-        click WaterTreatment href &quot;../WaterTreatment/&quot;
+        Site --&gt; "0..1" WaterTreatment : water_treatment
+        click WaterTreatment href "../WaterTreatment/"
 
 
 
@@ -4856,16 +4855,14 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 
-        Site --&gt; &quot;0..1&quot; WaterType : water_type
-        click WaterType href &quot;../WaterType/&quot;
+        Site --&gt; "0..1" WaterType : water_type
+        click WaterType href "../WaterType/"
 
 
 
       Site : year_established
 
-
 </code></pre>
-
 
 
 
@@ -4968,679 +4965,673 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 ### Direct
 
 <details>
-
-<pre><code class="language-yaml">name: Site
-description: A monitoring site or location where samples are collected. Coordinates
-  (latitude and longitude) are mandatory unless they cannot be provided for privacy,
-  security or confidentiality reasons. When coordinates are provided, GIS-derived
-  fields (NUTS3, land use, river basin, sea, soil type) can be automatically retrieved
-  from GIS layers. When coordinates are not provided, expert-described location fields
-  (country, geographic region, NUTS3) are required instead.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-slots:
-- acronym
-- country
-- site_id
-- site_name
-- link
-slot_usage:
-  country:
-    name: country
-    description: Country code(s) according to ISO 3166-1 alpha-2. Extended with XX
-      (unknown) and XZ (international waters).
-    in_subset:
-    - mandatory_if
-    multivalued: true
-  site_id:
-    name: site_id
-    identifier: true
-attributes:
-  coordinate_privacy_exception:
-    name: coordinate_privacy_exception
-    description: Set to true (value = true) if coordinates cannot be provided for
-      privacy, security or confidentiality reasons. If true, expert location fields
-      (country, geographic_region, nuts3) are required instead.  Optional - if not
-      provided, it is assumed coordinates are not withheld for privacy reasons.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    ifabsent: 'false'
-    domain_of:
-    - Site
-    range: boolean
-    required: false
-  coordinate_privacy_exception_reason:
-    name: coordinate_privacy_exception_reason
-    description: Justification for not providing coordinates. Required when coordinate_privacy_exception
-      is true. Provide a brief explanation of the privacy, security or confidentiality
-      reason that prevents disclosure of the exact site location.
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: string
-    required: false
-  latitude:
-    name: latitude
-    description: 'Latitude in signed decimal degrees (format 0.000000, range -90 to
-      90). South latitude with minus sign. Coordinate reference system: WGS 84 (EPSG:4326).
-      Mandatory unless coordinate_privacy_exception is true.'
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: DecimalDegree
-    required: false
-    minimum_value: -90
-    maximum_value: 90
-  longitude:
-    name: longitude
-    description: 'Longitude in signed decimal degrees (format 0.000000, range -180
-      to 180). West longitude with minus sign. Coordinate reference system: WGS 84
-      (EPSG:4326). Mandatory unless coordinate_privacy_exception is true.'
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: DecimalDegree
-    required: false
-    minimum_value: -180
-    maximum_value: 180
-  coordinate_system:
-    name: coordinate_system
-    description: Coordinate reference system used. Default is EPSG:4326 (WGS 84).
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: CoordinateSystem
-    required: false
-  geographic_region:
-    name: geographic_region
-    description: UN M49 geographic region
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: GeographicRegion
-    required: false
-  regional_group:
-    name: regional_group
-    description: Regional group of United Nations member states
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: UNRegionalGroup
-    required: false
-  nuts3:
-    name: nuts3
-    description: 'NUTS3 region code according to the Eurostat NUTS classification
-      (Nomenclature of Territorial Units for Statistics), level 3. Example: CZ080
-      (Moravskoslezsky kraj), DE300 (Berlin). If NUTS3 is not applicable (e.g. non-EU
-      countries), use an alternative administrative classification.'
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - http://data.europa.eu/nuts/
-    rank: 1000
-    domain_of:
-    - Site
-    range: string
-    required: false
-    pattern: ^[A-Z]{2}[A-Z0-9]{3,4}$
-  year_established:
-    name: year_established
-    description: Year of establishment of the monitoring station (YYYY)
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: YearValue
-    required: false
-  site_description:
-    name: site_description
-    description: Description of the site where samples were collected. Provide all
-      important information that cannot be captured in other fields.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: string
-    required: false
-  managing_instance:
-    name: managing_instance
-    description: The institution that manages the sampling site
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: Institution
-    required: false
-  water_type:
-    name: water_type
-    description: Type of water body at the site. Only relevant for water and sediment
-      sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: WaterType
-    required: false
-  water_geographical_feature:
-    name: water_geographical_feature
-    description: Geographical water feature type at the site. Only relevant for water
-      and sediment sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: WaterGeographicalFeature
-    required: false
-  water_treatment:
-    name: water_treatment
-    description: Water treatment status at the site. Only relevant for water and sediment
-      sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: WaterTreatment
-    required: false
-  altitude:
-    name: altitude
-    description: Altitude in meters above sea level (MSL). Use positive values for
-      above and negative for below sea level.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Site
-    range: double
-    required: false
-  land_use:
-    name: land_use
-    description: Land use classification according to CORINE Land Cover nomenclature.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.w3.org/2015/03/corine
-    rank: 1000
-    domain_of:
-    - Site
-    range: LandUse
-    required: false
-  river_basin:
-    name: river_basin
-    description: River basin associated with the site, based on the EEA river basin
-      districts dataset. Only relevant for water and sediment sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.eea.europa.eu/en/datahub/datahubitem-view/dc1b1cdf-5fa0-4535-8c89-10cc051e00db
-    rank: 1000
-    domain_of:
-    - Site
-    range: RiverBasin
-    required: false
-  sea:
-    name: sea
-    description: Sea or ocean associated with the site, based on the Marine Regions
-      Gazetteer. Only relevant for water and sediment sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.marineregions.org
-    rank: 1000
-    domain_of:
-    - Site
-    range: Sea
-    required: false
-  soil_type:
-    name: soil_type
-    description: World Reference Base for Soil Resources (WRB) 2006/2007 Reference
-      Soil Group at the site. Only relevant for soil sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue
-    rank: 1000
-    domain_of:
-    - Site
-    range: SoilTypeWRB
-    required: false
-rules:
-- preconditions:
-    slot_conditions:
-      coordinate_privacy_exception:
-        name: coordinate_privacy_exception
-        equals_string: 'false'
-  postconditions:
-    slot_conditions:
-      latitude:
-        name: latitude
-        required: true
-      longitude:
-        name: longitude
-        required: true
-  description: Coordinates are mandatory when coordinate_privacy_exception is false
-    or not provided (defaults to false via ifabsent).
-  title: coordinates_required_when_no_privacy_exception
-- preconditions:
-    slot_conditions:
-      coordinate_privacy_exception:
-        name: coordinate_privacy_exception
-        equals_string: 'true'
-  postconditions:
-    slot_conditions:
-      coordinate_privacy_exception_reason:
-        name: coordinate_privacy_exception_reason
-        required: true
-      country:
-        name: country
-        required: true
-      geographic_region:
-        name: geographic_region
-        required: true
-      nuts3:
-        name: nuts3
-        required: true
-      regional_group:
-        name: regional_group
-        required: true
-  description: When coordinates cannot be provided for privacy or confidentiality
-    reasons, a justification and expert location fields must be provided.
-  title: expert_fields_required_when_coordinates_withheld
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A monitoring site or location where samples are collected. Coordinates</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">(latitude and longitude) are mandatory unless they cannot be provided for privacy,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">security or confidentiality reasons. When coordinates are provided, GIS-derived</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fields (NUTS3, land use, river basin, sea, soil type) can be automatically retrieved</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">from GIS layers. When coordinates are not provided, expert-described location fields</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">(country, geographic region, NUTS3) are required instead.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">slots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">acronym</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">country</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_id</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_name</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">link</span>
+<span class="nt">slot_usage</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">country</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">country</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Country code(s) according to ISO 3166-1 alpha-2. Extended with XX</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(unknown) and XZ (international waters).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">site_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_id</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">coordinate_privacy_exception</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set to true (value = true) if coordinates cannot be provided for</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">privacy, security or confidentiality reasons. If true, expert location fields</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(country, geographic_region, nuts3) are required instead.  Optional - if not</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">provided, it is assumed coordinates are not withheld for privacy reasons.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;false&#39;</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">coordinate_privacy_exception_reason</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception_reason</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Justification for not providing coordinates. Required when coordinate_privacy_exception</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is true. Provide a brief explanation of the privacy, security or confidentiality</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">reason that prevents disclosure of the exact site location.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">latitude</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latitude</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Latitude</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">signed</span><span class="nv"> </span><span class="s">decimal</span><span class="nv"> </span><span class="s">degrees</span><span class="nv"> </span><span class="s">(format</span><span class="nv"> </span><span class="s">0.000000,</span><span class="nv"> </span><span class="s">range</span><span class="nv"> </span><span class="s">-90</span><span class="nv"> </span><span class="s">to</span>
+<span class="w">      </span><span class="s">90).</span><span class="nv"> </span><span class="s">South</span><span class="nv"> </span><span class="s">latitude</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">minus</span><span class="nv"> </span><span class="s">sign.</span><span class="nv"> </span><span class="s">Coordinate</span><span class="nv"> </span><span class="s">reference</span><span class="nv"> </span><span class="s">system:</span><span class="nv"> </span><span class="s">WGS</span><span class="nv"> </span><span class="s">84</span><span class="nv"> </span><span class="s">(EPSG:4326).</span>
+<span class="w">      </span><span class="s">Mandatory</span><span class="nv"> </span><span class="s">unless</span><span class="nv"> </span><span class="s">coordinate_privacy_exception</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">true.&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DecimalDegree</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-90</span>
+<span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90</span>
+<span class="w">  </span><span class="nt">longitude</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">longitude</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Longitude</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">signed</span><span class="nv"> </span><span class="s">decimal</span><span class="nv"> </span><span class="s">degrees</span><span class="nv"> </span><span class="s">(format</span><span class="nv"> </span><span class="s">0.000000,</span><span class="nv"> </span><span class="s">range</span><span class="nv"> </span><span class="s">-180</span>
+<span class="w">      </span><span class="s">to</span><span class="nv"> </span><span class="s">180).</span><span class="nv"> </span><span class="s">West</span><span class="nv"> </span><span class="s">longitude</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">minus</span><span class="nv"> </span><span class="s">sign.</span><span class="nv"> </span><span class="s">Coordinate</span><span class="nv"> </span><span class="s">reference</span><span class="nv"> </span><span class="s">system:</span><span class="nv"> </span><span class="s">WGS</span><span class="nv"> </span><span class="s">84</span>
+<span class="w">      </span><span class="s">(EPSG:4326).</span><span class="nv"> </span><span class="s">Mandatory</span><span class="nv"> </span><span class="s">unless</span><span class="nv"> </span><span class="s">coordinate_privacy_exception</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">true.&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DecimalDegree</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-180</span>
+<span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">180</span>
+<span class="w">  </span><span class="nt">coordinate_system</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_system</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Coordinate reference system used. Default is EPSG:4326 (WGS 84).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CoordinateSystem</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">geographic_region</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geographic_region</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UN M49 geographic region</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicRegion</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">regional_group</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regional_group</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Regional group of United Nations member states</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UNRegionalGroup</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">nuts3</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nuts3</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;NUTS3</span><span class="nv"> </span><span class="s">region</span><span class="nv"> </span><span class="s">code</span><span class="nv"> </span><span class="s">according</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Eurostat</span><span class="nv"> </span><span class="s">NUTS</span><span class="nv"> </span><span class="s">classification</span>
+<span class="w">      </span><span class="s">(Nomenclature</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Territorial</span><span class="nv"> </span><span class="s">Units</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Statistics),</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">3.</span><span class="nv"> </span><span class="s">Example:</span><span class="nv"> </span><span class="s">CZ080</span>
+<span class="w">      </span><span class="s">(Moravskoslezsky</span><span class="nv"> </span><span class="s">kraj),</span><span class="nv"> </span><span class="s">DE300</span><span class="nv"> </span><span class="s">(Berlin).</span><span class="nv"> </span><span class="s">If</span><span class="nv"> </span><span class="s">NUTS3</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable</span><span class="nv"> </span><span class="s">(e.g.</span><span class="nv"> </span><span class="s">non-EU</span>
+<span class="w">      </span><span class="s">countries),</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">alternative</span><span class="nv"> </span><span class="s">administrative</span><span class="nv"> </span><span class="s">classification.&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.europa.eu/nuts/</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^[A-Z]{2}[A-Z0-9]{3,4}$</span>
+<span class="w">  </span><span class="nt">year_established</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">year_established</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Year of establishment of the monitoring station (YYYY)</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YearValue</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">site_description</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_description</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description of the site where samples were collected. Provide all</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">important information that cannot be captured in other fields.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">managing_instance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">managing_instance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The institution that manages the sampling site</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Institution</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">water_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">water_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type of water body at the site. Only relevant for water and sediment</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaterType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">water_geographical_feature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">water_geographical_feature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Geographical water feature type at the site. Only relevant for water</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">and sediment sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaterGeographicalFeature</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">water_treatment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">water_treatment</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Water treatment status at the site. Only relevant for water and sediment</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaterTreatment</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">altitude</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">altitude</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Altitude in meters above sea level (MSL). Use positive values for</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">above and negative for below sea level.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">land_use</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">land_use</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Land use classification according to CORINE Land Cover nomenclature.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.w3.org/2015/03/corine</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LandUse</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">river_basin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">river_basin</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">River basin associated with the site, based on the EEA river basin</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">districts dataset. Only relevant for water and sediment sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.eea.europa.eu/en/datahub/datahubitem-view/dc1b1cdf-5fa0-4535-8c89-10cc051e00db</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RiverBasin</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">sea</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sea</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sea or ocean associated with the site, based on the Marine Regions</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Gazetteer. Only relevant for water and sediment sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.marineregions.org</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sea</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">soil_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">soil_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">World Reference Base for Soil Resources (WRB) 2006/2007 Reference</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Soil Group at the site. Only relevant for soil sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SoilTypeWRB</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">rules</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">coordinate_privacy_exception</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception</span>
+<span class="w">        </span><span class="nt">equals_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;false&#39;</span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">latitude</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latitude</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">longitude</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">longitude</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Coordinates are mandatory when coordinate_privacy_exception is false</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">or not provided (defaults to false via ifabsent).</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinates_required_when_no_privacy_exception</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">coordinate_privacy_exception</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception</span>
+<span class="w">        </span><span class="nt">equals_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;true&#39;</span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">coordinate_privacy_exception_reason</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception_reason</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">country</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">country</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">geographic_region</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geographic_region</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">nuts3</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nuts3</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">regional_group</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regional_group</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">When coordinates cannot be provided for privacy or confidentiality</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">reasons, a justification and expert location fields must be provided.</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">expert_fields_required_when_coordinates_withheld</span>
+</code></pre></div>
 </details>
 
 ### Induced
 
 <details>
-
-<pre><code class="language-yaml">name: Site
-description: A monitoring site or location where samples are collected. Coordinates
-  (latitude and longitude) are mandatory unless they cannot be provided for privacy,
-  security or confidentiality reasons. When coordinates are provided, GIS-derived
-  fields (NUTS3, land use, river basin, sea, soil type) can be automatically retrieved
-  from GIS layers. When coordinates are not provided, expert-described location fields
-  (country, geographic region, NUTS3) are required instead.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-slot_usage:
-  country:
-    name: country
-    description: Country code(s) according to ISO 3166-1 alpha-2. Extended with XX
-      (unknown) and XZ (international waters).
-    in_subset:
-    - mandatory_if
-    multivalued: true
-  site_id:
-    name: site_id
-    identifier: true
-attributes:
-  coordinate_privacy_exception:
-    name: coordinate_privacy_exception
-    description: Set to true (value = true) if coordinates cannot be provided for
-      privacy, security or confidentiality reasons. If true, expert location fields
-      (country, geographic_region, nuts3) are required instead.  Optional - if not
-      provided, it is assumed coordinates are not withheld for privacy reasons.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    ifabsent: 'false'
-    owner: Site
-    domain_of:
-    - Site
-    range: boolean
-    required: false
-  coordinate_privacy_exception_reason:
-    name: coordinate_privacy_exception_reason
-    description: Justification for not providing coordinates. Required when coordinate_privacy_exception
-      is true. Provide a brief explanation of the privacy, security or confidentiality
-      reason that prevents disclosure of the exact site location.
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: string
-    required: false
-  latitude:
-    name: latitude
-    description: 'Latitude in signed decimal degrees (format 0.000000, range -90 to
-      90). South latitude with minus sign. Coordinate reference system: WGS 84 (EPSG:4326).
-      Mandatory unless coordinate_privacy_exception is true.'
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: DecimalDegree
-    required: false
-    minimum_value: -90
-    maximum_value: 90
-  longitude:
-    name: longitude
-    description: 'Longitude in signed decimal degrees (format 0.000000, range -180
-      to 180). West longitude with minus sign. Coordinate reference system: WGS 84
-      (EPSG:4326). Mandatory unless coordinate_privacy_exception is true.'
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: DecimalDegree
-    required: false
-    minimum_value: -180
-    maximum_value: 180
-  coordinate_system:
-    name: coordinate_system
-    description: Coordinate reference system used. Default is EPSG:4326 (WGS 84).
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: CoordinateSystem
-    required: false
-  geographic_region:
-    name: geographic_region
-    description: UN M49 geographic region
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: GeographicRegion
-    required: false
-  regional_group:
-    name: regional_group
-    description: Regional group of United Nations member states
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: UNRegionalGroup
-    required: false
-  nuts3:
-    name: nuts3
-    description: 'NUTS3 region code according to the Eurostat NUTS classification
-      (Nomenclature of Territorial Units for Statistics), level 3. Example: CZ080
-      (Moravskoslezsky kraj), DE300 (Berlin). If NUTS3 is not applicable (e.g. non-EU
-      countries), use an alternative administrative classification.'
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - http://data.europa.eu/nuts/
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: string
-    required: false
-    pattern: ^[A-Z]{2}[A-Z0-9]{3,4}$
-  year_established:
-    name: year_established
-    description: Year of establishment of the monitoring station (YYYY)
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: YearValue
-    required: false
-  site_description:
-    name: site_description
-    description: Description of the site where samples were collected. Provide all
-      important information that cannot be captured in other fields.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: string
-    required: false
-  managing_instance:
-    name: managing_instance
-    description: The institution that manages the sampling site
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: Institution
-    required: false
-  water_type:
-    name: water_type
-    description: Type of water body at the site. Only relevant for water and sediment
-      sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: WaterType
-    required: false
-  water_geographical_feature:
-    name: water_geographical_feature
-    description: Geographical water feature type at the site. Only relevant for water
-      and sediment sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: WaterGeographicalFeature
-    required: false
-  water_treatment:
-    name: water_treatment
-    description: Water treatment status at the site. Only relevant for water and sediment
-      sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: WaterTreatment
-    required: false
-  altitude:
-    name: altitude
-    description: Altitude in meters above sea level (MSL). Use positive values for
-      above and negative for below sea level.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: double
-    required: false
-  land_use:
-    name: land_use
-    description: Land use classification according to CORINE Land Cover nomenclature.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.w3.org/2015/03/corine
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: LandUse
-    required: false
-  river_basin:
-    name: river_basin
-    description: River basin associated with the site, based on the EEA river basin
-      districts dataset. Only relevant for water and sediment sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.eea.europa.eu/en/datahub/datahubitem-view/dc1b1cdf-5fa0-4535-8c89-10cc051e00db
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: RiverBasin
-    required: false
-  sea:
-    name: sea
-    description: Sea or ocean associated with the site, based on the Marine Regions
-      Gazetteer. Only relevant for water and sediment sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.marineregions.org
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: Sea
-    required: false
-  soil_type:
-    name: soil_type
-    description: World Reference Base for Soil Resources (WRB) 2006/2007 Reference
-      Soil Group at the site. Only relevant for soil sampling.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    range: SoilTypeWRB
-    required: false
-  acronym:
-    name: acronym
-    description: Short name or acronym.
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - MonitoringActivity
-    - Campaign
-    - Institution
-    - Site
-    range: string
-  country:
-    name: country
-    description: Country code(s) according to ISO 3166-1 alpha-2. Extended with XX
-      (unknown) and XZ (international waters).
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Institution
-    - Site
-    range: Country
-    required: true
-    multivalued: true
-  site_id:
-    name: site_id
-    description: Unique identifier of the monitoring site where the sample was collected.
-      References the site_id of a Site record.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    identifier: true
-    owner: Site
-    domain_of:
-    - Site
-    - Sample
-    range: string
-    required: true
-  site_name:
-    name: site_name
-    description: Name of the monitoring site. Provide in the local language as the
-      primary name. An English name may be added if available and commonly used. Multiple
-      names in different languages are accepted.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - Site
-    - Sample
-    range: string
-    required: true
-  link:
-    name: link
-    description: URL with information about the institution
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Site
-    domain_of:
-    - OrganisationMetadata
-    - Site
-    range: IRI
-rules:
-- preconditions:
-    slot_conditions:
-      coordinate_privacy_exception:
-        name: coordinate_privacy_exception
-        equals_string: 'false'
-  postconditions:
-    slot_conditions:
-      latitude:
-        name: latitude
-        required: true
-      longitude:
-        name: longitude
-        required: true
-  description: Coordinates are mandatory when coordinate_privacy_exception is false
-    or not provided (defaults to false via ifabsent).
-  title: coordinates_required_when_no_privacy_exception
-- preconditions:
-    slot_conditions:
-      coordinate_privacy_exception:
-        name: coordinate_privacy_exception
-        equals_string: 'true'
-  postconditions:
-    slot_conditions:
-      coordinate_privacy_exception_reason:
-        name: coordinate_privacy_exception_reason
-        required: true
-      country:
-        name: country
-        required: true
-      geographic_region:
-        name: geographic_region
-        required: true
-      nuts3:
-        name: nuts3
-        required: true
-      regional_group:
-        name: regional_group
-        required: true
-  description: When coordinates cannot be provided for privacy or confidentiality
-    reasons, a justification and expert location fields must be provided.
-  title: expert_fields_required_when_coordinates_withheld
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A monitoring site or location where samples are collected. Coordinates</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">(latitude and longitude) are mandatory unless they cannot be provided for privacy,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">security or confidentiality reasons. When coordinates are provided, GIS-derived</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fields (NUTS3, land use, river basin, sea, soil type) can be automatically retrieved</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">from GIS layers. When coordinates are not provided, expert-described location fields</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">(country, geographic region, NUTS3) are required instead.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">slot_usage</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">country</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">country</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Country code(s) according to ISO 3166-1 alpha-2. Extended with XX</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(unknown) and XZ (international waters).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">site_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_id</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">coordinate_privacy_exception</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set to true (value = true) if coordinates cannot be provided for</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">privacy, security or confidentiality reasons. If true, expert location fields</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(country, geographic_region, nuts3) are required instead.  Optional - if not</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">provided, it is assumed coordinates are not withheld for privacy reasons.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;false&#39;</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">coordinate_privacy_exception_reason</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception_reason</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Justification for not providing coordinates. Required when coordinate_privacy_exception</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is true. Provide a brief explanation of the privacy, security or confidentiality</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">reason that prevents disclosure of the exact site location.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">latitude</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latitude</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Latitude</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">signed</span><span class="nv"> </span><span class="s">decimal</span><span class="nv"> </span><span class="s">degrees</span><span class="nv"> </span><span class="s">(format</span><span class="nv"> </span><span class="s">0.000000,</span><span class="nv"> </span><span class="s">range</span><span class="nv"> </span><span class="s">-90</span><span class="nv"> </span><span class="s">to</span>
+<span class="w">      </span><span class="s">90).</span><span class="nv"> </span><span class="s">South</span><span class="nv"> </span><span class="s">latitude</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">minus</span><span class="nv"> </span><span class="s">sign.</span><span class="nv"> </span><span class="s">Coordinate</span><span class="nv"> </span><span class="s">reference</span><span class="nv"> </span><span class="s">system:</span><span class="nv"> </span><span class="s">WGS</span><span class="nv"> </span><span class="s">84</span><span class="nv"> </span><span class="s">(EPSG:4326).</span>
+<span class="w">      </span><span class="s">Mandatory</span><span class="nv"> </span><span class="s">unless</span><span class="nv"> </span><span class="s">coordinate_privacy_exception</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">true.&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DecimalDegree</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-90</span>
+<span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90</span>
+<span class="w">  </span><span class="nt">longitude</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">longitude</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Longitude</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">signed</span><span class="nv"> </span><span class="s">decimal</span><span class="nv"> </span><span class="s">degrees</span><span class="nv"> </span><span class="s">(format</span><span class="nv"> </span><span class="s">0.000000,</span><span class="nv"> </span><span class="s">range</span><span class="nv"> </span><span class="s">-180</span>
+<span class="w">      </span><span class="s">to</span><span class="nv"> </span><span class="s">180).</span><span class="nv"> </span><span class="s">West</span><span class="nv"> </span><span class="s">longitude</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">minus</span><span class="nv"> </span><span class="s">sign.</span><span class="nv"> </span><span class="s">Coordinate</span><span class="nv"> </span><span class="s">reference</span><span class="nv"> </span><span class="s">system:</span><span class="nv"> </span><span class="s">WGS</span><span class="nv"> </span><span class="s">84</span>
+<span class="w">      </span><span class="s">(EPSG:4326).</span><span class="nv"> </span><span class="s">Mandatory</span><span class="nv"> </span><span class="s">unless</span><span class="nv"> </span><span class="s">coordinate_privacy_exception</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">true.&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DecimalDegree</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-180</span>
+<span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">180</span>
+<span class="w">  </span><span class="nt">coordinate_system</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_system</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Coordinate reference system used. Default is EPSG:4326 (WGS 84).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CoordinateSystem</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">geographic_region</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geographic_region</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UN M49 geographic region</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicRegion</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">regional_group</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regional_group</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Regional group of United Nations member states</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UNRegionalGroup</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">nuts3</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nuts3</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;NUTS3</span><span class="nv"> </span><span class="s">region</span><span class="nv"> </span><span class="s">code</span><span class="nv"> </span><span class="s">according</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Eurostat</span><span class="nv"> </span><span class="s">NUTS</span><span class="nv"> </span><span class="s">classification</span>
+<span class="w">      </span><span class="s">(Nomenclature</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Territorial</span><span class="nv"> </span><span class="s">Units</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Statistics),</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">3.</span><span class="nv"> </span><span class="s">Example:</span><span class="nv"> </span><span class="s">CZ080</span>
+<span class="w">      </span><span class="s">(Moravskoslezsky</span><span class="nv"> </span><span class="s">kraj),</span><span class="nv"> </span><span class="s">DE300</span><span class="nv"> </span><span class="s">(Berlin).</span><span class="nv"> </span><span class="s">If</span><span class="nv"> </span><span class="s">NUTS3</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable</span><span class="nv"> </span><span class="s">(e.g.</span><span class="nv"> </span><span class="s">non-EU</span>
+<span class="w">      </span><span class="s">countries),</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">alternative</span><span class="nv"> </span><span class="s">administrative</span><span class="nv"> </span><span class="s">classification.&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.europa.eu/nuts/</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^[A-Z]{2}[A-Z0-9]{3,4}$</span>
+<span class="w">  </span><span class="nt">year_established</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">year_established</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Year of establishment of the monitoring station (YYYY)</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YearValue</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">site_description</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_description</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description of the site where samples were collected. Provide all</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">important information that cannot be captured in other fields.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">managing_instance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">managing_instance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The institution that manages the sampling site</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Institution</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">water_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">water_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type of water body at the site. Only relevant for water and sediment</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaterType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">water_geographical_feature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">water_geographical_feature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Geographical water feature type at the site. Only relevant for water</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">and sediment sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaterGeographicalFeature</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">water_treatment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">water_treatment</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Water treatment status at the site. Only relevant for water and sediment</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaterTreatment</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">altitude</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">altitude</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Altitude in meters above sea level (MSL). Use positive values for</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">above and negative for below sea level.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">land_use</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">land_use</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Land use classification according to CORINE Land Cover nomenclature.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.w3.org/2015/03/corine</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LandUse</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">river_basin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">river_basin</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">River basin associated with the site, based on the EEA river basin</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">districts dataset. Only relevant for water and sediment sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.eea.europa.eu/en/datahub/datahubitem-view/dc1b1cdf-5fa0-4535-8c89-10cc051e00db</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RiverBasin</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">sea</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sea</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sea or ocean associated with the site, based on the Marine Regions</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Gazetteer. Only relevant for water and sediment sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.marineregions.org</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sea</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">soil_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">soil_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">World Reference Base for Soil Resources (WRB) 2006/2007 Reference</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Soil Group at the site. Only relevant for soil sampling.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SoilTypeWRB</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">acronym</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">acronym</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Short name or acronym.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Campaign</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Institution</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">country</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">country</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Country code(s) according to ISO 3166-1 alpha-2. Extended with XX</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(unknown) and XZ (international waters).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Institution</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Country</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">site_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier of the monitoring site where the sample was collected.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">References the site_id of a Site record.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">site_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name of the monitoring site. Provide in the local language as the</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">primary name. An English name may be added if available and commonly used. Multiple</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">names in different languages are accepted.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL with information about the institution</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+<span class="nt">rules</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">coordinate_privacy_exception</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception</span>
+<span class="w">        </span><span class="nt">equals_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;false&#39;</span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">latitude</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latitude</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">longitude</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">longitude</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Coordinates are mandatory when coordinate_privacy_exception is false</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">or not provided (defaults to false via ifabsent).</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinates_required_when_no_privacy_exception</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">coordinate_privacy_exception</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception</span>
+<span class="w">        </span><span class="nt">equals_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;true&#39;</span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">coordinate_privacy_exception_reason</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinate_privacy_exception_reason</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">country</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">country</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">geographic_region</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geographic_region</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">nuts3</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nuts3</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">regional_group</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regional_group</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">When coordinates cannot be provided for privacy or confidentiality</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">reasons, a justification and expert location fields must be provided.</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">expert_fields_required_when_coordinates_withheld</span>
+</code></pre></div>
 </details></div>
 
 
@@ -5694,10 +5685,12 @@ rules:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/Observation/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/Observation/">
       
       
         <link rel="prev" href="../Objectidentifier/">
@@ -4705,14 +4705,13 @@ URI: [cenvo:Observation](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 
-
-<pre><code class="language-mermaid"> classDiagram
+<pre class="mermaid"><code> classDiagram
     class Observation
-    click Observation href &quot;../Observation/&quot;
+    click Observation href "../Observation/"
       Observation &lt;|-- MeasurementConcentration
-        click MeasurementConcentration href &quot;../MeasurementConcentration/&quot;
+        click MeasurementConcentration href "../MeasurementConcentration/"
       Observation &lt;|-- MeasurementParameter
-        click MeasurementParameter href &quot;../MeasurementParameter/&quot;
+        click MeasurementParameter href "../MeasurementParameter/"
 
       Observation : observation_type
 
@@ -4720,16 +4719,14 @@ URI: [cenvo:Observation](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 
-        Observation --&gt; &quot;1&quot; ObservationType : observation_type
-        click ObservationType href &quot;../ObservationType/&quot;
+        Observation --&gt; "1" ObservationType : observation_type
+        click ObservationType href "../ObservationType/"
 
 
 
       Observation : sample_id
 
-
 </code></pre>
-
 
 
 
@@ -4795,73 +4792,67 @@ URI: [cenvo:Observation](https://w3id.org/chemical-exposome/schema/chemicals-out
 ### Direct
 
 <details>
-
-<pre><code class="language-yaml">name: Observation
-description: Observation - concentration measurement or other parameter
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-abstract: true
-slots:
-- sample_id
-attributes:
-  observation_type:
-    name: observation_type
-    description: 'Type of measurement/observation: i) Chemical concentration in the
-      environment or biota - main observation and; ii) Other parameters - they give
-      context to the  main measurement. '
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    designates_type: true
-    domain_of:
-    - Observation
-    range: ObservationType
-    required: true
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation - concentration measurement or other parameter</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">slots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_id</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">observation_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">observation_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measurement/observation:</span><span class="nv"> </span><span class="s">i)</span><span class="nv"> </span><span class="s">Chemical</span><span class="nv"> </span><span class="s">concentration</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">environment</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">biota</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">observation</span><span class="nv"> </span><span class="s">and;</span><span class="nv"> </span><span class="s">ii)</span><span class="nv"> </span><span class="s">Other</span><span class="nv"> </span><span class="s">parameters</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">give</span>
+<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv">  </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">designates_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ObservationType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 </details>
 
 ### Induced
 
 <details>
-
-<pre><code class="language-yaml">name: Observation
-description: Observation - concentration measurement or other parameter
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-abstract: true
-attributes:
-  observation_type:
-    name: observation_type
-    description: 'Type of measurement/observation: i) Chemical concentration in the
-      environment or biota - main observation and; ii) Other parameters - they give
-      context to the  main measurement. '
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    designates_type: true
-    owner: Observation
-    domain_of:
-    - Observation
-    range: ObservationType
-    required: true
-  sample_id:
-    name: sample_id
-    description: Unique identifier for the sample
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Observation
-    domain_of:
-    - Sample
-    - Observation
-    range: string
-    required: true
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation - concentration measurement or other parameter</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">observation_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">observation_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measurement/observation:</span><span class="nv"> </span><span class="s">i)</span><span class="nv"> </span><span class="s">Chemical</span><span class="nv"> </span><span class="s">concentration</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">environment</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">biota</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">observation</span><span class="nv"> </span><span class="s">and;</span><span class="nv"> </span><span class="s">ii)</span><span class="nv"> </span><span class="s">Other</span><span class="nv"> </span><span class="s">parameters</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">give</span>
+<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv">  </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">designates_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ObservationType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sample_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the sample</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 </details></div>
 
 
@@ -4915,10 +4906,12 @@ attributes:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>
