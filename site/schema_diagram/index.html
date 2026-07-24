@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/publication_year/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/schema_diagram/">
       
       
-        <link rel="prev" href="../pubchem_cid/">
+        <link rel="prev" href="../sampling_time_start/">
       
       
-        <link rel="next" href="../regional_group/">
+        <link rel="next" href="../sea/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Slot: publication_year - Metadata Schema for Data Concerning Chemicals in the Outdoor Environment</title>
+        <title>Schema diagram - Metadata Schema for Data Concerning Chemicals in the Outdoor Environment</title>
       
     
     
@@ -65,11 +65,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#slot-publication_year" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: publication_year
+              Schema diagram
             
           </span>
         </div>
@@ -3813,19 +3808,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../publication_year/" class="md-nav__link">
         
   
   
@@ -3841,7 +3827,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -4120,10 +4105,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../schema_diagram/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4139,6 +4131,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -4700,8 +4693,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -4718,107 +4709,220 @@
 
 
 
-<h1 id="slot-publication_year">Slot: publication_year</h1>
-<p><em>Year when the dataset was or will be made publicly available.</em></p>
-<div data-search-exclude markdown="1">
+  <h1>Schema diagram</h1>
+
+<pre class="mermaid"><code>erDiagram
+Aquatic {
+    AquaticMatrixFraction fraction  
+    MatrixAquatic matrix  
+    SamplingMethodAquatic sampling_method  
+    Domain domain  
+    date end_date  
+    string sample_id  
+    time sampling_time_end  
+    time sampling_time_start  
+    string site_id  
+    string site_name  
+    date start_date  
+}
+Atmospheric {
+    MatrixAtmospheric matrix  
+    SamplingMethodAtmospheric sampling_method  
+    Domain domain  
+    date end_date  
+    string sample_id  
+    time sampling_time_end  
+    time sampling_time_start  
+    string site_id  
+    string site_name  
+    date start_date  
+}
+Biota {
+    EnvironmentalCompartmentList compartment  
+    Gender gender  
+    string life_stage_age  
+    MatrixBiota matrix  
+    string sampling_method  
+    Domain domain  
+    date end_date  
+    string sample_id  
+    time sampling_time_end  
+    time sampling_time_start  
+    string site_id  
+    string site_name  
+    date start_date  
+}
+Campaign {
+    string acronym  
+    string campaign_description  
+    date end_date  
+    string name_en  
+    date start_date  
+}
+ChemicalCompound {
+    string cas_number  
+    IRI chebi_id  
+    CompoundGroup compound_group  
+    string compound_name  
+    string ec_number  
+    string inchi  
+    string inchikey  
+    string norman_id  
+    integer pubchem_cid  
+    integer wp9_id  
+}
+Contact {
+    string contact_id  
+    EmailAddress email  
+    OrcidIdentifier orcid  
+    Role role  
+}
+Funder {
+    string funder_id  
+    IRI link  
+    string name_en  
+    string name_original  
+    RorIdentifier ror  
+}
+Institution {
+    string acronym  
+    Country country  
+    string institution_id  
+    IRI link  
+    string name_en  
+    string name_original  
+    RorIdentifier ror  
+}
+MeasurementBase {
+    double uncertainty  
+    Unit unit  
+    double value  
+}
+MeasurementConcentration {
+    date analysis_date  
+    AnalyticalMethod analytical_method  
+    IRI analytical_method_link  
+    string batch  
+    string data_handling_procedure  
+    IRI data_handling_procedure_link  
+    string laboratory  
+    double lod  
+    double loq  
+    string sample_preparation_method  
+    IRI sample_preparation_method_link  
+    ObservationType observation_type  
+    string sample_id  
+    double uncertainty  
+    Unit unit  
+    double value  
+}
+MeasurementParameter {
+    Parameter parameter  
+    ObservationType observation_type  
+    string sample_id  
+    double uncertainty  
+    Unit unit  
+    double value  
+}
+MonitoringActivity {
+    string access_procedures  
+    string acknowledgement  
+    string acronym  
+    string activity_description  
+    IRIList activity_identifier  
+    string disclaimer  
+    date end_date  
+    ImplementationLevel implementation_level  
+    LanguageList language  
+    IRIList legislation_policy  
+    string license  
+    string monitoring_reasons  
+    string name_en  
+    string name_original  
+    string provenance  
+    integer publication_year  
+    date start_date  
+    MonitoringActivityType type  
+    string version  
+}
+Observation {
+    ObservationType observation_type  
+    string sample_id  
+}
+OrganisationMetadata {
+    IRI link  
+    string name_en  
+    string name_original  
+    RorIdentifier ror  
+}
+Sample {
+    Domain domain  
+    date end_date  
+    string sample_id  
+    time sampling_time_end  
+    time sampling_time_start  
+    string site_id  
+    string site_name  
+    date start_date  
+}
+Site {
+    string acronym  
+    double altitude  
+    boolean coordinate_privacy_exception  
+    string coordinate_privacy_exception_reason  
+    CoordinateSystem coordinate_system  
+    CountryList country  
+    GeographicRegion geographic_region  
+    LandUse land_use  
+    DecimalDegree latitude  
+    IRI link  
+    DecimalDegree longitude  
+    string nuts3  
+    UNRegionalGroup regional_group  
+    RiverBasin river_basin  
+    Sea sea  
+    string site_description  
+    string site_id  
+    string site_name  
+    SoilTypeWRB soil_type  
+    WaterGeographicalFeature water_geographical_feature  
+    WaterTreatment water_treatment  
+    WaterType water_type  
+    YearValue year_established  
+}
+Taxon {
+    integer taxon_id  
+    string taxon_name  
+    TaxonRankEnum taxon_rank  
+}
+Terrestrial {
+    MatrixTerrestrial matrix  
+    string sampling_method  
+    Domain domain  
+    date end_date  
+    string sample_id  
+    time sampling_time_end  
+    time sampling_time_start  
+    string site_id  
+    string site_name  
+    date start_date  
+}
+
+Biota ||--|o Taxon : "taxonomic_classification"
+Contact ||--|o Institution : "institution"
+MeasurementConcentration ||--|| ChemicalCompound : "compound"
+MonitoringActivity ||--}o Campaign : "campaigns"
+MonitoringActivity ||--}o Funder : "funders"
+MonitoringActivity ||--}| Contact : "contacts"
+MonitoringActivity ||--}| Institution : "institutions"
+Site ||--|o Institution : "managing_instance"
+</code></pre>
 
 
 
-URI: [cenvo:publication_year](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/publication_year)
-<!-- no inheritance hierarchy -->
 
 
 
-
-
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
-
-
-
-
-
-
-## Properties
-
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Integer](Integer.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MonitoringActivity](MonitoringActivity.md) |
-
-
-
-
-
-
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:publication_year |
-| native | cenvo:publication_year |
-
-
-
-
-## LinkML Source
-
-<details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publication_year</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Year when the dataset was or will be made publicly available.</span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
-<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
-<span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</code></pre></div>
-</details></div>
-
-
-
-
-
-
-
-  
-  
 
 
 
