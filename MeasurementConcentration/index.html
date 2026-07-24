@@ -5027,8 +5027,7 @@
     class MeasurementConcentration
     click MeasurementConcentration href "../MeasurementConcentration/"
       MeasurementBase &lt;|-- MeasurementConcentration
-        click MeasurementBase href "../MeasurementBase/"
-      Observation &lt;|-- MeasurementConcentration
+        click MeasurementBase href "../MeasurementBase/"       Observation &lt;|-- MeasurementConcentration
         click Observation href "../Observation/"
 
       MeasurementConcentration : analysis_date
@@ -5110,164 +5109,17 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../laboratory/">laboratory</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Name of the laboratory performing the analysis</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../batch/">batch</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Internal laboratory designation of the group of samples analyzed together</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../analysis_date/">analysis_date</a></td>
-<td>0..1 <br/> <a href="../Date/">Date</a></td>
-<td>The date on which the concentration was determined</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../compound/">compound</a></td>
-<td>1 <br/> <a href="../ChemicalCompound/">ChemicalCompound</a></td>
-<td>Chemical compound measured in the sample</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../sample_preparation_method/">sample_preparation_method</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Description of the process from sample collection to chemical analysis (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../sample_preparation_method_link/">sample_preparation_method_link</a></td>
-<td>0..1 <br/> <a href="../IRI/">IRI</a></td>
-<td>GUPRI (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../analytical_method/">analytical_method</a></td>
-<td>1 <br/> <a href="../AnalyticalMethod/">AnalyticalMethod</a></td>
-<td>Analytical method used to determine the analyte</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../analytical_method_link/">analytical_method_link</a></td>
-<td>0..1 <br/> <a href="../IRI/">IRI</a></td>
-<td>GUPRI linking to a public SOP or document describing the method</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../data_handling_procedure/">data_handling_procedure</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Description of steps taken after chemical analysis (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../data_handling_procedure_link/">data_handling_procedure_link</a></td>
-<td>0..1 <br/> <a href="../IRI/">IRI</a></td>
-<td>GUPRI linking to a document describing the data handling procedure</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../loq/">loq</a></td>
-<td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>Limit of quantification</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../lod/">lod</a></td>
-<td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>Limit of detection</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../unit/">unit</a></td>
-<td>1 <br/> <a href="Unit.md">Unit</a></td>
-<td>Unit of measurement</td>
-<td><a href="../MeasurementBase/">MeasurementBase</a></td>
-</tr>
-<tr>
-<td><a href="../uncertainty/">uncertainty</a></td>
-<td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>Measurement uncertainty of the concentration/paramter value, expressed as a p...</td>
-<td><a href="../MeasurementBase/">MeasurementBase</a></td>
-</tr>
-<tr>
-<td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>Measured value of the chemical concentration or other parameter</td>
-<td><a href="../MeasurementBase/">MeasurementBase</a></td>
-</tr>
-<tr>
-<td><a href="../sample_id/">sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Unique identifier for the sample</td>
-<td><a href="../Observation/">Observation</a></td>
-</tr>
-<tr>
-<td><a href="../observation_type/">observation_type</a></td>
-<td>1 <br/> <a href="../ObservationType/">ObservationType</a></td>
-<td>Type of measurement/observation: i) Chemical concentration in the environment...</td>
-<td><a href="../Observation/">Observation</a></td>
-</tr>
-</tbody>
-</table>
+<p>| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | <a href="../laboratory/">laboratory</a> | 1 <br/> <a href="../String/">String</a> | Name of the laboratory performing the analysis | direct | | <a href="../batch/">batch</a> | 0..1 <br/> <a href="../String/">String</a> | Internal laboratory designation of the group of samples analyzed together | direct | | <a href="../analysis_date/">analysis_date</a> | 0..1 <br/> <a href="../Date/">Date</a> | The date on which the concentration was determined | direct | | <a href="../compound/">compound</a> | 1 <br/> <a href="../ChemicalCompound/">ChemicalCompound</a> | Chemical compound measured in the sample | direct | | <a href="../sample_preparation_method/">sample_preparation_method</a> | 1 <br/> <a href="../String/">String</a> | Description of the process from sample collection to chemical analysis (e | direct | | <a href="../sample_preparation_method_link/">sample_preparation_method_link</a> | 0..1 <br/> <a href="../IRI/">IRI</a> | GUPRI (e | direct | | <a href="../analytical_method/">analytical_method</a> | 1 <br/> <a href="../AnalyticalMethod/">AnalyticalMethod</a> | Analytical method used to determine the analyte | direct | | <a href="../analytical_method_link/">analytical_method_link</a> | 0..1 <br/> <a href="../IRI/">IRI</a> | GUPRI linking to a public SOP or document describing the method | direct | | <a href="../data_handling_procedure/">data_handling_procedure</a> | 1 <br/> <a href="../String/">String</a> | Description of steps taken after chemical analysis (e | direct | | <a href="../data_handling_procedure_link/">data_handling_procedure_link</a> | 0..1 <br/> <a href="../IRI/">IRI</a> | GUPRI linking to a document describing the data handling procedure | direct | | <a href="../loq/">loq</a> | 0..1 <br/> <a href="../Double/">Double</a> | Limit of quantification | direct | | <a href="../lod/">lod</a> | 0..1 <br/> <a href="../Double/">Double</a> | Limit of detection | direct | | <a href="../unit/">unit</a> | 1 <br/> <a href="Unit.md">Unit</a> | Unit of measurement | <a href="../MeasurementBase/">MeasurementBase</a> | | <a href="../uncertainty/">uncertainty</a> | 0..1 <br/> <a href="../Double/">Double</a> | Measurement uncertainty of the concentration/paramter value, expressed as a p... | <a href="../MeasurementBase/">MeasurementBase</a> | | <a href="../value/">value</a> | 0..1 <br/> <a href="../Double/">Double</a> | Measured value of the chemical concentration or other parameter | <a href="../MeasurementBase/">MeasurementBase</a> | | <a href="../sample_id/">sample_id</a> | 1 <br/> <a href="../String/">String</a> | Unique identifier for the sample | <a href="../Observation/">Observation</a> | | <a href="../observation_type/">observation_type</a> | 1 <br/> <a href="../ObservationType/">ObservationType</a> | Type of measurement/observation: i) Chemical concentration in the environment... | <a href="../Observation/">Observation</a> |</p>
 <h2 id="rules">Rules</h2>
 <h3 id="at_least_one_measurement_value_required">at_least_one_measurement_value_required</h3>
-<table>
-<thead>
-<tr>
-<th>Rule Applied</th>
-<th>Preconditions</th>
-<th>Postconditions</th>
-<th>Elseconditions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>slot_conditions</td>
-<td><code>{'value': {'value_presence': 'ABSENT'}, 'loq': {'value_presence': 'ABSENT'}, 'lod': {'value_presence': 'ABSENT'}}</code></td>
-<td><code>{'value': {'value_presence': 'PRESENT'}}</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>| Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |<code>{'value': {'value_presence': 'ABSENT'}, 'loq': {'value_presence': 'ABSENT'}, 'lod': {'value_presence': 'ABSENT'}}</code> |<code>{'value': {'value_presence': 'PRESENT'}}</code> | |</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>cenvo:MeasurementConcentration</td>
-</tr>
-<tr>
-<td>native</td>
-<td>cenvo:MeasurementConcentration</td>
-</tr>
-</tbody>
-</table>
+<p>| Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:MeasurementConcentration | | native | cenvo:MeasurementConcentration |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

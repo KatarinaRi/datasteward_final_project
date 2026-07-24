@@ -4974,8 +4974,7 @@
     class Observation
     click Observation href "../Observation/"
       Observation &lt;|-- MeasurementConcentration
-        click MeasurementConcentration href "../MeasurementConcentration/"
-      Observation &lt;|-- MeasurementParameter
+        click MeasurementConcentration href "../MeasurementConcentration/"       Observation &lt;|-- MeasurementParameter
         click MeasurementParameter href "../MeasurementParameter/"
 
       Observation : observation_type
@@ -5001,54 +5000,14 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../sample_id/">sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Unique identifier for the sample</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../observation_type/">observation_type</a></td>
-<td>1 <br/> <a href="../ObservationType/">ObservationType</a></td>
-<td>Type of measurement/observation: i) Chemical concentration in the environment...</td>
-<td>direct</td>
-</tr>
-</tbody>
-</table>
+<p>| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | <a href="../sample_id/">sample_id</a> | 1 <br/> <a href="../String/">String</a> | Unique identifier for the sample | direct | | <a href="../observation_type/">observation_type</a> | 1 <br/> <a href="../ObservationType/">ObservationType</a> | Type of measurement/observation: i) Chemical concentration in the environment... | direct |</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>cenvo:Observation</td>
-</tr>
-<tr>
-<td>native</td>
-<td>cenvo:Observation</td>
-</tr>
-</tbody>
-</table>
+<p>| Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Observation | | native | cenvo:Observation |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

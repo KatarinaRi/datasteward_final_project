@@ -4993,8 +4993,7 @@
     class MeasurementBase
     click MeasurementBase href "../MeasurementBase/"
       MeasurementBase &lt;|-- MeasurementConcentration
-        click MeasurementConcentration href "../MeasurementConcentration/"
-      MeasurementBase &lt;|-- MeasurementParameter
+        click MeasurementConcentration href "../MeasurementConcentration/"       MeasurementBase &lt;|-- MeasurementParameter
         click MeasurementParameter href "../MeasurementParameter/"
 
       MeasurementBase : uncertainty
@@ -5015,94 +5014,18 @@
 </code></pre>
 <!-- no inheritance hierarchy -->
 <h2 id="class-properties">Class Properties</h2>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mixin</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
+<p>| Property | Value | | --- | --- | | Mixin | Yes |</p>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../unit/">unit</a></td>
-<td>1 <br/> <a href="Unit.md">Unit</a></td>
-<td>Unit of measurement</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../uncertainty/">uncertainty</a></td>
-<td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>Measurement uncertainty of the concentration/paramter value, expressed as a p...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../Double/">Double</a></td>
-<td>Measured value of the chemical concentration or other parameter</td>
-<td>direct</td>
-</tr>
-</tbody>
-</table>
+<p>| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | <a href="../unit/">unit</a> | 1 <br/> <a href="Unit.md">Unit</a> | Unit of measurement | direct | | <a href="../uncertainty/">uncertainty</a> | 0..1 <br/> <a href="../Double/">Double</a> | Measurement uncertainty of the concentration/paramter value, expressed as a p... | direct | | <a href="../value/">value</a> | 0..1 <br/> <a href="../Double/">Double</a> | Measured value of the chemical concentration or other parameter | direct |</p>
 <h2 id="mixin-usage">Mixin Usage</h2>
-<table>
-<thead>
-<tr>
-<th>mixed into</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../MeasurementConcentration/">MeasurementConcentration</a></td>
-<td>A measured concentration of a chemical compound in a sample</td>
-</tr>
-<tr>
-<td><a href="../MeasurementParameter/">MeasurementParameter</a></td>
-<td>An additional parameter measured in the sample (e</td>
-</tr>
-</tbody>
-</table>
+<p>| mixed into | description | | --- | --- | | <a href="../MeasurementConcentration/">MeasurementConcentration</a> | A measured concentration of a chemical compound in a sample | | <a href="../MeasurementParameter/">MeasurementParameter</a> | An additional parameter measured in the sample (e |</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>cenvo:MeasurementBase</td>
-</tr>
-<tr>
-<td>native</td>
-<td>cenvo:MeasurementBase</td>
-</tr>
-</tbody>
-</table>
+<p>| Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:MeasurementBase | | native | cenvo:MeasurementBase |</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
