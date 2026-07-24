@@ -83,7 +83,24 @@ This step is outside the scope of this project; however, comprehensive documenta
 
 ## First draft 
 
-The first draft was generated using Claude AI and existing .xlsx/ .csv schema. I have then reviewed the schema and edited manualy where necessary. Also, to learn and understand the LinkML, I was consulting with Claude and asked for explanation to make sure I understand all solutions or could propose a new one. The information that I found useful or further decision and editing is below:
+The first draft was generated using Claude AI and existing .xlsx/ .csv schema. I have then reviewed the schema and edited manualy where necessary. Also, to learn and understand the LinkML, I was consulting with Claude and asked for explanation to make sure I understand all solutions or could propose a new one. The information that I found useful or further decision and editing is below.
+
+## Review and editing
+
+## Validaiton:
+Two step validation:
+### Claude validation
+### LinkML validation
+
+## Documentation generation
+
+## Publication
+GitHub + GitHub pages
+
+## Next steps
+- Community review and refinement
+- Mapping to existing  controlled vocabularies and ontologies. 
+- Publishing the ontology and data reporting template.
 
 ## Schema level metadata
 In LinkML specifically it is called **schema metadata** or **schema header** — it is the metadata describing the schema itself, as opposed to the schema content (types, enums, slots, classes). **More broadly in the semantic web and data management world** this kind of self-describing metadata is called **provenance metadata** or **schema-level metadata**.
@@ -1538,170 +1555,6 @@ mkdocs gh-deploy
 | Deploy to GitHub Pages | `mkdocs gh-deploy` |
 
 
-# SOIL Existing standards and ontologies 
-## WRB Soil Typology — URI Options and Soil Data Standards Landscape
-
-The World Reference Base for Soil Resources (WRB) is published by the IUSS Working Group as a **document/book** (currently 4th edition, 2022), not as a linked-data vocabulary with an official URI registry. There is no authoritative `https://wrb.iuss.org/...` concept scheme. As a result, all available URIs for WRB Reference Soil Groups come from **third-party re-publications** of the WRB content as linked data.
-
-
-### Three Available URI Sources for WRB Reference Soil Groups
-
-**1. INSPIRE Registry**
-
-**URI pattern:**
-```
-https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue/{Name}
-```
-**Example:**
-```
-https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue/Albeluvisols
-```
-
-| Aspect | Detail |
-|--------|--------|
-| **Governing body** | European Commission / Joint Research Centre (JRC) |
-| **WRB edition** | 2006/2007 |
-| **Legal status** | EU legally binding under the INSPIRE Directive |
-| **Linked data format** | SKOS codelist in the INSPIRE Registry |
-| **Stability** | High — maintained as part of EU regulatory infrastructure |
-| **Scope** | EU-focused; EU member states are legally required to align with this |
-| **Limitation** | Based on 2006/2007 edition; does not reflect WRB 2022 changes |
-
-**2. GloSIS (Global Soil Information System)**
-
-**URI pattern:**
-```
-http://w3id.org/glosis/model/codelists/wrb2006rsgCode-{Name}
-```
-**Example:**
-```
-http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Albeluvisols
-```
-
-| Aspect | Detail |
-|--------|--------|
-| **Governing body** | FAO Global Soil Partnership (GSP) / ISRIC |
-| **WRB edition** | 2006/2007 |
-| **Legal status** | Community standard — no regulatory mandate |
-| **Linked data format** | OWL ontology with SKOS codelists, SOSA-aligned, QUDT units |
-| **Stability** | Good — `w3id.org` persistent identifier service |
-| **Scope** | Global; designed specifically for soil data exchange infrastructure |
-| **Limitation** | Not legally binding; GloSIS domain model UML not publicly available |
-
----
-
-**3. AGROVOC (FAO Multilingual Thesaurus)**
-
-**URI pattern:**
-```
-http://aims.fao.org/aos/agrovoc/c_{code}
-```
-**Example:**
-```
-http://aims.fao.org/aos/agrovoc/c_89f35c33  (WRB soil types — parent concept)
-```
-
-| Aspect | Detail |
-|--------|--------|
-| **Governing body** | FAO (AGROVOC team — separate from GSP/GloSIS) |
-| **WRB edition** | Mixed — absorbs WRB as one branch among thousands of concepts |
-| **Legal status** | None |
-| **Linked data format** | SKOS thesaurus, strong multilingual support (30+ languages) |
-| **Stability** | Good — long-standing FAO vocabulary |
-| **Scope** | General agriculture, food, forestry, environment — not soil-specific |
-| **Limitation** | Per-term URIs for individual RSGs require manual lookup; general-purpose thesaurus not optimised for soil data exchange |
-
----
-
-## Recommendation: Use INSPIRE URIs as Primary `meaning:`
-
-For a schema targeting **WRB 2006/2007** in a **European environmental monitoring context**, INSPIRE is the recommended primary URI source, for the following reasons:
-
-1. **Legal alignment** — INSPIRE is EU legally binding; your schema's `meaning:` URIs will point to the same codelist that EU member state systems are required to use, making your data directly interoperable with national INSPIRE-compliant soil datasets.
-
-2. **Institutional fit** — Your schema is developed in the context of PARC (a European initiative), uses INSPIRE-adjacent standards throughout (ISO 19115, WaterML 2.0), and targets European monitoring programmes. INSPIRE is the natural home.
-
-3. **Edition match** — You explicitly chose WRB 2006/2007 because it is the INSPIRE-legally-binding edition. The INSPIRE registry codelist represents exactly that edition.
-
-4. **Stable and maintained** — The INSPIRE Registry is maintained by the European Commission/JRC as long-term regulatory infrastructure, not a research project.
-
-5. **Directly WRB-sourced** — INSPIRE soil codelists were developed by the INSPIRE Thematic Working Group on Soil in direct reference to WRB, not as a general-purpose vocabulary absorption.
-
-**Suggested secondary reference:** Add GloSIS as `see_also` for global interoperability (useful if data is shared beyond the EU), and AGROVOC if multilingual label support is needed.
-
-```
-albeluvisols:
-  description: >-
-    Albeluvisols — soils with a clay-enriched subsoil and albic material
-    intruding into the argic horizon. (WRB 2006)
-  meaning: https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue/Albeluvisols
-  see_also:
-    - http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Albeluvisols
-```
-
----
-
-## Current and Relevant Soil Data Standards Initiatives
-
-### SoilWise (Horizon Europe, 2023–2026)
-
-- **What it is:** A Horizon Europe Mission Soil project building an open, FAIR knowledge and data repository for European soil data, designed to support EUSO and the EU Soil Strategy for 2030.
-- **Relevance to your schema:** SoilWise explicitly focuses on harmonising interoperability towards both INSPIRE and GloSIS — the exact two standards relevant to your soil typology URI decision. SoilWise is also exploring migration of soil models from O&M to the new OMS (Observations, Measurements & Samples) standard — the same transition relevant to your SensorThings/OMS work. It may also adopt soil health codelists from Envasso and Landmark projects into GloSIS or the INSPIRE registry.
-- **Website:** https://soilwise-he.eu
-
-### EU Soil Monitoring Law (SML) — in progress
-
-- **What it is:** Proposed EU regulation to standardise soil health monitoring across all member states, covering soil degradation, contamination, and sustainable management. As of 2024, 69% of preparatory actions under the EU Soil Strategy were completed.
-- **Relevance to your schema:** The SML will likely mandate specific data collection standards and reporting formats across EU member states. Your schema, if aligned with INSPIRE now, is well-positioned for compliance when the SML enters into force. EUSO is actively building monitoring infrastructure in support of the SML.
-- **Key body:** European Commission / EUSO / ESDAC (JRC)
-
-
-### EU Soil Observatory (EUSO) and ESDAC
-
-- **What it is:** The EU's dedicated soil research and monitoring task force, operating the European Soil Data Centre (ESDAC) — currently hosting over 120 datasets, 6,000+ maps, and 600+ scientific documents.
-- **Relevance to your schema:** EUSO's Soil Degradation Dashboard (2023–2025) monitors 19 indicators relevant to the parameters in your schema (organic carbon, contamination, compaction, etc.). EUSO is the primary EU institutional entry point for soil data and may become a key data consumer/publisher for your schema.
-- **Website:** https://esdac.jrc.ec.europa.eu/euso
-
-
-### LUCAS Soil Survey (Eurostat / JRC)
-
-- **What it is:** Land Use/Cover Area frame Survey — Soil component. A standardised pan-EU soil monitoring survey coordinated by Eurostat, collecting georeferenced topsoil samples across EU member states. Measures pH (CaCl₂ and H₂O), electrical conductivity, SOC, CaCO₃, phosphorus, nitrogen, potassium — many of which overlap with parameters in your `SoilParameter` enum.
-- **Relevance to your schema:** If your data will ever be compared or integrated with LUCAS, harmonising your parameter names and units with LUCAS conventions avoids costly data transformation. The LUCAS dataset is also used as the reference for the EU Taxonomy regulation on soil fertility in construction.
-- **Website:** https://esdac.jrc.ec.europa.eu/projects/lucas
-
-
-### WoSIS — World Soil Information Service (ISRIC, 2023 snapshot)
-
-- **What it is:** ISRIC's globally standardised and quality-controlled soil profile database, covering 228,000+ geo-referenced sites across 174 countries. The 2023 snapshot uses a new data model aligned with ISO 28258 and GloSIS.
-- **Relevance to your schema:** WoSIS's new data model (conditioning analytical methods to the observation, aligned with GloSIS/O&M) is an example of the exact modeling pattern we discussed for your `ParameterMeasurement` class. If your national data is ever contributed to WoSIS, alignment with GloSIS concepts facilitates this.
-- **Reference:** Batjes et al., 2024 (ESSD)
-
-
-### ISO 28258 — Soil Quality: Digital Exchange of Soil-Related Data
-
-- **What it is:** The ISO standard for digital exchange of soil data — used as the basis for both GloSIS and INSPIRE soil domain models. Both are designed to be interoperable with ISO 28258.
-- **Relevance to your schema:** If your national database (groundwater/surface water + soil) ever needs to exchange data internationally at a formal level, ISO 28258 is the underlying technical reference standard. GloSIS and INSPIRE are both ISO 28258-aligned, so choosing either for your `meaning:` URIs keeps you compatible.
-
-
-### OMS Migration (OGC/ISO 19156:2023)
-
-- **What it is:** The update of Observations & Measurements (O&M) to Observations, Measurements & Samples (OMS), now ISO 19156:2023. Both GloSIS and INSPIRE soil are currently based on the older O&M model; migration to OMS is under active discussion (SoilWise is specifically identified as a potential contributor to this migration).
-- **Relevance to your schema:** If you design your class hierarchy now with SOSA concepts in mind (as discussed), you will be well-positioned for the OMS migration — since SOSA/SSN and OMS are being actively co-evolved and kept compatible. This is a forward-looking consideration rather than an immediate action item.
-
-
-## Summary Table
-
-| Initiative | Type | Time horizon | Primary relevance to your schema |
-|------------|------|-------------|----------------------------------|
-| INSPIRE Soil / SML | EU regulatory | Now / near-term | Primary URI source, legal compliance |
-| GloSIS | Global standard | Now | Secondary URI source, global interoperability |
-| AGROVOC | Thesaurus | Now | Multilingual labels only |
-| SoilWise | EU research project | 2023–2026 | Monitor for emerging codelists and OMS migration |
-| EUSO / ESDAC | EU observatory | Ongoing | Data consumer / potential reporting target |
-| LUCAS | EU survey | Ongoing | Parameter and unit harmonisation |
-| WoSIS | Global DB | Ongoing | Modeling pattern reference; contribution pathway |
-| ISO 28258 | ISO standard | Background | Underpins both INSPIRE and GloSIS |
-| OMS (ISO 19156:2023) | ISO/OGC standard | Future | Migration target for your class hierarchy |
 
 
 # CHANGELOG

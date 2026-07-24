@@ -520,7 +520,7 @@ enums:
       ne:
         description: Nepali
         meaning: http://id.loc.gov/vocabulary/iso639-1/ne
-      no:
+      "no":
         description: Norwegian
         meaning: http://id.loc.gov/vocabulary/iso639-1/no
       nb:
@@ -1237,7 +1237,7 @@ enums:
       MP:
         description: Northern Mariana Islands
         meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MP
-      NO:
+      "NO":
         description: Norway
         meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NO
       OM:
@@ -1619,8 +1619,11 @@ enums:
     description: Regional groups of United Nations member states
     permissible_values:
       african:
+        description: African Group
       asia_pacific:
+        description: Asia-Pacific Group
       eastern_european:
+        description: Eastern European Group
       grulac:
         description: Group of Latin American and Caribbean Countries
       weog:
@@ -2425,10 +2428,15 @@ enums:
     description: Biological sex of a sampled organism
     permissible_values:
       male:
+        description: Male organism
       female:
+        description: Female organism
       hermaphrodite:
+        description: Hermaphrodite organism — both male and female reproductive organs
       not_specified:
+        description: Sex not recorded or unknown
       not_relevant:
+        description: Sex not relevant for this sample type
     
   # AnalyticalMethod This enum is a full placeholder. The final controlled vocabulary
   # for analytical methods is being developed separately within the PARC
@@ -2850,7 +2858,6 @@ slots:
     description: Unique identifier for the sample
     range: string
     required: true
-    identifier: true
     in_subset: 
       - mandatory
   
@@ -2860,7 +2867,6 @@ slots:
       was collected. References the site_id of a Site record.
     range: string
     required: true
-    identifier: true
     in_subset:
       - mandatory
 
@@ -2962,6 +2968,9 @@ classes:
       - name_en
       - name_original
       - acronym
+    slot_usage:
+      acronym:
+        identifier: true
     
     attributes:
 
@@ -3195,6 +3204,7 @@ classes:
   # ---------------------------------------------------------------------------
   
   Institution:
+    description: Institution 
     mixins:
       - OrganisationMetadata
     slots:
@@ -3213,6 +3223,7 @@ classes:
 # ---------------------------------------------------------------------------
 
   Funder:
+    description: Funder
     mixins:
       - OrganisationMetadata
     attributes:
@@ -3221,7 +3232,7 @@ classes:
           Unique funder ID
         identifier: true
         range: string
-        required: tru
+        required: true
 
   # ---------------------------------------------------------------------------
   # CONTACT
@@ -3280,6 +3291,8 @@ classes:
           XX (unknown) and XZ (international waters).
         in_subset:
           - mandatory_if    # mandatory when coordinates not provided
+      site_id:
+        identifier: true
 
     attributes:
       # --- Coordinate privacy exception ---
@@ -3496,6 +3509,9 @@ classes:
       - end_date
       - sampling_time_start
       - sampling_time_end
+    slot_usage:
+      sample_id:
+        identifier: true
 
     attributes:
       domain:
@@ -3516,14 +3532,17 @@ classes:
   # ---------------------------------------------------------------------------
   Atmospheric:
     is_a: Sample
+    description: Atmospheric sample
     attributes: 
       matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix belonging to AtmosphericMatrix
+        description: Sampled matrix
         range: MatrixAtmospheric
         required: true
         in_subset:
           - mandatory
 
       sampling_method: # Conditional sampling_method selection based on the domain? Do we need specific for each matrix/ domain?
+        description: Method used to collect the sample
         range: SamplingMethodAtmospheric
         required: true
         in_subset:
@@ -3534,14 +3553,17 @@ classes:
   # ---------------------------------------------------------------------------
   Aquatic:
     is_a: Sample
+    description: Aquatic sample
     attributes: 
       matrix: # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix belonging to AtmosphericMatrix
+        description: Sampled matrix
         range: MatrixAquatic
         required: true
         in_subset:
           - mandatory
 
       sampling_method: # Conditional sampling_method selection based on the domain? Do we need specific for each matrix/ domain?
+        description: Method used to collect the sample
         range: SamplingMethodAquatic
         required: true
         in_subset:
@@ -3563,6 +3585,7 @@ classes:
     attributes:
 
       matrix:
+        description: Sampled matrix
         range: MatrixTerrestrial # Set conditional matrix selection based on the domain. Submatrix deleted - matrix can be selected from vocabulary - any matrix belonging to AtmosphericMatrix
         required: true
         in_subset:
@@ -3583,10 +3606,12 @@ classes:
   # SAMPLE BIOTA
   # ---------------------------------------------------------------------------
   Biota:
-    is_a: Sample  
+    is_a: Sample 
+    description: Biota sample  
     attributes:
 
       matrix:
+        description: Sampled matrix
         range: MatrixBiota
         required: true
         in_subset:
@@ -3607,6 +3632,7 @@ classes:
         multivalued: true
 
       gender:
+        description: Collected organism gender
         range: Gender
         required: false
 
@@ -3663,7 +3689,9 @@ classes:
   # ---------------------------------------------------------------------------
   Observation:
     abstract: true
-    slots: sample_id
+    description: Observation - concentration measurement or other parameter
+    slots: 
+      - sample_id
     attributes:
       
       observation_type:
