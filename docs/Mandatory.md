@@ -1,0 +1,266 @@
+---
+search:
+  boost: 1.0
+---
+
+
+# Subset: Mandatory 
+
+
+_Fields that are required for all record types._
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [Mandatory](Mandatory.md)
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+        
+
+
+
+
+        
+
+        
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+        
+
+
+        
+
+
+
+
+
+        
+
+        
+
+
+        
+
+        
+
+        
+
+
+
+        
+
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Slots in subset
+
+| Slot | Description |
+| --- | --- |
+| [access_procedures](access_procedures.md) | Information on procedure to obtain access to the dataset |
+| [acknowledgement](acknowledgement.md) | Text for acknowledgement which should be reported when using/re-using the dat... |
+| [activity_description](activity_description.md) | A brief summary with the most important details summarising the project (obje... |
+| [analytical_method](analytical_method.md) | Analytical method used to determine the analyte |
+| [compound](compound.md) | Chemical compound measured in the sample |
+| [compound_name](compound_name.md) | Common or abbreviated name of the compound as used in the PARC community (e |
+| [contacts](contacts.md) | Contact person(s) for the monitoring activity |
+| [country](country.md) | Country where the site, institution or project is located, according to ISO 3... |
+| [data_handling_procedure](data_handling_procedure.md) | Description of steps taken after chemical analysis (e |
+| [domain](domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... |
+| [email](email.md) | Email address of the project contact point |
+| [institutions](institutions.md) | Institution(s) responsible for implementing the monitoring activity |
+| [laboratory](laboratory.md) | Name of the laboratory performing the analysis |
+| [license](license.md) | License or terms for data reuse |
+| [matrix](matrix.md) | Sampled matrix |
+| [name_original](name_original.md) | Name of the entity in the original language of the  institution/site/project |
+| [observation_type](observation_type.md) | Type of measurement/observation: i) Chemical concentration in the environment... |
+| [parameter](parameter.md) | Name of the parameter measured |
+| [sample_id](sample_id.md) | Unique identifier for the sample |
+| [sample_preparation_method](sample_preparation_method.md) | Description of the process from sample collection to chemical analysis (e |
+| [sampling_method](sampling_method.md) | Method used to collect the sample |
+| [site_id](site_id.md) | Unique identifier of the monitoring site where the sample was collected |
+| [site_name](site_name.md) | Name of the monitoring site |
+| [start_date](start_date.md) | Start date in format YYYY-MM-DD |
+| [taxon_id](taxon_id.md) | GBIF species key (integer) |
+| [taxon_name](taxon_name.md) | Scientific name of the taxon (genus, species or higher rank) as accepted in t... |
+| [type](type.md) | Type of monitoring activity |
+| [unit](unit.md) | Unit of measurement |
+| [value](value.md) | Measured value of the chemical concentration or other parameter |
+
+
+
+
+</div>

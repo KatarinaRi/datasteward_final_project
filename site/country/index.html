@@ -1,0 +1,6054 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/country/">
+      
+      
+        <link rel="prev" href="../coordinate_system/">
+      
+      
+        <link rel="next" href="../data_handling_procedure/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Enum: Country - Metadata Schema for Data Concerning Chemicals in the Outdoor Environment</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-country" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Metadata Schema for Data Concerning Chemicals in the Outdoor Environment" class="md-header__button md-logo" aria-label="Metadata Schema for Data Concerning Chemicals in the Outdoor Environment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Metadata Schema for Data Concerning Chemicals in the Outdoor Environment
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: Country
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Metadata Schema for Data Concerning Chemicals in the Outdoor Environment" class="md-nav__button md-logo" aria-label="Metadata Schema for Data Concerning Chemicals in the Outdoor Environment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Metadata Schema for Data Concerning Chemicals in the Outdoor Environment
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata Schema for Data Concerning Chemicals in the Outdoor Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AnalyticalMethod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: AnalyticalMethod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aquatic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Aquatic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AquaticMatrixFraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: AquaticMatrixFraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Atmospheric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Atmospheric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Biota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Biota
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boolean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Campaign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Campaign
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChemicalCompound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: ChemicalCompound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CompoundGroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: CompoundGroup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CoordinateSystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: CoordinateSystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Curie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Date/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DateOrDatetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateOrDatetime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Datetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datetime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Decimal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decimal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DecimalDegree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DecimalDegree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Double/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Double
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EmailAddress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EmailAddress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EnvironmentalCompartment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: EnvironmentalCompartment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Float/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Float
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Funder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GeographicRegion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: GeographicRegion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IRI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IRI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ImplementationLevel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: ImplementationLevel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Institution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: institution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Integer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jsonpath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jsonpath
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jsonpointer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jsonpointer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LandUse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: LandUse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mandatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subset: Mandatory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MandatoryIf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subset: MandatoryIf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MatrixAquatic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: MatrixAquatic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MatrixAtmospheric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: MatrixAtmospheric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MatrixBiota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: MatrixBiota
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MatrixTerrestrial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: MatrixTerrestrial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MeasurementBase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: MeasurementBase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MeasurementConcentration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: MeasurementConcentration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MeasurementParameter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: MeasurementParameter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MonitoringActivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: MonitoringActivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MonitoringActivityType/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: MonitoringActivityType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ncname/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ncname
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Nodeidentifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nodeidentifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Objectidentifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Objectidentifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Observation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Observation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ObservationType/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: ObservationType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OrcidIdentifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OrcidIdentifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OrganisationMetadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: OrganisationMetadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RiverBasin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: RiverBasin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RorIdentifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RorIdentifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SamplingMethodAquatic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: SamplingMethodAquatic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SamplingMethodAtmospheric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: SamplingMethodAtmospheric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SoilTypeWRB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: SoilTypeWRB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sparqlpath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sparqlpath
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../String/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Taxon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Taxon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TaxonRankEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: TaxonRankEnum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Terrestrial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class: Terrestrial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNRegionalGroup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: UNRegionalGroup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Uri/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uri
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Uriorcurie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uriorcurie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WaterGeographicalFeature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: WaterGeographicalFeature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WaterTreatment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: WaterTreatment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WaterType/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: WaterType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../YearValue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YearValue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access_procedures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: access_procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: acknowledgement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acronym/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: acronym
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activity_description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: activity_description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activity_identifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: activity_identifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../altitude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: altitude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis_date/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: analysis_date
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytical_method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: analytical_method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytical_method_link/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: analytical_method_link
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: batch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../campaign_description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: campaign_description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../campaigns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: campaigns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cas_number/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: cas_number
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chebi_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: chebi_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chemicals-outdoor-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    chemicals-outdoor-schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compartment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: compartment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: compound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compound_group/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: compound_group
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compound_name/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: compound_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: contact_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: contacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordinate_privacy_exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: coordinate_privacy_exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordinate_privacy_exception_reason/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: coordinate_privacy_exception_reason
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordinate_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: coordinate_system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Country
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_handling_procedure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: data_handling_procedure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_handling_procedure_link/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: data_handling_procedure_link
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disclaimer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: disclaimer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ec_number/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: ec_number
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: email
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../end_date/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: end_date
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: fraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funder_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: funder_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: funders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Gender
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geographic_region/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: geographic_region
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation_level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: implementation_level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inchi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: inchi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inchikey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: inchikey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../institution_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: institution_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../institutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: institutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../laboratory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: laboratory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../land_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: land_use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latitude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: latitude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legislation_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: legislation_policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: license
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../life_stage_age/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: life_stage_age
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../link/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: link
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: lod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../longitude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: longitude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: loq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing_instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: managing_instance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring_reasons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: monitoring_reasons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../name_en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: name_en
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../name_original/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: name_original
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../norman_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: norman_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nuts3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: nuts3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observation_type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observation_type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orcid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: orcid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Parameter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: provenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pubchem_cid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: pubchem_cid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publication_year/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: publication_year
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regional_group/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: regional_group
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../river_basin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: river_basin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../role/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ror/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: ror
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sample_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample_preparation_method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sample_preparation_method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample_preparation_method_link/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sample_preparation_method_link
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sampling_method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sampling_method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sampling_time_end/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sampling_time_end
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sampling_time_start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sampling_time_start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Sea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site_description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: site_description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: site_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site_name/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soil_type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: soil_type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start_date/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: start_date
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxon_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: taxon_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxon_name/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: taxon_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxon_rank/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: taxon_rank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomic_classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: taxonomic_classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uncertainty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: uncertainty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enum: Unit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water_geographical_feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: water_geographical_feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water_treatment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: water_treatment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water_type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: water_type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wp9_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: wp9_id
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../year_established/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: year_established
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="enum-country">Enum: Country</h1>
+<p><em>Country codes according to ISO 3166-1 alpha-2 (two-letter uppercase codes). URIs from OMG Languages, Countries and Codes (LCC) ontology, which provides the authoritative linked data representation of ISO 3166-1 since neither ISO nor UN Statistics Division publish official RDF vocabularies.</em></p>
+<div data-search-exclude markdown="1">
+
+URI: [cenvo:Country](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Country)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| AF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AF | Afghanistan |
+| AX | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AX | Aland Islands |
+| AL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AL | Albania |
+| DZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DZ | Algeria |
+| AS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AS | American Samoa |
+| AD | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AD | Andorra |
+| AO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AO | Angola |
+| AI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AI | Anguilla |
+| AQ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AQ | Antarctica |
+| AG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AG | Antigua and Barbuda |
+| AR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AR | Argentina |
+| AM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AM | Armenia |
+| AW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AW | Aruba |
+| AU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AU | Australia |
+| AT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AT | Austria |
+| AZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AZ | Azerbaijan |
+| BS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BS | Bahamas |
+| BH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BH | Bahrain |
+| BD | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BD | Bangladesh |
+| BB | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BB | Barbados |
+| BY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BY | Belarus |
+| BE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BE | Belgium |
+| BZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BZ | Belize |
+| BJ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BJ | Benin |
+| BM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BM | Bermuda |
+| BT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BT | Bhutan |
+| BO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BO | Bolivia |
+| BA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BA | Bosnia and Herzegovina |
+| BW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BW | Botswana |
+| BV | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BV | Bouvet Island |
+| BR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BR | Brazil |
+| IO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IO | British Indian Ocean Territory |
+| BN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BN | Brunei Darussalam |
+| BG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BG | Bulgaria |
+| BF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BF | Burkina Faso |
+| BI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BI | Burundi |
+| KH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KH | Cambodia |
+| CM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CM | Cameroon |
+| CA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CA | Canada |
+| CV | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CV | Cape Verde |
+| KY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KY | Cayman Islands |
+| CF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CF | Central African Republic |
+| TD | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TD | Chad |
+| CL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CL | Chile |
+| CN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CN | China |
+| CX | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CX | Christmas Island |
+| CC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CC | Cocos (Keeling) Islands |
+| CO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CO | Colombia |
+| KM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KM | Comoros |
+| CG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CG | Congo |
+| CD | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CD | Congo, The Democratic Republic Of The |
+| CK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CK | Cook Islands |
+| CR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CR | Costa Rica |
+| CI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CI | Cote d'Ivoire |
+| HR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HR | Croatia |
+| CU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CU | Cuba |
+| CY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CY | Cyprus |
+| CZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CZ | Czech Republic |
+| DK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DK | Denmark |
+| DJ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DJ | Djibouti |
+| DM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DM | Dominica |
+| DO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DO | Dominican Republic |
+| EC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EC | Ecuador |
+| EG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EG | Egypt |
+| SV | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SV | El Salvador |
+| GQ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GQ | Equatorial Guinea |
+| ER | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ER | Eritrea |
+| EE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EE | Estonia |
+| ET | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ET | Ethiopia |
+| FK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FK | Falkland Islands (Malvinas) |
+| FO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FO | Faroe Islands |
+| FJ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FJ | Fiji |
+| FI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FI | Finland |
+| FR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FR | France |
+| GF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GF | French Guiana |
+| PF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PF | French Polynesia |
+| TF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TF | French Southern Territories |
+| GA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GA | Gabon |
+| GM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GM | Gambia |
+| GE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GE | Georgia |
+| DE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DE | Germany |
+| GH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GH | Ghana |
+| GI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GI | Gibraltar |
+| GR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GR | Greece |
+| GL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GL | Greenland |
+| GD | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GD | Grenada |
+| GP | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GP | Guadeloupe |
+| GU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GU | Guam |
+| GT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GT | Guatemala |
+| GG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GG | Guernsey |
+| GN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GN | Guinea |
+| GW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GW | Guinea-Bissau |
+| GY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GY | Guyana |
+| HT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HT | Haiti |
+| HM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HM | Heard Island and Mcdonald Islands |
+| VA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VA | Holy See (Vatican City State) |
+| HN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HN | Honduras |
+| HK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HK | Hong Kong |
+| HU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HU | Hungary |
+| IS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IS | Iceland |
+| IN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IN | India |
+| ID | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ID | Indonesia |
+| IR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IR | Iran, Islamic Republic Of |
+| IQ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IQ | Iraq |
+| IE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IE | Ireland |
+| IM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IM | Isle Of Man |
+| IL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IL | Israel |
+| IT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IT | Italy |
+| JM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JM | Jamaica |
+| JP | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JP | Japan |
+| JE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JE | Jersey |
+| JO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JO | Jordan |
+| KZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KZ | Kazakhstan |
+| KE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KE | Kenya |
+| KI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KI | Kiribati |
+| KP | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KP | Korea, Democratic People's Republic Of |
+| KR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KR | Korea, Republic Of |
+| KW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KW | Kuwait |
+| KG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KG | Kyrgyzstan |
+| LA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LA | Lao People's Democratic Republic |
+| LV | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LV | Latvia |
+| LB | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LB | Lebanon |
+| LS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LS | Lesotho |
+| LR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LR | Liberia |
+| LY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LY | Libyan Arab Jamahiriya |
+| LI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LI | Liechtenstein |
+| LT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LT | Lithuania |
+| LU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LU | Luxembourg |
+| MO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MO | Macao |
+| MK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MK | North Macedonia |
+| MG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MG | Madagascar |
+| MW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MW | Malawi |
+| MY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MY | Malaysia |
+| MV | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MV | Maldives |
+| ML | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ML | Mali |
+| MT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MT | Malta |
+| MH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MH | Marshall Islands |
+| MQ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MQ | Martinique |
+| MR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MR | Mauritania |
+| MU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MU | Mauritius |
+| YT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/YT | Mayotte |
+| MX | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MX | Mexico |
+| FM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FM | Micronesia, Federated States Of |
+| MD | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MD | Moldova, Republic Of |
+| MC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MC | Monaco |
+| MN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MN | Mongolia |
+| ME | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ME | Montenegro |
+| MS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MS | Montserrat |
+| MA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MA | Morocco |
+| MZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MZ | Mozambique |
+| MM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MM | Myanmar |
+| NA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NA | Namibia |
+| NR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NR | Nauru |
+| NP | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NP | Nepal |
+| NL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NL | Netherlands |
+| AN | None | Netherlands Antilles (dissolved 2010) |
+| NC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NC | New Caledonia |
+| NZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NZ | New Zealand |
+| NI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NI | Nicaragua |
+| NE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NE | Niger |
+| NG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NG | Nigeria |
+| NU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NU | Niue |
+| NF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NF | Norfolk Island |
+| MP | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MP | Northern Mariana Islands |
+| NO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NO | Norway |
+| OM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/OM | Oman |
+| PK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PK | Pakistan |
+| PW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PW | Palau |
+| PS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PS | Palestinian Territory, Occupied |
+| PA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PA | Panama |
+| PG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PG | Papua New Guinea |
+| PY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PY | Paraguay |
+| PE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PE | Peru |
+| PH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PH | Philippines |
+| PN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PN | Pitcairn |
+| PL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PL | Poland |
+| PT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PT | Portugal |
+| PR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PR | Puerto Rico |
+| QA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/QA | Qatar |
+| RE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RE | Reunion |
+| RO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RO | Romania |
+| RU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RU | Russian Federation |
+| RW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RW | Rwanda |
+| SH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SH | Saint Helena |
+| KN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KN | Saint Kitts and Nevis |
+| LC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LC | Saint Lucia |
+| PM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PM | Saint Pierre and Miquelon |
+| VC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VC | Saint Vincent and The Grenadines |
+| WS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/WS | Samoa |
+| SM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SM | San Marino |
+| ST | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ST | Sao Tome and Principe |
+| SA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SA | Saudi Arabia |
+| SN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SN | Senegal |
+| RS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RS | Serbia |
+| SC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SC | Seychelles |
+| SL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SL | Sierra Leone |
+| SG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SG | Singapore |
+| SK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SK | Slovakia |
+| SI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SI | Slovenia |
+| SB | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SB | Solomon Islands |
+| SO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SO | Somalia |
+| ZA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZA | South Africa |
+| GS | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GS | South Georgia and The South Sandwich Islands |
+| ES | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ES | Spain |
+| LK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LK | Sri Lanka |
+| SD | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SD | Sudan |
+| SR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SR | Suriname |
+| SJ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SJ | Svalbard and Jan Mayen |
+| SZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SZ | Swaziland |
+| SE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SE | Sweden |
+| CH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CH | Switzerland |
+| SY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SY | Syrian Arab Republic |
+| TW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TW | Taiwan, Province Of China |
+| TJ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TJ | Tajikistan |
+| TZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TZ | Tanzania, United Republic Of |
+| TH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TH | Thailand |
+| TL | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TL | Timor-Leste |
+| TG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TG | Togo |
+| TK | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TK | Tokelau |
+| TO | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TO | Tonga |
+| TT | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TT | Trinidad and Tobago |
+| TN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TN | Tunisia |
+| TR | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TR | Turkey |
+| TM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TM | Turkmenistan |
+| TC | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TC | Turks and Caicos Islands |
+| TV | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TV | Tuvalu |
+| UG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UG | Uganda |
+| UA | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UA | Ukraine |
+| AE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AE | United Arab Emirates |
+| GB | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GB | United Kingdom |
+| US | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/US | United States |
+| UM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UM | United States Minor Outlying Islands |
+| UY | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UY | Uruguay |
+| UZ | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UZ | Uzbekistan |
+| VU | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VU | Vanuatu |
+| VE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VE | Venezuela |
+| VN | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VN | Viet Nam |
+| VG | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VG | Virgin Islands, British |
+| VI | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VI | Virgin Islands, U |
+| WF | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/WF | Wallis and Futuna |
+| EH | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EH | Western Sahara |
+| YE | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/YE | Yemen |
+| ZM | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZM | Zambia |
+| ZW | https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZW | Zimbabwe |
+| XX | None | Unspecified or unknown country (user-assigned code, not an official ISO 3166-... |
+| XZ | https://service.unece.org/trade/locode/xz.htm | International waters (user-assigned code from UN/LOCODE) |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [country](country.md) | Country where the site, institution or project is located, according to ISO 3... |
+
+
+
+
+
+
+
+
+## See Also
+
+* [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
+* [https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/](https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/)
+* [https://unstats.un.org/unsd/methodology/m49/](https://unstats.un.org/unsd/methodology/m49/)
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+
+<pre><code class="language-yaml">name: Country
+description: Country codes according to ISO 3166-1 alpha-2 (two-letter uppercase codes).
+  URIs from OMG Languages, Countries and Codes (LCC) ontology, which provides the
+  authoritative linked data representation of ISO 3166-1 since neither ISO nor UN
+  Statistics Division publish official RDF vocabularies.
+from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
+see_also:
+- https://www.iso.org/iso-3166-country-codes.html
+- https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/
+- https://unstats.un.org/unsd/methodology/m49/
+rank: 1000
+permissible_values:
+  AF:
+    text: AF
+    description: Afghanistan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AF
+  AX:
+    text: AX
+    description: Aland Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AX
+  AL:
+    text: AL
+    description: Albania
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AL
+  DZ:
+    text: DZ
+    description: Algeria
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DZ
+  AS:
+    text: AS
+    description: American Samoa
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AS
+  AD:
+    text: AD
+    description: Andorra
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AD
+  AO:
+    text: AO
+    description: Angola
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AO
+  AI:
+    text: AI
+    description: Anguilla
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AI
+  AQ:
+    text: AQ
+    description: Antarctica
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AQ
+  AG:
+    text: AG
+    description: Antigua and Barbuda
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AG
+  AR:
+    text: AR
+    description: Argentina
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AR
+  AM:
+    text: AM
+    description: Armenia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AM
+  AW:
+    text: AW
+    description: Aruba
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AW
+  AU:
+    text: AU
+    description: Australia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AU
+  AT:
+    text: AT
+    description: Austria
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AT
+  AZ:
+    text: AZ
+    description: Azerbaijan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AZ
+  BS:
+    text: BS
+    description: Bahamas
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BS
+  BH:
+    text: BH
+    description: Bahrain
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BH
+  BD:
+    text: BD
+    description: Bangladesh
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BD
+  BB:
+    text: BB
+    description: Barbados
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BB
+  BY:
+    text: BY
+    description: Belarus
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BY
+  BE:
+    text: BE
+    description: Belgium
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BE
+  BZ:
+    text: BZ
+    description: Belize
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BZ
+  BJ:
+    text: BJ
+    description: Benin
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BJ
+  BM:
+    text: BM
+    description: Bermuda
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BM
+  BT:
+    text: BT
+    description: Bhutan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BT
+  BO:
+    text: BO
+    description: Bolivia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BO
+  BA:
+    text: BA
+    description: Bosnia and Herzegovina
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BA
+  BW:
+    text: BW
+    description: Botswana
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BW
+  BV:
+    text: BV
+    description: Bouvet Island
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BV
+  BR:
+    text: BR
+    description: Brazil
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BR
+  IO:
+    text: IO
+    description: British Indian Ocean Territory
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IO
+  BN:
+    text: BN
+    description: Brunei Darussalam
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BN
+  BG:
+    text: BG
+    description: Bulgaria
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BG
+  BF:
+    text: BF
+    description: Burkina Faso
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BF
+  BI:
+    text: BI
+    description: Burundi
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/BI
+  KH:
+    text: KH
+    description: Cambodia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KH
+  CM:
+    text: CM
+    description: Cameroon
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CM
+  CA:
+    text: CA
+    description: Canada
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CA
+  CV:
+    text: CV
+    description: Cape Verde
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CV
+  KY:
+    text: KY
+    description: Cayman Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KY
+  CF:
+    text: CF
+    description: Central African Republic
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CF
+  TD:
+    text: TD
+    description: Chad
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TD
+  CL:
+    text: CL
+    description: Chile
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CL
+  CN:
+    text: CN
+    description: China
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CN
+  CX:
+    text: CX
+    description: Christmas Island
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CX
+  CC:
+    text: CC
+    description: Cocos (Keeling) Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CC
+  CO:
+    text: CO
+    description: Colombia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CO
+  KM:
+    text: KM
+    description: Comoros
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KM
+  CG:
+    text: CG
+    description: Congo
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CG
+  CD:
+    text: CD
+    description: Congo, The Democratic Republic Of The
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CD
+  CK:
+    text: CK
+    description: Cook Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CK
+  CR:
+    text: CR
+    description: Costa Rica
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CR
+  CI:
+    text: CI
+    description: Cote d'Ivoire
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CI
+  HR:
+    text: HR
+    description: Croatia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HR
+  CU:
+    text: CU
+    description: Cuba
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CU
+  CY:
+    text: CY
+    description: Cyprus
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CY
+  CZ:
+    text: CZ
+    description: Czech Republic
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CZ
+  DK:
+    text: DK
+    description: Denmark
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DK
+  DJ:
+    text: DJ
+    description: Djibouti
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DJ
+  DM:
+    text: DM
+    description: Dominica
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DM
+  DO:
+    text: DO
+    description: Dominican Republic
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DO
+  EC:
+    text: EC
+    description: Ecuador
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EC
+  EG:
+    text: EG
+    description: Egypt
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EG
+  SV:
+    text: SV
+    description: El Salvador
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SV
+  GQ:
+    text: GQ
+    description: Equatorial Guinea
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GQ
+  ER:
+    text: ER
+    description: Eritrea
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ER
+  EE:
+    text: EE
+    description: Estonia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EE
+  ET:
+    text: ET
+    description: Ethiopia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ET
+  FK:
+    text: FK
+    description: Falkland Islands (Malvinas)
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FK
+  FO:
+    text: FO
+    description: Faroe Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FO
+  FJ:
+    text: FJ
+    description: Fiji
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FJ
+  FI:
+    text: FI
+    description: Finland
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FI
+  FR:
+    text: FR
+    description: France
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FR
+  GF:
+    text: GF
+    description: French Guiana
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GF
+  PF:
+    text: PF
+    description: French Polynesia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PF
+  TF:
+    text: TF
+    description: French Southern Territories
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TF
+  GA:
+    text: GA
+    description: Gabon
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GA
+  GM:
+    text: GM
+    description: Gambia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GM
+  GE:
+    text: GE
+    description: Georgia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GE
+  DE:
+    text: DE
+    description: Germany
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/DE
+  GH:
+    text: GH
+    description: Ghana
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GH
+  GI:
+    text: GI
+    description: Gibraltar
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GI
+  GR:
+    text: GR
+    description: Greece
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GR
+  GL:
+    text: GL
+    description: Greenland
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GL
+  GD:
+    text: GD
+    description: Grenada
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GD
+  GP:
+    text: GP
+    description: Guadeloupe
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GP
+  GU:
+    text: GU
+    description: Guam
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GU
+  GT:
+    text: GT
+    description: Guatemala
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GT
+  GG:
+    text: GG
+    description: Guernsey
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GG
+  GN:
+    text: GN
+    description: Guinea
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GN
+  GW:
+    text: GW
+    description: Guinea-Bissau
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GW
+  GY:
+    text: GY
+    description: Guyana
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GY
+  HT:
+    text: HT
+    description: Haiti
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HT
+  HM:
+    text: HM
+    description: Heard Island and Mcdonald Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HM
+  VA:
+    text: VA
+    description: Holy See (Vatican City State)
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VA
+  HN:
+    text: HN
+    description: Honduras
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HN
+  HK:
+    text: HK
+    description: Hong Kong
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HK
+  HU:
+    text: HU
+    description: Hungary
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/HU
+  IS:
+    text: IS
+    description: Iceland
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IS
+  IN:
+    text: IN
+    description: India
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IN
+  ID:
+    text: ID
+    description: Indonesia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ID
+  IR:
+    text: IR
+    description: Iran, Islamic Republic Of
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IR
+  IQ:
+    text: IQ
+    description: Iraq
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IQ
+  IE:
+    text: IE
+    description: Ireland
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IE
+  IM:
+    text: IM
+    description: Isle Of Man
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IM
+  IL:
+    text: IL
+    description: Israel
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IL
+  IT:
+    text: IT
+    description: Italy
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/IT
+  JM:
+    text: JM
+    description: Jamaica
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JM
+  JP:
+    text: JP
+    description: Japan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JP
+  JE:
+    text: JE
+    description: Jersey
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JE
+  JO:
+    text: JO
+    description: Jordan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JO
+  KZ:
+    text: KZ
+    description: Kazakhstan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KZ
+  KE:
+    text: KE
+    description: Kenya
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KE
+  KI:
+    text: KI
+    description: Kiribati
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KI
+  KP:
+    text: KP
+    description: Korea, Democratic People's Republic Of
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KP
+  KR:
+    text: KR
+    description: Korea, Republic Of
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KR
+  KW:
+    text: KW
+    description: Kuwait
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KW
+  KG:
+    text: KG
+    description: Kyrgyzstan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KG
+  LA:
+    text: LA
+    description: Lao People's Democratic Republic
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LA
+  LV:
+    text: LV
+    description: Latvia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LV
+  LB:
+    text: LB
+    description: Lebanon
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LB
+  LS:
+    text: LS
+    description: Lesotho
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LS
+  LR:
+    text: LR
+    description: Liberia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LR
+  LY:
+    text: LY
+    description: Libyan Arab Jamahiriya
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LY
+  LI:
+    text: LI
+    description: Liechtenstein
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LI
+  LT:
+    text: LT
+    description: Lithuania
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LT
+  LU:
+    text: LU
+    description: Luxembourg
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LU
+  MO:
+    text: MO
+    description: Macao
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MO
+  MK:
+    text: MK
+    description: North Macedonia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MK
+  MG:
+    text: MG
+    description: Madagascar
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MG
+  MW:
+    text: MW
+    description: Malawi
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MW
+  MY:
+    text: MY
+    description: Malaysia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MY
+  MV:
+    text: MV
+    description: Maldives
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MV
+  ML:
+    text: ML
+    description: Mali
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ML
+  MT:
+    text: MT
+    description: Malta
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MT
+  MH:
+    text: MH
+    description: Marshall Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MH
+  MQ:
+    text: MQ
+    description: Martinique
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MQ
+  MR:
+    text: MR
+    description: Mauritania
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MR
+  MU:
+    text: MU
+    description: Mauritius
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MU
+  YT:
+    text: YT
+    description: Mayotte
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/YT
+  MX:
+    text: MX
+    description: Mexico
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MX
+  FM:
+    text: FM
+    description: Micronesia, Federated States Of
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/FM
+  MD:
+    text: MD
+    description: Moldova, Republic Of
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MD
+  MC:
+    text: MC
+    description: Monaco
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MC
+  MN:
+    text: MN
+    description: Mongolia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MN
+  ME:
+    text: ME
+    description: Montenegro
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ME
+  MS:
+    text: MS
+    description: Montserrat
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MS
+  MA:
+    text: MA
+    description: Morocco
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MA
+  MZ:
+    text: MZ
+    description: Mozambique
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MZ
+  MM:
+    text: MM
+    description: Myanmar
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MM
+  NA:
+    text: NA
+    description: Namibia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NA
+  NR:
+    text: NR
+    description: Nauru
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NR
+  NP:
+    text: NP
+    description: Nepal
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NP
+  NL:
+    text: NL
+    description: Netherlands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NL
+  AN:
+    text: AN
+    description: Netherlands Antilles (dissolved 2010)
+  NC:
+    text: NC
+    description: New Caledonia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NC
+  NZ:
+    text: NZ
+    description: New Zealand
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NZ
+  NI:
+    text: NI
+    description: Nicaragua
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NI
+  NE:
+    text: NE
+    description: Niger
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NE
+  NG:
+    text: NG
+    description: Nigeria
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NG
+  NU:
+    text: NU
+    description: Niue
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NU
+  NF:
+    text: NF
+    description: Norfolk Island
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NF
+  MP:
+    text: MP
+    description: Northern Mariana Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/MP
+  'NO':
+    text: 'NO'
+    description: Norway
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/NO
+  OM:
+    text: OM
+    description: Oman
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/OM
+  PK:
+    text: PK
+    description: Pakistan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PK
+  PW:
+    text: PW
+    description: Palau
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PW
+  PS:
+    text: PS
+    description: Palestinian Territory, Occupied
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PS
+  PA:
+    text: PA
+    description: Panama
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PA
+  PG:
+    text: PG
+    description: Papua New Guinea
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PG
+  PY:
+    text: PY
+    description: Paraguay
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PY
+  PE:
+    text: PE
+    description: Peru
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PE
+  PH:
+    text: PH
+    description: Philippines
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PH
+  PN:
+    text: PN
+    description: Pitcairn
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PN
+  PL:
+    text: PL
+    description: Poland
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PL
+  PT:
+    text: PT
+    description: Portugal
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PT
+  PR:
+    text: PR
+    description: Puerto Rico
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PR
+  QA:
+    text: QA
+    description: Qatar
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/QA
+  RE:
+    text: RE
+    description: Reunion
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RE
+  RO:
+    text: RO
+    description: Romania
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RO
+  RU:
+    text: RU
+    description: Russian Federation
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RU
+  RW:
+    text: RW
+    description: Rwanda
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RW
+  SH:
+    text: SH
+    description: Saint Helena
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SH
+  KN:
+    text: KN
+    description: Saint Kitts and Nevis
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/KN
+  LC:
+    text: LC
+    description: Saint Lucia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LC
+  PM:
+    text: PM
+    description: Saint Pierre and Miquelon
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/PM
+  VC:
+    text: VC
+    description: Saint Vincent and The Grenadines
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VC
+  WS:
+    text: WS
+    description: Samoa
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/WS
+  SM:
+    text: SM
+    description: San Marino
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SM
+  ST:
+    text: ST
+    description: Sao Tome and Principe
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ST
+  SA:
+    text: SA
+    description: Saudi Arabia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SA
+  SN:
+    text: SN
+    description: Senegal
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SN
+  RS:
+    text: RS
+    description: Serbia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/RS
+  SC:
+    text: SC
+    description: Seychelles
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SC
+  SL:
+    text: SL
+    description: Sierra Leone
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SL
+  SG:
+    text: SG
+    description: Singapore
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SG
+  SK:
+    text: SK
+    description: Slovakia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SK
+  SI:
+    text: SI
+    description: Slovenia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SI
+  SB:
+    text: SB
+    description: Solomon Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SB
+  SO:
+    text: SO
+    description: Somalia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SO
+  ZA:
+    text: ZA
+    description: South Africa
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZA
+  GS:
+    text: GS
+    description: South Georgia and The South Sandwich Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GS
+  ES:
+    text: ES
+    description: Spain
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ES
+  LK:
+    text: LK
+    description: Sri Lanka
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/LK
+  SD:
+    text: SD
+    description: Sudan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SD
+  SR:
+    text: SR
+    description: Suriname
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SR
+  SJ:
+    text: SJ
+    description: Svalbard and Jan Mayen
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SJ
+  SZ:
+    text: SZ
+    description: Swaziland
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SZ
+  SE:
+    text: SE
+    description: Sweden
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SE
+  CH:
+    text: CH
+    description: Switzerland
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/CH
+  SY:
+    text: SY
+    description: Syrian Arab Republic
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/SY
+  TW:
+    text: TW
+    description: Taiwan, Province Of China
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TW
+  TJ:
+    text: TJ
+    description: Tajikistan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TJ
+  TZ:
+    text: TZ
+    description: Tanzania, United Republic Of
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TZ
+  TH:
+    text: TH
+    description: Thailand
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TH
+  TL:
+    text: TL
+    description: Timor-Leste
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TL
+  TG:
+    text: TG
+    description: Togo
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TG
+  TK:
+    text: TK
+    description: Tokelau
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TK
+  TO:
+    text: TO
+    description: Tonga
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TO
+  TT:
+    text: TT
+    description: Trinidad and Tobago
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TT
+  TN:
+    text: TN
+    description: Tunisia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TN
+  TR:
+    text: TR
+    description: Turkey
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TR
+  TM:
+    text: TM
+    description: Turkmenistan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TM
+  TC:
+    text: TC
+    description: Turks and Caicos Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TC
+  TV:
+    text: TV
+    description: Tuvalu
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/TV
+  UG:
+    text: UG
+    description: Uganda
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UG
+  UA:
+    text: UA
+    description: Ukraine
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UA
+  AE:
+    text: AE
+    description: United Arab Emirates
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/AE
+  GB:
+    text: GB
+    description: United Kingdom
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/GB
+  US:
+    text: US
+    description: United States
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/US
+  UM:
+    text: UM
+    description: United States Minor Outlying Islands
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UM
+  UY:
+    text: UY
+    description: Uruguay
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UY
+  UZ:
+    text: UZ
+    description: Uzbekistan
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/UZ
+  VU:
+    text: VU
+    description: Vanuatu
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VU
+  VE:
+    text: VE
+    description: Venezuela
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VE
+  VN:
+    text: VN
+    description: Viet Nam
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VN
+  VG:
+    text: VG
+    description: Virgin Islands, British
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VG
+  VI:
+    text: VI
+    description: Virgin Islands, U.S.
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/VI
+  WF:
+    text: WF
+    description: Wallis and Futuna
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/WF
+  EH:
+    text: EH
+    description: Western Sahara
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/EH
+  YE:
+    text: YE
+    description: Yemen
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/YE
+  ZM:
+    text: ZM
+    description: Zambia
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZM
+  ZW:
+    text: ZW
+    description: Zimbabwe
+    meaning: https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/ZW
+  XX:
+    text: XX
+    description: Unspecified or unknown country (user-assigned code, not an official
+      ISO 3166-1 code)
+  XZ:
+    text: XZ
+    description: International waters (user-assigned code from UN/LOCODE)
+    meaning: https://service.unece.org/trade/locode/xz.htm
+
+</code></pre>
+
+</details>
+
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
