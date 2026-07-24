@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/parameter/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/parameter/">
       
       
         <link rel="prev" href="../orcid/">
@@ -4840,332 +4840,329 @@ URI: [cenvo:Parameter](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 ## LinkML Source
 
 <details>
-
-<pre><code class="language-yaml">name: Parameter
-description: Parameters measured alongside chemical concentrations in environmental
-  samples or at site. Covers air, water, sediment, soil and biota matrices. The applicable
-  environment is indicated in each parameter description.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-rank: 1000
-permissible_values:
-  volume:
-    text: volume
-    description: Volume of sample collected (air; m3)
-  height:
-    text: height
-    description: Height of measurement (air; m)
-  PM10:
-    text: PM10
-    description: Particulate Matter 10 (air; ug/m3)
-  PM10_2m:
-    text: PM10_2m
-    description: Particulate Matter 10 at 2m height (air; ug/m3)
-  PM25:
-    text: PM25
-    description: Particulate Matter 2.5 (air; ug/m3)
-  NO2:
-    text: NO2
-    description: NO2 concentration — height not specified (air; ug/m3)
-  NO2_1_5m:
-    text: NO2_1_5m
-    description: NO2 measured at 1.5m height (air; ug/m3)
-  wind_speed:
-    text: wind_speed
-    description: Wind speed (air; m/s)
-  wind_direction:
-    text: wind_direction
-    description: Wind direction (air; degrees)
-  sea_level_pressure:
-    text: sea_level_pressure
-    description: Sea level pressure (air; kPa)
-  dew_point_temperature:
-    text: dew_point_temperature
-    description: Dew point temperature (air; deg C)
-  water_vapor_mixing_ratio:
-    text: water_vapor_mixing_ratio
-    description: Water vapor mixing ratio (air; kg/kg)
-  depth_from:
-    text: depth_from
-    description: Depth from which the sample was collected (water; m)
-  depth_to:
-    text: depth_to
-    description: Depth to which the sample was collected (water; m)
-  depth:
-    text: depth
-    description: Depth of the sample (water; m)
-  salinity:
-    text: salinity
-    description: Salinity (water; PSU)
-  pH:
-    text: pH
-    description: pH (water, soil, sediment; dimensionless)
-  dissolved_inorganic_carbon:
-    text: dissolved_inorganic_carbon
-    description: Dissolved inorganic carbon (water; ng/l)
-  dissolved_organic_carbon:
-    text: dissolved_organic_carbon
-    description: Dissolved organic carbon (water; ng/l)
-  total_inorganic_carbon:
-    text: total_inorganic_carbon
-    description: Total inorganic carbon (water; ng/l)
-  total_dissolved_solids:
-    text: total_dissolved_solids
-    description: Total dissolved solids (water; mg/l)
-  ions_chlorides:
-    text: ions_chlorides
-    description: Chloride ions (water; mg/l)
-  ions_hydrogencarbonates:
-    text: ions_hydrogencarbonates
-    description: Hydrogencarbonate ions (water; mg/l)
-  ions_sulphates:
-    text: ions_sulphates
-    description: Sulphate ions (water; mg/l)
-  ions_Al:
-    text: ions_Al
-    description: Aluminium cation (water; ug/l)
-  ions_Ba:
-    text: ions_Ba
-    description: Barium cation (water; ug/l)
-  ions_Ca:
-    text: ions_Ca
-    description: Calcium cation (water; mg/l)
-  ions_Fe:
-    text: ions_Fe
-    description: Iron cation (water; ug/l)
-  ions_K:
-    text: ions_K
-    description: Potassium cation (water; mg/l)
-  ions_Mg:
-    text: ions_Mg
-    description: Magnesium cation (water; mg/l)
-  ions_Mn:
-    text: ions_Mn
-    description: Manganese cation (water; ug/l)
-  ions_Na:
-    text: ions_Na
-    description: Sodium cation (water; mg/l)
-  sample_depth_from:
-    text: sample_depth_from
-    description: Sample depth from (sediment, soil; cm)
-  sample_depth_to:
-    text: sample_depth_to
-    description: Sample depth to (sediment, soil; cm)
-  dry_mass:
-    text: dry_mass
-    description: Dry mass (sediment; %)
-  sil_Al2O3:
-    text: sil_Al2O3
-    description: Silicate Al2O3 (sediment; %)
-  sil_CaO:
-    text: sil_CaO
-    description: Silicate CaO (sediment; %)
-  sil_Co2:
-    text: sil_Co2
-    description: Silicate CO2 (sediment; %)
-  sil_Fe2O3:
-    text: sil_Fe2O3
-    description: Silicate Fe2O3 (sediment; %)
-  sil_K2O:
-    text: sil_K2O
-    description: Silicate K2O (sediment; %)
-  sil_Li2O:
-    text: sil_Li2O
-    description: Silicate Li2O (sediment; %)
-  sil_MgO:
-    text: sil_MgO
-    description: Silicate MgO (sediment; %)
-  sil_MnO:
-    text: sil_MnO
-    description: Silicate MnO (sediment; %)
-  sil_Na2O:
-    text: sil_Na2O
-    description: Silicate Na2O (sediment; %)
-  sil_P2O5:
-    text: sil_P2O5
-    description: Silicate P2O5 (sediment; %)
-  sil_SiO2:
-    text: sil_SiO2
-    description: Silicate SiO2 (sediment; %)
-  sil_SO3:
-    text: sil_SO3
-    description: Silicate SO3 (sediment; %)
-  sil_TiO2:
-    text: sil_TiO2
-    description: Silicate TiO2 (sediment; %)
-  sil_combined_water:
-    text: sil_combined_water
-    description: Silicate combined water (sediment; %)
-  sil_ignition_loss:
-    text: sil_ignition_loss
-    description: Silicate ignition loss (sediment; %)
-  absorbency:
-    text: absorbency
-    description: Absorbency (soil; %)
-  airiness:
-    text: airiness
-    description: Airiness (soil; %)
-  capillar_capacity:
-    text: capillar_capacity
-    description: Capillar capacity (soil; %)
-  humidity:
-    text: humidity
-    description: Humidity (soil; %)
-  minimum_air_capacity:
-    text: minimum_air_capacity
-    description: Minimum air capacity (soil; %)
-  porosity:
-    text: porosity
-    description: Porosity (soil; %)
-  volume_mass:
-    text: volume_mass
-    description: Volume mass (soil; g/cm3)
-  volume_mass_reduced:
-    text: volume_mass_reduced
-    description: Volume mass reduced (soil; g/cm3)
-  dissolved_organic_compounds:
-    text: dissolved_organic_compounds
-    description: Dissolved organic compounds (soil; %)
-  fulvic_acids:
-    text: fulvic_acids
-    description: Fulvic acids (soil; %)
-  humic_acids:
-    text: humic_acids
-    description: Humic acids (soil; %)
-  HA_FA:
-    text: HA_FA
-    description: HA/FA ratio (soil; dimensionless)
-  Q4_6:
-    text: Q4_6
-    description: Q4/6 ratio (soil; dimensionless)
-  saturation:
-    text: saturation
-    description: Saturation (soil; %)
-  total_carbonates:
-    text: total_carbonates
-    description: Total carbonates (soil; %)
-  total_nitrogen:
-    text: total_nitrogen
-    description: Total nitrogen (soil; %)
-  granularity_clay_1_10um:
-    text: granularity_clay_1_10um
-    description: Granularity clay 1-10 um (soil; %)
-  granularity_clay_lt1um:
-    text: granularity_clay_lt1um
-    description: Granularity clay &lt; 1 um (soil; %)
-  granularity_clay_lt2um:
-    text: granularity_clay_lt2um
-    description: Granularity clay &lt; 2 um (soil; %)
-  granularity_clay_lt6um:
-    text: granularity_clay_lt6um
-    description: Granularity clay &lt; 6 um (soil; %)
-  granularity_clay_lt10um:
-    text: granularity_clay_lt10um
-    description: Granularity clay &lt; 10 um (soil; %)
-  granularity_silt_10_50um:
-    text: granularity_silt_10_50um
-    description: Granularity silt 10-50 um (soil; %)
-  granularity_sand_50_100um:
-    text: granularity_sand_50_100um
-    description: Granularity sand 50-100 um (soil; %)
-  granularity_sand_100_2000um:
-    text: granularity_sand_100_2000um
-    description: Granularity sand 100-2000 um (soil; %)
-  granularity_sand_50_250um:
-    text: granularity_sand_50_250um
-    description: Granularity sand 50-250 um (soil; %)
-  granularity_sand_250_2000um:
-    text: granularity_sand_250_2000um
-    description: Granularity sand 250-2000 um (soil; %)
-  pH_CaCl2:
-    text: pH_CaCl2
-    description: pH in CaCl2 solution (soil; dimensionless)
-  pH_H2O:
-    text: pH_H2O
-    description: pH in water (soil; dimensionless)
-  pH_KCl:
-    text: pH_KCl
-    description: pH in KCl solution (soil; dimensionless)
-  total_organic_carbon:
-    text: total_organic_carbon
-    description: Total organic carbon (sediment, soil; %)
-  cec:
-    text: cec
-    description: Cation exchange capacity (CEC) (sediment, soil; meq/kg)
-  cec_t:
-    text: cec_t
-    description: Total (Effective) Cation Exchange Capacity (CEC) (soil; meq/kg)
-  cec_Meh_Ca:
-    text: cec_Meh_Ca
-    description: Exchangeable calcium extracted by Mehlich method (sediment, soil;
-      meq/kg)
-  cec_Meh_H:
-    text: cec_Meh_H
-    description: Exchangeable hydrogen extracted by Mehlich method (sediment, soil;
-      meq/kg)
-  cec_Meh_K:
-    text: cec_Meh_K
-    description: Exchangeable potassium extracted by Mehlich method (sediment, soil;
-      meq/kg)
-  cec_Meh_Mg:
-    text: cec_Meh_Mg
-    description: Exchangeable magnesium extracted by Mehlich method (sediment, soil;
-      meq/kg)
-  cec_Meh_P:
-    text: cec_Meh_P
-    description: Extractable phosphorus extracted by Mehlich method (soil; meq/kg)
-  cec_exchange_Al:
-    text: cec_exchange_Al
-    description: Exchangeable aluminium fraction of cation exchange capacity (soil;
-      meq/kg)
-  cec_exchange_Ca:
-    text: cec_exchange_Ca
-    description: Exchangeable calcium fraction of cation exchange capacity (soil;
-      meq/kg)
-  cec_exchange_Fe:
-    text: cec_exchange_Fe
-    description: Exchangeable iron fraction of cation exchange capacity (soil; meq/kg)
-  cec_exchange_K:
-    text: cec_exchange_K
-    description: Exchangeable potassium fraction of cation exchange capacity (soil;
-      meq/kg)
-  cec_exchange_Mg:
-    text: cec_exchange_Mg
-    description: Exchangeable magnesium fraction of cation exchange capacity (soil;
-      meq/kg)
-  cec_exchange_Mn:
-    text: cec_exchange_Mn
-    description: Exchangeable manganese fraction of cation exchange capacity (soil;
-      meq/kg)
-  cec_exchange_Na:
-    text: cec_exchange_Na
-    description: Exchangeable sodium fraction of cation exchange capacity (soil; meq/kg)
-  temperature:
-    text: temperature
-    description: Temperature (air, water; deg C)
-  sample_weight:
-    text: sample_weight
-    description: Weight of sample (air ug/m3; water g/l)
-  creatinine:
-    text: creatinine
-    description: Creatinine (biota; mg/dl)
-  specific_gravity:
-    text: specific_gravity
-    description: Specific gravity (biota; dimensionless)
-  dry_weight:
-    text: dry_weight
-    description: Dry weight (biota; g)
-  wet_weight:
-    text: wet_weight
-    description: Wet weight (biota; g)
-  lipid_weight:
-    text: lipid_weight
-    description: Lipid weight — tissue lipid content (biota; g)
-  density:
-    text: density
-    description: Density (soil; g/cm3)
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parameter</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parameters measured alongside chemical concentrations in environmental</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">samples or at site. Covers air, water, sediment, soil and biota matrices. The applicable</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">environment is indicated in each parameter description.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">permissible_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">volume</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Volume of sample collected (air; m3)</span>
+<span class="w">  </span><span class="nt">height</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">height</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Height of measurement (air; m)</span>
+<span class="w">  </span><span class="nt">PM10</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM10</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Particulate Matter 10 (air; ug/m3)</span>
+<span class="w">  </span><span class="nt">PM10_2m</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM10_2m</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Particulate Matter 10 at 2m height (air; ug/m3)</span>
+<span class="w">  </span><span class="nt">PM25</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM25</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Particulate Matter 2.5 (air; ug/m3)</span>
+<span class="w">  </span><span class="nt">NO2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NO2</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NO2 concentration — height not specified (air; ug/m3)</span>
+<span class="w">  </span><span class="nt">NO2_1_5m</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NO2_1_5m</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NO2 measured at 1.5m height (air; ug/m3)</span>
+<span class="w">  </span><span class="nt">wind_speed</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wind_speed</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wind speed (air; m/s)</span>
+<span class="w">  </span><span class="nt">wind_direction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wind_direction</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wind direction (air; degrees)</span>
+<span class="w">  </span><span class="nt">sea_level_pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sea_level_pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sea level pressure (air; kPa)</span>
+<span class="w">  </span><span class="nt">dew_point_temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dew_point_temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dew point temperature (air; deg C)</span>
+<span class="w">  </span><span class="nt">water_vapor_mixing_ratio</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">water_vapor_mixing_ratio</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Water vapor mixing ratio (air; kg/kg)</span>
+<span class="w">  </span><span class="nt">depth_from</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">depth_from</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Depth from which the sample was collected (water; m)</span>
+<span class="w">  </span><span class="nt">depth_to</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">depth_to</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Depth to which the sample was collected (water; m)</span>
+<span class="w">  </span><span class="nt">depth</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">depth</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Depth of the sample (water; m)</span>
+<span class="w">  </span><span class="nt">salinity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">salinity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Salinity (water; PSU)</span>
+<span class="w">  </span><span class="nt">pH</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH (water, soil, sediment; dimensionless)</span>
+<span class="w">  </span><span class="nt">dissolved_inorganic_carbon</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dissolved_inorganic_carbon</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dissolved inorganic carbon (water; ng/l)</span>
+<span class="w">  </span><span class="nt">dissolved_organic_carbon</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dissolved_organic_carbon</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dissolved organic carbon (water; ng/l)</span>
+<span class="w">  </span><span class="nt">total_inorganic_carbon</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">total_inorganic_carbon</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total inorganic carbon (water; ng/l)</span>
+<span class="w">  </span><span class="nt">total_dissolved_solids</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">total_dissolved_solids</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total dissolved solids (water; mg/l)</span>
+<span class="w">  </span><span class="nt">ions_chlorides</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_chlorides</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chloride ions (water; mg/l)</span>
+<span class="w">  </span><span class="nt">ions_hydrogencarbonates</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_hydrogencarbonates</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hydrogencarbonate ions (water; mg/l)</span>
+<span class="w">  </span><span class="nt">ions_sulphates</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_sulphates</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sulphate ions (water; mg/l)</span>
+<span class="w">  </span><span class="nt">ions_Al</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_Al</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aluminium cation (water; ug/l)</span>
+<span class="w">  </span><span class="nt">ions_Ba</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_Ba</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Barium cation (water; ug/l)</span>
+<span class="w">  </span><span class="nt">ions_Ca</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_Ca</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calcium cation (water; mg/l)</span>
+<span class="w">  </span><span class="nt">ions_Fe</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_Fe</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Iron cation (water; ug/l)</span>
+<span class="w">  </span><span class="nt">ions_K</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_K</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Potassium cation (water; mg/l)</span>
+<span class="w">  </span><span class="nt">ions_Mg</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_Mg</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Magnesium cation (water; mg/l)</span>
+<span class="w">  </span><span class="nt">ions_Mn</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_Mn</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Manganese cation (water; ug/l)</span>
+<span class="w">  </span><span class="nt">ions_Na</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ions_Na</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sodium cation (water; mg/l)</span>
+<span class="w">  </span><span class="nt">sample_depth_from</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_depth_from</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample depth from (sediment, soil; cm)</span>
+<span class="w">  </span><span class="nt">sample_depth_to</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_depth_to</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample depth to (sediment, soil; cm)</span>
+<span class="w">  </span><span class="nt">dry_mass</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dry_mass</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dry mass (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_Al2O3</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_Al2O3</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate Al2O3 (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_CaO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_CaO</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate CaO (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_Co2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_Co2</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate CO2 (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_Fe2O3</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_Fe2O3</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate Fe2O3 (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_K2O</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_K2O</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate K2O (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_Li2O</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_Li2O</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate Li2O (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_MgO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_MgO</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate MgO (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_MnO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_MnO</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate MnO (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_Na2O</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_Na2O</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate Na2O (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_P2O5</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_P2O5</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate P2O5 (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_SiO2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_SiO2</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate SiO2 (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_SO3</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_SO3</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate SO3 (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_TiO2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_TiO2</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate TiO2 (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_combined_water</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_combined_water</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate combined water (sediment; %)</span>
+<span class="w">  </span><span class="nt">sil_ignition_loss</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sil_ignition_loss</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Silicate ignition loss (sediment; %)</span>
+<span class="w">  </span><span class="nt">absorbency</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absorbency</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Absorbency (soil; %)</span>
+<span class="w">  </span><span class="nt">airiness</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">airiness</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Airiness (soil; %)</span>
+<span class="w">  </span><span class="nt">capillar_capacity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">capillar_capacity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Capillar capacity (soil; %)</span>
+<span class="w">  </span><span class="nt">humidity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">humidity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Humidity (soil; %)</span>
+<span class="w">  </span><span class="nt">minimum_air_capacity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minimum_air_capacity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimum air capacity (soil; %)</span>
+<span class="w">  </span><span class="nt">porosity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">porosity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Porosity (soil; %)</span>
+<span class="w">  </span><span class="nt">volume_mass</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume_mass</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Volume mass (soil; g/cm3)</span>
+<span class="w">  </span><span class="nt">volume_mass_reduced</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume_mass_reduced</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Volume mass reduced (soil; g/cm3)</span>
+<span class="w">  </span><span class="nt">dissolved_organic_compounds</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dissolved_organic_compounds</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dissolved organic compounds (soil; %)</span>
+<span class="w">  </span><span class="nt">fulvic_acids</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fulvic_acids</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fulvic acids (soil; %)</span>
+<span class="w">  </span><span class="nt">humic_acids</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">humic_acids</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Humic acids (soil; %)</span>
+<span class="w">  </span><span class="nt">HA_FA</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HA_FA</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HA/FA ratio (soil; dimensionless)</span>
+<span class="w">  </span><span class="nt">Q4_6</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Q4_6</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Q4/6 ratio (soil; dimensionless)</span>
+<span class="w">  </span><span class="nt">saturation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">saturation</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Saturation (soil; %)</span>
+<span class="w">  </span><span class="nt">total_carbonates</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">total_carbonates</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total carbonates (soil; %)</span>
+<span class="w">  </span><span class="nt">total_nitrogen</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">total_nitrogen</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total nitrogen (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_clay_1_10um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_clay_1_10um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity clay 1-10 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_clay_lt1um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_clay_lt1um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity clay &lt; 1 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_clay_lt2um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_clay_lt2um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity clay &lt; 2 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_clay_lt6um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_clay_lt6um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity clay &lt; 6 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_clay_lt10um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_clay_lt10um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity clay &lt; 10 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_silt_10_50um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_silt_10_50um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity silt 10-50 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_sand_50_100um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_sand_50_100um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity sand 50-100 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_sand_100_2000um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_sand_100_2000um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity sand 100-2000 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_sand_50_250um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_sand_50_250um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity sand 50-250 um (soil; %)</span>
+<span class="w">  </span><span class="nt">granularity_sand_250_2000um</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">granularity_sand_250_2000um</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Granularity sand 250-2000 um (soil; %)</span>
+<span class="w">  </span><span class="nt">pH_CaCl2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH_CaCl2</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH in CaCl2 solution (soil; dimensionless)</span>
+<span class="w">  </span><span class="nt">pH_H2O</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH_H2O</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH in water (soil; dimensionless)</span>
+<span class="w">  </span><span class="nt">pH_KCl</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH_KCl</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pH in KCl solution (soil; dimensionless)</span>
+<span class="w">  </span><span class="nt">total_organic_carbon</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">total_organic_carbon</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total organic carbon (sediment, soil; %)</span>
+<span class="w">  </span><span class="nt">cec</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cation exchange capacity (CEC) (sediment, soil; meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_t</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_t</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total (Effective) Cation Exchange Capacity (CEC) (soil; meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_Meh_Ca</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_Meh_Ca</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable calcium extracted by Mehlich method (sediment, soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_Meh_H</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_Meh_H</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable hydrogen extracted by Mehlich method (sediment, soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_Meh_K</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_Meh_K</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable potassium extracted by Mehlich method (sediment, soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_Meh_Mg</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_Meh_Mg</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable magnesium extracted by Mehlich method (sediment, soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_Meh_P</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_Meh_P</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Extractable phosphorus extracted by Mehlich method (soil; meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_exchange_Al</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_exchange_Al</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable aluminium fraction of cation exchange capacity (soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_exchange_Ca</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_exchange_Ca</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable calcium fraction of cation exchange capacity (soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_exchange_Fe</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_exchange_Fe</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable iron fraction of cation exchange capacity (soil; meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_exchange_K</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_exchange_K</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable potassium fraction of cation exchange capacity (soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_exchange_Mg</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_exchange_Mg</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable magnesium fraction of cation exchange capacity (soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_exchange_Mn</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_exchange_Mn</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable manganese fraction of cation exchange capacity (soil;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">meq/kg)</span>
+<span class="w">  </span><span class="nt">cec_exchange_Na</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec_exchange_Na</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exchangeable sodium fraction of cation exchange capacity (soil; meq/kg)</span>
+<span class="w">  </span><span class="nt">temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Temperature (air, water; deg C)</span>
+<span class="w">  </span><span class="nt">sample_weight</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_weight</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Weight of sample (air ug/m3; water g/l)</span>
+<span class="w">  </span><span class="nt">creatinine</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">creatinine</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Creatinine (biota; mg/dl)</span>
+<span class="w">  </span><span class="nt">specific_gravity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">specific_gravity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Specific gravity (biota; dimensionless)</span>
+<span class="w">  </span><span class="nt">dry_weight</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dry_weight</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dry weight (biota; g)</span>
+<span class="w">  </span><span class="nt">wet_weight</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wet_weight</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wet weight (biota; g)</span>
+<span class="w">  </span><span class="nt">lipid_weight</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lipid_weight</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lipid weight — tissue lipid content (biota; g)</span>
+<span class="w">  </span><span class="nt">density</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">density</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Density (soil; g/cm3)</span>
+</code></pre></div>
 </details>
 
 </div>
@@ -5221,10 +5218,12 @@ permissible_values:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>

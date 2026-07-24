@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/Aquatic/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/Aquatic/">
       
       
         <link rel="prev" href="../AnalyticalMethod/">
@@ -4703,12 +4703,11 @@ URI: [cenvo:Aquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 
-
-<pre><code class="language-mermaid"> classDiagram
+<pre class="mermaid"><code> classDiagram
     class Aquatic
-    click Aquatic href &quot;../Aquatic/&quot;
+    click Aquatic href "../Aquatic/"
       Sample &lt;|-- Aquatic
-        click Sample href &quot;../Sample/&quot;
+        click Sample href "../Sample/"
 
       Aquatic : domain
 
@@ -4716,8 +4715,8 @@ URI: [cenvo:Aquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 
-        Aquatic --&gt; &quot;1&quot; Domain : domain
-        click Domain href &quot;../Domain/&quot;
+        Aquatic --&gt; "1" Domain : domain
+        click Domain href "../Domain/"
 
 
 
@@ -4729,8 +4728,8 @@ URI: [cenvo:Aquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 
-        Aquatic --&gt; &quot;0..1&quot; AquaticMatrixFraction : fraction
-        click AquaticMatrixFraction href &quot;../AquaticMatrixFraction/&quot;
+        Aquatic --&gt; "0..1" AquaticMatrixFraction : fraction
+        click AquaticMatrixFraction href "../AquaticMatrixFraction/"
 
 
 
@@ -4740,8 +4739,8 @@ URI: [cenvo:Aquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 
-        Aquatic --&gt; &quot;1&quot; MatrixAquatic : matrix
-        click MatrixAquatic href &quot;../MatrixAquatic/&quot;
+        Aquatic --&gt; "1" MatrixAquatic : matrix
+        click MatrixAquatic href "../MatrixAquatic/"
 
 
 
@@ -4753,8 +4752,8 @@ URI: [cenvo:Aquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 
-        Aquatic --&gt; &quot;1&quot; SamplingMethodAquatic : sampling_method
-        click SamplingMethodAquatic href &quot;../SamplingMethodAquatic/&quot;
+        Aquatic --&gt; "1" SamplingMethodAquatic : sampling_method
+        click SamplingMethodAquatic href "../SamplingMethodAquatic/"
 
 
 
@@ -4768,9 +4767,7 @@ URI: [cenvo:Aquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
       Aquatic : start_date
 
-
 </code></pre>
-
 
 
 
@@ -4844,206 +4841,200 @@ URI: [cenvo:Aquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 ### Direct
 
 <details>
-
-<pre><code class="language-yaml">name: Aquatic
-description: Aquatic sample
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-is_a: Sample
-attributes:
-  matrix:
-    name: matrix
-    description: Sampled matrix
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    domain_of:
-    - Atmospheric
-    - Aquatic
-    - Terrestrial
-    - Biota
-    range: MatrixAquatic
-    required: true
-  sampling_method:
-    name: sampling_method
-    description: Method used to collect the sample
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    domain_of:
-    - Atmospheric
-    - Aquatic
-    - Terrestrial
-    - Biota
-    range: SamplingMethodAquatic
-    required: true
-  fraction:
-    name: fraction
-    description: If the collected sample is divided into multiple fractions for separate
-      analysis, this field identifies each subsample.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - Aquatic
-    range: AquaticMatrixFraction
-    required: false
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic sample</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sampled matrix</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Atmospheric</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terrestrial</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Biota</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MatrixAquatic</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sampling_method</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sampling_method</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Method used to collect the sample</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Atmospheric</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terrestrial</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Biota</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SamplingMethodAquatic</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">fraction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fraction</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If the collected sample is divided into multiple fractions for separate</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">analysis, this field identifies each subsample.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AquaticMatrixFraction</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
 </details>
 
 ### Induced
 
 <details>
-
-<pre><code class="language-yaml">name: Aquatic
-description: Aquatic sample
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-is_a: Sample
-attributes:
-  matrix:
-    name: matrix
-    description: Sampled matrix
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    owner: Aquatic
-    domain_of:
-    - Atmospheric
-    - Aquatic
-    - Terrestrial
-    - Biota
-    range: MatrixAquatic
-    required: true
-  sampling_method:
-    name: sampling_method
-    description: Method used to collect the sample
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    owner: Aquatic
-    domain_of:
-    - Atmospheric
-    - Aquatic
-    - Terrestrial
-    - Biota
-    range: SamplingMethodAquatic
-    required: true
-  fraction:
-    name: fraction
-    description: If the collected sample is divided into multiple fractions for separate
-      analysis, this field identifies each subsample.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Aquatic
-    domain_of:
-    - Aquatic
-    range: AquaticMatrixFraction
-    required: false
-  site_name:
-    name: site_name
-    description: Name of the monitoring site. Provide in the local language as the
-      primary name. An English name may be added if available and commonly used. Multiple
-      names in different languages are accepted.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Aquatic
-    domain_of:
-    - Site
-    - Sample
-    range: string
-    required: true
-  site_id:
-    name: site_id
-    description: Unique identifier of the monitoring site where the sample was collected.
-      References the site_id of a Site record.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Aquatic
-    domain_of:
-    - Site
-    - Sample
-    range: string
-    required: true
-  sample_id:
-    name: sample_id
-    description: Unique identifier for the sample
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    identifier: true
-    owner: Aquatic
-    domain_of:
-    - Sample
-    - Observation
-    range: string
-    required: true
-  start_date:
-    name: start_date
-    description: Start date in format YYYY-MM-DD
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Aquatic
-    domain_of:
-    - MonitoringActivity
-    - Campaign
-    - Sample
-    range: date
-    required: true
-  end_date:
-    name: end_date
-    description: End date in format YYYY-MM-DD
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Aquatic
-    domain_of:
-    - MonitoringActivity
-    - Campaign
-    - Sample
-    range: date
-  sampling_time_start:
-    name: sampling_time_start
-    description: Sampling start time according to ISO 8601, 24-hour clock. Format
-      T[hh][mm][ss].
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Aquatic
-    domain_of:
-    - Sample
-    range: time
-  sampling_time_end:
-    name: sampling_time_end
-    description: Sampling end time according to ISO 8601.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: Aquatic
-    domain_of:
-    - Sample
-    range: time
-  domain:
-    name: domain
-    description: 'Sample type according to sampled matrix:  Atmospheric for air, particles,
-      precipitation, dust; Aquatic for water and sediment; Terrestrial for soil Biota
-      for plants and animals'
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    designates_type: true
-    owner: Aquatic
-    domain_of:
-    - Sample
-    range: Domain
-    required: true
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic sample</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sampled matrix</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Atmospheric</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terrestrial</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Biota</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MatrixAquatic</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sampling_method</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sampling_method</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Method used to collect the sample</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Atmospheric</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terrestrial</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Biota</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SamplingMethodAquatic</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">fraction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fraction</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If the collected sample is divided into multiple fractions for separate</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">analysis, this field identifies each subsample.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AquaticMatrixFraction</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">site_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name of the monitoring site. Provide in the local language as the</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">primary name. An English name may be added if available and commonly used. Multiple</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">names in different languages are accepted.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">site_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier of the monitoring site where the sample was collected.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">References the site_id of a Site record.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sample_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the sample</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">start_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start date in format YYYY-MM-DD</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Campaign</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">end_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">End date in format YYYY-MM-DD</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Campaign</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+<span class="w">  </span><span class="nt">sampling_time_start</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sampling_time_start</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sampling start time according to ISO 8601, 24-hour clock. Format</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">T[hh][mm][ss].</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">time</span>
+<span class="w">  </span><span class="nt">sampling_time_end</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sampling_time_end</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sampling end time according to ISO 8601.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">time</span>
+<span class="w">  </span><span class="nt">domain</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">domain</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Sample</span><span class="nv"> </span><span class="s">type</span><span class="nv"> </span><span class="s">according</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">sampled</span><span class="nv"> </span><span class="s">matrix:</span><span class="nv">  </span><span class="s">Atmospheric</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">air,</span><span class="nv"> </span><span class="s">particles,</span>
+<span class="w">      </span><span class="s">precipitation,</span><span class="nv"> </span><span class="s">dust;</span><span class="nv"> </span><span class="s">Aquatic</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">water</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">sediment;</span><span class="nv"> </span><span class="s">Terrestrial</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">soil</span><span class="nv"> </span><span class="s">Biota</span>
+<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">plants</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">animals&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">designates_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aquatic</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Domain</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 </details></div>
 
 
@@ -5097,10 +5088,12 @@ attributes:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>

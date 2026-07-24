@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/MeasurementConcentration/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/MeasurementConcentration/">
       
       
         <link rel="prev" href="../MeasurementBase/">
@@ -4703,14 +4703,13 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 
 
-
-<pre><code class="language-mermaid"> classDiagram
+<pre class="mermaid"><code> classDiagram
     class MeasurementConcentration
-    click MeasurementConcentration href &quot;../MeasurementConcentration/&quot;
+    click MeasurementConcentration href "../MeasurementConcentration/"
       MeasurementBase &lt;|-- MeasurementConcentration
-        click MeasurementBase href &quot;../MeasurementBase/&quot;
+        click MeasurementBase href "../MeasurementBase/"
       Observation &lt;|-- MeasurementConcentration
-        click Observation href &quot;../Observation/&quot;
+        click Observation href "../Observation/"
 
       MeasurementConcentration : analysis_date
 
@@ -4720,8 +4719,8 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 
 
-        MeasurementConcentration --&gt; &quot;1&quot; AnalyticalMethod : analytical_method
-        click AnalyticalMethod href &quot;../AnalyticalMethod/&quot;
+        MeasurementConcentration --&gt; "1" AnalyticalMethod : analytical_method
+        click AnalyticalMethod href "../AnalyticalMethod/"
 
 
 
@@ -4735,8 +4734,8 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 
 
-        MeasurementConcentration --&gt; &quot;1&quot; ChemicalCompound : compound
-        click ChemicalCompound href &quot;../ChemicalCompound/&quot;
+        MeasurementConcentration --&gt; "1" ChemicalCompound : compound
+        click ChemicalCompound href "../ChemicalCompound/"
 
 
 
@@ -4756,8 +4755,8 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 
 
-        MeasurementConcentration --&gt; &quot;1&quot; ObservationType : observation_type
-        click ObservationType href &quot;../ObservationType/&quot;
+        MeasurementConcentration --&gt; "1" ObservationType : observation_type
+        click ObservationType href "../ObservationType/"
 
 
 
@@ -4775,16 +4774,14 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 
 
-        MeasurementConcentration --&gt; &quot;1&quot; Unit : unit
-        click Unit href &quot;../Unit/&quot;
+        MeasurementConcentration --&gt; "1" Unit : unit
+        click Unit href "../Unit/"
 
 
 
       MeasurementConcentration : value
 
-
 </code></pre>
-
 
 
 
@@ -4876,404 +4873,398 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 ### Direct
 
 <details>
-
-<pre><code class="language-yaml">name: MeasurementConcentration
-description: A measured concentration of a chemical compound in a sample. At least
-  one of concentration, LOQ, or LOD must be provided.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-is_a: Observation
-mixins:
-- MeasurementBase
-attributes:
-  laboratory:
-    name: laboratory
-    description: Name of the laboratory performing the analysis
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: true
-  batch:
-    name: batch
-    description: Internal laboratory designation of the group of samples analyzed
-      together
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: false
-  analysis_date:
-    name: analysis_date
-    description: The date on which the concentration was determined
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: date
-    required: false
-  compound:
-    name: compound
-    description: Chemical compound measured in the sample. Reference to the PARC WP9
-      compound list entry (ChemicalCompound class). Identified by WP9_id, name, CAS,
-      EC, InChI, and InChIKey. Mappable to ChEBI, PubChem, and NORMAN identifiers.
-      A single measurement record should typically correspond to one compound.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: ChemicalCompound
-    required: true
-  sample_preparation_method:
-    name: sample_preparation_method
-    description: Description of the process from sample collection to chemical analysis
-      (e.g., extraction, cleanup, fractionation).
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: true
-  sample_preparation_method_link:
-    name: sample_preparation_method_link
-    description: GUPRI (e.g. DOI) linking to a public SOP, article, or other document
-      describing the method.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: IRI
-    required: false
-  analytical_method:
-    name: analytical_method
-    description: Analytical method used to determine the analyte
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: AnalyticalMethod
-    required: true
-  analytical_method_link:
-    name: analytical_method_link
-    description: GUPRI linking to a public SOP or document describing the method
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: IRI
-    required: false
-  data_handling_procedure:
-    name: data_handling_procedure
-    description: Description of steps taken after chemical analysis (e.g., blank correction,
-      quality control, calibration, recovery, standardization, recalculations).
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: true
-  data_handling_procedure_link:
-    name: data_handling_procedure_link
-    description: GUPRI linking to a document describing the data handling procedure
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: IRI
-    required: false
-  loq:
-    name: loq
-    description: Limit of quantification
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: double
-    required: false
-  lod:
-    name: lod
-    description: Limit of detection
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementConcentration
-    range: double
-    required: false
-rules:
-- preconditions:
-    slot_conditions:
-      value:
-        name: value
-        value_presence: ABSENT
-      loq:
-        name: loq
-        value_presence: ABSENT
-      lod:
-        name: lod
-        value_presence: ABSENT
-  postconditions:
-    slot_conditions:
-      value:
-        name: value
-        value_presence: PRESENT
-  description: At least one of concentration value (value), LOQ, or LOD  must be provided
-    per measurement record. This rule creates a logical contradiction when all three
-    are absent, making that state invalid. The postcondition on value is  conventional
-    — any of the three would work equivalently.
-  title: at_least_one_measurement_value_required
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A measured concentration of a chemical compound in a sample. At least</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">one of concentration, LOQ, or LOD must be provided.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="nt">mixins</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">laboratory</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">laboratory</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name of the laboratory performing the analysis</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">batch</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Internal laboratory designation of the group of samples analyzed</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">together</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">analysis_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analysis_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The date on which the concentration was determined</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">compound</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compound</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chemical compound measured in the sample. Reference to the PARC WP9</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">compound list entry (ChemicalCompound class). Identified by WP9_id, name, CAS,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">EC, InChI, and InChIKey. Mappable to ChEBI, PubChem, and NORMAN identifiers.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">A single measurement record should typically correspond to one compound.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ChemicalCompound</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sample_preparation_method</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_preparation_method</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description of the process from sample collection to chemical analysis</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(e.g., extraction, cleanup, fractionation).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sample_preparation_method_link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_preparation_method_link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GUPRI (e.g. DOI) linking to a public SOP, article, or other document</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">describing the method.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">analytical_method</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analytical_method</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analytical method used to determine the analyte</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AnalyticalMethod</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">analytical_method_link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analytical_method_link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GUPRI linking to a public SOP or document describing the method</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">data_handling_procedure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data_handling_procedure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description of steps taken after chemical analysis (e.g., blank correction,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">quality control, calibration, recovery, standardization, recalculations).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">data_handling_procedure_link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data_handling_procedure_link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GUPRI linking to a document describing the data handling procedure</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">loq</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">loq</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Limit of quantification</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">lod</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lod</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Limit of detection</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">rules</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABSENT</span>
+<span class="w">      </span><span class="nt">loq</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">loq</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABSENT</span>
+<span class="w">      </span><span class="nt">lod</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lod</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABSENT</span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PRESENT</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">At least one of concentration value (value), LOQ, or LOD  must be provided</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">per measurement record. This rule creates a logical contradiction when all three</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">are absent, making that state invalid. The postcondition on value is  conventional</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">— any of the three would work equivalently.</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">at_least_one_measurement_value_required</span>
+</code></pre></div>
 </details>
 
 ### Induced
 
 <details>
-
-<pre><code class="language-yaml">name: MeasurementConcentration
-description: A measured concentration of a chemical compound in a sample. At least
-  one of concentration, LOQ, or LOD must be provided.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-is_a: Observation
-mixins:
-- MeasurementBase
-attributes:
-  laboratory:
-    name: laboratory
-    description: Name of the laboratory performing the analysis
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: true
-  batch:
-    name: batch
-    description: Internal laboratory designation of the group of samples analyzed
-      together
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: false
-  analysis_date:
-    name: analysis_date
-    description: The date on which the concentration was determined
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: date
-    required: false
-  compound:
-    name: compound
-    description: Chemical compound measured in the sample. Reference to the PARC WP9
-      compound list entry (ChemicalCompound class). Identified by WP9_id, name, CAS,
-      EC, InChI, and InChIKey. Mappable to ChEBI, PubChem, and NORMAN identifiers.
-      A single measurement record should typically correspond to one compound.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: ChemicalCompound
-    required: true
-  sample_preparation_method:
-    name: sample_preparation_method
-    description: Description of the process from sample collection to chemical analysis
-      (e.g., extraction, cleanup, fractionation).
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: true
-  sample_preparation_method_link:
-    name: sample_preparation_method_link
-    description: GUPRI (e.g. DOI) linking to a public SOP, article, or other document
-      describing the method.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: IRI
-    required: false
-  analytical_method:
-    name: analytical_method
-    description: Analytical method used to determine the analyte
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: AnalyticalMethod
-    required: true
-  analytical_method_link:
-    name: analytical_method_link
-    description: GUPRI linking to a public SOP or document describing the method
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: IRI
-    required: false
-  data_handling_procedure:
-    name: data_handling_procedure
-    description: Description of steps taken after chemical analysis (e.g., blank correction,
-      quality control, calibration, recovery, standardization, recalculations).
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: string
-    required: true
-  data_handling_procedure_link:
-    name: data_handling_procedure_link
-    description: GUPRI linking to a document describing the data handling procedure
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: IRI
-    required: false
-  loq:
-    name: loq
-    description: Limit of quantification
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: double
-    required: false
-  lod:
-    name: lod
-    description: Limit of detection
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementConcentration
-    range: double
-    required: false
-  unit:
-    name: unit
-    description: Unit of measurement
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementBase
-    range: Unit
-    required: true
-  uncertainty:
-    name: uncertainty
-    description: 'Measurement uncertainty of the concentration/paramter value, expressed
-      as a percentage (%) at 95% confidence level.  '
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementBase
-    range: double
-    minimum_value: 0
-  value:
-    name: value
-    description: Measured value of the chemical concentration or other parameter
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - MeasurementBase
-    range: double
-    required: false
-  sample_id:
-    name: sample_id
-    description: Unique identifier for the sample
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementConcentration
-    domain_of:
-    - Sample
-    - Observation
-    range: string
-    required: true
-  observation_type:
-    name: observation_type
-    description: 'Type of measurement/observation: i) Chemical concentration in the
-      environment or biota - main observation and; ii) Other parameters - they give
-      context to the  main measurement. '
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    designates_type: true
-    owner: MeasurementConcentration
-    domain_of:
-    - Observation
-    range: ObservationType
-    required: true
-rules:
-- preconditions:
-    slot_conditions:
-      value:
-        name: value
-        value_presence: ABSENT
-      loq:
-        name: loq
-        value_presence: ABSENT
-      lod:
-        name: lod
-        value_presence: ABSENT
-  postconditions:
-    slot_conditions:
-      value:
-        name: value
-        value_presence: PRESENT
-  description: At least one of concentration value (value), LOQ, or LOD  must be provided
-    per measurement record. This rule creates a logical contradiction when all three
-    are absent, making that state invalid. The postcondition on value is  conventional
-    — any of the three would work equivalently.
-  title: at_least_one_measurement_value_required
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A measured concentration of a chemical compound in a sample. At least</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">one of concentration, LOQ, or LOD must be provided.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="nt">mixins</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">laboratory</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">laboratory</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name of the laboratory performing the analysis</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">batch</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Internal laboratory designation of the group of samples analyzed</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">together</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">analysis_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analysis_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The date on which the concentration was determined</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">compound</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compound</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chemical compound measured in the sample. Reference to the PARC WP9</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">compound list entry (ChemicalCompound class). Identified by WP9_id, name, CAS,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">EC, InChI, and InChIKey. Mappable to ChEBI, PubChem, and NORMAN identifiers.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">A single measurement record should typically correspond to one compound.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ChemicalCompound</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sample_preparation_method</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_preparation_method</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description of the process from sample collection to chemical analysis</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(e.g., extraction, cleanup, fractionation).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">sample_preparation_method_link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_preparation_method_link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GUPRI (e.g. DOI) linking to a public SOP, article, or other document</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">describing the method.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">analytical_method</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analytical_method</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analytical method used to determine the analyte</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AnalyticalMethod</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">analytical_method_link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analytical_method_link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GUPRI linking to a public SOP or document describing the method</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">data_handling_procedure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data_handling_procedure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description of steps taken after chemical analysis (e.g., blank correction,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">quality control, calibration, recovery, standardization, recalculations).</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">data_handling_procedure_link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data_handling_procedure_link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GUPRI linking to a document describing the data handling procedure</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">loq</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">loq</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Limit of quantification</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">lod</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lod</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Limit of detection</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unit of measurement</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unit</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">uncertainty</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uncertainty</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Measurement</span><span class="nv"> </span><span class="s">uncertainty</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">concentration/paramter</span><span class="nv"> </span><span class="s">value,</span><span class="nv"> </span><span class="s">expressed</span>
+<span class="w">      </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">percentage</span><span class="nv"> </span><span class="s">(%)</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">95%</span><span class="nv"> </span><span class="s">confidence</span><span class="nv"> </span><span class="s">level.</span><span class="nv">  </span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measured value of the chemical concentration or other parameter</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">sample_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the sample</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">observation_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">observation_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measurement/observation:</span><span class="nv"> </span><span class="s">i)</span><span class="nv"> </span><span class="s">Chemical</span><span class="nv"> </span><span class="s">concentration</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">environment</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">biota</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">observation</span><span class="nv"> </span><span class="s">and;</span><span class="nv"> </span><span class="s">ii)</span><span class="nv"> </span><span class="s">Other</span><span class="nv"> </span><span class="s">parameters</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">give</span>
+<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv">  </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">designates_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementConcentration</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ObservationType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">rules</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABSENT</span>
+<span class="w">      </span><span class="nt">loq</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">loq</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABSENT</span>
+<span class="w">      </span><span class="nt">lod</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lod</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABSENT</span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">        </span><span class="nt">value_presence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PRESENT</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">At least one of concentration value (value), LOQ, or LOD  must be provided</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">per measurement record. This rule creates a logical contradiction when all three</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">are absent, making that state invalid. The postcondition on value is  conventional</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">— any of the three would work equivalently.</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">at_least_one_measurement_value_required</span>
+</code></pre></div>
 </details></div>
 
 
@@ -5327,10 +5318,12 @@ rules:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>

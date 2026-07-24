@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/OrganisationMetadata/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/OrganisationMetadata/">
       
       
         <link rel="prev" href="../OrcidIdentifier/">
@@ -4703,14 +4703,13 @@ URI: [cenvo:OrganisationMetadata](https://w3id.org/chemical-exposome/schema/chem
 
 
 
-
-<pre><code class="language-mermaid"> classDiagram
+<pre class="mermaid"><code> classDiagram
     class OrganisationMetadata
-    click OrganisationMetadata href &quot;../OrganisationMetadata/&quot;
+    click OrganisationMetadata href "../OrganisationMetadata/"
       OrganisationMetadata &lt;|-- Institution
-        click Institution href &quot;../Institution/&quot;
+        click Institution href "../Institution/"
       OrganisationMetadata &lt;|-- Funder
-        click Funder href &quot;../Funder/&quot;
+        click Funder href "../Funder/"
 
       OrganisationMetadata : link
 
@@ -4720,9 +4719,7 @@ URI: [cenvo:OrganisationMetadata](https://w3id.org/chemical-exposome/schema/chem
 
       OrganisationMetadata : ror
 
-
 </code></pre>
-
 
 
 
@@ -4800,80 +4797,74 @@ URI: [cenvo:OrganisationMetadata](https://w3id.org/chemical-exposome/schema/chem
 ### Direct
 
 <details>
-
-<pre><code class="language-yaml">name: OrganisationMetadata
-description: Shared metadata for organisations — institutions and funders.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-mixin: true
-slots:
-- name_en
-- name_original
-- ror
-- link
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shared metadata for organisations — institutions and funders.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">mixin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">slots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name_en</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name_original</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ror</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">link</span>
+</code></pre></div>
 </details>
 
 ### Induced
 
 <details>
-
-<pre><code class="language-yaml">name: OrganisationMetadata
-description: Shared metadata for organisations — institutions and funders.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-mixin: true
-attributes:
-  name_en:
-    name: name_en
-    description: Name or designation in English
-    in_subset:
-    - mandatory_if
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: OrganisationMetadata
-    domain_of:
-    - MonitoringActivity
-    - Campaign
-    - OrganisationMetadata
-    range: string
-    required: true
-  name_original:
-    name: name_original
-    description: Name of the entity in the original language of the  institution/site/project.
-      Use the local official name.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: OrganisationMetadata
-    domain_of:
-    - MonitoringActivity
-    - OrganisationMetadata
-    range: string
-    required: true
-  ror:
-    name: ror
-    description: ROR identifier of the institution (format ror.org/xxxxxxxx)
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: OrganisationMetadata
-    domain_of:
-    - OrganisationMetadata
-    range: RorIdentifier
-  link:
-    name: link
-    description: URL with information about the institution
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: OrganisationMetadata
-    domain_of:
-    - OrganisationMetadata
-    - Site
-    range: IRI
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shared metadata for organisations — institutions and funders.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">mixin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name_en</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name_en</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name or designation in English</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory_if</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Campaign</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">name_original</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name_original</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name of the entity in the original language of the  institution/site/project.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Use the local official name.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">ror</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ror</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ROR identifier of the institution (format ror.org/xxxxxxxx)</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RorIdentifier</span>
+<span class="w">  </span><span class="nt">link</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">link</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL with information about the institution</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrganisationMetadata</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IRI</span>
+</code></pre></div>
 </details></div>
 
 
@@ -4927,10 +4918,12 @@ attributes:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>

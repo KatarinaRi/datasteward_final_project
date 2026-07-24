@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/Taxon/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/Taxon/">
       
       
         <link rel="prev" href="../String/">
@@ -4703,10 +4703,9 @@ URI: [cenvo:Taxon](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/T
 
 
 
-
-<pre><code class="language-mermaid"> classDiagram
+<pre class="mermaid"><code> classDiagram
     class Taxon
-    click Taxon href &quot;../Taxon/&quot;
+    click Taxon href "../Taxon/"
       Taxon : taxon_id
 
       Taxon : taxon_name
@@ -4717,14 +4716,12 @@ URI: [cenvo:Taxon](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/T
 
 
 
-        Taxon --&gt; &quot;0..1&quot; TaxonRankEnum : taxon_rank
-        click TaxonRankEnum href &quot;../TaxonRankEnum/&quot;
-
+        Taxon --&gt; "0..1" TaxonRankEnum : taxon_rank
+        click TaxonRankEnum href "../TaxonRankEnum/"
 
 
 
 </code></pre>
-
 
 
 
@@ -4797,114 +4794,108 @@ URI: [cenvo:Taxon](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/T
 ### Direct
 
 <details>
-
-<pre><code class="language-yaml">name: Taxon
-description: A taxonomic entity identified in a biological sample, referenced against
-  the GBIF Backbone Taxonomy.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-see_also:
-- https://www.gbif.org/species/search
-attributes:
-  taxon_id:
-    name: taxon_id
-    description: GBIF species key (integer). Resolves to https://www.gbif.org/species/{taxon_id}
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.gbif.org/species/search
-    rank: 1000
-    identifier: true
-    domain_of:
-    - Taxon
-    range: integer
-    required: true
-  taxon_name:
-    name: taxon_name
-    description: Scientific name of the taxon (genus, species or higher rank) as accepted
-      in the GBIF Backbone Taxonomy.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.gbif.org/species/search
-    rank: 1000
-    domain_of:
-    - Taxon
-    range: string
-    required: true
-  taxon_rank:
-    name: taxon_rank
-    description: Taxonomic rank of the identified taxon.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.gbif.org/developer/species#rank
-    rank: 1000
-    domain_of:
-    - Taxon
-    range: TaxonRankEnum
-    required: false
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A taxonomic entity identified in a biological sample, referenced against</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the GBIF Backbone Taxonomy.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">see_also</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/species/search</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">taxon_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">taxon_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GBIF species key (integer). Resolves to https://www.gbif.org/species/{taxon_id}</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/species/search</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">taxon_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">taxon_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scientific name of the taxon (genus, species or higher rank) as accepted</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">in the GBIF Backbone Taxonomy.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/species/search</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">taxon_rank</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">taxon_rank</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxonomic rank of the identified taxon.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/developer/species#rank</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TaxonRankEnum</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
 </details>
 
 ### Induced
 
 <details>
-
-<pre><code class="language-yaml">name: Taxon
-description: A taxonomic entity identified in a biological sample, referenced against
-  the GBIF Backbone Taxonomy.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-see_also:
-- https://www.gbif.org/species/search
-attributes:
-  taxon_id:
-    name: taxon_id
-    description: GBIF species key (integer). Resolves to https://www.gbif.org/species/{taxon_id}
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.gbif.org/species/search
-    rank: 1000
-    identifier: true
-    owner: Taxon
-    domain_of:
-    - Taxon
-    range: integer
-    required: true
-  taxon_name:
-    name: taxon_name
-    description: Scientific name of the taxon (genus, species or higher rank) as accepted
-      in the GBIF Backbone Taxonomy.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.gbif.org/species/search
-    rank: 1000
-    owner: Taxon
-    domain_of:
-    - Taxon
-    range: string
-    required: true
-  taxon_rank:
-    name: taxon_rank
-    description: Taxonomic rank of the identified taxon.
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    see_also:
-    - https://www.gbif.org/developer/species#rank
-    rank: 1000
-    owner: Taxon
-    domain_of:
-    - Taxon
-    range: TaxonRankEnum
-    required: false
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A taxonomic entity identified in a biological sample, referenced against</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the GBIF Backbone Taxonomy.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">see_also</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/species/search</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">taxon_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">taxon_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GBIF species key (integer). Resolves to https://www.gbif.org/species/{taxon_id}</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/species/search</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">taxon_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">taxon_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scientific name of the taxon (genus, species or higher rank) as accepted</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">in the GBIF Backbone Taxonomy.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/species/search</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">taxon_rank</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">taxon_rank</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxonomic rank of the identified taxon.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">see_also</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.gbif.org/developer/species#rank</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taxon</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TaxonRankEnum</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
 </details></div>
 
 
@@ -4958,10 +4949,12 @@ attributes:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>

@@ -1,5 +1,16 @@
 site_name: Metadata Schema for Data Concerning Chemicals in the Outdoor Environment
-site_url: https://269713.github.io/datasteward_final_project/
+site_url: https://katarinari.github.io/datasteward_final_project/
 theme:
   name: material
+  features:
+    - content.code.copy
 docs_dir: docs
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js

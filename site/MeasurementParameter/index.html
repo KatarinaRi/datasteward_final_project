@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://269713.github.io/datasteward_final_project/MeasurementParameter/">
+        <link rel="canonical" href="https://katarinari.github.io/datasteward_final_project/MeasurementParameter/">
       
       
         <link rel="prev" href="../MeasurementConcentration/">
@@ -4703,14 +4703,13 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
 
 
 
-
-<pre><code class="language-mermaid"> classDiagram
+<pre class="mermaid"><code> classDiagram
     class MeasurementParameter
-    click MeasurementParameter href &quot;../MeasurementParameter/&quot;
+    click MeasurementParameter href "../MeasurementParameter/"
       MeasurementBase &lt;|-- MeasurementParameter
-        click MeasurementBase href &quot;../MeasurementBase/&quot;
+        click MeasurementBase href "../MeasurementBase/"
       Observation &lt;|-- MeasurementParameter
-        click Observation href &quot;../Observation/&quot;
+        click Observation href "../Observation/"
 
       MeasurementParameter : observation_type
 
@@ -4718,8 +4717,8 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
 
 
 
-        MeasurementParameter --&gt; &quot;1&quot; ObservationType : observation_type
-        click ObservationType href &quot;../ObservationType/&quot;
+        MeasurementParameter --&gt; "1" ObservationType : observation_type
+        click ObservationType href "../ObservationType/"
 
 
 
@@ -4729,8 +4728,8 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
 
 
 
-        MeasurementParameter --&gt; &quot;1&quot; Parameter : parameter
-        click Parameter href &quot;../Parameter/&quot;
+        MeasurementParameter --&gt; "1" Parameter : parameter
+        click Parameter href "../Parameter/"
 
 
 
@@ -4744,16 +4743,14 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
 
 
 
-        MeasurementParameter --&gt; &quot;1&quot; Unit : unit
-        click Unit href &quot;../Unit/&quot;
+        MeasurementParameter --&gt; "1" Unit : unit
+        click Unit href "../Unit/"
 
 
 
       MeasurementParameter : value
 
-
 </code></pre>
-
 
 
 
@@ -4822,123 +4819,117 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
 ### Direct
 
 <details>
-
-<pre><code class="language-yaml">name: MeasurementParameter
-description: An additional parameter measured in the sample (e.g. pH, temperature,
-  TOC). Depends on matrix type.  Gives context to the chemical concentration measurement.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-is_a: Observation
-mixins:
-- MeasurementBase
-attributes:
-  parameter:
-    name: parameter
-    description: Name of the parameter measured. Refer to the codelist-parameter tab
-      for the list.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    domain_of:
-    - MeasurementParameter
-    range: Parameter
-    required: true
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An additional parameter measured in the sample (e.g. pH, temperature,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">TOC). Depends on matrix type.  Gives context to the chemical concentration measurement.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="nt">mixins</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parameter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parameter</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name of the parameter measured. Refer to the codelist-parameter tab</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for the list.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parameter</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 </details>
 
 ### Induced
 
 <details>
-
-<pre><code class="language-yaml">name: MeasurementParameter
-description: An additional parameter measured in the sample (e.g. pH, temperature,
-  TOC). Depends on matrix type.  Gives context to the chemical concentration measurement.
-from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-is_a: Observation
-mixins:
-- MeasurementBase
-attributes:
-  parameter:
-    name: parameter
-    description: Name of the parameter measured. Refer to the codelist-parameter tab
-      for the list.
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementParameter
-    domain_of:
-    - MeasurementParameter
-    range: Parameter
-    required: true
-  unit:
-    name: unit
-    description: Unit of measurement
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementParameter
-    domain_of:
-    - MeasurementBase
-    range: Unit
-    required: true
-  uncertainty:
-    name: uncertainty
-    description: 'Measurement uncertainty of the concentration/paramter value, expressed
-      as a percentage (%) at 95% confidence level.  '
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementParameter
-    domain_of:
-    - MeasurementBase
-    range: double
-    minimum_value: 0
-  value:
-    name: value
-    description: Measured value of the chemical concentration or other parameter
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementParameter
-    domain_of:
-    - MeasurementBase
-    range: double
-    required: false
-  sample_id:
-    name: sample_id
-    description: Unique identifier for the sample
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    owner: MeasurementParameter
-    domain_of:
-    - Sample
-    - Observation
-    range: string
-    required: true
-  observation_type:
-    name: observation_type
-    description: 'Type of measurement/observation: i) Chemical concentration in the
-      environment or biota - main observation and; ii) Other parameters - they give
-      context to the  main measurement. '
-    in_subset:
-    - mandatory
-    from_schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
-    rank: 1000
-    designates_type: true
-    owner: MeasurementParameter
-    domain_of:
-    - Observation
-    range: ObservationType
-    required: true
-
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An additional parameter measured in the sample (e.g. pH, temperature,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">TOC). Depends on matrix type.  Gives context to the chemical concentration measurement.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="nt">mixins</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parameter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parameter</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name of the parameter measured. Refer to the codelist-parameter tab</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for the list.</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parameter</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unit of measurement</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unit</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">uncertainty</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uncertainty</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Measurement</span><span class="nv"> </span><span class="s">uncertainty</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">concentration/paramter</span><span class="nv"> </span><span class="s">value,</span><span class="nv"> </span><span class="s">expressed</span>
+<span class="w">      </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">percentage</span><span class="nv"> </span><span class="s">(%)</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">95%</span><span class="nv"> </span><span class="s">confidence</span><span class="nv"> </span><span class="s">level.</span><span class="nv">  </span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measured value of the chemical concentration or other parameter</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementBase</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">sample_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the sample</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">observation_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">observation_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measurement/observation:</span><span class="nv"> </span><span class="s">i)</span><span class="nv"> </span><span class="s">Chemical</span><span class="nv"> </span><span class="s">concentration</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">environment</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">biota</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">observation</span><span class="nv"> </span><span class="s">and;</span><span class="nv"> </span><span class="s">ii)</span><span class="nv"> </span><span class="s">Other</span><span class="nv"> </span><span class="s">parameters</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">give</span>
+<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv">  </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">designates_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementParameter</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ObservationType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 </details></div>
 
 
@@ -4992,10 +4983,12 @@ attributes:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>
