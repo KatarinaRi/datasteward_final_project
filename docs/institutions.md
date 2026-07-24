@@ -23,9 +23,7 @@ URI: [cenvo:institutions](https://w3id.org/chemical-exposome/schema/chemicals-ou
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
 
 
 
@@ -35,24 +33,12 @@ URI: [cenvo:institutions](https://w3id.org/chemical-exposome/schema/chemicals-ou
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Institution](Institution.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Range | [Institution](Institution.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-| Multivalued | Yes |
-| Minimum Cardinality | 1 |
+ | Property | Value | | --- | --- | | Required | Yes | | Multivalued | Yes | | Minimum Cardinality | 1 |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Owner | [MonitoringActivity](MonitoringActivity.md) |
 
 
 
@@ -86,11 +72,7 @@ URI: [cenvo:institutions](https://w3id.org/chemical-exposome/schema/chemicals-ou
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:institutions |
-| native | cenvo:institutions |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:institutions | | native | cenvo:institutions |
 
 
 

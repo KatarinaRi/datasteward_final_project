@@ -23,9 +23,7 @@ URI: [cenvo:sample_preparation_method_link](https://w3id.org/chemical-exposome/s
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:sample_preparation_method_link](https://w3id.org/chemical-exposome/s
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [IRI](IRI.md) |
-| Domain Of | [MeasurementConcentration](MeasurementConcentration.md) |
+ | Property | Value | | --- | --- | | Range | [IRI](IRI.md) | | Domain Of | [MeasurementConcentration](MeasurementConcentration.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MeasurementConcentration](MeasurementConcentration.md) |
+ | Property | Value | | --- | --- | | Owner | [MeasurementConcentration](MeasurementConcentration.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:sample_preparation_method_link](https://w3id.org/chemical-exposome/s
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:sample_preparation_method_link |
-| native | cenvo:sample_preparation_method_link |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:sample_preparation_method_link | | native | cenvo:sample_preparation_method_link |
 
 
 

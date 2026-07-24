@@ -23,9 +23,7 @@ URI: [cenvo:nuts3](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/n
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,28 +33,16 @@ URI: [cenvo:nuts3](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/n
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 ### Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Regex Pattern | `^[A-Z]{2}[A-Z0-9]{3,4}$` |
+ | Property | Value | | --- | --- | | Regex Pattern | `^[A-Z]{2}[A-Z0-9]{3,4}$` |
 
 
 
@@ -94,11 +80,7 @@ URI: [cenvo:nuts3](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/n
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:nuts3 |
-| native | cenvo:nuts3 |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:nuts3 | | native | cenvo:nuts3 |
 
 
 

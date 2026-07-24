@@ -16,11 +16,7 @@ URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `ElementIdentifier` |
-| Type URI | [shex:iri](http://www.w3.org/ns/shex#iri) |
-| Representation | `str` |
+| Property | Value | | --- | --- | | Base | `ElementIdentifier` | | Type URI | [shex:iri](http://www.w3.org/ns/shex#iri) | | Representation | `str` |
 
 
 
@@ -52,11 +48,7 @@ URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | shex:iri |
-| native | cenvo:objectidentifier |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | shex:iri | | native | cenvo:objectidentifier |
 
 
 

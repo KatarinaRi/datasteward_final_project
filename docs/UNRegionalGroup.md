@@ -18,22 +18,13 @@ _Regional groups of United Nations member states_
 URI: [cenvo:UNRegionalGroup](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/UNRegionalGroup)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| african | None | African Group |
-| asia_pacific | None | Asia-Pacific Group |
-| eastern_european | None | Eastern European Group |
-| grulac | None | Group of Latin American and Caribbean Countries |
-| weog | None | Western European and Others Group |
+| Value | Meaning | Description | | --- | --- | --- | | african | None | African Group | | asia_pacific | None | Asia-Pacific Group | | eastern_european | None | Eastern European Group | | grulac | None | Group of Latin American and Caribbean Countries | | weog | None | Western European and Others Group |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [regional_group](regional_group.md) | Regional group of United Nations member states |
+ | Name | Description | | ---  | --- | | [regional_group](regional_group.md) | Regional group of United Nations member states |
 
 
 

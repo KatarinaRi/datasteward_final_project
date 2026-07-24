@@ -18,27 +18,13 @@ _Taxonomic rank of the identified taxon, aligned with GBIF Backbone Taxonomy ran
 URI: [cenvo:TaxonRankEnum](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/TaxonRankEnum)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| KINGDOM | https://api.gbif.org/v1/enumeration/basic/Rank/KINGDOM | Kingdom — highest taxonomic rank |
-| PHYLUM | https://api.gbif.org/v1/enumeration/basic/Rank/PHYLUM | Phylum |
-| CLASS | https://api.gbif.org/v1/enumeration/basic/Rank/CLASS | Class |
-| ORDER | https://api.gbif.org/v1/enumeration/basic/Rank/ORDER | Order |
-| FAMILY | https://api.gbif.org/v1/enumeration/basic/Rank/FAMILY | Family |
-| GENUS | https://api.gbif.org/v1/enumeration/basic/Rank/GENUS | Genus |
-| SPECIES | https://api.gbif.org/v1/enumeration/basic/Rank/SPECIES | Species — most common rank for environmental monitoring |
-| SUBSPECIES | https://api.gbif.org/v1/enumeration/basic/Rank/SUBSPECIES | Subspecies |
-| VARIETY | https://api.gbif.org/v1/enumeration/basic/Rank/VARIETY | Variety — used for plants |
-| FORM | https://api.gbif.org/v1/enumeration/basic/Rank/FORM | Form — lowest commonly used rank |
+| Value | Meaning | Description | | --- | --- | --- | | KINGDOM | https://api.gbif.org/v1/enumeration/basic/Rank/KINGDOM | Kingdom — highest taxonomic rank | | PHYLUM | https://api.gbif.org/v1/enumeration/basic/Rank/PHYLUM | Phylum | | CLASS | https://api.gbif.org/v1/enumeration/basic/Rank/CLASS | Class | | ORDER | https://api.gbif.org/v1/enumeration/basic/Rank/ORDER | Order | | FAMILY | https://api.gbif.org/v1/enumeration/basic/Rank/FAMILY | Family | | GENUS | https://api.gbif.org/v1/enumeration/basic/Rank/GENUS | Genus | | SPECIES | https://api.gbif.org/v1/enumeration/basic/Rank/SPECIES | Species — most common rank for environmental monitoring | | SUBSPECIES | https://api.gbif.org/v1/enumeration/basic/Rank/SUBSPECIES | Subspecies | | VARIETY | https://api.gbif.org/v1/enumeration/basic/Rank/VARIETY | Variety — used for plants | | FORM | https://api.gbif.org/v1/enumeration/basic/Rank/FORM | Form — lowest commonly used rank |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [taxon_rank](taxon_rank.md) | Taxonomic rank of the identified taxon |
+ | Name | Description | | ---  | --- | | [taxon_rank](taxon_rank.md) | Taxonomic rank of the identified taxon |
 
 
 

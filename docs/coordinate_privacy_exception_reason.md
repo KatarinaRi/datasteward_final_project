@@ -23,9 +23,7 @@ URI: [cenvo:coordinate_privacy_exception_reason](https://w3id.org/chemical-expos
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:coordinate_privacy_exception_reason](https://w3id.org/chemical-expos
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 
@@ -83,11 +72,7 @@ URI: [cenvo:coordinate_privacy_exception_reason](https://w3id.org/chemical-expos
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:coordinate_privacy_exception_reason |
-| native | cenvo:coordinate_privacy_exception_reason |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:coordinate_privacy_exception_reason | | native | cenvo:coordinate_privacy_exception_reason |
 
 
 

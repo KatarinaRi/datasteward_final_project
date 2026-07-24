@@ -23,11 +23,7 @@ URI: [cenvo:uncertainty](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MeasurementBase](MeasurementBase.md) | Shared measurement slots common to all observation types |  no  |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
-| [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MeasurementBase](MeasurementBase.md) | Shared measurement slots common to all observation types |  no  | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  | | [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
 
 
 
@@ -37,21 +33,12 @@ URI: [cenvo:uncertainty](https://w3id.org/chemical-exposome/schema/chemicals-out
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Double](Double.md) |
-| Domain Of | [MeasurementBase](MeasurementBase.md) |
+ | Property | Value | | --- | --- | | Range | [Double](Double.md) | | Domain Of | [MeasurementBase](MeasurementBase.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Minimum Value | 0 |
+ | Property | Value | | --- | --- | | Minimum Value | 0 |
 
 
 
@@ -79,11 +66,7 @@ URI: [cenvo:uncertainty](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:uncertainty |
-| native | cenvo:uncertainty |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:uncertainty | | native | cenvo:uncertainty |
 
 
 

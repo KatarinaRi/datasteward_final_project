@@ -23,12 +23,7 @@ URI: [cenvo:name_original](https://w3id.org/chemical-exposome/schema/chemicals-o
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
-| [OrganisationMetadata](OrganisationMetadata.md) | Shared metadata for organisations — institutions and funders |  no  |
-| [Institution](Institution.md) | Institution |  no  |
-| [Funder](Funder.md) | Funder |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  | | [OrganisationMetadata](OrganisationMetadata.md) | Shared metadata for organisations — institutions and funders |  no  | | [Institution](Institution.md) | Institution |  no  | | [Funder](Funder.md) | Funder |  no  |
 
 
 
@@ -38,17 +33,10 @@ URI: [cenvo:name_original](https://w3id.org/chemical-exposome/schema/chemicals-o
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md), [OrganisationMetadata](OrganisationMetadata.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md), [OrganisationMetadata](OrganisationMetadata.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 
 
 
@@ -80,11 +68,7 @@ URI: [cenvo:name_original](https://w3id.org/chemical-exposome/schema/chemicals-o
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:name_original |
-| native | cenvo:name_original |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:name_original | | native | cenvo:name_original |
 
 
 

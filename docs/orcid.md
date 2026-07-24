@@ -23,9 +23,7 @@ URI: [cenvo:orcid](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/o
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Contact](Contact.md) | A contact person associated with the monitoring activity |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Contact](Contact.md) | A contact person associated with the monitoring activity |  no  |
 
 
 
@@ -35,16 +33,10 @@ URI: [cenvo:orcid](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/o
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [OrcidIdentifier](OrcidIdentifier.md) |
-| Domain Of | [Contact](Contact.md) |
+ | Property | Value | | --- | --- | | Range | [OrcidIdentifier](OrcidIdentifier.md) | | Domain Of | [Contact](Contact.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 
 
 
@@ -70,11 +62,7 @@ URI: [cenvo:orcid](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/o
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:orcid |
-| native | cenvo:orcid |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:orcid | | native | cenvo:orcid |
 
 
 

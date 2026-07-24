@@ -113,23 +113,7 @@ URI: [cenvo:Biota](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/B
 
 
 ## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [matrix](matrix.md) | 1 <br/> [MatrixBiota](MatrixBiota.md) | Sampled matrix | direct |
-| [sampling_method](sampling_method.md) | 0..1 <br/> [String](String.md) | Sampling method for biota samples (to be discussed) | direct |
-| [compartment](compartment.md) | * <br/> [EnvironmentalCompartment](EnvironmentalCompartment.md) | The environmental compartment where the organism was sampled from | direct |
-| [gender](gender.md) | 0..1 <br/> [Gender](Gender.md) | Collected organism gender | direct |
-| [life_stage_age](life_stage_age.md) | 0..1 <br/> [String](String.md) | Life stage or age of the organism | direct |
-| [taxonomic_classification](taxonomic_classification.md) | 0..1 <br/> [Taxon](Taxon.md) | A taxonomic entity identified in a biological sample, referenced against the ... | direct |
-| [site_name](site_name.md) | 1 <br/> [String](String.md) | Name of the monitoring site | [Sample](Sample.md) |
-| [site_id](site_id.md) | 1 <br/> [String](String.md) | Unique identifier of the monitoring site where the sample was collected | [Sample](Sample.md) |
-| [sample_id](sample_id.md) | 1 <br/> [String](String.md) | Unique identifier for the sample | [Sample](Sample.md) |
-| [start_date](start_date.md) | 1 <br/> [Date](Date.md) | Start date in format YYYY-MM-DD | [Sample](Sample.md) |
-| [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) | End date in format YYYY-MM-DD | [Sample](Sample.md) |
-| [sampling_time_start](sampling_time_start.md) | 0..1 <br/> [Time](Time.md) | Sampling start time according to ISO 8601, 24-hour clock | [Sample](Sample.md) |
-| [sampling_time_end](sampling_time_end.md) | 0..1 <br/> [Time](Time.md) | Sampling end time according to ISO 8601 | [Sample](Sample.md) |
-| [domain](domain.md) | 1 <br/> [Domain](Domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | [Sample](Sample.md) |
+ | Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [matrix](matrix.md) | 1 [MatrixBiota](MatrixBiota.md) | Sampled matrix | direct | | [sampling_method](sampling_method.md) | 0..1 [String](String.md) | Sampling method for biota samples (to be discussed) | direct | | [compartment](compartment.md) | * [EnvironmentalCompartment](EnvironmentalCompartment.md) | The environmental compartment where the organism was sampled from | direct | | [gender](gender.md) | 0..1 [Gender](Gender.md) | Collected organism gender | direct | | [life_stage_age](life_stage_age.md) | 0..1 [String](String.md) | Life stage or age of the organism | direct | | [taxonomic_classification](taxonomic_classification.md) | 0..1 [Taxon](Taxon.md) | A taxonomic entity identified in a biological sample, referenced against the ... | direct | | [site_name](site_name.md) | 1 [String](String.md) | Name of the monitoring site | [Sample](Sample.md) | | [site_id](site_id.md) | 1 [String](String.md) | Unique identifier of the monitoring site where the sample was collected | [Sample](Sample.md) | | [sample_id](sample_id.md) | 1 [String](String.md) | Unique identifier for the sample | [Sample](Sample.md) | | [start_date](start_date.md) | 1 [Date](Date.md) | Start date in format YYYY-MM-DD | [Sample](Sample.md) | | [end_date](end_date.md) | 0..1 [Date](Date.md) | End date in format YYYY-MM-DD | [Sample](Sample.md) | | [sampling_time_start](sampling_time_start.md) | 0..1 [Time](Time.md) | Sampling start time according to ISO 8601, 24-hour clock | [Sample](Sample.md) | | [sampling_time_end](sampling_time_end.md) | 0..1 [Time](Time.md) | Sampling end time according to ISO 8601 | [Sample](Sample.md) | | [domain](domain.md) | 1 [Domain](Domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | [Sample](Sample.md) |
 
 
 
@@ -160,11 +144,7 @@ URI: [cenvo:Biota](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/B
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Biota |
-| native | cenvo:Biota |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Biota | | native | cenvo:Biota |
 
 
 

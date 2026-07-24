@@ -78,19 +78,7 @@ URI: [cenvo:Terrestrial](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 ## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [matrix](matrix.md) | 1 <br/> [MatrixTerrestrial](MatrixTerrestrial.md) | Sampled matrix | direct |
-| [sampling_method](sampling_method.md) | 1 <br/> [String](String.md) | Sampling method for terrestrial samples | direct |
-| [site_name](site_name.md) | 1 <br/> [String](String.md) | Name of the monitoring site | [Sample](Sample.md) |
-| [site_id](site_id.md) | 1 <br/> [String](String.md) | Unique identifier of the monitoring site where the sample was collected | [Sample](Sample.md) |
-| [sample_id](sample_id.md) | 1 <br/> [String](String.md) | Unique identifier for the sample | [Sample](Sample.md) |
-| [start_date](start_date.md) | 1 <br/> [Date](Date.md) | Start date in format YYYY-MM-DD | [Sample](Sample.md) |
-| [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) | End date in format YYYY-MM-DD | [Sample](Sample.md) |
-| [sampling_time_start](sampling_time_start.md) | 0..1 <br/> [Time](Time.md) | Sampling start time according to ISO 8601, 24-hour clock | [Sample](Sample.md) |
-| [sampling_time_end](sampling_time_end.md) | 0..1 <br/> [Time](Time.md) | Sampling end time according to ISO 8601 | [Sample](Sample.md) |
-| [domain](domain.md) | 1 <br/> [Domain](Domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | [Sample](Sample.md) |
+ | Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [matrix](matrix.md) | 1 [MatrixTerrestrial](MatrixTerrestrial.md) | Sampled matrix | direct | | [sampling_method](sampling_method.md) | 1 [String](String.md) | Sampling method for terrestrial samples | direct | | [site_name](site_name.md) | 1 [String](String.md) | Name of the monitoring site | [Sample](Sample.md) | | [site_id](site_id.md) | 1 [String](String.md) | Unique identifier of the monitoring site where the sample was collected | [Sample](Sample.md) | | [sample_id](sample_id.md) | 1 [String](String.md) | Unique identifier for the sample | [Sample](Sample.md) | | [start_date](start_date.md) | 1 [Date](Date.md) | Start date in format YYYY-MM-DD | [Sample](Sample.md) | | [end_date](end_date.md) | 0..1 [Date](Date.md) | End date in format YYYY-MM-DD | [Sample](Sample.md) | | [sampling_time_start](sampling_time_start.md) | 0..1 [Time](Time.md) | Sampling start time according to ISO 8601, 24-hour clock | [Sample](Sample.md) | | [sampling_time_end](sampling_time_end.md) | 0..1 [Time](Time.md) | Sampling end time according to ISO 8601 | [Sample](Sample.md) | | [domain](domain.md) | 1 [Domain](Domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | [Sample](Sample.md) |
 
 
 
@@ -121,11 +109,7 @@ URI: [cenvo:Terrestrial](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Terrestrial |
-| native | cenvo:Terrestrial |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Terrestrial | | native | cenvo:Terrestrial |
 
 
 

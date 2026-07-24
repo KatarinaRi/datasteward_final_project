@@ -18,19 +18,13 @@ _Type of measurement/observation: i) Chemical concentration in the environment o
 URI: [cenvo:ObservationType](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/ObservationType)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| MeasurementConcentration | None | Chemical concentration in the environment or biota - main observation |
-| MeasurementParameter | None | Other parameters giving context to the main measurement |
+| Value | Meaning | Description | | --- | --- | --- | | MeasurementConcentration | None | Chemical concentration in the environment or biota - main observation | | MeasurementParameter | None | Other parameters giving context to the main measurement |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [observation_type](observation_type.md) | Type of measurement/observation: i) Chemical concentration in the environment... |
+ | Name | Description | | ---  | --- | | [observation_type](observation_type.md) | Type of measurement/observation: i) Chemical concentration in the environment... |
 
 
 

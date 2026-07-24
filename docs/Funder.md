@@ -49,24 +49,14 @@ URI: [cenvo:Funder](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 
 ## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [funder_id](funder_id.md) | 1 <br/> [String](String.md) | Unique funder ID | direct |
-| [name_en](name_en.md) | 1 <br/> [String](String.md) | Name or designation in English | [OrganisationMetadata](OrganisationMetadata.md) |
-| [name_original](name_original.md) | 1 <br/> [String](String.md) | Name of the entity in the original language of the  institution/site/project | [OrganisationMetadata](OrganisationMetadata.md) |
-| [ror](ror.md) | 0..1 <br/> [RorIdentifier](RorIdentifier.md) | ROR identifier of the institution (format ror | [OrganisationMetadata](OrganisationMetadata.md) |
-| [link](link.md) | 0..1 <br/> [IRI](IRI.md) | URL with information about the institution | [OrganisationMetadata](OrganisationMetadata.md) |
+ | Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [funder_id](funder_id.md) | 1 [String](String.md) | Unique funder ID | direct | | [name_en](name_en.md) | 1 [String](String.md) | Name or designation in English | [OrganisationMetadata](OrganisationMetadata.md) | | [name_original](name_original.md) | 1 [String](String.md) | Name of the entity in the original language of the  institution/site/project | [OrganisationMetadata](OrganisationMetadata.md) | | [ror](ror.md) | 0..1 [RorIdentifier](RorIdentifier.md) | ROR identifier of the institution (format ror | [OrganisationMetadata](OrganisationMetadata.md) | | [link](link.md) | 0..1 [IRI](IRI.md) | URL with information about the institution | [OrganisationMetadata](OrganisationMetadata.md) |
 
 
 
 
 
 ## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | [funders](funders.md) | range | [Funder](Funder.md) |
+ | used by | used in | type | used | | ---  | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | [funders](funders.md) | range | [Funder](Funder.md) |
 
 
 
@@ -94,11 +84,7 @@ URI: [cenvo:Funder](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Funder |
-| native | cenvo:Funder |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Funder | | native | cenvo:Funder |
 
 
 

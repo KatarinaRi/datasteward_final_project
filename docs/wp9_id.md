@@ -23,9 +23,7 @@ URI: [cenvo:wp9_id](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
 
 
 
@@ -35,23 +33,12 @@ URI: [cenvo:wp9_id](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Integer](Integer.md) |
-| Domain Of | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Range | [Integer](Integer.md) | | Domain Of | [ChemicalCompound](ChemicalCompound.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Identifier | Yes |
-| Owner | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Identifier | Yes | | Owner | [ChemicalCompound](ChemicalCompound.md) |
 
 
 
@@ -79,11 +66,7 @@ URI: [cenvo:wp9_id](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:wp9_id |
-| native | cenvo:wp9_id |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:wp9_id | | native | cenvo:wp9_id |
 
 
 

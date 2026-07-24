@@ -23,12 +23,7 @@ URI: [cenvo:acronym](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  yes  |
-| [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  yes  |
-| [Institution](Institution.md) | Institution |  no  |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  yes  | | [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  yes  | | [Institution](Institution.md) | Institution |  no  | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -38,16 +33,10 @@ URI: [cenvo:acronym](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md), [Campaign](Campaign.md), [Institution](Institution.md), [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md), [Campaign](Campaign.md), [Institution](Institution.md), [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 
 
 
@@ -79,11 +68,7 @@ URI: [cenvo:acronym](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:acronym |
-| native | cenvo:acronym |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:acronym | | native | cenvo:acronym |
 
 
 

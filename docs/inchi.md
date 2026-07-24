@@ -23,9 +23,7 @@ URI: [cenvo:inchi](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/i
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
 
 
 
@@ -35,29 +33,16 @@ URI: [cenvo:inchi](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/i
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [ChemicalCompound](ChemicalCompound.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Owner | [ChemicalCompound](ChemicalCompound.md) |
 
 
 ### Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Regex Pattern | `^InChI=1S/` |
+ | Property | Value | | --- | --- | | Regex Pattern | `^InChI=1S/` |
 
 
 
@@ -85,11 +70,7 @@ URI: [cenvo:inchi](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/i
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:inchi |
-| native | cenvo:inchi |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:inchi | | native | cenvo:inchi |
 
 
 

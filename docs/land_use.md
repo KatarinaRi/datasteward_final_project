@@ -23,9 +23,7 @@ URI: [cenvo:land_use](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:land_use](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [LandUse](LandUse.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [LandUse](LandUse.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 
@@ -81,11 +70,7 @@ URI: [cenvo:land_use](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:land_use |
-| native | cenvo:land_use |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:land_use | | native | cenvo:land_use |
 
 
 

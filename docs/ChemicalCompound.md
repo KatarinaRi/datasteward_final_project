@@ -63,28 +63,14 @@ URI: [cenvo:ChemicalCompound](https://w3id.org/chemical-exposome/schema/chemical
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [wp9_id](wp9_id.md) | 1 <br/> [Integer](Integer.md) | Internal PARC WP9 identifier for the compound | direct |
-| [compound_name](compound_name.md) | 1 <br/> [String](String.md) | Common or abbreviated name of the compound as used in the PARC community (e | direct |
-| [compound_group](compound_group.md) | 0..1 <br/> [CompoundGroup](CompoundGroup.md) | Chemical group classification of the compound as defined in the PARC WP9 comp... | direct |
-| [cas_number](cas_number.md) | 0..1 <br/> [String](String.md) | CAS Registry Number — unique numerical identifier assigned by the Chemical Ab... | direct |
-| [ec_number](ec_number.md) | 0..1 <br/> [String](String.md) | EC Number (European Community Number) — identifier used in the ECHA substance... | direct |
-| [inchi](inchi.md) | 1 <br/> [String](String.md) | IUPAC International Chemical Identifier (InChI) — a standard textual represen... | direct |
-| [inchikey](inchikey.md) | 0..1 <br/> [String](String.md) | InChIKey — a fixed-length (27-character) hash of the InChI string | direct |
-| [chebi_id](chebi_id.md) | 0..1 <br/> [IRI](IRI.md) | ChEBI identifier for the compound | direct |
-| [pubchem_cid](pubchem_cid.md) | 0..1 <br/> [Integer](Integer.md) | PubChem Compound ID (CID) | direct |
-| [norman_id](norman_id.md) | 0..1 <br/> [String](String.md) | NORMAN substance identifier | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [wp9_id](wp9_id.md) | 1 [Integer](Integer.md) | Internal PARC WP9 identifier for the compound | direct | | [compound_name](compound_name.md) | 1 [String](String.md) | Common or abbreviated name of the compound as used in the PARC community (e | direct | | [compound_group](compound_group.md) | 0..1 [CompoundGroup](CompoundGroup.md) | Chemical group classification of the compound as defined in the PARC WP9 comp... | direct | | [cas_number](cas_number.md) | 0..1 [String](String.md) | CAS Registry Number — unique numerical identifier assigned by the Chemical Ab... | direct | | [ec_number](ec_number.md) | 0..1 [String](String.md) | EC Number (European Community Number) — identifier used in the ECHA substance... | direct | | [inchi](inchi.md) | 1 [String](String.md) | IUPAC International Chemical Identifier (InChI) — a standard textual represen... | direct | | [inchikey](inchikey.md) | 0..1 [String](String.md) | InChIKey — a fixed-length (27-character) hash of the InChI string | direct | | [chebi_id](chebi_id.md) | 0..1 [IRI](IRI.md) | ChEBI identifier for the compound | direct | | [pubchem_cid](pubchem_cid.md) | 0..1 [Integer](Integer.md) | PubChem Compound ID (CID) | direct | | [norman_id](norman_id.md) | 0..1 [String](String.md) | NORMAN substance identifier | direct |
 
 
 
 
 
 ## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [MeasurementConcentration](MeasurementConcentration.md) | [compound](compound.md) | range | [ChemicalCompound](ChemicalCompound.md) |
+ | used by | used in | type | used | | ---  | --- | --- | --- | | [MeasurementConcentration](MeasurementConcentration.md) | [compound](compound.md) | range | [ChemicalCompound](ChemicalCompound.md) |
 
 
 
@@ -116,11 +102,7 @@ URI: [cenvo:ChemicalCompound](https://w3id.org/chemical-exposome/schema/chemical
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:ChemicalCompound |
-| native | cenvo:ChemicalCompound |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:ChemicalCompound | | native | cenvo:ChemicalCompound |
 
 
 

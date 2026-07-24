@@ -18,27 +18,13 @@ _Geographical water feature type_
 URI: [cenvo:WaterGeographicalFeature](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/WaterGeographicalFeature)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| not_relevant | None | Geographical water feature type is not relevant for this record |
-| not_reported | None | Geographical water feature type was not reported |
-| river_stream_canal | None | River, stream or canal |
-| lake_pond_pool_reservoir | None | Lake, pond, pool or reservoir |
-| ocean_sea_territorial_waters | None | Ocean, sea and/or territorial waters |
-| coastal_fjord | None | Coastal waters or fjords |
-| drainage_sewer_artificial_water | None | Drainage, sewer or artificial water |
-| swamp_wetland | None | Swamp or wetland |
-| groundwater_aquifer | None | Groundwater or aquifer |
-| other | None | Other feature |
+| Value | Meaning | Description | | --- | --- | --- | | not_relevant | None | Geographical water feature type is not relevant for this record | | not_reported | None | Geographical water feature type was not reported | | river_stream_canal | None | River, stream or canal | | lake_pond_pool_reservoir | None | Lake, pond, pool or reservoir | | ocean_sea_territorial_waters | None | Ocean, sea and/or territorial waters | | coastal_fjord | None | Coastal waters or fjords | | drainage_sewer_artificial_water | None | Drainage, sewer or artificial water | | swamp_wetland | None | Swamp or wetland | | groundwater_aquifer | None | Groundwater or aquifer | | other | None | Other feature |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [water_geographical_feature](water_geographical_feature.md) | Geographical water feature type at the site |
+ | Name | Description | | ---  | --- | | [water_geographical_feature](water_geographical_feature.md) | Geographical water feature type at the site |
 
 
 

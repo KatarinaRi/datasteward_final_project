@@ -18,17 +18,7 @@ _Matrix values valid for terrestrial samples (SampleTerrestrial). All terms are 
 URI: [cenvo:MatrixTerrestrial](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/MatrixTerrestrial)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| SoilProfile | https://w3id.org/peh/matrices/SoilProfile | Composite soil profile sample covering multiple horizons |
-| O_Horizon | https://w3id.org/peh/matrices/O_Horizon | O horizon — organic horizon above mineral soil, dominated by organic material... |
-| A_Horizon | https://w3id.org/peh/matrices/A_Horizon | A horizon — topsoil mineral horizon with incorporated organic matter, darkene... |
-| E_Horizon | https://w3id.org/peh/matrices/E_Horizon | E horizon — eluviation horizon, leached of clay, iron and aluminium oxides |
-| B_Horizon | https://w3id.org/peh/matrices/B_Horizon | B horizon — illuviation horizon, enriched by materials leached from above |
-| C_Horizon | https://w3id.org/peh/matrices/C_Horizon | C horizon — parent material horizon, unconsolidated mineral material |
-| R_Horizon | https://w3id.org/peh/matrices/R_Horizon | R horizon — bedrock, consolidated hard rock |
-| S_Horizon | https://w3id.org/peh/matrices/S_Horizon | S horizon — salic horizon, enriched with soluble salts |
-| H_Horizon | https://w3id.org/peh/matrices/H_Horizon | H horizon — histic horizon, organic horizon that is saturated with water for ... |
+| Value | Meaning | Description | | --- | --- | --- | | SoilProfile | https://w3id.org/peh/matrices/SoilProfile | Composite soil profile sample covering multiple horizons | | O_Horizon | https://w3id.org/peh/matrices/O_Horizon | O horizon — organic horizon above mineral soil, dominated by organic material... | | A_Horizon | https://w3id.org/peh/matrices/A_Horizon | A horizon — topsoil mineral horizon with incorporated organic matter, darkene... | | E_Horizon | https://w3id.org/peh/matrices/E_Horizon | E horizon — eluviation horizon, leached of clay, iron and aluminium oxides | | B_Horizon | https://w3id.org/peh/matrices/B_Horizon | B horizon — illuviation horizon, enriched by materials leached from above | | C_Horizon | https://w3id.org/peh/matrices/C_Horizon | C horizon — parent material horizon, unconsolidated mineral material | | R_Horizon | https://w3id.org/peh/matrices/R_Horizon | R horizon — bedrock, consolidated hard rock | | S_Horizon | https://w3id.org/peh/matrices/S_Horizon | S horizon — salic horizon, enriched with soluble salts | | H_Horizon | https://w3id.org/peh/matrices/H_Horizon | H horizon — histic horizon, organic horizon that is saturated with water for ... |
 
 
 

@@ -23,13 +23,7 @@ URI: [cenvo:name_en](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
-| [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  yes  |
-| [OrganisationMetadata](OrganisationMetadata.md) | Shared metadata for organisations — institutions and funders |  no  |
-| [Institution](Institution.md) | Institution |  no  |
-| [Funder](Funder.md) | Funder |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  | | [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  yes  | | [OrganisationMetadata](OrganisationMetadata.md) | Shared metadata for organisations — institutions and funders |  no  | | [Institution](Institution.md) | Institution |  no  | | [Funder](Funder.md) | Funder |  no  |
 
 
 
@@ -39,17 +33,10 @@ URI: [cenvo:name_en](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md), [Campaign](Campaign.md), [OrganisationMetadata](OrganisationMetadata.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md), [Campaign](Campaign.md), [OrganisationMetadata](OrganisationMetadata.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 
 
 
@@ -81,11 +68,7 @@ URI: [cenvo:name_en](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:name_en |
-| native | cenvo:name_en |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:name_en | | native | cenvo:name_en |
 
 
 

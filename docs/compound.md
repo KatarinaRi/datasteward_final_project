@@ -23,9 +23,7 @@ URI: [cenvo:compound](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
 
 
 
@@ -35,22 +33,12 @@ URI: [cenvo:compound](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [ChemicalCompound](ChemicalCompound.md) |
-| Domain Of | [MeasurementConcentration](MeasurementConcentration.md) |
+ | Property | Value | | --- | --- | | Range | [ChemicalCompound](ChemicalCompound.md) | | Domain Of | [MeasurementConcentration](MeasurementConcentration.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MeasurementConcentration](MeasurementConcentration.md) |
+ | Property | Value | | --- | --- | | Owner | [MeasurementConcentration](MeasurementConcentration.md) |
 
 
 
@@ -84,11 +72,7 @@ URI: [cenvo:compound](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:compound |
-| native | cenvo:compound |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:compound | | native | cenvo:compound |
 
 
 

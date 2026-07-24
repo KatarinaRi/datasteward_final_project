@@ -16,15 +16,9 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `str` |
-| Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
+| Property | Value | | --- | --- | | Base | `str` | | Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
 ## Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Regex Pattern | `^[\w.+-]+@[\w-]+\.[\w.]+$` |
+ | Property | Value | | --- | --- | | Regex Pattern | `^[\w.+-]+@[\w-]+\.[\w.]+$` |
 
 
 
@@ -50,11 +44,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:string |
-| native | cenvo:EmailAddress |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:string | | native | cenvo:EmailAddress |
 
 
 

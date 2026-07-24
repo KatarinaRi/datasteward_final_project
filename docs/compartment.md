@@ -23,9 +23,7 @@ URI: [cenvo:compartment](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Biota](Biota.md) | Biota sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Biota](Biota.md) | Biota sample |  no  |
 
 
 
@@ -35,22 +33,12 @@ URI: [cenvo:compartment](https://w3id.org/chemical-exposome/schema/chemicals-out
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [EnvironmentalCompartment](EnvironmentalCompartment.md) |
-| Domain Of | [Biota](Biota.md) |
+ | Property | Value | | --- | --- | | Range | [EnvironmentalCompartment](EnvironmentalCompartment.md) | | Domain Of | [Biota](Biota.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
+ | Property | Value | | --- | --- | | Multivalued | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Biota](Biota.md) |
+ | Property | Value | | --- | --- | | Owner | [Biota](Biota.md) |
 
 
 
@@ -78,11 +66,7 @@ URI: [cenvo:compartment](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:compartment |
-| native | cenvo:compartment |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:compartment | | native | cenvo:compartment |
 
 
 

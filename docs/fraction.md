@@ -23,9 +23,7 @@ URI: [cenvo:fraction](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Aquatic](Aquatic.md) | Aquatic sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Aquatic](Aquatic.md) | Aquatic sample |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:fraction](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [AquaticMatrixFraction](AquaticMatrixFraction.md) |
-| Domain Of | [Aquatic](Aquatic.md) |
+ | Property | Value | | --- | --- | | Range | [AquaticMatrixFraction](AquaticMatrixFraction.md) | | Domain Of | [Aquatic](Aquatic.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Aquatic](Aquatic.md) |
+ | Property | Value | | --- | --- | | Owner | [Aquatic](Aquatic.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:fraction](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:fraction |
-| native | cenvo:fraction |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:fraction | | native | cenvo:fraction |
 
 
 

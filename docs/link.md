@@ -23,12 +23,7 @@ URI: [cenvo:link](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/li
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [OrganisationMetadata](OrganisationMetadata.md) | Shared metadata for organisations — institutions and funders |  no  |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
-| [Institution](Institution.md) | Institution |  no  |
-| [Funder](Funder.md) | Funder |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [OrganisationMetadata](OrganisationMetadata.md) | Shared metadata for organisations — institutions and funders |  no  | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  | | [Institution](Institution.md) | Institution |  no  | | [Funder](Funder.md) | Funder |  no  |
 
 
 
@@ -38,16 +33,10 @@ URI: [cenvo:link](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/li
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [IRI](IRI.md) |
-| Domain Of | [OrganisationMetadata](OrganisationMetadata.md), [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [IRI](IRI.md) | | Domain Of | [OrganisationMetadata](OrganisationMetadata.md), [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 
 
 
@@ -73,11 +62,7 @@ URI: [cenvo:link](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/li
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:link |
-| native | cenvo:link |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:link | | native | cenvo:link |
 
 
 

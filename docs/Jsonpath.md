@@ -16,11 +16,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `str` |
-| Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
-| Representation | `str` |
+| Property | Value | | --- | --- | | Base | `str` | | Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | | Representation | `str` |
 
 
 
@@ -48,11 +44,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:string |
-| native | cenvo:jsonpath |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:string | | native | cenvo:jsonpath |
 
 
 

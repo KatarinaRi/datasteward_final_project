@@ -18,19 +18,13 @@ _Type of monitoring activity_
 URI: [cenvo:MonitoringActivityType](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/MonitoringActivityType)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| scientific_project | None | Usually a time-limited initiative focused on the collection,  analysis, and i... |
-| monitoring_programme | None | A systematic and long-term observation of specific parameters,  organized bas... |
+| Value | Meaning | Description | | --- | --- | --- | | scientific_project | None | Usually a time-limited initiative focused on the collection,  analysis, and i... | | monitoring_programme | None | A systematic and long-term observation of specific parameters,  organized bas... |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [type](type.md) | Type of monitoring activity |
+ | Name | Description | | ---  | --- | | [type](type.md) | Type of monitoring activity |
 
 
 

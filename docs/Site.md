@@ -190,32 +190,7 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [acronym](acronym.md) | 0..1 <br/> [String](String.md) | Short name or acronym | direct |
-| [country](country.md) | 1..* <br/> [Country](Country.md) | Country code(s) according to ISO 3166-1 alpha-2 | direct |
-| [site_id](site_id.md) | 1 <br/> [String](String.md) | Unique identifier of the monitoring site where the sample was collected | direct |
-| [site_name](site_name.md) | 1 <br/> [String](String.md) | Name of the monitoring site | direct |
-| [link](link.md) | 0..1 <br/> [IRI](IRI.md) | URL with information about the institution | direct |
-| [coordinate_privacy_exception](coordinate_privacy_exception.md) | 0..1 <br/> [Boolean](Boolean.md) | Set to true (value = true) if coordinates cannot be provided for privacy, sec... | direct |
-| [coordinate_privacy_exception_reason](coordinate_privacy_exception_reason.md) | 0..1 <br/> [String](String.md) | Justification for not providing coordinates | direct |
-| [latitude](latitude.md) | 0..1 <br/> [DecimalDegree](DecimalDegree.md) | Latitude in signed decimal degrees (format 0 | direct |
-| [longitude](longitude.md) | 0..1 <br/> [DecimalDegree](DecimalDegree.md) | Longitude in signed decimal degrees (format 0 | direct |
-| [coordinate_system](coordinate_system.md) | 0..1 <br/> [CoordinateSystem](CoordinateSystem.md) | Coordinate reference system used | direct |
-| [geographic_region](geographic_region.md) | 0..1 <br/> [GeographicRegion](GeographicRegion.md) | UN M49 geographic region | direct |
-| [regional_group](regional_group.md) | 0..1 <br/> [UNRegionalGroup](UNRegionalGroup.md) | Regional group of United Nations member states | direct |
-| [nuts3](nuts3.md) | 0..1 <br/> [String](String.md) | NUTS3 region code according to the Eurostat NUTS classification (Nomenclature... | direct |
-| [year_established](year_established.md) | 0..1 <br/> [YearValue](YearValue.md) | Year of establishment of the monitoring station (YYYY) | direct |
-| [site_description](site_description.md) | 0..1 <br/> [String](String.md) | Description of the site where samples were collected | direct |
-| [managing_instance](managing_instance.md) | 0..1 <br/> [Institution](Institution.md) | The institution that manages the sampling site | direct |
-| [water_type](water_type.md) | 0..1 <br/> [WaterType](WaterType.md) | Type of water body at the site | direct |
-| [water_geographical_feature](water_geographical_feature.md) | 0..1 <br/> [WaterGeographicalFeature](WaterGeographicalFeature.md) | Geographical water feature type at the site | direct |
-| [water_treatment](water_treatment.md) | 0..1 <br/> [WaterTreatment](WaterTreatment.md) | Water treatment status at the site | direct |
-| [altitude](altitude.md) | 0..1 <br/> [Double](Double.md) | Altitude in meters above sea level (MSL) | direct |
-| [land_use](land_use.md) | 0..1 <br/> [LandUse](LandUse.md) | Land use classification according to CORINE Land Cover nomenclature | direct |
-| [river_basin](river_basin.md) | 0..1 <br/> [RiverBasin](RiverBasin.md) | River basin associated with the site, based on the EEA river basin districts ... | direct |
-| [sea](sea.md) | 0..1 <br/> [Sea](Sea.md) | Sea or ocean associated with the site, based on the Marine Regions Gazetteer | direct |
-| [soil_type](soil_type.md) | 0..1 <br/> [SoilTypeWRB](SoilTypeWRB.md) | World Reference Base for Soil Resources (WRB) 2006/2007 Reference Soil Group ... | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [acronym](acronym.md) | 0..1 [String](String.md) | Short name or acronym | direct | | [country](country.md) | 1..* [Country](Country.md) | Country code(s) according to ISO 3166-1 alpha-2 | direct | | [site_id](site_id.md) | 1 [String](String.md) | Unique identifier of the monitoring site where the sample was collected | direct | | [site_name](site_name.md) | 1 [String](String.md) | Name of the monitoring site | direct | | [link](link.md) | 0..1 [IRI](IRI.md) | URL with information about the institution | direct | | [coordinate_privacy_exception](coordinate_privacy_exception.md) | 0..1 [Boolean](Boolean.md) | Set to true (value = true) if coordinates cannot be provided for privacy, sec... | direct | | [coordinate_privacy_exception_reason](coordinate_privacy_exception_reason.md) | 0..1 [String](String.md) | Justification for not providing coordinates | direct | | [latitude](latitude.md) | 0..1 [DecimalDegree](DecimalDegree.md) | Latitude in signed decimal degrees (format 0 | direct | | [longitude](longitude.md) | 0..1 [DecimalDegree](DecimalDegree.md) | Longitude in signed decimal degrees (format 0 | direct | | [coordinate_system](coordinate_system.md) | 0..1 [CoordinateSystem](CoordinateSystem.md) | Coordinate reference system used | direct | | [geographic_region](geographic_region.md) | 0..1 [GeographicRegion](GeographicRegion.md) | UN M49 geographic region | direct | | [regional_group](regional_group.md) | 0..1 [UNRegionalGroup](UNRegionalGroup.md) | Regional group of United Nations member states | direct | | [nuts3](nuts3.md) | 0..1 [String](String.md) | NUTS3 region code according to the Eurostat NUTS classification (Nomenclature... | direct | | [year_established](year_established.md) | 0..1 [YearValue](YearValue.md) | Year of establishment of the monitoring station (YYYY) | direct | | [site_description](site_description.md) | 0..1 [String](String.md) | Description of the site where samples were collected | direct | | [managing_instance](managing_instance.md) | 0..1 [Institution](Institution.md) | The institution that manages the sampling site | direct | | [water_type](water_type.md) | 0..1 [WaterType](WaterType.md) | Type of water body at the site | direct | | [water_geographical_feature](water_geographical_feature.md) | 0..1 [WaterGeographicalFeature](WaterGeographicalFeature.md) | Geographical water feature type at the site | direct | | [water_treatment](water_treatment.md) | 0..1 [WaterTreatment](WaterTreatment.md) | Water treatment status at the site | direct | | [altitude](altitude.md) | 0..1 [Double](Double.md) | Altitude in meters above sea level (MSL) | direct | | [land_use](land_use.md) | 0..1 [LandUse](LandUse.md) | Land use classification according to CORINE Land Cover nomenclature | direct | | [river_basin](river_basin.md) | 0..1 [RiverBasin](RiverBasin.md) | River basin associated with the site, based on the EEA river basin districts ... | direct | | [sea](sea.md) | 0..1 [Sea](Sea.md) | Sea or ocean associated with the site, based on the Marine Regions Gazetteer | direct | | [soil_type](soil_type.md) | 0..1 [SoilTypeWRB](SoilTypeWRB.md) | World Reference Base for Soil Resources (WRB) 2006/2007 Reference Soil Group ... | direct |
 
 
 
@@ -227,18 +202,12 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 ### coordinates_required_when_no_privacy_exception
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'coordinate_privacy_exception': {'equals_string': 'false'}}``` |```{'latitude': {'required': True}, 'longitude': {'required': True}}``` | |
+ | Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |```{'coordinate_privacy_exception': {'equals_string': 'false'}}``` |```{'latitude': {'required': True}, 'longitude': {'required': True}}``` | |
 
 
 
 ### expert_fields_required_when_coordinates_withheld
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'coordinate_privacy_exception': {'equals_string': 'true'}}``` |```{'coordinate_privacy_exception_reason': {'required': True}, 'country': {'required': True}, 'geographic_region': {'required': True}, 'nuts3': {'required': True}, 'regional_group': {'required': True}}``` | |
+ | Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |```{'coordinate_privacy_exception': {'equals_string': 'true'}}``` |```{'coordinate_privacy_exception_reason': {'required': True}, 'country': {'required': True}, 'geographic_region': {'required': True}, 'nuts3': {'required': True}, 'regional_group': {'required': True}}``` | |
 
 
 
@@ -266,11 +235,7 @@ URI: [cenvo:Site](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Si
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Site |
-| native | cenvo:Site |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Site | | native | cenvo:Site |
 
 
 

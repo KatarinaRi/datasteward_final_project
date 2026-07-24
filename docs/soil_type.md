@@ -23,9 +23,7 @@ URI: [cenvo:soil_type](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:soil_type](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [SoilTypeWRB](SoilTypeWRB.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [SoilTypeWRB](SoilTypeWRB.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 
@@ -81,11 +70,7 @@ URI: [cenvo:soil_type](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:soil_type |
-| native | cenvo:soil_type |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:soil_type | | native | cenvo:soil_type |
 
 
 

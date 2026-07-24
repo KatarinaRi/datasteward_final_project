@@ -18,58 +18,13 @@ _Units used for chemical concentration and other parameter measurements_
 URI: [cenvo:Unit](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Unit)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| ug_m3 | None | Micrograms per cubic meter (ug/m3) |
-| ng_m3 | None | Nanograms per cubic meter (ng/m3) |
-| mg_m3 | None | Milligrams per cubic meter (mg/m3) |
-| pg_m3 | None | Picograms per cubic meter (pg/m3) |
-| ng_m2 | None | Nanograms per square meter (ng/m2) |
-| ug_m2 | None | Micrograms per square meter (ug/m2) |
-| ng_mg1 | None | Nanograms per milligram (ng/mg) |
-| ug_mg1 | None | Micrograms per milligram (ug/mg) |
-| mg_kg1 | None | Milligrams per kilogram (mg/kg) |
-| ng_g1 | None | Nanograms per gram (ng/g) |
-| ug_g1 | None | Micrograms per gram (ug/g) |
-| pg_g1 | None | Picograms per gram (pg/g) |
-| ng_sample1 | None | Nanograms per sample (ng/sample) |
-| pg_sample1 | None | Picograms per sample (pg/sample) |
-| g_l1 | None | Grams per liter (g/l) |
-| mg_l1 | None | Milligrams per liter (mg/l) |
-| ug_l1 | None | Micrograms per liter (ug/l) |
-| ng_l1 | None | Nanograms per liter (ng/l) |
-| pg_l1 | None | Picograms per liter (pg/l) |
-| ng_m2_d1 | None | Nanograms per square meter per day (ng/m2/d) |
-| pg_m2_d1 | None | Picograms per square meter per day (pg/m2/d) |
-| g_cm3 | None | Grams per cubic centimeter (g/cm3) |
-| mg_dl | None | Milligrams per deciliter (mg/dl) |
-| ppb | None | Parts per billion |
-| ppm | None | Parts per million |
-| psu | None | Practical Salinity Units |
-| m3 | None | Cubic meter (m3) |
-| m | None | Meter (m) |
-| cm | None | Centimeter (cm) |
-| g | None | Gram (g) |
-| celsius | None | Degrees Celsius (deg C) |
-| m_s1 | None | Meters per second (m/s) |
-| degrees | None | Degrees (wind direction) |
-| kPa | None | Kilopascal (kPa) |
-| Qv_kg_kg | None | Water vapor mixing ratio (Qv, kg/kg) |
-| percent | None | Percentage (%) |
-| unitless | None | Dimensionless or unitless |
-| meq_kg1 | None | Milliequivalents per kilogram (meq/kg) |
-| minus | None | Dimensionless ratio (-) |
-| kg_kg | None | Kilograms per kilogram — water vapor mixing ratio (kg/kg) |
-| um | None | Micrometer (um) — used for particle size granularity |
+| Value | Meaning | Description | | --- | --- | --- | | ug_m3 | None | Micrograms per cubic meter (ug/m3) | | ng_m3 | None | Nanograms per cubic meter (ng/m3) | | mg_m3 | None | Milligrams per cubic meter (mg/m3) | | pg_m3 | None | Picograms per cubic meter (pg/m3) | | ng_m2 | None | Nanograms per square meter (ng/m2) | | ug_m2 | None | Micrograms per square meter (ug/m2) | | ng_mg1 | None | Nanograms per milligram (ng/mg) | | ug_mg1 | None | Micrograms per milligram (ug/mg) | | mg_kg1 | None | Milligrams per kilogram (mg/kg) | | ng_g1 | None | Nanograms per gram (ng/g) | | ug_g1 | None | Micrograms per gram (ug/g) | | pg_g1 | None | Picograms per gram (pg/g) | | ng_sample1 | None | Nanograms per sample (ng/sample) | | pg_sample1 | None | Picograms per sample (pg/sample) | | g_l1 | None | Grams per liter (g/l) | | mg_l1 | None | Milligrams per liter (mg/l) | | ug_l1 | None | Micrograms per liter (ug/l) | | ng_l1 | None | Nanograms per liter (ng/l) | | pg_l1 | None | Picograms per liter (pg/l) | | ng_m2_d1 | None | Nanograms per square meter per day (ng/m2/d) | | pg_m2_d1 | None | Picograms per square meter per day (pg/m2/d) | | g_cm3 | None | Grams per cubic centimeter (g/cm3) | | mg_dl | None | Milligrams per deciliter (mg/dl) | | ppb | None | Parts per billion | | ppm | None | Parts per million | | psu | None | Practical Salinity Units | | m3 | None | Cubic meter (m3) | | m | None | Meter (m) | | cm | None | Centimeter (cm) | | g | None | Gram (g) | | celsius | None | Degrees Celsius (deg C) | | m_s1 | None | Meters per second (m/s) | | degrees | None | Degrees (wind direction) | | kPa | None | Kilopascal (kPa) | | Qv_kg_kg | None | Water vapor mixing ratio (Qv, kg/kg) | | percent | None | Percentage (%) | | unitless | None | Dimensionless or unitless | | meq_kg1 | None | Milliequivalents per kilogram (meq/kg) | | minus | None | Dimensionless ratio (-) | | kg_kg | None | Kilograms per kilogram — water vapor mixing ratio (kg/kg) | | um | None | Micrometer (um) — used for particle size granularity |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [unit](unit.md) | Unit of measurement |
+ | Name | Description | | ---  | --- | | [unit](unit.md) | Unit of measurement |
 
 
 

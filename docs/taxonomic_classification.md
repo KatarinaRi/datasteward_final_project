@@ -23,9 +23,7 @@ URI: [cenvo:taxonomic_classification](https://w3id.org/chemical-exposome/schema/
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Biota](Biota.md) | Biota sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Biota](Biota.md) | Biota sample |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:taxonomic_classification](https://w3id.org/chemical-exposome/schema/
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Taxon](Taxon.md) |
-| Domain Of | [Biota](Biota.md) |
+ | Property | Value | | --- | --- | | Range | [Taxon](Taxon.md) | | Domain Of | [Biota](Biota.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Biota](Biota.md) |
+ | Property | Value | | --- | --- | | Owner | [Biota](Biota.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:taxonomic_classification](https://w3id.org/chemical-exposome/schema/
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:taxonomic_classification |
-| native | cenvo:taxonomic_classification |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:taxonomic_classification | | native | cenvo:taxonomic_classification |
 
 
 

@@ -16,10 +16,7 @@ URI: [xsd:gYear](http://www.w3.org/2001/XMLSchema#gYear)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `int` |
-| Type URI | [xsd:gYear](http://www.w3.org/2001/XMLSchema#gYear) |
+| Property | Value | | --- | --- | | Base | `int` | | Type URI | [xsd:gYear](http://www.w3.org/2001/XMLSchema#gYear) |
 
 
 
@@ -43,11 +40,7 @@ URI: [xsd:gYear](http://www.w3.org/2001/XMLSchema#gYear)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:gYear |
-| native | cenvo:YearValue |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:gYear | | native | cenvo:YearValue |
 
 
 

@@ -16,11 +16,7 @@ URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `str` |
-| Type URI | [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) |
-| Representation | `str` |
+| Property | Value | | --- | --- | | Base | `str` | | Type URI | [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) | | Representation | `str` |
 
 
 
@@ -48,11 +44,7 @@ URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | linkml:DateOrDatetime |
-| native | cenvo:date_or_datetime |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | linkml:DateOrDatetime | | native | cenvo:date_or_datetime |
 
 
 

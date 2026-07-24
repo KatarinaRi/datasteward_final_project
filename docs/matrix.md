@@ -18,12 +18,7 @@ URI: [cenvo:matrix](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  |
-| [Aquatic](Aquatic.md) | Aquatic sample |  no  |
-| [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  |
-| [Biota](Biota.md) | Biota sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  | | [Aquatic](Aquatic.md) | Aquatic sample |  no  | | [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  | | [Biota](Biota.md) | Biota sample |  no  |
 
 
 
@@ -33,16 +28,10 @@ URI: [cenvo:matrix](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Atmospheric](Atmospheric.md), [Aquatic](Aquatic.md), [Terrestrial](Terrestrial.md), [Biota](Biota.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Atmospheric](Atmospheric.md), [Aquatic](Aquatic.md), [Terrestrial](Terrestrial.md), [Biota](Biota.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 
 
 
@@ -61,11 +50,7 @@ URI: [cenvo:matrix](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:matrix |
-| native | cenvo:matrix |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:matrix | | native | cenvo:matrix |
 
 
 

@@ -23,16 +23,7 @@ URI: [cenvo:sample_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Sample](Sample.md) | Abstract base class for all sample types |  yes  |
-| [Observation](Observation.md) | Observation - concentration measurement or other parameter |  no  |
-| [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  |
-| [Aquatic](Aquatic.md) | Aquatic sample |  no  |
-| [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  |
-| [Biota](Biota.md) | Biota sample |  no  |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
-| [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Sample](Sample.md) | Abstract base class for all sample types |  yes  | | [Observation](Observation.md) | Observation - concentration measurement or other parameter |  no  | | [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  | | [Aquatic](Aquatic.md) | Aquatic sample |  no  | | [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  | | [Biota](Biota.md) | Biota sample |  no  | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  | | [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
 
 
 
@@ -42,17 +33,10 @@ URI: [cenvo:sample_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Sample](Sample.md), [Observation](Observation.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Sample](Sample.md), [Observation](Observation.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 
 
 
@@ -84,11 +68,7 @@ URI: [cenvo:sample_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:sample_id |
-| native | cenvo:sample_id |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:sample_id | | native | cenvo:sample_id |
 
 
 

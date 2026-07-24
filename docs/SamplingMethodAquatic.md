@@ -18,9 +18,7 @@ _Sampling method used to collect aquatic samples (water, sediment). Placeholder 
 URI: [cenvo:SamplingMethodAquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/SamplingMethodAquatic)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| PLACEHOLDER | None | Placeholder — do not use in production |
+| Value | Meaning | Description | | --- | --- | --- | | PLACEHOLDER | None | Placeholder — do not use in production |
 
 
 

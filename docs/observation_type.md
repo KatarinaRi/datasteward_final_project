@@ -23,11 +23,7 @@ URI: [cenvo:observation_type](https://w3id.org/chemical-exposome/schema/chemical
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Observation](Observation.md) | Observation - concentration measurement or other parameter |  no  |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
-| [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Observation](Observation.md) | Observation - concentration measurement or other parameter |  no  | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  | | [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
 
 
 
@@ -37,23 +33,12 @@ URI: [cenvo:observation_type](https://w3id.org/chemical-exposome/schema/chemical
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [ObservationType](ObservationType.md) |
-| Domain Of | [Observation](Observation.md) |
+ | Property | Value | | --- | --- | | Range | [ObservationType](ObservationType.md) | | Domain Of | [Observation](Observation.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Designates Type | Yes |
-| Owner | [Observation](Observation.md) |
+ | Property | Value | | --- | --- | | Designates Type | Yes | | Owner | [Observation](Observation.md) |
 
 
 
@@ -87,11 +72,7 @@ URI: [cenvo:observation_type](https://w3id.org/chemical-exposome/schema/chemical
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:observation_type |
-| native | cenvo:observation_type |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:observation_type | | native | cenvo:observation_type |
 
 
 

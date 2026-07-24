@@ -23,9 +23,7 @@ URI: [cenvo:email](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/e
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Contact](Contact.md) | A contact person associated with the monitoring activity |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Contact](Contact.md) | A contact person associated with the monitoring activity |  no  |
 
 
 
@@ -35,17 +33,10 @@ URI: [cenvo:email](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/e
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [EmailAddress](EmailAddress.md) |
-| Domain Of | [Contact](Contact.md) |
+ | Property | Value | | --- | --- | | Range | [EmailAddress](EmailAddress.md) | | Domain Of | [Contact](Contact.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 
 
 
@@ -77,11 +68,7 @@ URI: [cenvo:email](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/e
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:email |
-| native | cenvo:email |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:email | | native | cenvo:email |
 
 
 

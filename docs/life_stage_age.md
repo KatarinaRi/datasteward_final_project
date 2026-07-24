@@ -23,9 +23,7 @@ URI: [cenvo:life_stage_age](https://w3id.org/chemical-exposome/schema/chemicals-
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Biota](Biota.md) | Biota sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Biota](Biota.md) | Biota sample |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:life_stage_age](https://w3id.org/chemical-exposome/schema/chemicals-
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Biota](Biota.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Biota](Biota.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Biota](Biota.md) |
+ | Property | Value | | --- | --- | | Owner | [Biota](Biota.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:life_stage_age](https://w3id.org/chemical-exposome/schema/chemicals-
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:life_stage_age |
-| native | cenvo:life_stage_age |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:life_stage_age | | native | cenvo:life_stage_age |
 
 
 

@@ -16,15 +16,9 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `str` |
-| Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
+| Property | Value | | --- | --- | | Base | `str` | | Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
 ## Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Regex Pattern | `^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$` |
+ | Property | Value | | --- | --- | | Regex Pattern | `^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$` |
 
 
 
@@ -50,11 +44,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:string |
-| native | cenvo:OrcidIdentifier |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:string | | native | cenvo:OrcidIdentifier |
 
 
 

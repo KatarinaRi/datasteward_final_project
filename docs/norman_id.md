@@ -23,9 +23,7 @@ URI: [cenvo:norman_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:norman_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [ChemicalCompound](ChemicalCompound.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Owner | [ChemicalCompound](ChemicalCompound.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:norman_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:norman_id |
-| native | cenvo:norman_id |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:norman_id | | native | cenvo:norman_id |
 
 
 

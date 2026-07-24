@@ -18,21 +18,13 @@ _The geographic scale of the monitoring coverage  (e.g. international, national,
 URI: [cenvo:ImplementationLevel](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/ImplementationLevel)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| international | None | Covers international area |
-| national | None | Covers national area |
-| regional | None | Covers regional area |
-| local | None | Covers local area |
+| Value | Meaning | Description | | --- | --- | --- | | international | None | Covers international area | | national | None | Covers national area | | regional | None | Covers regional area | | local | None | Covers local area |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [implementation_level](implementation_level.md) | The geographic scale of the monitoring coverage (international, national, reg... |
+ | Name | Description | | ---  | --- | | [implementation_level](implementation_level.md) | The geographic scale of the monitoring coverage (international, national, reg... |
 
 
 

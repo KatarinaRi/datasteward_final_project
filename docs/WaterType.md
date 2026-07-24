@@ -18,27 +18,13 @@ _Type of water body_
 URI: [cenvo:WaterType](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/WaterType)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| salt_marine | None | Salt or marine water |
-| transitional_brackish | None | Transitional or brackish water |
-| fresh_surface | None | Fresh or surface water |
-| ground | None | Groundwater |
-| sludge_waste | None | Sludge or waste water |
-| liquid_growth_medium | None | Liquid growth medium |
-| stormwater | None | Stormwater |
-| leachate | None | A liquid that is created when water percolates through permeable materials li... |
-| not_relevant | None | Water type is not relevant for this record |
-| not_reported | None | Water type was not reported |
+| Value | Meaning | Description | | --- | --- | --- | | salt_marine | None | Salt or marine water | | transitional_brackish | None | Transitional or brackish water | | fresh_surface | None | Fresh or surface water | | ground | None | Groundwater | | sludge_waste | None | Sludge or waste water | | liquid_growth_medium | None | Liquid growth medium | | stormwater | None | Stormwater | | leachate | None | A liquid that is created when water percolates through permeable materials li... | | not_relevant | None | Water type is not relevant for this record | | not_reported | None | Water type was not reported |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [water_type](water_type.md) | Type of water body at the site |
+ | Name | Description | | ---  | --- | | [water_type](water_type.md) | Type of water body at the site |
 
 
 

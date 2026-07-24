@@ -18,31 +18,13 @@ _Matrix values valid for atmospheric samples (SampleAtmospheric). All terms are 
 URI: [cenvo:MatrixAtmospheric](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/MatrixAtmospheric)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| AirTotal | https://w3id.org/peh/matrices/AirTotal | Total air — no phase separation applied |
-| AirGasPhase | https://w3id.org/peh/matrices/AirGasPhase | Gas phase fraction of air |
-| AirParticulatePhase | https://w3id.org/peh/matrices/AirParticulatePhase | Particulate phase fraction of air |
-| TotalSuspendedParticles | https://w3id.org/peh/matrices/TotalSuspendedParticles | Total suspended particles (TSP) in air |
-| PM10 | https://w3id.org/peh/matrices/PM10 | Particulate matter with aerodynamic diameter <= 10 um |
-| PM2_5 | https://w3id.org/peh/matrices/PM2_5 | Particulate matter with aerodynamic diameter <= 2 |
-| InhalableFraction | https://w3id.org/peh/matrices/InhalableFraction | Inhalable fraction of airborne particles — fraction deposited in the nose, mo... |
-| RespirableFraction | https://w3id.org/peh/matrices/RespirableFraction | Respirable fraction of airborne particles — fraction reaching the alveolar re... |
-| PassiveSamplerFraction | https://w3id.org/peh/matrices/PassiveSamplerFraction | Fraction collected by passive air sampler — integrates gas and/or particulate... |
-| DepositionTotal | https://w3id.org/peh/matrices/DepositionTotal | Total atmospheric deposition (wet + dry combined) |
-| DepositionWet | https://w3id.org/peh/matrices/DepositionWet | Wet atmospheric deposition (rain, snow, fog) |
-| Dust | https://w3id.org/peh/matrices/Dust | Dust — general, unspecified surface or airborne dust |
-| SurfaceDust | https://w3id.org/peh/matrices/SurfaceDust | Dust collected from surfaces (e |
-| FloorDust | https://w3id.org/peh/matrices/FloorDust | Dust collected from floor surfaces |
+| Value | Meaning | Description | | --- | --- | --- | | AirTotal | https://w3id.org/peh/matrices/AirTotal | Total air — no phase separation applied | | AirGasPhase | https://w3id.org/peh/matrices/AirGasPhase | Gas phase fraction of air | | AirParticulatePhase | https://w3id.org/peh/matrices/AirParticulatePhase | Particulate phase fraction of air | | TotalSuspendedParticles | https://w3id.org/peh/matrices/TotalSuspendedParticles | Total suspended particles (TSP) in air | | PM10 | https://w3id.org/peh/matrices/PM10 | Particulate matter with aerodynamic diameter <= 10 um | | PM2_5 | https://w3id.org/peh/matrices/PM2_5 | Particulate matter with aerodynamic diameter <= 2 | | InhalableFraction | https://w3id.org/peh/matrices/InhalableFraction | Inhalable fraction of airborne particles — fraction deposited in the nose, mo... | | RespirableFraction | https://w3id.org/peh/matrices/RespirableFraction | Respirable fraction of airborne particles — fraction reaching the alveolar re... | | PassiveSamplerFraction | https://w3id.org/peh/matrices/PassiveSamplerFraction | Fraction collected by passive air sampler — integrates gas and/or particulate... | | DepositionTotal | https://w3id.org/peh/matrices/DepositionTotal | Total atmospheric deposition (wet + dry combined) | | DepositionWet | https://w3id.org/peh/matrices/DepositionWet | Wet atmospheric deposition (rain, snow, fog) | | Dust | https://w3id.org/peh/matrices/Dust | Dust — general, unspecified surface or airborne dust | | SurfaceDust | https://w3id.org/peh/matrices/SurfaceDust | Dust collected from surfaces (e | | FloorDust | https://w3id.org/peh/matrices/FloorDust | Dust collected from floor surfaces |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [matrix](matrix.md) | Sampled matrix |
+ | Name | Description | | ---  | --- | | [matrix](matrix.md) | Sampled matrix |
 
 
 

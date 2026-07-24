@@ -18,22 +18,13 @@ _Biological sex of a sampled organism_
 URI: [cenvo:Gender](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Gender)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| male | None | Male organism |
-| female | None | Female organism |
-| hermaphrodite | None | Hermaphrodite organism — both male and female reproductive organs |
-| not_specified | None | Sex not recorded or unknown |
-| not_relevant | None | Sex not relevant for this sample type |
+| Value | Meaning | Description | | --- | --- | --- | | male | None | Male organism | | female | None | Female organism | | hermaphrodite | None | Hermaphrodite organism — both male and female reproductive organs | | not_specified | None | Sex not recorded or unknown | | not_relevant | None | Sex not relevant for this sample type |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [gender](gender.md) | Collected organism gender |
+ | Name | Description | | ---  | --- | | [gender](gender.md) | Collected organism gender |
 
 
 

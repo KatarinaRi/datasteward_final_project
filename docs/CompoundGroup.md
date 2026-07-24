@@ -18,35 +18,13 @@ _Chemical group classification as used in the PARC WP9 compound list. Groups are
 URI: [cenvo:CompoundGroup](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/CompoundGroup)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| PFAS | None | Per- and polyfluoroalkyl substances |
-| PCBs | None | Polychlorinated biphenyls |
-| PBDEs | None | Polybrominated diphenyl ethers |
-| PAHs | None | Polycyclic aromatic hydrocarbons |
-| OCPs | None | Organochlorine pesticides |
-| biocides | None | Biocidal substances |
-| pharmaceuticals | None | Pharmaceutical compounds and metabolites |
-| hormones | None | Natural and synthetic hormones |
-| heavy_metals | None | Heavy metals and metalloids |
-| dioxins_furans | None | Dioxins and furans (PCDD/PCDF) |
-| HBCDs | None | Hexabromocyclododecanes |
-| PFRs | None | Phosphorus flame retardants |
-| UV_filters | None | UV filters and stabilizers |
-| plasticizers | None | Plasticizers including phthalates |
-| siloxanes | None | Siloxanes and silicones |
-| musks | None | Synthetic and natural musks |
-| pesticides_other | None | Other pesticides not covered above |
-| other | None | Other compounds not classified above |
+| Value | Meaning | Description | | --- | --- | --- | | PFAS | None | Per- and polyfluoroalkyl substances | | PCBs | None | Polychlorinated biphenyls | | PBDEs | None | Polybrominated diphenyl ethers | | PAHs | None | Polycyclic aromatic hydrocarbons | | OCPs | None | Organochlorine pesticides | | biocides | None | Biocidal substances | | pharmaceuticals | None | Pharmaceutical compounds and metabolites | | hormones | None | Natural and synthetic hormones | | heavy_metals | None | Heavy metals and metalloids | | dioxins_furans | None | Dioxins and furans (PCDD/PCDF) | | HBCDs | None | Hexabromocyclododecanes | | PFRs | None | Phosphorus flame retardants | | UV_filters | None | UV filters and stabilizers | | plasticizers | None | Plasticizers including phthalates | | siloxanes | None | Siloxanes and silicones | | musks | None | Synthetic and natural musks | | pesticides_other | None | Other pesticides not covered above | | other | None | Other compounds not classified above |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [compound_group](compound_group.md) | Chemical group classification of the compound as defined in the PARC WP9 comp... |
+ | Name | Description | | ---  | --- | | [compound_group](compound_group.md) | Chemical group classification of the compound as defined in the PARC WP9 comp... |
 
 
 

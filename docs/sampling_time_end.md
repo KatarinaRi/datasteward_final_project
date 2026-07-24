@@ -23,13 +23,7 @@ URI: [cenvo:sampling_time_end](https://w3id.org/chemical-exposome/schema/chemica
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Sample](Sample.md) | Abstract base class for all sample types |  no  |
-| [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  |
-| [Aquatic](Aquatic.md) | Aquatic sample |  no  |
-| [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  |
-| [Biota](Biota.md) | Biota sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Sample](Sample.md) | Abstract base class for all sample types |  no  | | [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  | | [Aquatic](Aquatic.md) | Aquatic sample |  no  | | [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  | | [Biota](Biota.md) | Biota sample |  no  |
 
 
 
@@ -39,16 +33,10 @@ URI: [cenvo:sampling_time_end](https://w3id.org/chemical-exposome/schema/chemica
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Time](Time.md) |
-| Domain Of | [Sample](Sample.md) |
+ | Property | Value | | --- | --- | | Range | [Time](Time.md) | | Domain Of | [Sample](Sample.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 
 
 
@@ -74,11 +62,7 @@ URI: [cenvo:sampling_time_end](https://w3id.org/chemical-exposome/schema/chemica
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:sampling_time_end |
-| native | cenvo:sampling_time_end |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:sampling_time_end | | native | cenvo:sampling_time_end |
 
 
 

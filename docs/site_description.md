@@ -23,9 +23,7 @@ URI: [cenvo:site_description](https://w3id.org/chemical-exposome/schema/chemical
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:site_description](https://w3id.org/chemical-exposome/schema/chemical
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:site_description](https://w3id.org/chemical-exposome/schema/chemical
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:site_description |
-| native | cenvo:site_description |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:site_description | | native | cenvo:site_description |
 
 
 

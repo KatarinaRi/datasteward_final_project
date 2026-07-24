@@ -23,9 +23,7 @@ URI: [cenvo:analysis_date](https://w3id.org/chemical-exposome/schema/chemicals-o
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:analysis_date](https://w3id.org/chemical-exposome/schema/chemicals-o
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Date](Date.md) |
-| Domain Of | [MeasurementConcentration](MeasurementConcentration.md) |
+ | Property | Value | | --- | --- | | Range | [Date](Date.md) | | Domain Of | [MeasurementConcentration](MeasurementConcentration.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MeasurementConcentration](MeasurementConcentration.md) |
+ | Property | Value | | --- | --- | | Owner | [MeasurementConcentration](MeasurementConcentration.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:analysis_date](https://w3id.org/chemical-exposome/schema/chemicals-o
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:analysis_date |
-| native | cenvo:analysis_date |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:analysis_date | | native | cenvo:analysis_date |
 
 
 

@@ -23,9 +23,7 @@ URI: [cenvo:altitude](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:altitude](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Double](Double.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [Double](Double.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:altitude](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:altitude |
-| native | cenvo:altitude |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:altitude | | native | cenvo:altitude |
 
 
 

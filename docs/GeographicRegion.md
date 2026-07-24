@@ -18,22 +18,13 @@ _UN M49 geographic region. Source: https://unstats.un.org/unsd/methodology/m49/_
 URI: [cenvo:GeographicRegion](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/GeographicRegion)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| Africa | None | Africa |
-| Americas | None | Americas |
-| Asia | None | Asia |
-| Europe | None | Europe |
-| Oceania | None | Oceania |
+| Value | Meaning | Description | | --- | --- | --- | | Africa | None | Africa | | Americas | None | Americas | | Asia | None | Asia | | Europe | None | Europe | | Oceania | None | Oceania |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [geographic_region](geographic_region.md) | UN M49 geographic region |
+ | Name | Description | | ---  | --- | | [geographic_region](geographic_region.md) | UN M49 geographic region |
 
 
 

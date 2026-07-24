@@ -16,11 +16,7 @@ URI: [xsd:time](http://www.w3.org/2001/XMLSchema#time)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `XSDTime` |
-| Type URI | [xsd:time](http://www.w3.org/2001/XMLSchema#time) |
-| Representation | `str` |
+| Property | Value | | --- | --- | | Base | `XSDTime` | | Type URI | [xsd:time](http://www.w3.org/2001/XMLSchema#time) | | Representation | `str` |
 
 
 
@@ -49,12 +45,7 @@ URI: [xsd:time](http://www.w3.org/2001/XMLSchema#time)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:time |
-| native | cenvo:time |
-| exact | schema:Time |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:time | | native | cenvo:time | | exact | schema:Time |
 
 
 

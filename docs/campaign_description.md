@@ -23,9 +23,7 @@ URI: [cenvo:campaign_description](https://w3id.org/chemical-exposome/schema/chem
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:campaign_description](https://w3id.org/chemical-exposome/schema/chem
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Campaign](Campaign.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Campaign](Campaign.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Campaign](Campaign.md) |
+ | Property | Value | | --- | --- | | Owner | [Campaign](Campaign.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:campaign_description](https://w3id.org/chemical-exposome/schema/chem
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:campaign_description |
-| native | cenvo:campaign_description |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:campaign_description | | native | cenvo:campaign_description |
 
 
 

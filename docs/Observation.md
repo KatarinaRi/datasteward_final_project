@@ -27,8 +27,7 @@ URI: [cenvo:Observation](https://w3id.org/chemical-exposome/schema/chemicals-out
     class Observation
     click Observation href "../Observation/"
       Observation <|-- MeasurementConcentration
-        click MeasurementConcentration href "../MeasurementConcentration/"
-      Observation <|-- MeasurementParameter
+        click MeasurementConcentration href "../MeasurementConcentration/"       Observation <|-- MeasurementParameter
         click MeasurementParameter href "../MeasurementParameter/"
       
       Observation : observation_type
@@ -59,10 +58,7 @@ URI: [cenvo:Observation](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [sample_id](sample_id.md) | 1 <br/> [String](String.md) | Unique identifier for the sample | direct |
-| [observation_type](observation_type.md) | 1 <br/> [ObservationType](ObservationType.md) | Type of measurement/observation: i) Chemical concentration in the environment... | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [sample_id](sample_id.md) | 1 [String](String.md) | Unique identifier for the sample | direct | | [observation_type](observation_type.md) | 1 [ObservationType](ObservationType.md) | Type of measurement/observation: i) Chemical concentration in the environment... | direct |
 
 
 
@@ -93,11 +89,7 @@ URI: [cenvo:Observation](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Observation |
-| native | cenvo:Observation |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Observation | | native | cenvo:Observation |
 
 
 

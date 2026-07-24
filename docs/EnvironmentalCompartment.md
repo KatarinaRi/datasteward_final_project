@@ -18,20 +18,13 @@ _Environmental compartment where a biota organism was sampled from. Excludes Bio
 URI: [cenvo:EnvironmentalCompartment](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/EnvironmentalCompartment)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| Atmospheric | None | Atmospheric compartment — air, particles, deposition |
-| Aquatic | None | Aquatic compartment — water, sediment |
-| Terrestrial | None | Terrestrial compartment — soil |
+| Value | Meaning | Description | | --- | --- | --- | | Atmospheric | None | Atmospheric compartment — air, particles, deposition | | Aquatic | None | Aquatic compartment — water, sediment | | Terrestrial | None | Terrestrial compartment — soil |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [compartment](compartment.md) | The environmental compartment where the organism was sampled from |
+ | Name | Description | | ---  | --- | | [compartment](compartment.md) | The environmental compartment where the organism was sampled from |
 
 
 

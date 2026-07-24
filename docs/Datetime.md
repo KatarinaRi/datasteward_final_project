@@ -16,11 +16,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `XSDDateTime` |
-| Type URI | [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) |
-| Representation | `str` |
+| Property | Value | | --- | --- | | Base | `XSDDateTime` | | Type URI | [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | | Representation | `str` |
 
 
 
@@ -48,12 +44,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:dateTime |
-| native | cenvo:datetime |
-| exact | schema:DateTime |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:dateTime | | native | cenvo:datetime | | exact | schema:DateTime |
 
 
 

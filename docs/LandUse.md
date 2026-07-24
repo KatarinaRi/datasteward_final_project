@@ -18,62 +18,13 @@ _CORINE Land Cover (CLC) land use classification. Coordination of Information on
 URI: [cenvo:LandUse](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/LandUse)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| continuous_urban_fabric | http://www.w3.org/2015/03/corine#clc111 | Continuous urban fabric (CLC 111) |
-| discontinuous_urban_fabric | http://www.w3.org/2015/03/corine#clc112 | Discontinuous urban fabric (CLC 112) |
-| industrial_or_commercial_units | http://www.w3.org/2015/03/corine#clc121 | Industrial or commercial units (CLC 121) |
-| road_and_rail_networks | http://www.w3.org/2015/03/corine#clc122 | Road and rail networks and associated land (CLC 122) |
-| port_areas | http://www.w3.org/2015/03/corine#clc123 | Port areas (CLC 123) |
-| airports | http://www.w3.org/2015/03/corine#clc124 | Airports (CLC 124) |
-| mineral_extraction_sites | http://www.w3.org/2015/03/corine#clc131 | Mineral extraction sites (CLC 131) |
-| dump_sites | http://www.w3.org/2015/03/corine#clc132 | Dump sites (CLC 132) |
-| construction_sites | http://www.w3.org/2015/03/corine#clc133 | Construction sites (CLC 133) |
-| green_urban_areas | http://www.w3.org/2015/03/corine#clc141 | Green urban areas (CLC 141) |
-| sport_and_leisure_facilities | http://www.w3.org/2015/03/corine#clc142 | Sport and leisure facilities (CLC 142) |
-| non_irrigated_arable_land | http://www.w3.org/2015/03/corine#clc211 | Non-irrigated arable land (CLC 211) |
-| permanently_irrigated_land | http://www.w3.org/2015/03/corine#clc212 | Permanently irrigated land (CLC 212) |
-| fruit_trees_and_berry_plantations | http://www.w3.org/2015/03/corine#clc222 | Fruit trees and berry plantations (CLC 222) |
-| olive_groves | http://www.w3.org/2015/03/corine#clc223 | Olive groves (CLC 223) |
-| pastures | http://www.w3.org/2015/03/corine#clc231 | Pastures (CLC 231) |
-| annual_crops_associated_with_permanent_crops | http://www.w3.org/2015/03/corine#clc241 | Annual crops associated with permanent crops (CLC 241) |
-| complex_cultivation_patterns | http://www.w3.org/2015/03/corine#clc242 | Complex cultivation patterns (CLC 242) |
-| land_principally_occupied_by_agriculture | http://www.w3.org/2015/03/corine#clc243 | Land principally occupied by agriculture, with significant areas of natural v... |
-| agro_forestry_areas | http://www.w3.org/2015/03/corine#clc244 | Agro-forestry areas (CLC 244) |
-| broad_leaved_forest | http://www.w3.org/2015/03/corine#clc311 | Broad-leaved forest (CLC 311) |
-| coniferous_forest | http://www.w3.org/2015/03/corine#clc312 | Coniferous forest (CLC 312) |
-| mixed_forest | http://www.w3.org/2015/03/corine#clc313 | Mixed forest (CLC 313) |
-| natural_grasslands | http://www.w3.org/2015/03/corine#clc321 | Natural grasslands (CLC 321) |
-| moors_and_heathland | http://www.w3.org/2015/03/corine#clc322 | Moors and heathland (CLC 322) |
-| sclerophyllous_vegetation | http://www.w3.org/2015/03/corine#clc323 | Sclerophyllous vegetation (CLC 323) |
-| transitional_woodland_shrub | http://www.w3.org/2015/03/corine#clc324 | Transitional woodland-shrub (CLC 324) |
-| beaches_dunes_sands | http://www.w3.org/2015/03/corine#clc331 | Beaches, dunes, sands (CLC 331) |
-| bare_rocks | http://www.w3.org/2015/03/corine#clc332 | Bare rocks (CLC 332) |
-| sparsely_vegetated_areas | http://www.w3.org/2015/03/corine#clc333 | Sparsely vegetated areas (CLC 333) |
-| burnt_areas | http://www.w3.org/2015/03/corine#clc334 | Burnt areas (CLC 334) |
-| glaciers_and_perpetual_snow | http://www.w3.org/2015/03/corine#clc335 | Glaciers and perpetual snow (CLC 335) |
-| inland_marshes | http://www.w3.org/2015/03/corine#clc411 | Inland marshes (CLC 411) |
-| peat_bogs | http://www.w3.org/2015/03/corine#clc412 | Peat bogs (CLC 412) |
-| salt_marshes | http://www.w3.org/2015/03/corine#clc421 | Salt marshes (CLC 421) |
-| salines | http://www.w3.org/2015/03/corine#clc422 | Salines (CLC 422) |
-| intertidal_flats | http://www.w3.org/2015/03/corine#clc423 | Intertidal flats (CLC 423) |
-| water_courses | http://www.w3.org/2015/03/corine#clc511 | Water courses (CLC 511) |
-| water_bodies | http://www.w3.org/2015/03/corine#clc512 | Water bodies (CLC 512) |
-| coastal_lagoons | http://www.w3.org/2015/03/corine#clc521 | Coastal lagoons (CLC 521) |
-| estuaries | http://www.w3.org/2015/03/corine#clc522 | Estuaries (CLC 522) |
-| sea_and_ocean | http://www.w3.org/2015/03/corine#clc523 | Sea and ocean (CLC 523) |
-| unclassified_land_surface | None | Unclassified land surface (CLC 990) |
-| unclassified_water_bodies | None | Unclassified water bodies (CLC 995) |
-| no_data | None | No data (CLC 999) |
+| Value | Meaning | Description | | --- | --- | --- | | continuous_urban_fabric | http://www.w3.org/2015/03/corine#clc111 | Continuous urban fabric (CLC 111) | | discontinuous_urban_fabric | http://www.w3.org/2015/03/corine#clc112 | Discontinuous urban fabric (CLC 112) | | industrial_or_commercial_units | http://www.w3.org/2015/03/corine#clc121 | Industrial or commercial units (CLC 121) | | road_and_rail_networks | http://www.w3.org/2015/03/corine#clc122 | Road and rail networks and associated land (CLC 122) | | port_areas | http://www.w3.org/2015/03/corine#clc123 | Port areas (CLC 123) | | airports | http://www.w3.org/2015/03/corine#clc124 | Airports (CLC 124) | | mineral_extraction_sites | http://www.w3.org/2015/03/corine#clc131 | Mineral extraction sites (CLC 131) | | dump_sites | http://www.w3.org/2015/03/corine#clc132 | Dump sites (CLC 132) | | construction_sites | http://www.w3.org/2015/03/corine#clc133 | Construction sites (CLC 133) | | green_urban_areas | http://www.w3.org/2015/03/corine#clc141 | Green urban areas (CLC 141) | | sport_and_leisure_facilities | http://www.w3.org/2015/03/corine#clc142 | Sport and leisure facilities (CLC 142) | | non_irrigated_arable_land | http://www.w3.org/2015/03/corine#clc211 | Non-irrigated arable land (CLC 211) | | permanently_irrigated_land | http://www.w3.org/2015/03/corine#clc212 | Permanently irrigated land (CLC 212) | | fruit_trees_and_berry_plantations | http://www.w3.org/2015/03/corine#clc222 | Fruit trees and berry plantations (CLC 222) | | olive_groves | http://www.w3.org/2015/03/corine#clc223 | Olive groves (CLC 223) | | pastures | http://www.w3.org/2015/03/corine#clc231 | Pastures (CLC 231) | | annual_crops_associated_with_permanent_crops | http://www.w3.org/2015/03/corine#clc241 | Annual crops associated with permanent crops (CLC 241) | | complex_cultivation_patterns | http://www.w3.org/2015/03/corine#clc242 | Complex cultivation patterns (CLC 242) | | land_principally_occupied_by_agriculture | http://www.w3.org/2015/03/corine#clc243 | Land principally occupied by agriculture, with significant areas of natural v... | | agro_forestry_areas | http://www.w3.org/2015/03/corine#clc244 | Agro-forestry areas (CLC 244) | | broad_leaved_forest | http://www.w3.org/2015/03/corine#clc311 | Broad-leaved forest (CLC 311) | | coniferous_forest | http://www.w3.org/2015/03/corine#clc312 | Coniferous forest (CLC 312) | | mixed_forest | http://www.w3.org/2015/03/corine#clc313 | Mixed forest (CLC 313) | | natural_grasslands | http://www.w3.org/2015/03/corine#clc321 | Natural grasslands (CLC 321) | | moors_and_heathland | http://www.w3.org/2015/03/corine#clc322 | Moors and heathland (CLC 322) | | sclerophyllous_vegetation | http://www.w3.org/2015/03/corine#clc323 | Sclerophyllous vegetation (CLC 323) | | transitional_woodland_shrub | http://www.w3.org/2015/03/corine#clc324 | Transitional woodland-shrub (CLC 324) | | beaches_dunes_sands | http://www.w3.org/2015/03/corine#clc331 | Beaches, dunes, sands (CLC 331) | | bare_rocks | http://www.w3.org/2015/03/corine#clc332 | Bare rocks (CLC 332) | | sparsely_vegetated_areas | http://www.w3.org/2015/03/corine#clc333 | Sparsely vegetated areas (CLC 333) | | burnt_areas | http://www.w3.org/2015/03/corine#clc334 | Burnt areas (CLC 334) | | glaciers_and_perpetual_snow | http://www.w3.org/2015/03/corine#clc335 | Glaciers and perpetual snow (CLC 335) | | inland_marshes | http://www.w3.org/2015/03/corine#clc411 | Inland marshes (CLC 411) | | peat_bogs | http://www.w3.org/2015/03/corine#clc412 | Peat bogs (CLC 412) | | salt_marshes | http://www.w3.org/2015/03/corine#clc421 | Salt marshes (CLC 421) | | salines | http://www.w3.org/2015/03/corine#clc422 | Salines (CLC 422) | | intertidal_flats | http://www.w3.org/2015/03/corine#clc423 | Intertidal flats (CLC 423) | | water_courses | http://www.w3.org/2015/03/corine#clc511 | Water courses (CLC 511) | | water_bodies | http://www.w3.org/2015/03/corine#clc512 | Water bodies (CLC 512) | | coastal_lagoons | http://www.w3.org/2015/03/corine#clc521 | Coastal lagoons (CLC 521) | | estuaries | http://www.w3.org/2015/03/corine#clc522 | Estuaries (CLC 522) | | sea_and_ocean | http://www.w3.org/2015/03/corine#clc523 | Sea and ocean (CLC 523) | | unclassified_land_surface | None | Unclassified land surface (CLC 990) | | unclassified_water_bodies | None | Unclassified water bodies (CLC 995) | | no_data | None | No data (CLC 999) |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [land_use](land_use.md) | Land use classification according to CORINE Land Cover nomenclature |
+ | Name | Description | | ---  | --- | | [land_use](land_use.md) | Land use classification according to CORINE Land Cover nomenclature |
 
 
 

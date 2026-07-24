@@ -23,9 +23,7 @@ URI: [cenvo:version](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:version](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Owner | [MonitoringActivity](MonitoringActivity.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:version](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:version |
-| native | cenvo:version |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:version | | native | cenvo:version |
 
 
 

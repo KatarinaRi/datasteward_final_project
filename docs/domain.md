@@ -18,21 +18,13 @@ _Environmental domain - sample type according to sampled matrix/ environmental c
 URI: [cenvo:Domain](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Domain)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| Atmospheric | None | Atmospheric for air, particles, precipitation, dust; |
-| Aquatic | None | Aquatic for water and sediment; |
-| Terrestrial | None | Terrestrial for soil; |
-| Biota | None | Biota for animal and plant tissues; |
+| Value | Meaning | Description | | --- | --- | --- | | Atmospheric | None | Atmospheric for air, particles, precipitation, dust; | | Aquatic | None | Aquatic for water and sediment; | | Terrestrial | None | Terrestrial for soil; | | Biota | None | Biota for animal and plant tissues; |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [domain](domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... |
+ | Name | Description | | ---  | --- | | [domain](domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... |
 
 
 

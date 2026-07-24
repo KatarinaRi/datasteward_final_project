@@ -16,10 +16,7 @@ URI: [xsd:float](http://www.w3.org/2001/XMLSchema#float)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `float` |
-| Type URI | [xsd:float](http://www.w3.org/2001/XMLSchema#float) |
+| Property | Value | | --- | --- | | Base | `float` | | Type URI | [xsd:float](http://www.w3.org/2001/XMLSchema#float) |
 
 
 
@@ -47,12 +44,7 @@ URI: [xsd:float](http://www.w3.org/2001/XMLSchema#float)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:float |
-| native | cenvo:float |
-| exact | schema:Float |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:float | | native | cenvo:float | | exact | schema:Float |
 
 
 

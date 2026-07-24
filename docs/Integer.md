@@ -16,10 +16,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `int` |
-| Type URI | [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) |
+| Property | Value | | --- | --- | | Base | `int` | | Type URI | [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) |
 
 
 
@@ -47,12 +44,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:integer |
-| native | cenvo:integer |
-| exact | schema:Integer |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:integer | | native | cenvo:integer | | exact | schema:Integer |
 
 
 

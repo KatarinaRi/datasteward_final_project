@@ -49,21 +49,14 @@ URI: [cenvo:Taxon](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/T
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [taxon_id](taxon_id.md) | 1 <br/> [Integer](Integer.md) | GBIF species key (integer) | direct |
-| [taxon_name](taxon_name.md) | 1 <br/> [String](String.md) | Scientific name of the taxon (genus, species or higher rank) as accepted in t... | direct |
-| [taxon_rank](taxon_rank.md) | 0..1 <br/> [TaxonRankEnum](TaxonRankEnum.md) | Taxonomic rank of the identified taxon | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [taxon_id](taxon_id.md) | 1 [Integer](Integer.md) | GBIF species key (integer) | direct | | [taxon_name](taxon_name.md) | 1 [String](String.md) | Scientific name of the taxon (genus, species or higher rank) as accepted in t... | direct | | [taxon_rank](taxon_rank.md) | 0..1 [TaxonRankEnum](TaxonRankEnum.md) | Taxonomic rank of the identified taxon | direct |
 
 
 
 
 
 ## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Biota](Biota.md) | [taxonomic_classification](taxonomic_classification.md) | range | [Taxon](Taxon.md) |
+ | used by | used in | type | used | | ---  | --- | --- | --- | | [Biota](Biota.md) | [taxonomic_classification](taxonomic_classification.md) | range | [Taxon](Taxon.md) |
 
 
 
@@ -95,11 +88,7 @@ URI: [cenvo:Taxon](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/T
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Taxon |
-| native | cenvo:Taxon |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Taxon | | native | cenvo:Taxon |
 
 
 

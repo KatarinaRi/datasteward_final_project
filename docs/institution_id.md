@@ -23,9 +23,7 @@ URI: [cenvo:institution_id](https://w3id.org/chemical-exposome/schema/chemicals-
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Institution](Institution.md) | Institution |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Institution](Institution.md) | Institution |  no  |
 
 
 
@@ -35,23 +33,12 @@ URI: [cenvo:institution_id](https://w3id.org/chemical-exposome/schema/chemicals-
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Institution](Institution.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Institution](Institution.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Identifier | Yes |
-| Owner | [Institution](Institution.md) |
+ | Property | Value | | --- | --- | | Identifier | Yes | | Owner | [Institution](Institution.md) |
 
 
 
@@ -79,11 +66,7 @@ URI: [cenvo:institution_id](https://w3id.org/chemical-exposome/schema/chemicals-
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:institution_id |
-| native | cenvo:institution_id |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:institution_id | | native | cenvo:institution_id |
 
 
 

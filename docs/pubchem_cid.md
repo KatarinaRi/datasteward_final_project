@@ -23,9 +23,7 @@ URI: [cenvo:pubchem_cid](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:pubchem_cid](https://w3id.org/chemical-exposome/schema/chemicals-out
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Integer](Integer.md) |
-| Domain Of | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Range | [Integer](Integer.md) | | Domain Of | [ChemicalCompound](ChemicalCompound.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Owner | [ChemicalCompound](ChemicalCompound.md) |
 
 
 
@@ -77,11 +66,7 @@ URI: [cenvo:pubchem_cid](https://w3id.org/chemical-exposome/schema/chemicals-out
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:pubchem_cid |
-| native | cenvo:pubchem_cid |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:pubchem_cid | | native | cenvo:pubchem_cid |
 
 
 

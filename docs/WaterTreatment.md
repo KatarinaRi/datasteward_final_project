@@ -18,19 +18,13 @@ _Water treatment status_
 URI: [cenvo:WaterTreatment](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/WaterTreatment)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| pre_treatment | None |  |
-| post_treatment | None |  |
+| Value | Meaning | Description | | --- | --- | --- | | pre_treatment | None |  | | post_treatment | None |  |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [water_treatment](water_treatment.md) | Water treatment status at the site |
+ | Name | Description | | ---  | --- | | [water_treatment](water_treatment.md) | Water treatment status at the site |
 
 
 

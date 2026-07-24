@@ -44,23 +44,14 @@ URI: [cenvo:Campaign](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [name_en](name_en.md) | 1 <br/> [String](String.md) | Name or designation in English | direct |
-| [acronym](acronym.md) | 1 <br/> [String](String.md) | Short name or acronym | direct |
-| [start_date](start_date.md) | 1 <br/> [Date](Date.md) | Start date in format YYYY-MM-DD | direct |
-| [end_date](end_date.md) | 1 <br/> [Date](Date.md) | End date in format YYYY-MM-DD | direct |
-| [campaign_description](campaign_description.md) | 0..1 <br/> [String](String.md) | Description of the campaign | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [name_en](name_en.md) | 1 [String](String.md) | Name or designation in English | direct | | [acronym](acronym.md) | 1 [String](String.md) | Short name or acronym | direct | | [start_date](start_date.md) | 1 [Date](Date.md) | Start date in format YYYY-MM-DD | direct | | [end_date](end_date.md) | 1 [Date](Date.md) | End date in format YYYY-MM-DD | direct | | [campaign_description](campaign_description.md) | 0..1 [String](String.md) | Description of the campaign | direct |
 
 
 
 
 
 ## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | [campaigns](campaigns.md) | range | [Campaign](Campaign.md) |
+ | used by | used in | type | used | | ---  | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | [campaigns](campaigns.md) | range | [Campaign](Campaign.md) |
 
 
 
@@ -88,11 +79,7 @@ URI: [cenvo:Campaign](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Campaign |
-| native | cenvo:Campaign |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Campaign | | native | cenvo:Campaign |
 
 
 

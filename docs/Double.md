@@ -16,10 +16,7 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `float` |
-| Type URI | [xsd:double](http://www.w3.org/2001/XMLSchema#double) |
+| Property | Value | | --- | --- | | Base | `float` | | Type URI | [xsd:double](http://www.w3.org/2001/XMLSchema#double) |
 
 
 
@@ -47,12 +44,7 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:double |
-| native | cenvo:double |
-| close | schema:Float |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:double | | native | cenvo:double | | close | schema:Float |
 
 
 

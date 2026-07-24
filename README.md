@@ -1555,7 +1555,38 @@ mkdocs gh-deploy
 | Deploy to GitHub Pages | `mkdocs gh-deploy` |
 
 
+Important note for future updates
+Every time you regenerate the documentation with gen-doc, you'll need to run the fix script before deploying. So your complete update workflow is now:
+bash# 1. Regenerate docs
+PYTHONUTF8=1 gen-doc md_env_outdoor_linkml_v1.1.0.yaml -d ./docs -f markdown
 
+# 2. Re-add schema diagram to index.md
+PYTHONUTF8=1 gen-erdiagram md_env_outdoor_linkml_v1.1.0.yaml >> docs/index.md
+
+# 3. Fix <br/> tags in table cells
+python3 -c "
+import os, re
+fixed = 0
+for f in os.listdir('docs'):
+    if not f.endswith('.md'): continue
+    path = os.path.join('docs', f)
+    with open(path, 'r', encoding='utf-8') as fh:
+        content = fh.read()
+    new = re.sub(r'\s*<br/>\s*', ' ', content)
+    if new != content:
+        with open(path, 'w', encoding='utf-8') as fh:
+            fh.write(new)
+        fixed += 1
+print(f'Fixed {fixed} files')
+"
+
+# 4. Deploy
+mkdocs gh-deploy
+
+# 5. Commit to main
+git add .
+git commit -m "Update documentation"
+git push
 
 # CHANGELOG
 

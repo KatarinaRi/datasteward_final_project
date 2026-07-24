@@ -18,18 +18,13 @@ _Sampling method used to collect atmospheric samples (air, deposition, dust). Pl
 URI: [cenvo:SamplingMethodAtmospheric](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/SamplingMethodAtmospheric)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| PLACEHOLDER | None | Placeholder — do not use in production |
+| Value | Meaning | Description | | --- | --- | --- | | PLACEHOLDER | None | Placeholder — do not use in production |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [sampling_method](sampling_method.md) | Method used to collect the sample |
+ | Name | Description | | ---  | --- | | [sampling_method](sampling_method.md) | Method used to collect the sample |
 
 
 

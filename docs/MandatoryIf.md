@@ -210,19 +210,7 @@ URI: [MandatoryIf](MandatoryIf.md)
 
 ## Slots in subset
 
-| Slot | Description |
-| --- | --- |
-| [acronym](acronym.md) | Short name or acronym |
-| [coordinate_privacy_exception_reason](coordinate_privacy_exception_reason.md) | Justification for not providing coordinates |
-| [coordinate_system](coordinate_system.md) | Coordinate reference system used |
-| [geographic_region](geographic_region.md) | UN M49 geographic region |
-| [latitude](latitude.md) | Latitude in signed decimal degrees (format 0 |
-| [legislation_policy](legislation_policy.md) | Link(s) to policy, convention, or legislation underpinning the monitoring act... |
-| [longitude](longitude.md) | Longitude in signed decimal degrees (format 0 |
-| [monitoring_reasons](monitoring_reasons.md) | Primary reasons for performing monitoring (e |
-| [name_en](name_en.md) | Name or designation in English |
-| [nuts3](nuts3.md) | NUTS3 region code according to the Eurostat NUTS classification (Nomenclature... |
-| [regional_group](regional_group.md) | Regional group of United Nations member states |
+| Slot | Description | | --- | --- | | [acronym](acronym.md) | Short name or acronym | | [coordinate_privacy_exception_reason](coordinate_privacy_exception_reason.md) | Justification for not providing coordinates | | [coordinate_system](coordinate_system.md) | Coordinate reference system used | | [geographic_region](geographic_region.md) | UN M49 geographic region | | [latitude](latitude.md) | Latitude in signed decimal degrees (format 0 | | [legislation_policy](legislation_policy.md) | Link(s) to policy, convention, or legislation underpinning the monitoring act... | | [longitude](longitude.md) | Longitude in signed decimal degrees (format 0 | | [monitoring_reasons](monitoring_reasons.md) | Primary reasons for performing monitoring (e | | [name_en](name_en.md) | Name or designation in English | | [nuts3](nuts3.md) | NUTS3 region code according to the Eurostat NUTS classification (Nomenclature... | | [regional_group](regional_group.md) | Regional group of United Nations member states |
 
 
 

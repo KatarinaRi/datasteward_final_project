@@ -23,9 +23,7 @@ URI: [cenvo:latitude](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,29 +33,16 @@ URI: [cenvo:latitude](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [DecimalDegree](DecimalDegree.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [DecimalDegree](DecimalDegree.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 ### Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Minimum Value | -90 |
-| Maximum Value | 90 |
+ | Property | Value | | --- | --- | | Minimum Value | -90 | | Maximum Value | 90 |
 
 
 
@@ -91,11 +76,7 @@ URI: [cenvo:latitude](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:latitude |
-| native | cenvo:latitude |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:latitude | | native | cenvo:latitude |
 
 
 

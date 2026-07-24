@@ -25,8 +25,7 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
     class MeasurementConcentration
     click MeasurementConcentration href "../MeasurementConcentration/"
       MeasurementBase <|-- MeasurementConcentration
-        click MeasurementBase href "../MeasurementBase/"
-      Observation <|-- MeasurementConcentration
+        click MeasurementBase href "../MeasurementBase/"       Observation <|-- MeasurementConcentration
         click Observation href "../Observation/"
       
       MeasurementConcentration : analysis_date
@@ -113,25 +112,7 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [laboratory](laboratory.md) | 1 <br/> [String](String.md) | Name of the laboratory performing the analysis | direct |
-| [batch](batch.md) | 0..1 <br/> [String](String.md) | Internal laboratory designation of the group of samples analyzed together | direct |
-| [analysis_date](analysis_date.md) | 0..1 <br/> [Date](Date.md) | The date on which the concentration was determined | direct |
-| [compound](compound.md) | 1 <br/> [ChemicalCompound](ChemicalCompound.md) | Chemical compound measured in the sample | direct |
-| [sample_preparation_method](sample_preparation_method.md) | 1 <br/> [String](String.md) | Description of the process from sample collection to chemical analysis (e | direct |
-| [sample_preparation_method_link](sample_preparation_method_link.md) | 0..1 <br/> [IRI](IRI.md) | GUPRI (e | direct |
-| [analytical_method](analytical_method.md) | 1 <br/> [AnalyticalMethod](AnalyticalMethod.md) | Analytical method used to determine the analyte | direct |
-| [analytical_method_link](analytical_method_link.md) | 0..1 <br/> [IRI](IRI.md) | GUPRI linking to a public SOP or document describing the method | direct |
-| [data_handling_procedure](data_handling_procedure.md) | 1 <br/> [String](String.md) | Description of steps taken after chemical analysis (e | direct |
-| [data_handling_procedure_link](data_handling_procedure_link.md) | 0..1 <br/> [IRI](IRI.md) | GUPRI linking to a document describing the data handling procedure | direct |
-| [loq](loq.md) | 0..1 <br/> [Double](Double.md) | Limit of quantification | direct |
-| [lod](lod.md) | 0..1 <br/> [Double](Double.md) | Limit of detection | direct |
-| [unit](unit.md) | 1 <br/> [Unit](Unit.md) | Unit of measurement | [MeasurementBase](MeasurementBase.md) |
-| [uncertainty](uncertainty.md) | 0..1 <br/> [Double](Double.md) | Measurement uncertainty of the concentration/paramter value, expressed as a p... | [MeasurementBase](MeasurementBase.md) |
-| [value](value.md) | 0..1 <br/> [Double](Double.md) | Measured value of the chemical concentration or other parameter | [MeasurementBase](MeasurementBase.md) |
-| [sample_id](sample_id.md) | 1 <br/> [String](String.md) | Unique identifier for the sample | [Observation](Observation.md) |
-| [observation_type](observation_type.md) | 1 <br/> [ObservationType](ObservationType.md) | Type of measurement/observation: i) Chemical concentration in the environment... | [Observation](Observation.md) |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [laboratory](laboratory.md) | 1 [String](String.md) | Name of the laboratory performing the analysis | direct | | [batch](batch.md) | 0..1 [String](String.md) | Internal laboratory designation of the group of samples analyzed together | direct | | [analysis_date](analysis_date.md) | 0..1 [Date](Date.md) | The date on which the concentration was determined | direct | | [compound](compound.md) | 1 [ChemicalCompound](ChemicalCompound.md) | Chemical compound measured in the sample | direct | | [sample_preparation_method](sample_preparation_method.md) | 1 [String](String.md) | Description of the process from sample collection to chemical analysis (e | direct | | [sample_preparation_method_link](sample_preparation_method_link.md) | 0..1 [IRI](IRI.md) | GUPRI (e | direct | | [analytical_method](analytical_method.md) | 1 [AnalyticalMethod](AnalyticalMethod.md) | Analytical method used to determine the analyte | direct | | [analytical_method_link](analytical_method_link.md) | 0..1 [IRI](IRI.md) | GUPRI linking to a public SOP or document describing the method | direct | | [data_handling_procedure](data_handling_procedure.md) | 1 [String](String.md) | Description of steps taken after chemical analysis (e | direct | | [data_handling_procedure_link](data_handling_procedure_link.md) | 0..1 [IRI](IRI.md) | GUPRI linking to a document describing the data handling procedure | direct | | [loq](loq.md) | 0..1 [Double](Double.md) | Limit of quantification | direct | | [lod](lod.md) | 0..1 [Double](Double.md) | Limit of detection | direct | | [unit](unit.md) | 1 [Unit](Unit.md) | Unit of measurement | [MeasurementBase](MeasurementBase.md) | | [uncertainty](uncertainty.md) | 0..1 [Double](Double.md) | Measurement uncertainty of the concentration/paramter value, expressed as a p... | [MeasurementBase](MeasurementBase.md) | | [value](value.md) | 0..1 [Double](Double.md) | Measured value of the chemical concentration or other parameter | [MeasurementBase](MeasurementBase.md) | | [sample_id](sample_id.md) | 1 [String](String.md) | Unique identifier for the sample | [Observation](Observation.md) | | [observation_type](observation_type.md) | 1 [ObservationType](ObservationType.md) | Type of measurement/observation: i) Chemical concentration in the environment... | [Observation](Observation.md) |
 
 
 
@@ -143,10 +124,7 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 
 ### at_least_one_measurement_value_required
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'value': {'value_presence': 'ABSENT'}, 'loq': {'value_presence': 'ABSENT'}, 'lod': {'value_presence': 'ABSENT'}}``` |```{'value': {'value_presence': 'PRESENT'}}``` | |
+ | Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |```{'value': {'value_presence': 'ABSENT'}, 'loq': {'value_presence': 'ABSENT'}, 'lod': {'value_presence': 'ABSENT'}}``` |```{'value': {'value_presence': 'PRESENT'}}``` | |
 
 
 
@@ -174,11 +152,7 @@ URI: [cenvo:MeasurementConcentration](https://w3id.org/chemical-exposome/schema/
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:MeasurementConcentration |
-| native | cenvo:MeasurementConcentration |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:MeasurementConcentration | | native | cenvo:MeasurementConcentration |
 
 
 

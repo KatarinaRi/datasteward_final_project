@@ -23,9 +23,7 @@ URI: [cenvo:coordinate_system](https://w3id.org/chemical-exposome/schema/chemica
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,21 +33,12 @@ URI: [cenvo:coordinate_system](https://w3id.org/chemical-exposome/schema/chemica
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [CoordinateSystem](CoordinateSystem.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [CoordinateSystem](CoordinateSystem.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Owner | [Site](Site.md) |
 
 
 
@@ -83,11 +72,7 @@ URI: [cenvo:coordinate_system](https://w3id.org/chemical-exposome/schema/chemica
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:coordinate_system |
-| native | cenvo:coordinate_system |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:coordinate_system | | native | cenvo:coordinate_system |
 
 
 

@@ -23,9 +23,7 @@ URI: [cenvo:acknowledgement](https://w3id.org/chemical-exposome/schema/chemicals
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
 
 
 
@@ -35,22 +33,12 @@ URI: [cenvo:acknowledgement](https://w3id.org/chemical-exposome/schema/chemicals
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Owner | [MonitoringActivity](MonitoringActivity.md) |
 
 
 
@@ -84,11 +72,7 @@ URI: [cenvo:acknowledgement](https://w3id.org/chemical-exposome/schema/chemicals
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:acknowledgement |
-| native | cenvo:acknowledgement |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:acknowledgement | | native | cenvo:acknowledgement |
 
 
 

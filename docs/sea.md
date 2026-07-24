@@ -18,45 +18,13 @@ _Major seas and oceans. Based on the Marine Regions Gazetteer (marineregions.org
 URI: [cenvo:Sea](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Sea)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| pacific_ocean | None | Pacific Ocean |
-| atlantic_ocean | None | Atlantic Ocean |
-| indian_ocean | None | Indian Ocean |
-| arctic_ocean | None | Arctic Ocean |
-| southern_ocean | None | Southern Ocean |
-| caribbean_sea | None | Caribbean Sea |
-| south_china_sea | None | South China Sea |
-| arabian_sea | None | Arabian Sea |
-| bering_sea | None | Bering Sea |
-| red_sea | None | Red Sea |
-| mediterranean_sea | None | Mediterranean Sea |
-| alboran_sea | None | Alboran Sea |
-| balearic_sea | None | Balearic Sea |
-| ligurian_sea | None | Ligurian Sea |
-| tyrrhenian_sea | None | Tyrrhenian Sea |
-| adriatic_sea | None | Adriatic Sea |
-| ionian_sea | None | Ionian Sea |
-| aegean_sea | None | Aegean Sea |
-| cretan_sea | None | Cretan Sea |
-| black_sea | None | Black Sea |
-| sea_of_azov | None | Sea of Azov |
-| baltic_sea | None | Baltic Sea |
-| north_sea | None | North Sea |
-| norwegian_sea | None | Norwegian Sea |
-| barents_sea | None | Barents Sea |
-| white_sea | None | White Sea |
-| irish_sea | None | Irish Sea |
-| celtic_sea | None | Celtic Sea |
+| Value | Meaning | Description | | --- | --- | --- | | pacific_ocean | None | Pacific Ocean | | atlantic_ocean | None | Atlantic Ocean | | indian_ocean | None | Indian Ocean | | arctic_ocean | None | Arctic Ocean | | southern_ocean | None | Southern Ocean | | caribbean_sea | None | Caribbean Sea | | south_china_sea | None | South China Sea | | arabian_sea | None | Arabian Sea | | bering_sea | None | Bering Sea | | red_sea | None | Red Sea | | mediterranean_sea | None | Mediterranean Sea | | alboran_sea | None | Alboran Sea | | balearic_sea | None | Balearic Sea | | ligurian_sea | None | Ligurian Sea | | tyrrhenian_sea | None | Tyrrhenian Sea | | adriatic_sea | None | Adriatic Sea | | ionian_sea | None | Ionian Sea | | aegean_sea | None | Aegean Sea | | cretan_sea | None | Cretan Sea | | black_sea | None | Black Sea | | sea_of_azov | None | Sea of Azov | | baltic_sea | None | Baltic Sea | | north_sea | None | North Sea | | norwegian_sea | None | Norwegian Sea | | barents_sea | None | Barents Sea | | white_sea | None | White Sea | | irish_sea | None | Irish Sea | | celtic_sea | None | Celtic Sea |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [sea](sea.md) | Sea or ocean associated with the site, based on the Marine Regions Gazetteer |
+ | Name | Description | | ---  | --- | | [sea](sea.md) | Sea or ocean associated with the site, based on the Marine Regions Gazetteer |
 
 
 

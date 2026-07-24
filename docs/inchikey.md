@@ -23,9 +23,7 @@ URI: [cenvo:inchikey](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [ChemicalCompound](ChemicalCompound.md) | A chemical compound monitored in environmental samples |  no  |
 
 
 
@@ -35,28 +33,16 @@ URI: [cenvo:inchikey](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [ChemicalCompound](ChemicalCompound.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [ChemicalCompound](ChemicalCompound.md) |
+ | Property | Value | | --- | --- | | Owner | [ChemicalCompound](ChemicalCompound.md) |
 
 
 ### Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Regex Pattern | `^[A-Z]{14}-[A-Z]{10}-[A-Z]$` |
+ | Property | Value | | --- | --- | | Regex Pattern | `^[A-Z]{14}-[A-Z]{10}-[A-Z]$` |
 
 
 
@@ -84,11 +70,7 @@ URI: [cenvo:inchikey](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:inchikey |
-| native | cenvo:inchikey |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:inchikey | | native | cenvo:inchikey |
 
 
 

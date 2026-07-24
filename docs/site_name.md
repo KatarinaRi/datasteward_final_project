@@ -23,14 +23,7 @@ URI: [cenvo:site_name](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
-| [Sample](Sample.md) | Abstract base class for all sample types |  no  |
-| [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  |
-| [Aquatic](Aquatic.md) | Aquatic sample |  no  |
-| [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  |
-| [Biota](Biota.md) | Biota sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  | | [Sample](Sample.md) | Abstract base class for all sample types |  no  | | [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  | | [Aquatic](Aquatic.md) | Aquatic sample |  no  | | [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  | | [Biota](Biota.md) | Biota sample |  no  |
 
 
 
@@ -40,17 +33,10 @@ URI: [cenvo:site_name](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Site](Site.md), [Sample](Sample.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Site](Site.md), [Sample](Sample.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 
 
 
@@ -82,11 +68,7 @@ URI: [cenvo:site_name](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:site_name |
-| native | cenvo:site_name |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:site_name | | native | cenvo:site_name |
 
 
 

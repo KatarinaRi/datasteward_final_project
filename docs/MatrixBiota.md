@@ -18,24 +18,7 @@ _Matrix values valid for biota samples (SampleBiota). Covers plant and animal ti
 URI: [cenvo:MatrixBiota](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/MatrixBiota)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| WholePlant | https://w3id.org/peh/matrices/WholePlant | Whole plant sample — no tissue separation |
-| Seed | https://w3id.org/peh/matrices/Seed | Plant seed tissue |
-| Leaves | https://w3id.org/peh/matrices/Leaves | Plant leaf tissue |
-| Needles | https://w3id.org/peh/matrices/Needles | Conifer needle tissue |
-| Root | https://w3id.org/peh/matrices/Root | Plant root tissue |
-| Fruit | https://w3id.org/peh/matrices/Fruit | Plant fruit tissue |
-| Bark | https://w3id.org/peh/matrices/Bark | Plant bark tissue |
-| Wood | https://w3id.org/peh/matrices/Wood | Plant wood tissue |
-| Blood | https://w3id.org/peh/matrices/Blood | Animal blood sample |
-| Liver | https://w3id.org/peh/matrices/Liver | Animal liver tissue |
-| Kidney | https://w3id.org/peh/matrices/Kidney | Animal kidney tissue |
-| Muscle | https://w3id.org/peh/matrices/Muscle | Animal muscle tissue |
-| Fat | https://w3id.org/peh/matrices/Fat | Animal fat/adipose tissue |
-| Hair | https://w3id.org/peh/matrices/Hair | Animal hair or fur sample |
-| Bone | https://w3id.org/peh/matrices/Bone | Animal bone tissue |
-| Eggs | https://w3id.org/peh/matrices/Eggs | Animal egg sample |
+| Value | Meaning | Description | | --- | --- | --- | | WholePlant | https://w3id.org/peh/matrices/WholePlant | Whole plant sample — no tissue separation | | Seed | https://w3id.org/peh/matrices/Seed | Plant seed tissue | | Leaves | https://w3id.org/peh/matrices/Leaves | Plant leaf tissue | | Needles | https://w3id.org/peh/matrices/Needles | Conifer needle tissue | | Root | https://w3id.org/peh/matrices/Root | Plant root tissue | | Fruit | https://w3id.org/peh/matrices/Fruit | Plant fruit tissue | | Bark | https://w3id.org/peh/matrices/Bark | Plant bark tissue | | Wood | https://w3id.org/peh/matrices/Wood | Plant wood tissue | | Blood | https://w3id.org/peh/matrices/Blood | Animal blood sample | | Liver | https://w3id.org/peh/matrices/Liver | Animal liver tissue | | Kidney | https://w3id.org/peh/matrices/Kidney | Animal kidney tissue | | Muscle | https://w3id.org/peh/matrices/Muscle | Animal muscle tissue | | Fat | https://w3id.org/peh/matrices/Fat | Animal fat/adipose tissue | | Hair | https://w3id.org/peh/matrices/Hair | Animal hair or fur sample | | Bone | https://w3id.org/peh/matrices/Bone | Animal bone tissue | | Eggs | https://w3id.org/peh/matrices/Eggs | Animal egg sample |
 
 
 

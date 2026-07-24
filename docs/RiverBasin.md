@@ -18,37 +18,13 @@ _Major European river basins. Based on the EEA river basin districts dataset. On
 URI: [cenvo:RiverBasin](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/RiverBasin)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| danube | None | Danube river basin |
-| rhine | None | Rhine river basin |
-| elbe | None | Elbe river basin |
-| oder | None | Oder river basin |
-| vistula | None | Vistula river basin |
-| neman | None | Neman river basin |
-| dnieper | None | Dnieper river basin |
-| po | None | Po river basin |
-| ebro | None | Ebro river basin |
-| loire | None | Loire river basin |
-| thames | None | Thames river basin |
-| seine | None | Seine river basin |
-| tagus | None | Tagus river basin |
-| garonne | None | Garonne river basin |
-| daugava | None | Daugava river basin |
-| tisza | None | Tisza river basin |
-| maritsa | None | Maritsa river basin |
-| sava | None | Sava river basin |
-| morava | None | Morava river basin |
-| drava | None | Drava river basin |
+| Value | Meaning | Description | | --- | --- | --- | | danube | None | Danube river basin | | rhine | None | Rhine river basin | | elbe | None | Elbe river basin | | oder | None | Oder river basin | | vistula | None | Vistula river basin | | neman | None | Neman river basin | | dnieper | None | Dnieper river basin | | po | None | Po river basin | | ebro | None | Ebro river basin | | loire | None | Loire river basin | | thames | None | Thames river basin | | seine | None | Seine river basin | | tagus | None | Tagus river basin | | garonne | None | Garonne river basin | | daugava | None | Daugava river basin | | tisza | None | Tisza river basin | | maritsa | None | Maritsa river basin | | sava | None | Sava river basin | | morava | None | Morava river basin | | drava | None | Drava river basin |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [river_basin](river_basin.md) | River basin associated with the site, based on the EEA river basin districts ... |
+ | Name | Description | | ---  | --- | | [river_basin](river_basin.md) | River basin associated with the site, based on the EEA river basin districts ... |
 
 
 

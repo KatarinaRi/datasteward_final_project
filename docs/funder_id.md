@@ -23,9 +23,7 @@ URI: [cenvo:funder_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Funder](Funder.md) | Funder |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Funder](Funder.md) | Funder |  no  |
 
 
 
@@ -35,23 +33,12 @@ URI: [cenvo:funder_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Funder](Funder.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Funder](Funder.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Identifier | Yes |
-| Owner | [Funder](Funder.md) |
+ | Property | Value | | --- | --- | | Identifier | Yes | | Owner | [Funder](Funder.md) |
 
 
 
@@ -79,11 +66,7 @@ URI: [cenvo:funder_id](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:funder_id |
-| native | cenvo:funder_id |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:funder_id | | native | cenvo:funder_id |
 
 
 

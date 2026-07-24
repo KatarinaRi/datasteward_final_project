@@ -23,15 +23,7 @@ URI: [cenvo:start_date](https://w3id.org/chemical-exposome/schema/chemicals-outd
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  no  |
-| [Sample](Sample.md) | Abstract base class for all sample types |  no  |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
-| [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  |
-| [Aquatic](Aquatic.md) | Aquatic sample |  no  |
-| [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  |
-| [Biota](Biota.md) | Biota sample |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Campaign](Campaign.md) | A time-bounded data collection period within a project or monitoring programm... |  no  | | [Sample](Sample.md) | Abstract base class for all sample types |  no  | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  | | [Atmospheric](Atmospheric.md) | Atmospheric sample |  no  | | [Aquatic](Aquatic.md) | Aquatic sample |  no  | | [Terrestrial](Terrestrial.md) | A sample from the terrestrial domain (soil) |  no  | | [Biota](Biota.md) | Biota sample |  no  |
 
 
 
@@ -41,17 +33,10 @@ URI: [cenvo:start_date](https://w3id.org/chemical-exposome/schema/chemicals-outd
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Date](Date.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md), [Campaign](Campaign.md), [Sample](Sample.md) |
+ | Property | Value | | --- | --- | | Range | [Date](Date.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md), [Campaign](Campaign.md), [Sample](Sample.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 
 
 
@@ -83,11 +68,7 @@ URI: [cenvo:start_date](https://w3id.org/chemical-exposome/schema/chemicals-outd
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:start_date |
-| native | cenvo:start_date |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:start_date | | native | cenvo:start_date |
 
 
 

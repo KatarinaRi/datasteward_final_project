@@ -18,18 +18,13 @@ _Coordinate reference system used for geographic coordinates_
 URI: [cenvo:CoordinateSystem](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/CoordinateSystem)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| WGS84 | http://www.opengis.net/def/crs/EPSG/0/4326 | World Geodetic System 1984 |
+| Value | Meaning | Description | | --- | --- | --- | | WGS84 | http://www.opengis.net/def/crs/EPSG/0/4326 | World Geodetic System 1984 |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [coordinate_system](coordinate_system.md) | Coordinate reference system used |
+ | Name | Description | | ---  | --- | | [coordinate_system](coordinate_system.md) | Coordinate reference system used |
 
 
 

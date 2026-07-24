@@ -18,26 +18,13 @@ _TBC - might be integrated with the matrix vocabulary_
 URI: [cenvo:AquaticMatrixFraction](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/AquaticMatrixFraction)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| PLACEHOLDER | None | Placeholder — do not use in production |
-| water_spm | None | Water - Suspended Particulate Matter |
-| water_dom | None | Water - Dissolved Organic Matter |
-| water_cfree | None | Water - Colloid-free |
-| water_dom+cfree | None | water - Dissolved Organic Matter that is also colloid-free |
-| water_colloidal_fraction | None | Water - Colloidal fraction |
-| sediment_solid_phase | None | Sediment - Solid phase |
-| sediment_pore_water | None | Sediment - pore water |
-| sediment_colloidal_fraction | None | Sediment - Colloidal fraction |
+| Value | Meaning | Description | | --- | --- | --- | | PLACEHOLDER | None | Placeholder — do not use in production | | water_spm | None | Water - Suspended Particulate Matter | | water_dom | None | Water - Dissolved Organic Matter | | water_cfree | None | Water - Colloid-free | | water_dom+cfree | None | water - Dissolved Organic Matter that is also colloid-free | | water_colloidal_fraction | None | Water - Colloidal fraction | | sediment_solid_phase | None | Sediment - Solid phase | | sediment_pore_water | None | Sediment - pore water | | sediment_colloidal_fraction | None | Sediment - Colloidal fraction |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [fraction](fraction.md) | If the collected sample is divided into multiple fractions for separate analy... |
+ | Name | Description | | ---  | --- | | [fraction](fraction.md) | If the collected sample is divided into multiple fractions for separate analy... |
 
 
 

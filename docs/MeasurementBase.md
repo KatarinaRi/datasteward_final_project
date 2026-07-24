@@ -25,8 +25,7 @@ URI: [cenvo:MeasurementBase](https://w3id.org/chemical-exposome/schema/chemicals
     class MeasurementBase
     click MeasurementBase href "../MeasurementBase/"
       MeasurementBase <|-- MeasurementConcentration
-        click MeasurementConcentration href "../MeasurementConcentration/"
-      MeasurementBase <|-- MeasurementParameter
+        click MeasurementConcentration href "../MeasurementConcentration/"       MeasurementBase <|-- MeasurementParameter
         click MeasurementParameter href "../MeasurementParameter/"
       
       MeasurementBase : uncertainty
@@ -54,27 +53,16 @@ URI: [cenvo:MeasurementBase](https://w3id.org/chemical-exposome/schema/chemicals
 
 ## Class Properties
 
-| Property | Value |
-| --- | --- |
-| Mixin | Yes |
+| Property | Value | | --- | --- | | Mixin | Yes |
 
 
 ## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [unit](unit.md) | 1 <br/> [Unit](Unit.md) | Unit of measurement | direct |
-| [uncertainty](uncertainty.md) | 0..1 <br/> [Double](Double.md) | Measurement uncertainty of the concentration/paramter value, expressed as a p... | direct |
-| [value](value.md) | 0..1 <br/> [Double](Double.md) | Measured value of the chemical concentration or other parameter | direct |
+ | Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [unit](unit.md) | 1 [Unit](Unit.md) | Unit of measurement | direct | | [uncertainty](uncertainty.md) | 0..1 [Double](Double.md) | Measurement uncertainty of the concentration/paramter value, expressed as a p... | direct | | [value](value.md) | 0..1 [Double](Double.md) | Measured value of the chemical concentration or other parameter | direct |
 
 
 
 ## Mixin Usage
-
-| mixed into | description |
-| --- | --- |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |
-| [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |
+ | mixed into | description | | --- | --- | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample | | [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |
 
 
 
@@ -104,11 +92,7 @@ URI: [cenvo:MeasurementBase](https://w3id.org/chemical-exposome/schema/chemicals
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:MeasurementBase |
-| native | cenvo:MeasurementBase |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:MeasurementBase | | native | cenvo:MeasurementBase |
 
 
 

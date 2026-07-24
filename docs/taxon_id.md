@@ -23,9 +23,7 @@ URI: [cenvo:taxon_id](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Taxon](Taxon.md) | A taxonomic entity identified in a biological sample, referenced against the ... |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Taxon](Taxon.md) | A taxonomic entity identified in a biological sample, referenced against the ... |  no  |
 
 
 
@@ -35,23 +33,12 @@ URI: [cenvo:taxon_id](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Integer](Integer.md) |
-| Domain Of | [Taxon](Taxon.md) |
+ | Property | Value | | --- | --- | | Range | [Integer](Integer.md) | | Domain Of | [Taxon](Taxon.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Identifier | Yes |
-| Owner | [Taxon](Taxon.md) |
+ | Property | Value | | --- | --- | | Identifier | Yes | | Owner | [Taxon](Taxon.md) |
 
 
 
@@ -89,11 +76,7 @@ URI: [cenvo:taxon_id](https://w3id.org/chemical-exposome/schema/chemicals-outdoo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:taxon_id |
-| native | cenvo:taxon_id |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:taxon_id | | native | cenvo:taxon_id |
 
 
 

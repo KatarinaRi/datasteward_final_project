@@ -62,23 +62,14 @@ URI: [cenvo:Contact](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [email](email.md) | 1 <br/> [EmailAddress](EmailAddress.md) | Email address of the project contact point | direct |
-| [orcid](orcid.md) | 0..1 <br/> [OrcidIdentifier](OrcidIdentifier.md) | ORCID identifier of the contact person | direct |
-| [contact_id](contact_id.md) | 1 <br/> [String](String.md) | Unique contact ID | direct |
-| [role](role.md) | 0..1 <br/> [Role](Role.md) | Role/function performed by the contact person | direct |
-| [institution](institution.md) | 0..1 <br/> [Institution](Institution.md) | Contact's institution | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [email](email.md) | 1 [EmailAddress](EmailAddress.md) | Email address of the project contact point | direct | | [orcid](orcid.md) | 0..1 [OrcidIdentifier](OrcidIdentifier.md) | ORCID identifier of the contact person | direct | | [contact_id](contact_id.md) | 1 [String](String.md) | Unique contact ID | direct | | [role](role.md) | 0..1 [Role](Role.md) | Role/function performed by the contact person | direct | | [institution](institution.md) | 0..1 [Institution](Institution.md) | Contact's institution | direct |
 
 
 
 
 
 ## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |
+ | used by | used in | type | used | | ---  | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |
 
 
 
@@ -106,11 +97,7 @@ URI: [cenvo:Contact](https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Contact |
-| native | cenvo:Contact |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Contact | | native | cenvo:Contact |
 
 
 

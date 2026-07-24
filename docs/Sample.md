@@ -27,12 +27,10 @@ URI: [cenvo:Sample](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
     class Sample
     click Sample href "../Sample/"
       Sample <|-- Atmospheric
-        click Atmospheric href "../Atmospheric/"
-      Sample <|-- Aquatic
+        click Atmospheric href "../Atmospheric/"       Sample <|-- Aquatic
         click Aquatic href "../Aquatic/"
       Sample <|-- Terrestrial
-        click Terrestrial href "../Terrestrial/"
-      Sample <|-- Biota
+        click Terrestrial href "../Terrestrial/"       Sample <|-- Biota
         click Biota href "../Biota/"
       
       Sample : domain
@@ -77,16 +75,7 @@ URI: [cenvo:Sample](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [site_name](site_name.md) | 1 <br/> [String](String.md) | Name of the monitoring site | direct |
-| [site_id](site_id.md) | 1 <br/> [String](String.md) | Unique identifier of the monitoring site where the sample was collected | direct |
-| [sample_id](sample_id.md) | 1 <br/> [String](String.md) | Unique identifier for the sample | direct |
-| [start_date](start_date.md) | 1 <br/> [Date](Date.md) | Start date in format YYYY-MM-DD | direct |
-| [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) | End date in format YYYY-MM-DD | direct |
-| [sampling_time_start](sampling_time_start.md) | 0..1 <br/> [Time](Time.md) | Sampling start time according to ISO 8601, 24-hour clock | direct |
-| [sampling_time_end](sampling_time_end.md) | 0..1 <br/> [Time](Time.md) | Sampling end time according to ISO 8601 | direct |
-| [domain](domain.md) | 1 <br/> [Domain](Domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [site_name](site_name.md) | 1 [String](String.md) | Name of the monitoring site | direct | | [site_id](site_id.md) | 1 [String](String.md) | Unique identifier of the monitoring site where the sample was collected | direct | | [sample_id](sample_id.md) | 1 [String](String.md) | Unique identifier for the sample | direct | | [start_date](start_date.md) | 1 [Date](Date.md) | Start date in format YYYY-MM-DD | direct | | [end_date](end_date.md) | 0..1 [Date](Date.md) | End date in format YYYY-MM-DD | direct | | [sampling_time_start](sampling_time_start.md) | 0..1 [Time](Time.md) | Sampling start time according to ISO 8601, 24-hour clock | direct | | [sampling_time_end](sampling_time_end.md) | 0..1 [Time](Time.md) | Sampling end time according to ISO 8601 | direct | | [domain](domain.md) | 1 [Domain](Domain.md) | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | direct |
 
 
 
@@ -117,11 +106,7 @@ URI: [cenvo:Sample](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:Sample |
-| native | cenvo:Sample |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Sample | | native | cenvo:Sample |
 
 
 

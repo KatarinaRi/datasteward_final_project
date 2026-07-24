@@ -196,14 +196,7 @@ Terrestrial {
     date start_date  
 }
 
-Biota ||--|o Taxon : "taxonomic_classification"
-Contact ||--|o Institution : "institution"
-MeasurementConcentration ||--|| ChemicalCompound : "compound"
-MonitoringActivity ||--}o Campaign : "campaigns"
-MonitoringActivity ||--}o Funder : "funders"
-MonitoringActivity ||--}| Contact : "contacts"
-MonitoringActivity ||--}| Institution : "institutions"
-Site ||--|o Institution : "managing_instance"
+Biota ||--|o Taxon : "taxonomic_classification" Contact ||--|o Institution : "institution" MeasurementConcentration ||--|| ChemicalCompound : "compound" MonitoringActivity ||--}o Campaign : "campaigns" MonitoringActivity ||--}o Funder : "funders" MonitoringActivity ||--}| Contact : "contacts" MonitoringActivity ||--}| Institution : "institutions" Site ||--|o Institution : "managing_instance"
 
 ```
 

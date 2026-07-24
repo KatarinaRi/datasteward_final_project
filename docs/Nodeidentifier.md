@@ -16,11 +16,7 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `NodeIdentifier` |
-| Type URI | [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral) |
-| Representation | `str` |
+| Property | Value | | --- | --- | | Base | `NodeIdentifier` | | Type URI | [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral) | | Representation | `str` |
 
 
 
@@ -48,11 +44,7 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | shex:nonLiteral |
-| native | cenvo:nodeidentifier |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | shex:nonLiteral | | native | cenvo:nodeidentifier |
 
 
 

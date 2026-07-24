@@ -23,9 +23,7 @@ URI: [cenvo:contact_id](https://w3id.org/chemical-exposome/schema/chemicals-outd
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Contact](Contact.md) | A contact person associated with the monitoring activity |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Contact](Contact.md) | A contact person associated with the monitoring activity |  no  |
 
 
 
@@ -35,23 +33,12 @@ URI: [cenvo:contact_id](https://w3id.org/chemical-exposome/schema/chemicals-outd
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Contact](Contact.md) |
+ | Property | Value | | --- | --- | | Range | [String](String.md) | | Domain Of | [Contact](Contact.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
+ | Property | Value | | --- | --- | | Required | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Identifier | Yes |
-| Owner | [Contact](Contact.md) |
+ | Property | Value | | --- | --- | | Identifier | Yes | | Owner | [Contact](Contact.md) |
 
 
 
@@ -79,11 +66,7 @@ URI: [cenvo:contact_id](https://w3id.org/chemical-exposome/schema/chemicals-outd
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:contact_id |
-| native | cenvo:contact_id |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:contact_id | | native | cenvo:contact_id |
 
 
 

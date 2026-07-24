@@ -23,9 +23,7 @@ URI: [cenvo:coordinate_privacy_exception](https://w3id.org/chemical-exposome/sch
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [Site](Site.md) | A monitoring site or location where samples are collected |  no  |
 
 
 
@@ -35,22 +33,12 @@ URI: [cenvo:coordinate_privacy_exception](https://w3id.org/chemical-exposome/sch
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Boolean](Boolean.md) |
-| Domain Of | [Site](Site.md) |
+ | Property | Value | | --- | --- | | Range | [Boolean](Boolean.md) | | Domain Of | [Site](Site.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| If Absent | `false` |
-| Owner | [Site](Site.md) |
+ | Property | Value | | --- | --- | | If Absent | `false` | | Owner | [Site](Site.md) |
 
 
 
@@ -78,11 +66,7 @@ URI: [cenvo:coordinate_privacy_exception](https://w3id.org/chemical-exposome/sch
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:coordinate_privacy_exception |
-| native | cenvo:coordinate_privacy_exception |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:coordinate_privacy_exception | | native | cenvo:coordinate_privacy_exception |
 
 
 

@@ -16,10 +16,7 @@ URI: [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `Decimal` |
-| Type URI | [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal) |
+| Property | Value | | --- | --- | | Base | `Decimal` | | Type URI | [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal) |
 
 
 
@@ -47,12 +44,7 @@ URI: [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:decimal |
-| native | cenvo:decimal |
-| broad | schema:Number |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:decimal | | native | cenvo:decimal | | broad | schema:Number |
 
 
 

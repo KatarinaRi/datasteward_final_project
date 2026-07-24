@@ -18,11 +18,7 @@ _Matrix values valid for aquatic samples (SampleAquatic). All terms are narrower
 URI: [cenvo:MatrixAquatic](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/MatrixAquatic)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| WaterTotal | https://w3id.org/peh/matrices/WaterTotal | Total water sample — no phase separation applied |
-| PassiveWaterSamplerFraction | https://w3id.org/peh/matrices/PassiveWaterSamplerFraction | Fraction collected by passive water sampler (e |
-| SedimentTotal | https://w3id.org/peh/matrices/SedimentTotal | Total sediment sample — bulk sediment |
+| Value | Meaning | Description | | --- | --- | --- | | WaterTotal | https://w3id.org/peh/matrices/WaterTotal | Total water sample — no phase separation applied | | PassiveWaterSamplerFraction | https://w3id.org/peh/matrices/PassiveWaterSamplerFraction | Fraction collected by passive water sampler (e | | SedimentTotal | https://w3id.org/peh/matrices/SedimentTotal | Total sediment sample — bulk sediment |
 
 
 

@@ -23,9 +23,7 @@ URI: [cenvo:campaigns](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MonitoringActivity](MonitoringActivity.md) | A research project or monitoring programme collecting environmental data on c... |  no  |
 
 
 
@@ -35,22 +33,12 @@ URI: [cenvo:campaigns](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Campaign](Campaign.md) |
-| Domain Of | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Range | [Campaign](Campaign.md) | | Domain Of | [MonitoringActivity](MonitoringActivity.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
+ | Property | Value | | --- | --- | | Multivalued | Yes |
 ### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MonitoringActivity](MonitoringActivity.md) |
+ | Property | Value | | --- | --- | | Owner | [MonitoringActivity](MonitoringActivity.md) |
 
 
 
@@ -78,11 +66,7 @@ URI: [cenvo:campaigns](https://w3id.org/chemical-exposome/schema/chemicals-outdo
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:campaigns |
-| native | cenvo:campaigns |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:campaigns | | native | cenvo:campaigns |
 
 
 

@@ -25,8 +25,7 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
     class MeasurementParameter
     click MeasurementParameter href "../MeasurementParameter/"
       MeasurementBase <|-- MeasurementParameter
-        click MeasurementBase href "../MeasurementBase/"
-      Observation <|-- MeasurementParameter
+        click MeasurementBase href "../MeasurementBase/"       Observation <|-- MeasurementParameter
         click Observation href "../Observation/"
       
       MeasurementParameter : observation_type
@@ -82,14 +81,7 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [parameter](parameter.md) | 1 <br/> [Parameter](Parameter.md) | Name of the parameter measured | direct |
-| [unit](unit.md) | 1 <br/> [Unit](Unit.md) | Unit of measurement | [MeasurementBase](MeasurementBase.md) |
-| [uncertainty](uncertainty.md) | 0..1 <br/> [Double](Double.md) | Measurement uncertainty of the concentration/paramter value, expressed as a p... | [MeasurementBase](MeasurementBase.md) |
-| [value](value.md) | 0..1 <br/> [Double](Double.md) | Measured value of the chemical concentration or other parameter | [MeasurementBase](MeasurementBase.md) |
-| [sample_id](sample_id.md) | 1 <br/> [String](String.md) | Unique identifier for the sample | [Observation](Observation.md) |
-| [observation_type](observation_type.md) | 1 <br/> [ObservationType](ObservationType.md) | Type of measurement/observation: i) Chemical concentration in the environment... | [Observation](Observation.md) |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [parameter](parameter.md) | 1 [Parameter](Parameter.md) | Name of the parameter measured | direct | | [unit](unit.md) | 1 [Unit](Unit.md) | Unit of measurement | [MeasurementBase](MeasurementBase.md) | | [uncertainty](uncertainty.md) | 0..1 [Double](Double.md) | Measurement uncertainty of the concentration/paramter value, expressed as a p... | [MeasurementBase](MeasurementBase.md) | | [value](value.md) | 0..1 [Double](Double.md) | Measured value of the chemical concentration or other parameter | [MeasurementBase](MeasurementBase.md) | | [sample_id](sample_id.md) | 1 [String](String.md) | Unique identifier for the sample | [Observation](Observation.md) | | [observation_type](observation_type.md) | 1 [ObservationType](ObservationType.md) | Type of measurement/observation: i) Chemical concentration in the environment... | [Observation](Observation.md) |
 
 
 
@@ -120,11 +112,7 @@ URI: [cenvo:MeasurementParameter](https://w3id.org/chemical-exposome/schema/chem
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:MeasurementParameter |
-| native | cenvo:MeasurementParameter |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:MeasurementParameter | | native | cenvo:MeasurementParameter |
 
 
 

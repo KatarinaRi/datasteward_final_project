@@ -23,11 +23,7 @@ URI: [cenvo:value](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/v
 
 ## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MeasurementBase](MeasurementBase.md) | Shared measurement slots common to all observation types |  no  |
-| [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  |
-| [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
+| Name | Description | Modifies Slot | | --- | --- | --- | | [MeasurementBase](MeasurementBase.md) | Shared measurement slots common to all observation types |  no  | | [MeasurementConcentration](MeasurementConcentration.md) | A measured concentration of a chemical compound in a sample |  no  | | [MeasurementParameter](MeasurementParameter.md) | An additional parameter measured in the sample (e |  no  |
 
 
 
@@ -37,16 +33,10 @@ URI: [cenvo:value](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/v
 ## Properties
 
 ### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Double](Double.md) |
-| Domain Of | [MeasurementBase](MeasurementBase.md) |
+ | Property | Value | | --- | --- | | Range | [Double](Double.md) | | Domain Of | [MeasurementBase](MeasurementBase.md) |
 
 ### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
+ | Property | Value | | --- | --- |
 
 
 
@@ -78,11 +68,7 @@ URI: [cenvo:value](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/v
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:value |
-| native | cenvo:value |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:value | | native | cenvo:value |
 
 
 

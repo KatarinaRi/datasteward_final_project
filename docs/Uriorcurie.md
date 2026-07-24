@@ -16,11 +16,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `URIorCURIE` |
-| Type URI | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |
-| Representation | `str` |
+| Property | Value | | --- | --- | | Base | `URIorCURIE` | | Type URI | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | | Representation | `str` |
 
 
 
@@ -48,11 +44,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:anyURI |
-| native | cenvo:uriorcurie |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:anyURI | | native | cenvo:uriorcurie |
 
 
 

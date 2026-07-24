@@ -25,8 +25,7 @@ URI: [cenvo:OrganisationMetadata](https://w3id.org/chemical-exposome/schema/chem
     class OrganisationMetadata
     click OrganisationMetadata href "../OrganisationMetadata/"
       OrganisationMetadata <|-- Institution
-        click Institution href "../Institution/"
-      OrganisationMetadata <|-- Funder
+        click Institution href "../Institution/"       OrganisationMetadata <|-- Funder
         click Funder href "../Funder/"
       
       OrganisationMetadata : link
@@ -47,28 +46,16 @@ URI: [cenvo:OrganisationMetadata](https://w3id.org/chemical-exposome/schema/chem
 
 ## Class Properties
 
-| Property | Value |
-| --- | --- |
-| Mixin | Yes |
+| Property | Value | | --- | --- | | Mixin | Yes |
 
 
 ## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [name_en](name_en.md) | 1 <br/> [String](String.md) | Name or designation in English | direct |
-| [name_original](name_original.md) | 1 <br/> [String](String.md) | Name of the entity in the original language of the  institution/site/project | direct |
-| [ror](ror.md) | 0..1 <br/> [RorIdentifier](RorIdentifier.md) | ROR identifier of the institution (format ror | direct |
-| [link](link.md) | 0..1 <br/> [IRI](IRI.md) | URL with information about the institution | direct |
+ | Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [name_en](name_en.md) | 1 [String](String.md) | Name or designation in English | direct | | [name_original](name_original.md) | 1 [String](String.md) | Name of the entity in the original language of the  institution/site/project | direct | | [ror](ror.md) | 0..1 [RorIdentifier](RorIdentifier.md) | ROR identifier of the institution (format ror | direct | | [link](link.md) | 0..1 [IRI](IRI.md) | URL with information about the institution | direct |
 
 
 
 ## Mixin Usage
-
-| mixed into | description |
-| --- | --- |
-| [Institution](Institution.md) | Institution |
-| [Funder](Funder.md) | Funder |
+ | mixed into | description | | --- | --- | | [Institution](Institution.md) | Institution | | [Funder](Funder.md) | Funder |
 
 
 
@@ -98,11 +85,7 @@ URI: [cenvo:OrganisationMetadata](https://w3id.org/chemical-exposome/schema/chem
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:OrganisationMetadata |
-| native | cenvo:OrganisationMetadata |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:OrganisationMetadata | | native | cenvo:OrganisationMetadata |
 
 
 

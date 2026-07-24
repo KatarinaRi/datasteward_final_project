@@ -18,119 +18,13 @@ _Parameters measured alongside chemical concentrations in environmental samples 
 URI: [cenvo:Parameter](https://w3id.org/chemical-exposome/schema/chemicals-outdoor/Parameter)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| volume | None | Volume of sample collected (air; m3) |
-| height | None | Height of measurement (air; m) |
-| PM10 | None | Particulate Matter 10 (air; ug/m3) |
-| PM10_2m | None | Particulate Matter 10 at 2m height (air; ug/m3) |
-| PM25 | None | Particulate Matter 2 |
-| NO2 | None | NO2 concentration — height not specified (air; ug/m3) |
-| NO2_1_5m | None | NO2 measured at 1 |
-| wind_speed | None | Wind speed (air; m/s) |
-| wind_direction | None | Wind direction (air; degrees) |
-| sea_level_pressure | None | Sea level pressure (air; kPa) |
-| dew_point_temperature | None | Dew point temperature (air; deg C) |
-| water_vapor_mixing_ratio | None | Water vapor mixing ratio (air; kg/kg) |
-| depth_from | None | Depth from which the sample was collected (water; m) |
-| depth_to | None | Depth to which the sample was collected (water; m) |
-| depth | None | Depth of the sample (water; m) |
-| salinity | None | Salinity (water; PSU) |
-| pH | None | pH (water, soil, sediment; dimensionless) |
-| dissolved_inorganic_carbon | None | Dissolved inorganic carbon (water; ng/l) |
-| dissolved_organic_carbon | None | Dissolved organic carbon (water; ng/l) |
-| total_inorganic_carbon | None | Total inorganic carbon (water; ng/l) |
-| total_dissolved_solids | None | Total dissolved solids (water; mg/l) |
-| ions_chlorides | None | Chloride ions (water; mg/l) |
-| ions_hydrogencarbonates | None | Hydrogencarbonate ions (water; mg/l) |
-| ions_sulphates | None | Sulphate ions (water; mg/l) |
-| ions_Al | None | Aluminium cation (water; ug/l) |
-| ions_Ba | None | Barium cation (water; ug/l) |
-| ions_Ca | None | Calcium cation (water; mg/l) |
-| ions_Fe | None | Iron cation (water; ug/l) |
-| ions_K | None | Potassium cation (water; mg/l) |
-| ions_Mg | None | Magnesium cation (water; mg/l) |
-| ions_Mn | None | Manganese cation (water; ug/l) |
-| ions_Na | None | Sodium cation (water; mg/l) |
-| sample_depth_from | None | Sample depth from (sediment, soil; cm) |
-| sample_depth_to | None | Sample depth to (sediment, soil; cm) |
-| dry_mass | None | Dry mass (sediment; %) |
-| sil_Al2O3 | None | Silicate Al2O3 (sediment; %) |
-| sil_CaO | None | Silicate CaO (sediment; %) |
-| sil_Co2 | None | Silicate CO2 (sediment; %) |
-| sil_Fe2O3 | None | Silicate Fe2O3 (sediment; %) |
-| sil_K2O | None | Silicate K2O (sediment; %) |
-| sil_Li2O | None | Silicate Li2O (sediment; %) |
-| sil_MgO | None | Silicate MgO (sediment; %) |
-| sil_MnO | None | Silicate MnO (sediment; %) |
-| sil_Na2O | None | Silicate Na2O (sediment; %) |
-| sil_P2O5 | None | Silicate P2O5 (sediment; %) |
-| sil_SiO2 | None | Silicate SiO2 (sediment; %) |
-| sil_SO3 | None | Silicate SO3 (sediment; %) |
-| sil_TiO2 | None | Silicate TiO2 (sediment; %) |
-| sil_combined_water | None | Silicate combined water (sediment; %) |
-| sil_ignition_loss | None | Silicate ignition loss (sediment; %) |
-| absorbency | None | Absorbency (soil; %) |
-| airiness | None | Airiness (soil; %) |
-| capillar_capacity | None | Capillar capacity (soil; %) |
-| humidity | None | Humidity (soil; %) |
-| minimum_air_capacity | None | Minimum air capacity (soil; %) |
-| porosity | None | Porosity (soil; %) |
-| volume_mass | None | Volume mass (soil; g/cm3) |
-| volume_mass_reduced | None | Volume mass reduced (soil; g/cm3) |
-| dissolved_organic_compounds | None | Dissolved organic compounds (soil; %) |
-| fulvic_acids | None | Fulvic acids (soil; %) |
-| humic_acids | None | Humic acids (soil; %) |
-| HA_FA | None | HA/FA ratio (soil; dimensionless) |
-| Q4_6 | None | Q4/6 ratio (soil; dimensionless) |
-| saturation | None | Saturation (soil; %) |
-| total_carbonates | None | Total carbonates (soil; %) |
-| total_nitrogen | None | Total nitrogen (soil; %) |
-| granularity_clay_1_10um | None | Granularity clay 1-10 um (soil; %) |
-| granularity_clay_lt1um | None | Granularity clay < 1 um (soil; %) |
-| granularity_clay_lt2um | None | Granularity clay < 2 um (soil; %) |
-| granularity_clay_lt6um | None | Granularity clay < 6 um (soil; %) |
-| granularity_clay_lt10um | None | Granularity clay < 10 um (soil; %) |
-| granularity_silt_10_50um | None | Granularity silt 10-50 um (soil; %) |
-| granularity_sand_50_100um | None | Granularity sand 50-100 um (soil; %) |
-| granularity_sand_100_2000um | None | Granularity sand 100-2000 um (soil; %) |
-| granularity_sand_50_250um | None | Granularity sand 50-250 um (soil; %) |
-| granularity_sand_250_2000um | None | Granularity sand 250-2000 um (soil; %) |
-| pH_CaCl2 | None | pH in CaCl2 solution (soil; dimensionless) |
-| pH_H2O | None | pH in water (soil; dimensionless) |
-| pH_KCl | None | pH in KCl solution (soil; dimensionless) |
-| total_organic_carbon | None | Total organic carbon (sediment, soil; %) |
-| cec | None | Cation exchange capacity (CEC) (sediment, soil; meq/kg) |
-| cec_t | None | Total (Effective) Cation Exchange Capacity (CEC) (soil; meq/kg) |
-| cec_Meh_Ca | None | Exchangeable calcium extracted by Mehlich method (sediment, soil; meq/kg) |
-| cec_Meh_H | None | Exchangeable hydrogen extracted by Mehlich method (sediment, soil; meq/kg) |
-| cec_Meh_K | None | Exchangeable potassium extracted by Mehlich method (sediment, soil; meq/kg) |
-| cec_Meh_Mg | None | Exchangeable magnesium extracted by Mehlich method (sediment, soil; meq/kg) |
-| cec_Meh_P | None | Extractable phosphorus extracted by Mehlich method (soil; meq/kg) |
-| cec_exchange_Al | None | Exchangeable aluminium fraction of cation exchange capacity (soil; meq/kg) |
-| cec_exchange_Ca | None | Exchangeable calcium fraction of cation exchange capacity (soil; meq/kg) |
-| cec_exchange_Fe | None | Exchangeable iron fraction of cation exchange capacity (soil; meq/kg) |
-| cec_exchange_K | None | Exchangeable potassium fraction of cation exchange capacity (soil; meq/kg) |
-| cec_exchange_Mg | None | Exchangeable magnesium fraction of cation exchange capacity (soil; meq/kg) |
-| cec_exchange_Mn | None | Exchangeable manganese fraction of cation exchange capacity (soil; meq/kg) |
-| cec_exchange_Na | None | Exchangeable sodium fraction of cation exchange capacity (soil; meq/kg) |
-| temperature | None | Temperature (air, water; deg C) |
-| sample_weight | None | Weight of sample (air ug/m3; water g/l) |
-| creatinine | None | Creatinine (biota; mg/dl) |
-| specific_gravity | None | Specific gravity (biota; dimensionless) |
-| dry_weight | None | Dry weight (biota; g) |
-| wet_weight | None | Wet weight (biota; g) |
-| lipid_weight | None | Lipid weight — tissue lipid content (biota; g) |
-| density | None | Density (soil; g/cm3) |
+| Value | Meaning | Description | | --- | --- | --- | | volume | None | Volume of sample collected (air; m3) | | height | None | Height of measurement (air; m) | | PM10 | None | Particulate Matter 10 (air; ug/m3) | | PM10_2m | None | Particulate Matter 10 at 2m height (air; ug/m3) | | PM25 | None | Particulate Matter 2 | | NO2 | None | NO2 concentration — height not specified (air; ug/m3) | | NO2_1_5m | None | NO2 measured at 1 | | wind_speed | None | Wind speed (air; m/s) | | wind_direction | None | Wind direction (air; degrees) | | sea_level_pressure | None | Sea level pressure (air; kPa) | | dew_point_temperature | None | Dew point temperature (air; deg C) | | water_vapor_mixing_ratio | None | Water vapor mixing ratio (air; kg/kg) | | depth_from | None | Depth from which the sample was collected (water; m) | | depth_to | None | Depth to which the sample was collected (water; m) | | depth | None | Depth of the sample (water; m) | | salinity | None | Salinity (water; PSU) | | pH | None | pH (water, soil, sediment; dimensionless) | | dissolved_inorganic_carbon | None | Dissolved inorganic carbon (water; ng/l) | | dissolved_organic_carbon | None | Dissolved organic carbon (water; ng/l) | | total_inorganic_carbon | None | Total inorganic carbon (water; ng/l) | | total_dissolved_solids | None | Total dissolved solids (water; mg/l) | | ions_chlorides | None | Chloride ions (water; mg/l) | | ions_hydrogencarbonates | None | Hydrogencarbonate ions (water; mg/l) | | ions_sulphates | None | Sulphate ions (water; mg/l) | | ions_Al | None | Aluminium cation (water; ug/l) | | ions_Ba | None | Barium cation (water; ug/l) | | ions_Ca | None | Calcium cation (water; mg/l) | | ions_Fe | None | Iron cation (water; ug/l) | | ions_K | None | Potassium cation (water; mg/l) | | ions_Mg | None | Magnesium cation (water; mg/l) | | ions_Mn | None | Manganese cation (water; ug/l) | | ions_Na | None | Sodium cation (water; mg/l) | | sample_depth_from | None | Sample depth from (sediment, soil; cm) | | sample_depth_to | None | Sample depth to (sediment, soil; cm) | | dry_mass | None | Dry mass (sediment; %) | | sil_Al2O3 | None | Silicate Al2O3 (sediment; %) | | sil_CaO | None | Silicate CaO (sediment; %) | | sil_Co2 | None | Silicate CO2 (sediment; %) | | sil_Fe2O3 | None | Silicate Fe2O3 (sediment; %) | | sil_K2O | None | Silicate K2O (sediment; %) | | sil_Li2O | None | Silicate Li2O (sediment; %) | | sil_MgO | None | Silicate MgO (sediment; %) | | sil_MnO | None | Silicate MnO (sediment; %) | | sil_Na2O | None | Silicate Na2O (sediment; %) | | sil_P2O5 | None | Silicate P2O5 (sediment; %) | | sil_SiO2 | None | Silicate SiO2 (sediment; %) | | sil_SO3 | None | Silicate SO3 (sediment; %) | | sil_TiO2 | None | Silicate TiO2 (sediment; %) | | sil_combined_water | None | Silicate combined water (sediment; %) | | sil_ignition_loss | None | Silicate ignition loss (sediment; %) | | absorbency | None | Absorbency (soil; %) | | airiness | None | Airiness (soil; %) | | capillar_capacity | None | Capillar capacity (soil; %) | | humidity | None | Humidity (soil; %) | | minimum_air_capacity | None | Minimum air capacity (soil; %) | | porosity | None | Porosity (soil; %) | | volume_mass | None | Volume mass (soil; g/cm3) | | volume_mass_reduced | None | Volume mass reduced (soil; g/cm3) | | dissolved_organic_compounds | None | Dissolved organic compounds (soil; %) | | fulvic_acids | None | Fulvic acids (soil; %) | | humic_acids | None | Humic acids (soil; %) | | HA_FA | None | HA/FA ratio (soil; dimensionless) | | Q4_6 | None | Q4/6 ratio (soil; dimensionless) | | saturation | None | Saturation (soil; %) | | total_carbonates | None | Total carbonates (soil; %) | | total_nitrogen | None | Total nitrogen (soil; %) | | granularity_clay_1_10um | None | Granularity clay 1-10 um (soil; %) | | granularity_clay_lt1um | None | Granularity clay < 1 um (soil; %) | | granularity_clay_lt2um | None | Granularity clay < 2 um (soil; %) | | granularity_clay_lt6um | None | Granularity clay < 6 um (soil; %) | | granularity_clay_lt10um | None | Granularity clay < 10 um (soil; %) | | granularity_silt_10_50um | None | Granularity silt 10-50 um (soil; %) | | granularity_sand_50_100um | None | Granularity sand 50-100 um (soil; %) | | granularity_sand_100_2000um | None | Granularity sand 100-2000 um (soil; %) | | granularity_sand_50_250um | None | Granularity sand 50-250 um (soil; %) | | granularity_sand_250_2000um | None | Granularity sand 250-2000 um (soil; %) | | pH_CaCl2 | None | pH in CaCl2 solution (soil; dimensionless) | | pH_H2O | None | pH in water (soil; dimensionless) | | pH_KCl | None | pH in KCl solution (soil; dimensionless) | | total_organic_carbon | None | Total organic carbon (sediment, soil; %) | | cec | None | Cation exchange capacity (CEC) (sediment, soil; meq/kg) | | cec_t | None | Total (Effective) Cation Exchange Capacity (CEC) (soil; meq/kg) | | cec_Meh_Ca | None | Exchangeable calcium extracted by Mehlich method (sediment, soil; meq/kg) | | cec_Meh_H | None | Exchangeable hydrogen extracted by Mehlich method (sediment, soil; meq/kg) | | cec_Meh_K | None | Exchangeable potassium extracted by Mehlich method (sediment, soil; meq/kg) | | cec_Meh_Mg | None | Exchangeable magnesium extracted by Mehlich method (sediment, soil; meq/kg) | | cec_Meh_P | None | Extractable phosphorus extracted by Mehlich method (soil; meq/kg) | | cec_exchange_Al | None | Exchangeable aluminium fraction of cation exchange capacity (soil; meq/kg) | | cec_exchange_Ca | None | Exchangeable calcium fraction of cation exchange capacity (soil; meq/kg) | | cec_exchange_Fe | None | Exchangeable iron fraction of cation exchange capacity (soil; meq/kg) | | cec_exchange_K | None | Exchangeable potassium fraction of cation exchange capacity (soil; meq/kg) | | cec_exchange_Mg | None | Exchangeable magnesium fraction of cation exchange capacity (soil; meq/kg) | | cec_exchange_Mn | None | Exchangeable manganese fraction of cation exchange capacity (soil; meq/kg) | | cec_exchange_Na | None | Exchangeable sodium fraction of cation exchange capacity (soil; meq/kg) | | temperature | None | Temperature (air, water; deg C) | | sample_weight | None | Weight of sample (air ug/m3; water g/l) | | creatinine | None | Creatinine (biota; mg/dl) | | specific_gravity | None | Specific gravity (biota; dimensionless) | | dry_weight | None | Dry weight (biota; g) | | wet_weight | None | Wet weight (biota; g) | | lipid_weight | None | Lipid weight — tissue lipid content (biota; g) | | density | None | Density (soil; g/cm3) |
 
 
 
 
 ## Slots
-
-| Name | Description |
-| ---  | --- |
-| [parameter](parameter.md) | Name of the parameter measured |
+ | Name | Description | | ---  | --- | | [parameter](parameter.md) | Name of the parameter measured |
 
 
 

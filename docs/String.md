@@ -16,10 +16,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 ## Type Properties
 
-| Property | Value |
-| --- | --- |
-| Base | `str` |
-| Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
+| Property | Value | | --- | --- | | Base | `str` | | Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
 
 
 
@@ -47,12 +44,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:string |
-| native | cenvo:string |
-| exact | schema:Text |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | xsd:string | | native | cenvo:string | | exact | schema:Text |
 
 
 

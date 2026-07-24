@@ -143,31 +143,7 @@ URI: [cenvo:MonitoringActivity](https://w3id.org/chemical-exposome/schema/chemic
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [name_en](name_en.md) | 1 <br/> [String](String.md) | Name or designation in English | direct |
-| [name_original](name_original.md) | 1 <br/> [String](String.md) | Name of the entity in the original language of the  institution/site/project | direct |
-| [acronym](acronym.md) | 1 <br/> [String](String.md) | Short name or acronym | direct |
-| [type](type.md) | 1 <br/> [MonitoringActivityType](MonitoringActivityType.md) | Type of monitoring activity | direct |
-| [activity_description](activity_description.md) | 1 <br/> [String](String.md) | A brief summary with the most important details summarising the project (obje... | direct |
-| [activity_identifier](activity_identifier.md) | * <br/> [IRI](IRI.md) | Project/monitoring programme identifier provided as URL (GUPRI) | direct |
-| [monitoring_reasons](monitoring_reasons.md) | 0..1 <br/> [String](String.md) | Primary reasons for performing monitoring (e | direct |
-| [legislation_policy](legislation_policy.md) | * <br/> [IRI](IRI.md) | Link(s) to policy, convention, or legislation underpinning the monitoring act... | direct |
-| [implementation_level](implementation_level.md) | 0..1 <br/> [ImplementationLevel](ImplementationLevel.md) | The geographic scale of the monitoring coverage (international, national, reg... | direct |
-| [language](language.md) | * <br/> [Language](Language.md) | Language(s) used, as 2-letter codes according to ISO 639-1 | direct |
-| [start_date](start_date.md) | 1 <br/> [Date](Date.md) | The beginning (or previewed starting) date of the monitoring programme/projec... | direct |
-| [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) | End date of the project/monitoring programme | direct |
-| [campaigns](campaigns.md) | * <br/> [Campaign](Campaign.md) | If an Environmental Monitoring Programme/Project has a long-term perspective ... | direct |
-| [institutions](institutions.md) | 1..* <br/> [Institution](Institution.md) | Institution(s) responsible for implementing the monitoring activity | direct |
-| [contacts](contacts.md) | 1..* <br/> [Contact](Contact.md) | Contact person(s) for the monitoring activity | direct |
-| [funders](funders.md) | * <br/> [Funder](Funder.md) | Funding entity/entities supporting the monitoring activity | direct |
-| [access_procedures](access_procedures.md) | 1 <br/> [String](String.md) | Information on procedure to obtain access to the dataset | direct |
-| [acknowledgement](acknowledgement.md) | 1 <br/> [String](String.md) | Text for acknowledgement which should be reported when using/re-using the dat... | direct |
-| [license](license.md) | 1 <br/> [String](String.md) | License or terms for data reuse | direct |
-| [disclaimer](disclaimer.md) | 0..1 <br/> [String](String.md) | Text for disclaimer when using/re-using the data | direct |
-| [version](version.md) | 0..1 <br/> [String](String.md) | Version of the dataset | direct |
-| [publication_year](publication_year.md) | 0..1 <br/> [Integer](Integer.md) | Year when the dataset was or will be made publicly available | direct |
-| [provenance](provenance.md) | 0..1 <br/> [String](String.md) | A statement about the lineage of the dataset | direct |
+| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | [name_en](name_en.md) | 1 [String](String.md) | Name or designation in English | direct | | [name_original](name_original.md) | 1 [String](String.md) | Name of the entity in the original language of the  institution/site/project | direct | | [acronym](acronym.md) | 1 [String](String.md) | Short name or acronym | direct | | [type](type.md) | 1 [MonitoringActivityType](MonitoringActivityType.md) | Type of monitoring activity | direct | | [activity_description](activity_description.md) | 1 [String](String.md) | A brief summary with the most important details summarising the project (obje... | direct | | [activity_identifier](activity_identifier.md) | * [IRI](IRI.md) | Project/monitoring programme identifier provided as URL (GUPRI) | direct | | [monitoring_reasons](monitoring_reasons.md) | 0..1 [String](String.md) | Primary reasons for performing monitoring (e | direct | | [legislation_policy](legislation_policy.md) | * [IRI](IRI.md) | Link(s) to policy, convention, or legislation underpinning the monitoring act... | direct | | [implementation_level](implementation_level.md) | 0..1 [ImplementationLevel](ImplementationLevel.md) | The geographic scale of the monitoring coverage (international, national, reg... | direct | | [language](language.md) | * [Language](Language.md) | Language(s) used, as 2-letter codes according to ISO 639-1 | direct | | [start_date](start_date.md) | 1 [Date](Date.md) | The beginning (or previewed starting) date of the monitoring programme/projec... | direct | | [end_date](end_date.md) | 0..1 [Date](Date.md) | End date of the project/monitoring programme | direct | | [campaigns](campaigns.md) | * [Campaign](Campaign.md) | If an Environmental Monitoring Programme/Project has a long-term perspective ... | direct | | [institutions](institutions.md) | 1..* [Institution](Institution.md) | Institution(s) responsible for implementing the monitoring activity | direct | | [contacts](contacts.md) | 1..* [Contact](Contact.md) | Contact person(s) for the monitoring activity | direct | | [funders](funders.md) | * [Funder](Funder.md) | Funding entity/entities supporting the monitoring activity | direct | | [access_procedures](access_procedures.md) | 1 [String](String.md) | Information on procedure to obtain access to the dataset | direct | | [acknowledgement](acknowledgement.md) | 1 [String](String.md) | Text for acknowledgement which should be reported when using/re-using the dat... | direct | | [license](license.md) | 1 [String](String.md) | License or terms for data reuse | direct | | [disclaimer](disclaimer.md) | 0..1 [String](String.md) | Text for disclaimer when using/re-using the data | direct | | [version](version.md) | 0..1 [String](String.md) | Version of the dataset | direct | | [publication_year](publication_year.md) | 0..1 [Integer](Integer.md) | Year when the dataset was or will be made publicly available | direct | | [provenance](provenance.md) | 0..1 [String](String.md) | A statement about the lineage of the dataset | direct |
 
 
 
@@ -179,18 +155,12 @@ URI: [cenvo:MonitoringActivity](https://w3id.org/chemical-exposome/schema/chemic
 
 
 ### monitoring_reasons_required_for_monitoring_programme
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'type': {'equals_string': 'monitoring_programme'}}``` |```{'monitoring_reasons': {'required': True}}``` | |
+ | Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |```{'type': {'equals_string': 'monitoring_programme'}}``` |```{'monitoring_reasons': {'required': True}}``` | |
 
 
 
 ### legislation_policy_required_for_monitoring_programme
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'type': {'equals_string': 'monitoring_programme'}}``` |```{'legislation_policy': {'required': True, 'minimum_cardinality': 1}}``` | |
+ | Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |```{'type': {'equals_string': 'monitoring_programme'}}``` |```{'legislation_policy': {'required': True, 'minimum_cardinality': 1}}``` | |
 
 
 
@@ -218,11 +188,7 @@ URI: [cenvo:MonitoringActivity](https://w3id.org/chemical-exposome/schema/chemic
 
 
 ## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cenvo:MonitoringActivity |
-| native | cenvo:MonitoringActivity |
+ | Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:MonitoringActivity | | native | cenvo:MonitoringActivity |
 
 
 
