@@ -11,7 +11,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 
-## [1.1.0] - 2026-07-24
+## [1.1.0] - 2026-07-26
 
 ### Added
 
@@ -72,24 +72,24 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - `sampling_date_start`, `sampling_date_end` → replaced by `start_date`, `end_date` (already present as global slots)
 - `institution_name`, `institution_abbreviation`, `institution_link` → replaced by `Institution` class with `OrganisationMetadata` mixin
 - `water_type`, `water_geographical_feature`, `water_treatment` as global slots → moved to `Site` class as optional attributes
-- `uncertainty` as global slot → moved to `MeasurementBase` mixin
+- `uncertainty` as global slot → moved to `Observation` class
 
 #### Classes — added
 - `Site` — unified monitoring site class replacing `SiteGIS` and `SiteExpert`
-- `Observation` — abstract base class for all observation types with `designates_type` pattern
+- `Observation` — abstract base class for all observation types with `designates_type` pattern and shared measurement slots
 - `Atmospheric` — concrete sample subclass for atmospheric domain; replaces `SampleAtmospheric`
 - `Aquatic` — concrete sample subclass for aquatic domain; replaces `SampleAquatic`
 - `Terrestrial` — concrete sample subclass for terrestrial domain; replaces `SampleTerrestrial`
 - `Biota` — concrete sample subclass for biota domain; replaces `SampleBiota`
 - `Taxon` — taxonomic entity referenced against GBIF Backbone Taxonomy
 - `OrganisationMetadata` — mixin providing shared metadata for `Institution` and `Funder` (name_en, name_original, ror, link)
-- `MeasurementBase` — mixin providing shared measurement slots for `MeasurementConcentration` and `MeasurementParameter` (unit, uncertainty, value)
 
 #### Classes — removed
 - `Project` → renamed and restructured as `MonitoringActivity`
 - `SiteGIS` and `SiteExpert` → merged into unified `Site` class
 - `SampleAtmospheric`, `SampleAquatic`, `SampleTerrestrial`, `SampleBiota` → replaced by `Atmospheric`, `Aquatic`, `Terrestrial`, `Biota`
 - `ChemicalCompound` class → moved to external vocabulary; referenced via PARC WP9 compound list
+- `MeasurementBase` — mixin removed; slots (`unit`, `uncertainty`, `value`) promoted to `Observation` base class
 
 #### Subsets
 - `mandatory` — fields required for all records (was present in v1.0.0 but not consistently applied)
@@ -103,12 +103,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - `Site`: `latitude_required_when_longitude_provided`
 - `Site`: `coordinate_system_required_when_coordinates_provided`
 - `Site`: `expert_fields_required_when_coordinates_withheld`
-- `MeasurementConcentration`: `at_least_one_measurement_value_required`
+- `Observation`: `at_least_one_measurement_value_required` (moved from `MeasurementConcentration`)
 
 ### Changed
 
 #### MonitoringActivity (renamed from Project)
 - Renamed `Project` → `MonitoringActivity` to reflect broader scope (scientific projects and monitoring programmes)
+- Added `sites` slot (range: `Site`, multivalued, 0..n) — explicit relationship between project and monitoring sites
 - `activity_type` → `type` (renamed, range changed to `MonitoringActivityType` enum)
 - `name_english` → `name_en` (global slot); `name_original` added as separate mandatory global slot
 - `description` → `activity_description` (renamed to avoid conflict with LinkML metadata keyword)
@@ -117,7 +118,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - `contact_email`, `contact_role`, `contact_orcid` (flat attributes) → replaced by `contacts` slot referencing `Contact` class (1..n)
 - `funder_name`, `funder_uri` (flat attributes) → replaced by `funders` slot referencing `Funder` class (0..n)
 - Added `campaigns` slot referencing `Campaign` class (0..n)
-- `version`, `publication_year`, `provenance` removed — moved to dataset-level metadata
 - `language` retained but range corrected to `Language` enum
 
 #### Campaign
@@ -126,53 +126,52 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - `start_date`, `end_date`, `acronym` now inherited via global slots rather than local attributes
 
 #### Institution
-- Flat attributes (`name`, `name_abbreviation`, `institutional_ror`, `country`, `link`) replaced by `OrganisationMetadata` mixin slots
+- Flat attributes replaced by `OrganisationMetadata` mixin slots
 - Now uses `OrganisationMetadata` mixin for shared organisation fields
 
 #### Contact
 - Added `contact_id` identifier attribute
 - Added `institution` attribute (range: `Institution`) — links contact to their institution
-- `role` retained
 
 #### Funder
 - Added `funder_id` identifier attribute
-- `funder_name`, `funder_uri` removed — replaced by `OrganisationMetadata` mixin slots (`name_en`, `name_original`, `ror`, `link`)
-- Now uses `OrganisationMetadata` mixin
+- Flat attributes replaced by `OrganisationMetadata` mixin slots
 
 #### Sample
 - Added `domain` attribute with `designates_type: true` — determines which subclass to instantiate
-- Added `sample_id` attribute (previously a slot reference only)
+- Added `observations` slot (range: `Observation`, multivalued, 0..n) — explicit relationship between sample and observations
+- Added `site_id` global slot reference — explicit relationship between sample and site
 - `sampling_date_start`, `sampling_date_end` → replaced by global `start_date`, `end_date` slots
-- Added `site_id` global slot reference
+
+#### Observation
+- `unit`, `uncertainty`, `value` slots promoted from `MeasurementBase` mixin directly to `Observation` — shared by all observation subclasses
+- `sample_id` slot retained — links observation to its sample
+- `at_least_one_measurement_value_required` rule moved here from `MeasurementConcentration`
 
 #### MeasurementConcentration
-- Now inherits from `Observation` via `is_a` and uses `MeasurementBase` mixin
+- Now inherits from `Observation` via `is_a` — no longer uses `MeasurementBase` mixin
 - `analysis_method` → `analytical_method` (renamed for domain accuracy)
-- `analysis_method_link` → `analytical_method_link` (renamed accordingly)
-- `laboratory` removed — to be referenced via `Institution` class in future version
-- `concentration` removed — replaced by `value` slot from `MeasurementBase` mixin
-- `loq`, `lod` retained
-- `compound` range changed to `ChemicalCompound` class reference
+- `concentration` removed — replaced by `value` slot inherited from `Observation`
+- `loq`, `lod` retained as concentration-specific attributes
 
 #### MeasurementParameter
-- Now inherits from `Observation` via `is_a` and uses `MeasurementBase` mixin
-- `parameter` slot moved to class level (range: `Parameter` enum)
-- `value` slot moved to `MeasurementBase` mixin (shared with `MeasurementConcentration`)
+- Now inherits from `Observation` via `is_a` — no longer uses `MeasurementBase` mixin
+- `parameter` slot at class level (range: `Parameter` enum)
+- `value` slot inherited from `Observation`
 
-#### Site (replacing SiteGIS + SiteExpert)
+#### Site
 - `SiteGIS` and `SiteExpert` merged into single `Site` class
-- `coordinate_privacy_exception` boolean flag introduced to switch between GIS and expert mode
-- `coordinate_privacy_exception_reason` added — mandatory justification when coordinates withheld
-- Conditional rules enforce: coordinates mandatory by default; expert fields mandatory when privacy exception set
+- `coordinate_privacy_exception` boolean flag introduced
+- `coordinate_privacy_exception_reason` added
 - `managing_instance` range changed from `string` to `Institution`
-- `site_name` modelled as multivalued string with no English enforcement — culturally neutral
+- `site_name` modelled as multivalued string with no English enforcement
 
 ### Fixed
-- `identifier: true` removed from all global slot definitions — now defined only in `slot_usage` of the class where the slot IS the primary key (`Site`, `Sample`, `Institution`, `Funder`, `Contact`, `MonitoringActivity`)
-- Country enum `NO` (Norway) and Language enum `no` (Norwegian) quoted to prevent YAML boolean misinterpretation (`False`)
-- `created_on` and `last_updated_on` corrected to full ISO 8601 datetime format and corrected order
-- `URIorCURIE` type replaced by `IRI` — more precise semantic type
-- All `standard_naming` warnings acknowledged as intentional — enum values follow external controlled vocabularies (ISO 3166-1, ISO 639-1, scientific nomenclature, PARC matrix vocabulary) rather than LinkML snake_case convention
+- `identifier: true` removed from all global slot definitions — now defined only in `slot_usage` of the owning class
+- Country enum `NO` (Norway) and Language enum `no` (Norwegian) quoted to prevent YAML boolean misinterpretation
+- `created_on` and `last_updated_on` corrected to full ISO 8601 datetime format and correct order; `last_updated_on` updated to `2026-07-26`
+- `URIorCURIE` type replaced by `IRI`
+- All `standard_naming` warnings acknowledged as intentional — enum values follow external controlled vocabularies
 - Descriptions added to all enum values in `Gender`, `UNRegionalGroup`, `ImplementationLevel`, `WaterTreatment`
 - Descriptions added to classes `Institution`, `Funder`, `Atmospheric`, `Aquatic`, `Biota`, `Observation`
 - Descriptions added to `matrix`, `sampling_method`, `gender` attributes on sample subclasses

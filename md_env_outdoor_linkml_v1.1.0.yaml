@@ -13,7 +13,7 @@ license: https://creativecommons.org/licenses/by/4.0/
 # Udate the created_by and last_updated_on
 created_by: https://orcid.org/0000-0003-0222-801x # Katarina Rihackova
 created_on: "2026-06-08T00:00:00Z"
-last_updated_on: "2026-07-24T00:00:00Z"
+last_updated_on: "2026-07-26T00:00:00Z"
 modified_by: https://orcid.org/0000-0003-0222-801x # Katarina Rihackova
 # contributors - TBC. Placeholder.
 contributors:
@@ -2964,6 +2964,7 @@ classes:
     description: >-
       A research project or monitoring programme collecting environmental
       data on chemicals in the outdoor environment (air, water, sediment, soil, biota)
+    tree_root: true
     slots:
       - name_en
       - name_original
@@ -3047,6 +3048,7 @@ classes:
           a few years, it may be necessary to input data at suitable time intervals. For this time period, 
           is used the term "Campaign". A Campaign is defined by its start and end, and it is recommended 
           to name it within the project using a consistent style.
+        required: false
         multivalued: true    # 0..n
         inlined_as_list: true
       
@@ -3124,7 +3126,16 @@ classes:
         range: string
         required: false
 
-  
+      # Site
+      sites:
+        range: Site
+        multivalued: true
+        required: true
+        inlined_as_list: true
+        description: >-
+          Monitoring site(s) associated with this project
+          or monitoring programme.
+
     rules:
       - title: monitoring_reasons_required_for_monitoring_programme
         description: >-
@@ -3316,6 +3327,15 @@ classes:
           disclosure of the exact site location.
         in_subset:
           - mandatory_if
+
+      # Samples
+      samples:
+        range: Sample
+        multivalued: true
+        required: false
+        inlined_as_list: true
+        description: >-
+          Samples collected at this monitoring site.
 
       # --- Coordinates (mandatory unless privacy exception - see coordinate_privacy_exception attribute) ---
       latitude:
@@ -3527,6 +3547,15 @@ classes:
           - mandatory
         designates_type: true
 
+      observations:
+        range: Observation
+        multivalued: true
+        required: false
+        inlined_as_list: true
+        description: >-
+          Observations (concentration measurements and parameters)
+          associated with this sample.
+
   # ---------------------------------------------------------------------------
   # SAMPLE ATMOSPHERIC
   # ---------------------------------------------------------------------------
@@ -3685,42 +3714,43 @@ classes:
   
   
   # ---------------------------------------------------------------------------
-  # MEASUREMENT CONCENTRATION
+  # OBSERVATION
   # ---------------------------------------------------------------------------
   Observation:
     abstract: true
-    description: Observation - concentration measurement or other parameter
-    slots: 
+    description: >-
+      Abstract base class for all observations associated with a sample.
+      Every observation must be either a MeasurementConcentration or a
+      MeasurementParameter. Contains shared slots (unit, uncertainty, value)
+      common to all observation types.
+    slots:
       - sample_id
+      - unit
+      - uncertainty
+      - value
+    
     attributes:
-      
       observation_type:
         description: >-
-          Type of measurement/observation: i) Chemical concentration in the environment
-          or biota - main observation and; ii) Other parameters - they give context to the 
-          main measurement. 
+          Type of measurement/observation: i) Chemical concentration in the
+          environment or biota - main observation and; ii) Other parameters -
+          they give context to the main measurement.
         range: ObservationType
         required: true
         in_subset:
           - mandatory
         designates_type: true
-  
-  MeasurementBase:
-    mixin: true
-    description: >-
-      Shared measurement slots common to all observation types.
-    slots:
-      - unit
-      - uncertainty
-      - value
+
+  # ---------------------------------------------------------------------------
+  # MEASUREMENT CONCENTRATION
+  # ---------------------------------------------------------------------------
 
   MeasurementConcentration:
     is_a: Observation
     description: >-
       A measured concentration of a chemical compound in a sample.
       At least one of concentration, LOQ, or LOD must be provided.
-    mixins: 
-      - MeasurementBase 
+   
     attributes:
       laboratory: # Link with the institution?
         description: Name of the laboratory performing the analysis
@@ -3837,10 +3867,8 @@ classes:
       An additional parameter measured in the sample
       (e.g. pH, temperature, TOC). Depends on matrix type. 
       Gives context to the chemical concentration measurement.
-    mixins:
-      - MeasurementBase
+    
     attributes:
-
       parameter: # Add rule about meteorological information source.. 
         description: >-
           Name of the parameter measured. Refer to the
