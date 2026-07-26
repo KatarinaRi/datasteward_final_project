@@ -6,7 +6,10 @@ URI: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 Name: chemicals-outdoor-schema
 
+## Schema Overview
 
+- [ER diagram — data relationships](schema_diagram.md)
+- [Class diagram — inheritance hierarchy](class_diagram.md)
 
 ## Classes
 
