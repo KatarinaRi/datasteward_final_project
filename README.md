@@ -1566,6 +1566,175 @@ git commit -m "Update schema documentation"
 git push
 ```
 
+### Generating Outputs from a LinkML Schema
+
+One of the key strengths of LinkML is that the schema (`.yaml` file) is a **single source of truth** from which multiple different outputs can be generated automatically. This means that when the schema is updated, all outputs can be regenerated consistently without manual effort.
+
+
+**Available outputs overview**
+
+| Output | Generator | Format | Primary use |
+|--------|-----------|--------|-------------|
+| OWL ontology | `gen-owl` | `.owl` (RDF/XML) | Semantic web, Protégé, reasoning |
+| JSON Schema | `gen-json-schema` | `.json` | JSON data validation |
+| SHACL Shapes | `gen-shacl` | `.ttl` (Turtle RDF) | RDF/linked data validation |
+| Excel template | `gen-excel` | `.xlsx` | Data entry and reporting |
+| Data dictionary | `gen-markdown-datadict` | `.md` | Human-readable field reference |
+| Python classes | `gen-python` | `.py` | Programmatic data handling |
+| CSV summary | `gen-csv` | `.csv` | Technical field reference |
+| Documentation | `gen-doc` | `.md` | GitHub Pages documentation |
+| ER diagram | `gen-erdiagram` | `.md` (Mermaid) | Data relationship diagram |
+
+#### OWL ontology
+
+**What it is:** A formal ontology in Web Ontology Language (OWL) — the standard format for semantic web ontologies. Expresses your schema as a machine-readable ontology with classes, properties, and axioms.
+
+**What it contains:**
+- Every class becomes an `owl:Class`
+- Every slot becomes an `owl:ObjectProperty` or `owl:DatatypeProperty`
+- Inheritance is expressed as `rdfs:subClassOf`
+- Enum values become `owl:NamedIndividual` instances
+- Cardinality constraints become OWL restriction axioms
+
+**Primary use cases:**
+- Open in **Protégé** (free ontology editor) to visualise the full class hierarchy and property relationships in one diagram
+- Run an **OWL reasoner** (HermiT, Pellet) to infer implicit relationships and check consistency
+- Publish as a **linked data ontology** — making your schema part of the semantic web
+- Align with other ontologies using `owl:equivalentClass`, `owl:equivalentProperty`
+
+**Generate:**
+```bash
+PYTHONUTF8=1 gen-owl your-schema.yml > schema.owl
+```
+
+#### Excel data entry template
+
+**What it is:** A multi-sheet Excel workbook where each sheet corresponds to a class in the schema and each column corresponds to an attribute.
+
+**What it contains:**
+- One sheet per class
+- One column per slot/attribute
+- Column headers = slot names
+- Empty rows ready for data entry
+
+**Primary use cases:**
+- Send to **data providers** (research partners, monitoring stations) as a data reporting template — they fill it in without needing to understand the schema
+- Use as a **data collection template** for field data
+- Basis for a more enhanced template with dropdown validation and cardinality annotations
+
+**Generate:**
+```bash
+PYTHONUTF8=1 gen-excel your-schema.yml --output schema.xlsx
+```
+
+**Limitations:**
+- Does not include cardinality information
+- Does not include dropdown validation for enum fields
+- Does not include data type constraints
+- These can be added manually or via a custom Python script using openpyxl
+
+#### Data dictionary (Markdown)
+
+**What it is:** A human-readable reference document listing all classes, slots, enums and their properties — a technical specification for data providers and schema users.
+
+**What it contains:**
+- All classes with their slots
+- Data types and cardinalities
+- Descriptions
+- Enum values
+
+**Primary use cases:**
+- Reference document for **data managers** and **data providers**
+- Supplementary material for **publications** describing the schema
+- Input for **metadata profile documentation**
+
+**Generate:**
+```bash
+PYTHONUTF8=1 gen-markdown-datadict your-schema.yml > datadict.md
+```
+
+#### JSON Schema
+
+**What it is:** A JSON Schema document (`.json`) that validates JSON data files against the schema constraints.
+
+**What it contains:**
+- All classes as JSON Schema object definitions
+- Data types mapped to JSON Schema types
+- Required fields
+- Enum value constraints
+- Pattern constraints
+
+**Primary use cases:**
+- **Validate JSON data** submitted by partners before ingestion into the repository
+- Use in **APIs** to validate request/response bodies
+- Integrate into **CI/CD pipelines** for automated data quality checking
+
+**Generate:**
+```bash
+PYTHONUTF8=1 gen-json-schema your-schema.yml > schema.json
+```
+
+#### SHACL Shapes
+
+**What it is:** SHACL (Shapes Constraint Language) is a W3C standard for validating RDF graphs. The generated `.ttl` file contains shapes that validate RDF data against your schema constraints.
+
+**What it contains:**
+- One `sh:NodeShape` per class
+- Property shapes for each slot with cardinality and datatype constraints
+- Value constraints for enum slots
+
+**Primary use cases:**
+- **Validate RDF/linked data** (Turtle, JSON-LD, RDF/XML) submitted to the repository
+- Use in **SPARQL endpoints** to enforce data quality
+- Required for **EOSC compliance** when publishing linked data
+
+**Generate:**
+```bash
+PYTHONUTF8=1 gen-shacl your-schema.yml > schema.shacl.ttl
+```
+
+#### Python classes
+
+**What it is:** Python dataclasses or Pydantic models generated from the schema — one class per LinkML class.
+
+**What it contains:**
+- Python class definitions with typed attributes
+- Inheritance between classes
+- Basic validation
+
+**Primary use cases:**
+- Build **data pipelines** that create and validate records programmatically
+- Use in **repository software** to handle data ingestion
+- **Type-safe** data handling in Python code
+
+**Generate:**
+```bash
+PYTHONUTF8=1 gen-python your-schema.yml > schema.py
+```
+
+#### Full generation workflow
+
+Run all outputs at once:
+
+```bash
+# Activate virtual environment
+source linkml-env/Scripts/activate
+
+# Navigate to schema folder
+cd /path/to/your/schema
+
+# Generate all outputs
+PYTHONUTF8=1 gen-owl your-schema.yml > outputs/schema.owl
+PYTHONUTF8=1 gen-json-schema your-schema.yml > outputs/schema.json
+PYTHONUTF8=1 gen-shacl your-schema.yml > outputs/schema.shacl.ttl
+PYTHONUTF8=1 gen-excel your-schema.yml --output outputs/schema.xlsx
+PYTHONUTF8=1 gen-markdown-datadict your-schema.yml > outputs/datadict.md
+PYTHONUTF8=1 gen-python your-schema.yml > outputs/schema.py
+PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown
+```
+
+All outputs are generated from the same source file — update the schema once and regenerate everything.
+
 ## CHANGELOG
 
 A changelog is a file that documents all notable changes made to a project between versions — what was added, changed, fixed, or removed. It's essentially a human-readable history of the project's evolution.
