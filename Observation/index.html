@@ -1197,33 +1197,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../MeasurementBase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Class: MeasurementBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../MeasurementConcentration/" class="md-nav__link">
         
   
@@ -1488,6 +1461,17 @@
     <span class="md-ellipsis">
       
         Slots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usages
       
     </span>
   </a>
@@ -3855,6 +3839,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../observations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../orcid/" class="md-nav__link">
         
   
@@ -4179,6 +4190,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sampling_method/" class="md-nav__link">
         
   
@@ -4376,6 +4414,33 @@
     
   
     Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sites
   
 
     
@@ -4869,6 +4934,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4964,7 +5040,7 @@
 
 
 <h1 id="class-observation">Class: Observation</h1>
-<p><em>Observation - concentration measurement or other parameter</em></p>
+<p><em>Abstract base class for all observations associated with a sample. Every observation must be either a MeasurementConcentration or a MeasurementParameter. Contains shared slots (unit, uncertainty, value) common to all observation types.</em></p>
 <div>
 <ul>
 <li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
@@ -4974,7 +5050,8 @@
     class Observation
     click Observation href "../Observation/"
       Observation &lt;|-- MeasurementConcentration
-        click MeasurementConcentration href "../MeasurementConcentration/"       Observation &lt;|-- MeasurementParameter
+        click MeasurementConcentration href "../MeasurementConcentration/"
+      Observation &lt;|-- MeasurementParameter
         click MeasurementParameter href "../MeasurementParameter/"
 
       Observation : observation_type
@@ -4990,40 +5067,161 @@
 
       Observation : sample_id
 
+      Observation : uncertainty
+
+      Observation : unit
+
+
+
+
+
+        Observation --&gt; "1" Unit : unit
+        click Unit href "../Unit/"
+
+
+
+      Observation : value
+
 </code></pre>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>Observation</strong><ul>
-<li><a href="../MeasurementConcentration/">MeasurementConcentration</a> [ <a href="../MeasurementBase/">MeasurementBase</a>]</li>
-<li><a href="../MeasurementParameter/">MeasurementParameter</a> [ <a href="../MeasurementBase/">MeasurementBase</a>]</li>
+<li><a href="../MeasurementConcentration/">MeasurementConcentration</a></li>
+<li><a href="../MeasurementParameter/">MeasurementParameter</a></li>
 </ul>
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<p>| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | <a href="../sample_id/">sample_id</a> | 1 <a href="../String/">String</a> | Unique identifier for the sample | direct | | <a href="../observation_type/">observation_type</a> | 1 <a href="../ObservationType/">ObservationType</a> | Type of measurement/observation: i) Chemical concentration in the environment... | direct |</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../sample_id/">sample_id</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Unique identifier for the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../unit/">unit</a></td>
+<td>1 <a href="Unit.md">Unit</a></td>
+<td>Unit of measurement</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../uncertainty/">uncertainty</a></td>
+<td>0..1 <a href="../Double/">Double</a></td>
+<td>Measurement uncertainty of the concentration/paramter value, expressed as a p...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../value/">value</a></td>
+<td>0..1 <a href="../Double/">Double</a></td>
+<td>Measured value of the chemical concentration or other parameter</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../observation_type/">observation_type</a></td>
+<td>1 <a href="../ObservationType/">ObservationType</a></td>
+<td>Type of measurement/observation: i) Chemical concentration in the environment...</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Sample/">Sample</a></td>
+<td><a href="../observations/">observations</a></td>
+<td>range</td>
+<td><a href="./">Observation</a></td>
+</tr>
+<tr>
+<td><a href="../Atmospheric/">Atmospheric</a></td>
+<td><a href="../observations/">observations</a></td>
+<td>range</td>
+<td><a href="./">Observation</a></td>
+</tr>
+<tr>
+<td><a href="../Aquatic/">Aquatic</a></td>
+<td><a href="../observations/">observations</a></td>
+<td>range</td>
+<td><a href="./">Observation</a></td>
+</tr>
+<tr>
+<td><a href="../Terrestrial/">Terrestrial</a></td>
+<td><a href="../observations/">observations</a></td>
+<td>range</td>
+<td><a href="./">Observation</a></td>
+</tr>
+<tr>
+<td><a href="../Biota/">Biota</a></td>
+<td><a href="../observations/">observations</a></td>
+<td>range</td>
+<td><a href="./">Observation</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
-<p>| Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Observation | | native | cenvo:Observation |</p>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>cenvo:Observation</td>
+</tr>
+<tr>
+<td>native</td>
+<td>cenvo:Observation</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation - concentration measurement or other parameter</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Abstract base class for all observations associated with a sample. Every</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">observation must be either a MeasurementConcentration or a MeasurementParameter.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Contains shared slots (unit, uncertainty, value) common to all observation types.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
 <span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">slots</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_id</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uncertainty</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">observation_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">observation_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measurement/observation:</span><span class="nv"> </span><span class="s">i)</span><span class="nv"> </span><span class="s">Chemical</span><span class="nv"> </span><span class="s">concentration</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span>
 <span class="w">      </span><span class="s">environment</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">biota</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">observation</span><span class="nv"> </span><span class="s">and;</span><span class="nv"> </span><span class="s">ii)</span><span class="nv"> </span><span class="s">Other</span><span class="nv"> </span><span class="s">parameters</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">give</span>
-<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv">  </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">&#39;</span>
+<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.&#39;</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
@@ -5038,7 +5236,9 @@
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation - concentration measurement or other parameter</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Abstract base class for all observations associated with a sample. Every</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">observation must be either a MeasurementConcentration or a MeasurementParameter.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Contains shared slots (unit, uncertainty, value) common to all observation types.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
 <span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">attributes</span><span class="p">:</span>
@@ -5046,7 +5246,7 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">observation_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measurement/observation:</span><span class="nv"> </span><span class="s">i)</span><span class="nv"> </span><span class="s">Chemical</span><span class="nv"> </span><span class="s">concentration</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span>
 <span class="w">      </span><span class="s">environment</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">biota</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">observation</span><span class="nv"> </span><span class="s">and;</span><span class="nv"> </span><span class="s">ii)</span><span class="nv"> </span><span class="s">Other</span><span class="nv"> </span><span class="s">parameters</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">give</span>
-<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv">  </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">&#39;</span>
+<span class="w">      </span><span class="s">context</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">main</span><span class="nv"> </span><span class="s">measurement.&#39;</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
@@ -5070,6 +5270,41 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unit of measurement</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unit</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">uncertainty</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uncertainty</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Measurement</span><span class="nv"> </span><span class="s">uncertainty</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">concentration/paramter</span><span class="nv"> </span><span class="s">value,</span><span class="nv"> </span><span class="s">expressed</span>
+<span class="w">      </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">percentage</span><span class="nv"> </span><span class="s">(%)</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">95%</span><span class="nv"> </span><span class="s">confidence</span><span class="nv"> </span><span class="s">level.</span><span class="nv">  </span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measured value of the chemical concentration or other parameter</span>
+<span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandatory</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 </details>
 </div>

@@ -1192,33 +1192,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../MeasurementBase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Class: MeasurementBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../MeasurementConcentration/" class="md-nav__link">
         
   
@@ -3703,6 +3676,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../observations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../orcid/" class="md-nav__link">
         
   
@@ -4027,6 +4027,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sampling_method/" class="md-nav__link">
         
   
@@ -4232,6 +4259,33 @@
     
   
     Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sites
   
 
     
@@ -4712,64 +4766,12 @@
   <h1>Schema diagram</h1>
 
 <pre class="mermaid"><code>erDiagram
-Aquatic {
-    AquaticMatrixFraction fraction  
-    MatrixAquatic matrix  
-    SamplingMethodAquatic sampling_method  
-    Domain domain  
-    date end_date  
-    string sample_id  
-    time sampling_time_end  
-    time sampling_time_start  
-    string site_id  
-    string site_name  
-    date start_date  
-}
-Atmospheric {
-    MatrixAtmospheric matrix  
-    SamplingMethodAtmospheric sampling_method  
-    Domain domain  
-    date end_date  
-    string sample_id  
-    time sampling_time_end  
-    time sampling_time_start  
-    string site_id  
-    string site_name  
-    date start_date  
-}
-Biota {
-    EnvironmentalCompartmentList compartment  
-    Gender gender  
-    string life_stage_age  
-    MatrixBiota matrix  
-    string sampling_method  
-    Domain domain  
-    date end_date  
-    string sample_id  
-    time sampling_time_end  
-    time sampling_time_start  
-    string site_id  
-    string site_name  
-    date start_date  
-}
 Campaign {
     string acronym  
     string campaign_description  
     date end_date  
     string name_en  
     date start_date  
-}
-ChemicalCompound {
-    string cas_number  
-    IRI chebi_id  
-    CompoundGroup compound_group  
-    string compound_name  
-    string ec_number  
-    string inchi  
-    string inchikey  
-    string norman_id  
-    integer pubchem_cid  
-    integer wp9_id  
 }
 Contact {
     string contact_id  
@@ -4792,37 +4794,6 @@ Institution {
     string name_en  
     string name_original  
     RorIdentifier ror  
-}
-MeasurementBase {
-    double uncertainty  
-    Unit unit  
-    double value  
-}
-MeasurementConcentration {
-    date analysis_date  
-    AnalyticalMethod analytical_method  
-    IRI analytical_method_link  
-    string batch  
-    string data_handling_procedure  
-    IRI data_handling_procedure_link  
-    string laboratory  
-    double lod  
-    double loq  
-    string sample_preparation_method  
-    IRI sample_preparation_method_link  
-    ObservationType observation_type  
-    string sample_id  
-    double uncertainty  
-    Unit unit  
-    double value  
-}
-MeasurementParameter {
-    Parameter parameter  
-    ObservationType observation_type  
-    string sample_id  
-    double uncertainty  
-    Unit unit  
-    double value  
 }
 MonitoringActivity {
     string access_procedures  
@@ -4848,12 +4819,9 @@ MonitoringActivity {
 Observation {
     ObservationType observation_type  
     string sample_id  
-}
-OrganisationMetadata {
-    IRI link  
-    string name_en  
-    string name_original  
-    RorIdentifier ror  
+    double uncertainty  
+    Unit unit  
+    double value  
 }
 Sample {
     Domain domain  
@@ -4890,32 +4858,16 @@ Site {
     WaterType water_type  
     YearValue year_established  
 }
-Taxon {
-    integer taxon_id  
-    string taxon_name  
-    TaxonRankEnum taxon_rank  
-}
-Terrestrial {
-    MatrixTerrestrial matrix  
-    string sampling_method  
-    Domain domain  
-    date end_date  
-    string sample_id  
-    time sampling_time_end  
-    time sampling_time_start  
-    string site_id  
-    string site_name  
-    date start_date  
-}
 
-Biota ||--|o Taxon : "taxonomic_classification"
 Contact ||--|o Institution : "institution"
-MeasurementConcentration ||--|| ChemicalCompound : "compound"
 MonitoringActivity ||--}o Campaign : "campaigns"
 MonitoringActivity ||--}o Funder : "funders"
 MonitoringActivity ||--}| Contact : "contacts"
 MonitoringActivity ||--}| Institution : "institutions"
+MonitoringActivity ||--}| Site : "sites"
+Sample ||--}o Observation : "observations"
 Site ||--|o Institution : "managing_instance"
+Site ||--}o Sample : "samples"
 </code></pre>
 
 

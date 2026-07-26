@@ -1197,33 +1197,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../MeasurementBase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Class: MeasurementBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../MeasurementConcentration/" class="md-nav__link">
         
   
@@ -1336,6 +1309,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class Properties
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#slots" class="md-nav__link">
@@ -3883,6 +3867,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../observations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../orcid/" class="md-nav__link">
         
   
@@ -4207,6 +4218,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sampling_method/" class="md-nav__link">
         
   
@@ -4404,6 +4442,33 @@
     
   
     Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sites
   
 
     
@@ -4875,6 +4940,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#class-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5120,6 +5196,17 @@
 
       MonitoringActivity : publication_year
 
+      MonitoringActivity : sites
+
+
+
+
+
+        MonitoringActivity --&gt; "1..*" Site : sites
+        click Site href "../Site/"
+
+
+
       MonitoringActivity : start_date
 
       MonitoringActivity : type
@@ -5137,20 +5224,241 @@
 
 </code></pre>
 <!-- no inheritance hierarchy -->
+<h2 id="class-properties">Class Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tree Root</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
-<p>| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | <a href="../name_en/">name_en</a> | 1 <a href="../String/">String</a> | Name or designation in English | direct | | <a href="../name_original/">name_original</a> | 1 <a href="../String/">String</a> | Name of the entity in the original language of the  institution/site/project | direct | | <a href="../acronym/">acronym</a> | 1 <a href="../String/">String</a> | Short name or acronym | direct | | <a href="../type/">type</a> | 1 <a href="../MonitoringActivityType/">MonitoringActivityType</a> | Type of monitoring activity | direct | | <a href="../activity_description/">activity_description</a> | 1 <a href="../String/">String</a> | A brief summary with the most important details summarising the project (obje... | direct | | <a href="../activity_identifier/">activity_identifier</a> | * <a href="../IRI/">IRI</a> | Project/monitoring programme identifier provided as URL (GUPRI) | direct | | <a href="../monitoring_reasons/">monitoring_reasons</a> | 0..1 <a href="../String/">String</a> | Primary reasons for performing monitoring (e | direct | | <a href="../legislation_policy/">legislation_policy</a> | * <a href="../IRI/">IRI</a> | Link(s) to policy, convention, or legislation underpinning the monitoring act... | direct | | <a href="../implementation_level/">implementation_level</a> | 0..1 <a href="../ImplementationLevel/">ImplementationLevel</a> | The geographic scale of the monitoring coverage (international, national, reg... | direct | | <a href="../language/">language</a> | * <a href="Language.md">Language</a> | Language(s) used, as 2-letter codes according to ISO 639-1 | direct | | <a href="../start_date/">start_date</a> | 1 <a href="../Date/">Date</a> | The beginning (or previewed starting) date of the monitoring programme/projec... | direct | | <a href="../end_date/">end_date</a> | 0..1 <a href="../Date/">Date</a> | End date of the project/monitoring programme | direct | | <a href="../campaigns/">campaigns</a> | * <a href="../Campaign/">Campaign</a> | If an Environmental Monitoring Programme/Project has a long-term perspective ... | direct | | <a href="../institutions/">institutions</a> | 1..<em> <a href="../Institution/">Institution</a> | Institution(s) responsible for implementing the monitoring activity | direct | | <a href="../contacts/">contacts</a> | 1..</em> <a href="../Contact/">Contact</a> | Contact person(s) for the monitoring activity | direct | | <a href="../funders/">funders</a> | * <a href="../Funder/">Funder</a> | Funding entity/entities supporting the monitoring activity | direct | | <a href="../access_procedures/">access_procedures</a> | 1 <a href="../String/">String</a> | Information on procedure to obtain access to the dataset | direct | | <a href="../acknowledgement/">acknowledgement</a> | 1 <a href="../String/">String</a> | Text for acknowledgement which should be reported when using/re-using the dat... | direct | | <a href="../license/">license</a> | 1 <a href="../String/">String</a> | License or terms for data reuse | direct | | <a href="../disclaimer/">disclaimer</a> | 0..1 <a href="../String/">String</a> | Text for disclaimer when using/re-using the data | direct | | <a href="../version/">version</a> | 0..1 <a href="../String/">String</a> | Version of the dataset | direct | | <a href="../publication_year/">publication_year</a> | 0..1 <a href="../Integer/">Integer</a> | Year when the dataset was or will be made publicly available | direct | | <a href="../provenance/">provenance</a> | 0..1 <a href="../String/">String</a> | A statement about the lineage of the dataset | direct |</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../name_en/">name_en</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Name or designation in English</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../name_original/">name_original</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Name of the entity in the original language of the  institution/site/project</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../acronym/">acronym</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Short name or acronym</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>1 <a href="../MonitoringActivityType/">MonitoringActivityType</a></td>
+<td>Type of monitoring activity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../activity_description/">activity_description</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>A brief summary with the most important details summarising the project (obje...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../activity_identifier/">activity_identifier</a></td>
+<td>* <a href="../IRI/">IRI</a></td>
+<td>Project/monitoring programme identifier provided as URL (GUPRI)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../monitoring_reasons/">monitoring_reasons</a></td>
+<td>0..1 <a href="../String/">String</a></td>
+<td>Primary reasons for performing monitoring (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../legislation_policy/">legislation_policy</a></td>
+<td>* <a href="../IRI/">IRI</a></td>
+<td>Link(s) to policy, convention, or legislation underpinning the monitoring act...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../implementation_level/">implementation_level</a></td>
+<td>0..1 <a href="../ImplementationLevel/">ImplementationLevel</a></td>
+<td>The geographic scale of the monitoring coverage (international, national, reg...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../language/">language</a></td>
+<td>* <a href="Language.md">Language</a></td>
+<td>Language(s) used, as 2-letter codes according to ISO 639-1</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../start_date/">start_date</a></td>
+<td>1 <a href="../Date/">Date</a></td>
+<td>The beginning (or previewed starting) date of the monitoring programme/projec...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../end_date/">end_date</a></td>
+<td>0..1 <a href="../Date/">Date</a></td>
+<td>End date of the project/monitoring programme</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../campaigns/">campaigns</a></td>
+<td>* <a href="../Campaign/">Campaign</a></td>
+<td>If an Environmental Monitoring Programme/Project has a long-term perspective ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../institutions/">institutions</a></td>
+<td>1..* <a href="../Institution/">Institution</a></td>
+<td>Institution(s) responsible for implementing the monitoring activity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../contacts/">contacts</a></td>
+<td>1..* <a href="../Contact/">Contact</a></td>
+<td>Contact person(s) for the monitoring activity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../funders/">funders</a></td>
+<td>* <a href="../Funder/">Funder</a></td>
+<td>Funding entity/entities supporting the monitoring activity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../access_procedures/">access_procedures</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Information on procedure to obtain access to the dataset</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../acknowledgement/">acknowledgement</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Text for acknowledgement which should be reported when using/re-using the dat...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../license/">license</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>License or terms for data reuse</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../disclaimer/">disclaimer</a></td>
+<td>0..1 <a href="../String/">String</a></td>
+<td>Text for disclaimer when using/re-using the data</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../version/">version</a></td>
+<td>0..1 <a href="../String/">String</a></td>
+<td>Version of the dataset</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../publication_year/">publication_year</a></td>
+<td>0..1 <a href="../Integer/">Integer</a></td>
+<td>Year when the dataset was or will be made publicly available</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../provenance/">provenance</a></td>
+<td>0..1 <a href="../String/">String</a></td>
+<td>A statement about the lineage of the dataset</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sites/">sites</a></td>
+<td>1..* <a href="../Site/">Site</a></td>
+<td>Monitoring site(s) associated with this project or monitoring programme</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
 <h2 id="rules">Rules</h2>
 <h3 id="monitoring_reasons_required_for_monitoring_programme">monitoring_reasons_required_for_monitoring_programme</h3>
-<p>| Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |<code>{'type': {'equals_string': 'monitoring_programme'}}</code> |<code>{'monitoring_reasons': {'required': True}}</code> | |</p>
+<table>
+<thead>
+<tr>
+<th>Rule Applied</th>
+<th>Preconditions</th>
+<th>Postconditions</th>
+<th>Elseconditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slot_conditions</td>
+<td><code>{'type': {'equals_string': 'monitoring_programme'}}</code></td>
+<td><code>{'monitoring_reasons': {'required': True}}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="legislation_policy_required_for_monitoring_programme">legislation_policy_required_for_monitoring_programme</h3>
-<p>| Rule Applied | Preconditions | Postconditions | Elseconditions | |--------------|---------------|----------------|----------------| | slot_conditions |<code>{'type': {'equals_string': 'monitoring_programme'}}</code> |<code>{'legislation_policy': {'required': True, 'minimum_cardinality': 1}}</code> | |</p>
+<table>
+<thead>
+<tr>
+<th>Rule Applied</th>
+<th>Preconditions</th>
+<th>Postconditions</th>
+<th>Elseconditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slot_conditions</td>
+<td><code>{'type': {'equals_string': 'monitoring_programme'}}</code></td>
+<td><code>{'legislation_policy': {'required': True, 'minimum_cardinality': 1}}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
-<p>| Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:MonitoringActivity | | native | cenvo:MonitoringActivity |</p>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>cenvo:MonitoringActivity</td>
+</tr>
+<tr>
+<td>native</td>
+<td>cenvo:MonitoringActivity</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
@@ -5276,6 +5584,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Campaign</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">institutions</span><span class="p">:</span>
@@ -5386,6 +5695,18 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">sites</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sites</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Monitoring site(s) associated with this project or monitoring programme.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">tree_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">rules</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>
@@ -5546,6 +5867,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Campaign</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -5670,6 +5992,19 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">sites</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sites</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Monitoring site(s) associated with this project or monitoring programme.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MonitoringActivity</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">name_en</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name_en</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name or designation in English</span>
@@ -5714,6 +6049,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">tree_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">rules</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span>

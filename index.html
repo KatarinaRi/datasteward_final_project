@@ -1308,33 +1308,6 @@
   
   
     <li class="md-nav__item">
-      <a href="MeasurementBase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Class: MeasurementBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="MeasurementConcentration/" class="md-nav__link">
         
   
@@ -3819,6 +3792,33 @@
   
   
     <li class="md-nav__item">
+      <a href="observations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="orcid/" class="md-nav__link">
         
   
@@ -4143,6 +4143,33 @@
   
   
     <li class="md-nav__item">
+      <a href="samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="sampling_method/" class="md-nav__link">
         
   
@@ -4340,6 +4367,33 @@
     
   
     Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sites
   
 
     
@@ -4900,15 +4954,756 @@
 <h2 id="schema-overview">Schema Overview</h2>
 <p><a href="schema_diagram/">View full schema diagram</a></p>
 <h2 id="classes">Classes</h2>
-<p>| Class | Description | | --- | --- | | <a href="Campaign/">Campaign</a> | A time-bounded data collection period within a project or monitoring programm... | | <a href="ChemicalCompound/">ChemicalCompound</a> | A chemical compound monitored in environmental samples | | <a href="Contact/">Contact</a> | A contact person associated with the monitoring activity | | <a href="Funder/">Funder</a> | Funder | | <a href="Institution/">Institution</a> | Institution | | <a href="MeasurementBase/">MeasurementBase</a> | Shared measurement slots common to all observation types | | <a href="MonitoringActivity/">MonitoringActivity</a> | A research project or monitoring programme collecting environmental data on c... | | <a href="Observation/">Observation</a> | Observation - concentration measurement or other parameter | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementConcentration/">MeasurementConcentration</a> | A measured concentration of a chemical compound in a sample | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementParameter/">MeasurementParameter</a> | An additional parameter measured in the sample (e | | <a href="OrganisationMetadata/">OrganisationMetadata</a> | Shared metadata for organisations — institutions and funders | | <a href="Sample/">Sample</a> | Abstract base class for all sample types | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Aquatic/">Aquatic</a> | Aquatic sample | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Atmospheric/">Atmospheric</a> | Atmospheric sample | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Biota/">Biota</a> | Biota sample | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Terrestrial/">Terrestrial</a> | A sample from the terrestrial domain (soil) | | <a href="Site/">Site</a> | A monitoring site or location where samples are collected | | <a href="Taxon/">Taxon</a> | A taxonomic entity identified in a biological sample, referenced against the ... |</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Campaign/">Campaign</a></td>
+<td>A time-bounded data collection period within a project or monitoring programm...</td>
+</tr>
+<tr>
+<td><a href="ChemicalCompound/">ChemicalCompound</a></td>
+<td>A chemical compound monitored in environmental samples</td>
+</tr>
+<tr>
+<td><a href="Contact/">Contact</a></td>
+<td>A contact person associated with the monitoring activity</td>
+</tr>
+<tr>
+<td><a href="Funder/">Funder</a></td>
+<td>Funder</td>
+</tr>
+<tr>
+<td><a href="Institution/">Institution</a></td>
+<td>Institution</td>
+</tr>
+<tr>
+<td><a href="MonitoringActivity/">MonitoringActivity</a></td>
+<td>A research project or monitoring programme collecting environmental data on c...</td>
+</tr>
+<tr>
+<td><a href="Observation/">Observation</a></td>
+<td>Abstract base class for all observations associated with a sample</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementConcentration/">MeasurementConcentration</a></td>
+<td>A measured concentration of a chemical compound in a sample</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementParameter/">MeasurementParameter</a></td>
+<td>An additional parameter measured in the sample (e</td>
+</tr>
+<tr>
+<td><a href="OrganisationMetadata/">OrganisationMetadata</a></td>
+<td>Shared metadata for organisations — institutions and funders</td>
+</tr>
+<tr>
+<td><a href="Sample/">Sample</a></td>
+<td>Abstract base class for all sample types</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Aquatic/">Aquatic</a></td>
+<td>Aquatic sample</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Atmospheric/">Atmospheric</a></td>
+<td>Atmospheric sample</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Biota/">Biota</a></td>
+<td>Biota sample</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Terrestrial/">Terrestrial</a></td>
+<td>A sample from the terrestrial domain (soil)</td>
+</tr>
+<tr>
+<td><a href="Site/">Site</a></td>
+<td>A monitoring site or location where samples are collected</td>
+</tr>
+<tr>
+<td><a href="Taxon/">Taxon</a></td>
+<td>A taxonomic entity identified in a biological sample, referenced against the ...</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
-<p>| Slot | Description | | --- | --- | | <a href="access_procedures/">access_procedures</a> | Information on procedure to obtain access to the dataset | | <a href="acknowledgement/">acknowledgement</a> | Text for acknowledgement which should be reported when using/re-using the dat... | | <a href="acronym/">acronym</a> | Short name or acronym | | <a href="activity_description/">activity_description</a> | A brief summary with the most important details summarising the project (obje... | | <a href="activity_identifier/">activity_identifier</a> | Project/monitoring programme identifier provided as URL (GUPRI) | | <a href="altitude/">altitude</a> | Altitude in meters above sea level (MSL) | | <a href="analysis_date/">analysis_date</a> | The date on which the concentration was determined | | <a href="analytical_method/">analytical_method</a> | Analytical method used to determine the analyte | | <a href="analytical_method_link/">analytical_method_link</a> | GUPRI linking to a public SOP or document describing the method | | <a href="batch/">batch</a> | Internal laboratory designation of the group of samples analyzed together | | <a href="campaign_description/">campaign_description</a> | Description of the campaign | | <a href="campaigns/">campaigns</a> | If an Environmental Monitoring Programme/Project has a long-term perspective ... | | <a href="cas_number/">cas_number</a> | CAS Registry Number — unique numerical identifier assigned by the Chemical Ab... | | <a href="chebi_id/">chebi_id</a> | ChEBI identifier for the compound | | <a href="compartment/">compartment</a> | The environmental compartment where the organism was sampled from | | <a href="compound/">compound</a> | Chemical compound measured in the sample | | <a href="compound_group/">compound_group</a> | Chemical group classification of the compound as defined in the PARC WP9 comp... | | <a href="compound_name/">compound_name</a> | Common or abbreviated name of the compound as used in the PARC community (e | | <a href="contact_id/">contact_id</a> | Unique contact ID | | <a href="contacts/">contacts</a> | Contact person(s) for the monitoring activity | | <a href="coordinate_privacy_exception/">coordinate_privacy_exception</a> | Set to true (value = true) if coordinates cannot be provided for privacy, sec... | | <a href="coordinate_privacy_exception_reason/">coordinate_privacy_exception_reason</a> | Justification for not providing coordinates | | <a href="coordinate_system/">coordinate_system</a> | Coordinate reference system used | | <a href="country/">country</a> | Country where the site, institution or project is located, according to ISO 3... | | <a href="data_handling_procedure/">data_handling_procedure</a> | Description of steps taken after chemical analysis (e | | <a href="data_handling_procedure_link/">data_handling_procedure_link</a> | GUPRI linking to a document describing the data handling procedure | | <a href="disclaimer/">disclaimer</a> | Text for disclaimer when using/re-using the data | | <a href="domain/">domain</a> | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | | <a href="ec_number/">ec_number</a> | EC Number (European Community Number) — identifier used in the ECHA substance... | | <a href="email/">email</a> | Email address of the project contact point | | <a href="end_date/">end_date</a> | End date in format YYYY-MM-DD | | <a href="fraction/">fraction</a> | If the collected sample is divided into multiple fractions for separate analy... | | <a href="funder_id/">funder_id</a> | Unique funder ID | | <a href="funders/">funders</a> | Funding entity/entities supporting the monitoring activity | | <a href="gender/">gender</a> | Collected organism gender | | <a href="geographic_region/">geographic_region</a> | UN M49 geographic region | | <a href="implementation_level/">implementation_level</a> | The geographic scale of the monitoring coverage (international, national, reg... | | <a href="inchi/">inchi</a> | IUPAC International Chemical Identifier (InChI) — a standard textual represen... | | <a href="inchikey/">inchikey</a> | InChIKey — a fixed-length (27-character) hash of the InChI string | | <a href="institution.md">institution</a> | Contact's institution | | <a href="institution_id/">institution_id</a> | Unique institution id | | <a href="institutions/">institutions</a> | Institution(s) responsible for implementing the monitoring activity | | <a href="laboratory/">laboratory</a> | Name of the laboratory performing the analysis | | <a href="land_use/">land_use</a> | Land use classification according to CORINE Land Cover nomenclature | | <a href="language/">language</a> | Language(s) used, as 2-letter codes according to ISO 639-1 | | <a href="latitude/">latitude</a> | Latitude in signed decimal degrees (format 0 | | <a href="legislation_policy/">legislation_policy</a> | Link(s) to policy, convention, or legislation underpinning the monitoring act... | | <a href="license/">license</a> | License or terms for data reuse | | <a href="life_stage_age/">life_stage_age</a> | Life stage or age of the organism | | <a href="link/">link</a> | URL with information about the institution | | <a href="lod/">lod</a> | Limit of detection | | <a href="longitude/">longitude</a> | Longitude in signed decimal degrees (format 0 | | <a href="loq/">loq</a> | Limit of quantification | | <a href="managing_instance/">managing_instance</a> | The institution that manages the sampling site | | <a href="matrix/">matrix</a> | Sampled matrix | | <a href="monitoring_reasons/">monitoring_reasons</a> | Primary reasons for performing monitoring (e | | <a href="name_en/">name_en</a> | Name or designation in English | | <a href="name_original/">name_original</a> | Name of the entity in the original language of the  institution/site/project | | <a href="norman_id/">norman_id</a> | NORMAN substance identifier | | <a href="nuts3/">nuts3</a> | NUTS3 region code according to the Eurostat NUTS classification (Nomenclature... | | <a href="observation_type/">observation_type</a> | Type of measurement/observation: i) Chemical concentration in the environment... | | <a href="orcid/">orcid</a> | ORCID identifier of the contact person | | <a href="parameter/">parameter</a> | Name of the parameter measured | | <a href="provenance/">provenance</a> | A statement about the lineage of the dataset | | <a href="pubchem_cid/">pubchem_cid</a> | PubChem Compound ID (CID) | | <a href="publication_year/">publication_year</a> | Year when the dataset was or will be made publicly available | | <a href="regional_group/">regional_group</a> | Regional group of United Nations member states | | <a href="river_basin/">river_basin</a> | River basin associated with the site, based on the EEA river basin districts ... | | <a href="role/">role</a> | Role/function performed by the contact person | | <a href="ror/">ror</a> | ROR identifier of the institution (format ror | | <a href="sample_id/">sample_id</a> | Unique identifier for the sample | | <a href="sample_preparation_method/">sample_preparation_method</a> | Description of the process from sample collection to chemical analysis (e | | <a href="sample_preparation_method_link/">sample_preparation_method_link</a> | GUPRI (e | | <a href="sampling_method/">sampling_method</a> | Method used to collect the sample | | <a href="sampling_time_end/">sampling_time_end</a> | Sampling end time according to ISO 8601 | | <a href="sampling_time_start/">sampling_time_start</a> | Sampling start time according to ISO 8601, 24-hour clock | | <a href="sea/">sea</a> | Sea or ocean associated with the site, based on the Marine Regions Gazetteer | | <a href="site_description/">site_description</a> | Description of the site where samples were collected | | <a href="site_id/">site_id</a> | Unique identifier of the monitoring site where the sample was collected | | <a href="site_name/">site_name</a> | Name of the monitoring site | | <a href="soil_type/">soil_type</a> | World Reference Base for Soil Resources (WRB) 2006/2007 Reference Soil Group ... | | <a href="start_date/">start_date</a> | Start date in format YYYY-MM-DD | | <a href="taxon_id/">taxon_id</a> | GBIF species key (integer) | | <a href="taxon_name/">taxon_name</a> | Scientific name of the taxon (genus, species or higher rank) as accepted in t... | | <a href="taxon_rank/">taxon_rank</a> | Taxonomic rank of the identified taxon | | <a href="taxonomic_classification/">taxonomic_classification</a> | A taxonomic entity identified in a biological sample, referenced against the ... | | <a href="type/">type</a> | Type of monitoring activity | | <a href="uncertainty/">uncertainty</a> | Measurement uncertainty of the concentration/paramter value, expressed as a p... | | <a href="unit/">unit</a> | Unit of measurement | | <a href="value/">value</a> | Measured value of the chemical concentration or other parameter | | <a href="version/">version</a> | Version of the dataset | | <a href="water_geographical_feature/">water_geographical_feature</a> | Geographical water feature type at the site | | <a href="water_treatment/">water_treatment</a> | Water treatment status at the site | | <a href="water_type/">water_type</a> | Type of water body at the site | | <a href="wp9_id/">wp9_id</a> | Internal PARC WP9 identifier for the compound | | <a href="year_established/">year_established</a> | Year of establishment of the monitoring station (YYYY) |</p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="access_procedures/">access_procedures</a></td>
+<td>Information on procedure to obtain access to the dataset</td>
+</tr>
+<tr>
+<td><a href="acknowledgement/">acknowledgement</a></td>
+<td>Text for acknowledgement which should be reported when using/re-using the dat...</td>
+</tr>
+<tr>
+<td><a href="acronym/">acronym</a></td>
+<td>Short name or acronym</td>
+</tr>
+<tr>
+<td><a href="activity_description/">activity_description</a></td>
+<td>A brief summary with the most important details summarising the project (obje...</td>
+</tr>
+<tr>
+<td><a href="activity_identifier/">activity_identifier</a></td>
+<td>Project/monitoring programme identifier provided as URL (GUPRI)</td>
+</tr>
+<tr>
+<td><a href="altitude/">altitude</a></td>
+<td>Altitude in meters above sea level (MSL)</td>
+</tr>
+<tr>
+<td><a href="analysis_date/">analysis_date</a></td>
+<td>The date on which the concentration was determined</td>
+</tr>
+<tr>
+<td><a href="analytical_method/">analytical_method</a></td>
+<td>Analytical method used to determine the analyte</td>
+</tr>
+<tr>
+<td><a href="analytical_method_link/">analytical_method_link</a></td>
+<td>GUPRI linking to a public SOP or document describing the method</td>
+</tr>
+<tr>
+<td><a href="batch/">batch</a></td>
+<td>Internal laboratory designation of the group of samples analyzed together</td>
+</tr>
+<tr>
+<td><a href="campaign_description/">campaign_description</a></td>
+<td>Description of the campaign</td>
+</tr>
+<tr>
+<td><a href="campaigns/">campaigns</a></td>
+<td>If an Environmental Monitoring Programme/Project has a long-term perspective ...</td>
+</tr>
+<tr>
+<td><a href="cas_number/">cas_number</a></td>
+<td>CAS Registry Number — unique numerical identifier assigned by the Chemical Ab...</td>
+</tr>
+<tr>
+<td><a href="chebi_id/">chebi_id</a></td>
+<td>ChEBI identifier for the compound</td>
+</tr>
+<tr>
+<td><a href="compartment/">compartment</a></td>
+<td>The environmental compartment where the organism was sampled from</td>
+</tr>
+<tr>
+<td><a href="compound/">compound</a></td>
+<td>Chemical compound measured in the sample</td>
+</tr>
+<tr>
+<td><a href="compound_group/">compound_group</a></td>
+<td>Chemical group classification of the compound as defined in the PARC WP9 comp...</td>
+</tr>
+<tr>
+<td><a href="compound_name/">compound_name</a></td>
+<td>Common or abbreviated name of the compound as used in the PARC community (e</td>
+</tr>
+<tr>
+<td><a href="contact_id/">contact_id</a></td>
+<td>Unique contact ID</td>
+</tr>
+<tr>
+<td><a href="contacts/">contacts</a></td>
+<td>Contact person(s) for the monitoring activity</td>
+</tr>
+<tr>
+<td><a href="coordinate_privacy_exception/">coordinate_privacy_exception</a></td>
+<td>Set to true (value = true) if coordinates cannot be provided for privacy, sec...</td>
+</tr>
+<tr>
+<td><a href="coordinate_privacy_exception_reason/">coordinate_privacy_exception_reason</a></td>
+<td>Justification for not providing coordinates</td>
+</tr>
+<tr>
+<td><a href="coordinate_system/">coordinate_system</a></td>
+<td>Coordinate reference system used</td>
+</tr>
+<tr>
+<td><a href="country/">country</a></td>
+<td>Country where the site, institution or project is located, according to ISO 3...</td>
+</tr>
+<tr>
+<td><a href="data_handling_procedure/">data_handling_procedure</a></td>
+<td>Description of steps taken after chemical analysis (e</td>
+</tr>
+<tr>
+<td><a href="data_handling_procedure_link/">data_handling_procedure_link</a></td>
+<td>GUPRI linking to a document describing the data handling procedure</td>
+</tr>
+<tr>
+<td><a href="disclaimer/">disclaimer</a></td>
+<td>Text for disclaimer when using/re-using the data</td>
+</tr>
+<tr>
+<td><a href="domain/">domain</a></td>
+<td>Sample type according to sampled matrix:  Atmospheric for air, particles, pre...</td>
+</tr>
+<tr>
+<td><a href="ec_number/">ec_number</a></td>
+<td>EC Number (European Community Number) — identifier used in the ECHA substance...</td>
+</tr>
+<tr>
+<td><a href="email/">email</a></td>
+<td>Email address of the project contact point</td>
+</tr>
+<tr>
+<td><a href="end_date/">end_date</a></td>
+<td>End date in format YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><a href="fraction/">fraction</a></td>
+<td>If the collected sample is divided into multiple fractions for separate analy...</td>
+</tr>
+<tr>
+<td><a href="funder_id/">funder_id</a></td>
+<td>Unique funder ID</td>
+</tr>
+<tr>
+<td><a href="funders/">funders</a></td>
+<td>Funding entity/entities supporting the monitoring activity</td>
+</tr>
+<tr>
+<td><a href="gender/">gender</a></td>
+<td>Collected organism gender</td>
+</tr>
+<tr>
+<td><a href="geographic_region/">geographic_region</a></td>
+<td>UN M49 geographic region</td>
+</tr>
+<tr>
+<td><a href="implementation_level/">implementation_level</a></td>
+<td>The geographic scale of the monitoring coverage (international, national, reg...</td>
+</tr>
+<tr>
+<td><a href="inchi/">inchi</a></td>
+<td>IUPAC International Chemical Identifier (InChI) — a standard textual represen...</td>
+</tr>
+<tr>
+<td><a href="inchikey/">inchikey</a></td>
+<td>InChIKey — a fixed-length (27-character) hash of the InChI string</td>
+</tr>
+<tr>
+<td><a href="institution.md">institution</a></td>
+<td>Contact's institution</td>
+</tr>
+<tr>
+<td><a href="institution_id/">institution_id</a></td>
+<td>Unique institution id</td>
+</tr>
+<tr>
+<td><a href="institutions/">institutions</a></td>
+<td>Institution(s) responsible for implementing the monitoring activity</td>
+</tr>
+<tr>
+<td><a href="laboratory/">laboratory</a></td>
+<td>Name of the laboratory performing the analysis</td>
+</tr>
+<tr>
+<td><a href="land_use/">land_use</a></td>
+<td>Land use classification according to CORINE Land Cover nomenclature</td>
+</tr>
+<tr>
+<td><a href="language/">language</a></td>
+<td>Language(s) used, as 2-letter codes according to ISO 639-1</td>
+</tr>
+<tr>
+<td><a href="latitude/">latitude</a></td>
+<td>Latitude in signed decimal degrees (format 0</td>
+</tr>
+<tr>
+<td><a href="legislation_policy/">legislation_policy</a></td>
+<td>Link(s) to policy, convention, or legislation underpinning the monitoring act...</td>
+</tr>
+<tr>
+<td><a href="license/">license</a></td>
+<td>License or terms for data reuse</td>
+</tr>
+<tr>
+<td><a href="life_stage_age/">life_stage_age</a></td>
+<td>Life stage or age of the organism</td>
+</tr>
+<tr>
+<td><a href="link/">link</a></td>
+<td>URL with information about the institution</td>
+</tr>
+<tr>
+<td><a href="lod/">lod</a></td>
+<td>Limit of detection</td>
+</tr>
+<tr>
+<td><a href="longitude/">longitude</a></td>
+<td>Longitude in signed decimal degrees (format 0</td>
+</tr>
+<tr>
+<td><a href="loq/">loq</a></td>
+<td>Limit of quantification</td>
+</tr>
+<tr>
+<td><a href="managing_instance/">managing_instance</a></td>
+<td>The institution that manages the sampling site</td>
+</tr>
+<tr>
+<td><a href="matrix/">matrix</a></td>
+<td>Sampled matrix</td>
+</tr>
+<tr>
+<td><a href="monitoring_reasons/">monitoring_reasons</a></td>
+<td>Primary reasons for performing monitoring (e</td>
+</tr>
+<tr>
+<td><a href="name_en/">name_en</a></td>
+<td>Name or designation in English</td>
+</tr>
+<tr>
+<td><a href="name_original/">name_original</a></td>
+<td>Name of the entity in the original language of the  institution/site/project</td>
+</tr>
+<tr>
+<td><a href="norman_id/">norman_id</a></td>
+<td>NORMAN substance identifier</td>
+</tr>
+<tr>
+<td><a href="nuts3/">nuts3</a></td>
+<td>NUTS3 region code according to the Eurostat NUTS classification (Nomenclature...</td>
+</tr>
+<tr>
+<td><a href="observation_type/">observation_type</a></td>
+<td>Type of measurement/observation: i) Chemical concentration in the environment...</td>
+</tr>
+<tr>
+<td><a href="observations/">observations</a></td>
+<td>Observations (concentration measurements and parameters) associated with this...</td>
+</tr>
+<tr>
+<td><a href="orcid/">orcid</a></td>
+<td>ORCID identifier of the contact person</td>
+</tr>
+<tr>
+<td><a href="parameter/">parameter</a></td>
+<td>Name of the parameter measured</td>
+</tr>
+<tr>
+<td><a href="provenance/">provenance</a></td>
+<td>A statement about the lineage of the dataset</td>
+</tr>
+<tr>
+<td><a href="pubchem_cid/">pubchem_cid</a></td>
+<td>PubChem Compound ID (CID)</td>
+</tr>
+<tr>
+<td><a href="publication_year/">publication_year</a></td>
+<td>Year when the dataset was or will be made publicly available</td>
+</tr>
+<tr>
+<td><a href="regional_group/">regional_group</a></td>
+<td>Regional group of United Nations member states</td>
+</tr>
+<tr>
+<td><a href="river_basin/">river_basin</a></td>
+<td>River basin associated with the site, based on the EEA river basin districts ...</td>
+</tr>
+<tr>
+<td><a href="role/">role</a></td>
+<td>Role/function performed by the contact person</td>
+</tr>
+<tr>
+<td><a href="ror/">ror</a></td>
+<td>ROR identifier of the institution (format ror</td>
+</tr>
+<tr>
+<td><a href="sample_id/">sample_id</a></td>
+<td>Unique identifier for the sample</td>
+</tr>
+<tr>
+<td><a href="sample_preparation_method/">sample_preparation_method</a></td>
+<td>Description of the process from sample collection to chemical analysis (e</td>
+</tr>
+<tr>
+<td><a href="sample_preparation_method_link/">sample_preparation_method_link</a></td>
+<td>GUPRI (e</td>
+</tr>
+<tr>
+<td><a href="samples/">samples</a></td>
+<td>Samples collected at this monitoring site</td>
+</tr>
+<tr>
+<td><a href="sampling_method/">sampling_method</a></td>
+<td>Method used to collect the sample</td>
+</tr>
+<tr>
+<td><a href="sampling_time_end/">sampling_time_end</a></td>
+<td>Sampling end time according to ISO 8601</td>
+</tr>
+<tr>
+<td><a href="sampling_time_start/">sampling_time_start</a></td>
+<td>Sampling start time according to ISO 8601, 24-hour clock</td>
+</tr>
+<tr>
+<td><a href="sea/">sea</a></td>
+<td>Sea or ocean associated with the site, based on the Marine Regions Gazetteer</td>
+</tr>
+<tr>
+<td><a href="site_description/">site_description</a></td>
+<td>Description of the site where samples were collected</td>
+</tr>
+<tr>
+<td><a href="site_id/">site_id</a></td>
+<td>Unique identifier of the monitoring site where the sample was collected</td>
+</tr>
+<tr>
+<td><a href="site_name/">site_name</a></td>
+<td>Name of the monitoring site</td>
+</tr>
+<tr>
+<td><a href="sites/">sites</a></td>
+<td>Monitoring site(s) associated with this project or monitoring programme</td>
+</tr>
+<tr>
+<td><a href="soil_type/">soil_type</a></td>
+<td>World Reference Base for Soil Resources (WRB) 2006/2007 Reference Soil Group ...</td>
+</tr>
+<tr>
+<td><a href="start_date/">start_date</a></td>
+<td>Start date in format YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><a href="taxon_id/">taxon_id</a></td>
+<td>GBIF species key (integer)</td>
+</tr>
+<tr>
+<td><a href="taxon_name/">taxon_name</a></td>
+<td>Scientific name of the taxon (genus, species or higher rank) as accepted in t...</td>
+</tr>
+<tr>
+<td><a href="taxon_rank/">taxon_rank</a></td>
+<td>Taxonomic rank of the identified taxon</td>
+</tr>
+<tr>
+<td><a href="taxonomic_classification/">taxonomic_classification</a></td>
+<td>A taxonomic entity identified in a biological sample, referenced against the ...</td>
+</tr>
+<tr>
+<td><a href="type/">type</a></td>
+<td>Type of monitoring activity</td>
+</tr>
+<tr>
+<td><a href="uncertainty/">uncertainty</a></td>
+<td>Measurement uncertainty of the concentration/paramter value, expressed as a p...</td>
+</tr>
+<tr>
+<td><a href="unit/">unit</a></td>
+<td>Unit of measurement</td>
+</tr>
+<tr>
+<td><a href="value/">value</a></td>
+<td>Measured value of the chemical concentration or other parameter</td>
+</tr>
+<tr>
+<td><a href="version/">version</a></td>
+<td>Version of the dataset</td>
+</tr>
+<tr>
+<td><a href="water_geographical_feature/">water_geographical_feature</a></td>
+<td>Geographical water feature type at the site</td>
+</tr>
+<tr>
+<td><a href="water_treatment/">water_treatment</a></td>
+<td>Water treatment status at the site</td>
+</tr>
+<tr>
+<td><a href="water_type/">water_type</a></td>
+<td>Type of water body at the site</td>
+</tr>
+<tr>
+<td><a href="wp9_id/">wp9_id</a></td>
+<td>Internal PARC WP9 identifier for the compound</td>
+</tr>
+<tr>
+<td><a href="year_established/">year_established</a></td>
+<td>Year of establishment of the monitoring station (YYYY)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="enumerations">Enumerations</h2>
-<p>| Enumeration | Description | | --- | --- | | <a href="AnalyticalMethod/">AnalyticalMethod</a> | Analytical method used to determine the analyte in the sample | | <a href="AquaticMatrixFraction/">AquaticMatrixFraction</a> | TBC - might be integrated with the matrix vocabulary | | <a href="CompoundGroup/">CompoundGroup</a> | Chemical group classification as used in the PARC WP9 compound list | | <a href="CoordinateSystem/">CoordinateSystem</a> | Coordinate reference system used for geographic coordinates | | <a href="Country.md">Country</a> | Country codes according to ISO 3166-1 alpha-2 (two-letter uppercase codes) | | <a href="Domain.md">Domain</a> | Environmental domain - sample type according to sampled matrix/ environmental... | | <a href="EnvironmentalCompartment/">EnvironmentalCompartment</a> | Environmental compartment where a biota organism was sampled from | | <a href="Gender.md">Gender</a> | Biological sex of a sampled organism | | <a href="GeographicRegion/">GeographicRegion</a> | UN M49 geographic region | | <a href="ImplementationLevel/">ImplementationLevel</a> | The geographic scale of the monitoring coverage  (e | | <a href="LandUse/">LandUse</a> | CORINE Land Cover (CLC) land use classification | | <a href="Language.md">Language</a> | Language codes according to ISO 639-1 (two-letter lowercase codes) | | <a href="MatrixAquatic/">MatrixAquatic</a> | Matrix values valid for aquatic samples (SampleAquatic) | | <a href="MatrixAtmospheric/">MatrixAtmospheric</a> | Matrix values valid for atmospheric samples (SampleAtmospheric) | | <a href="MatrixBiota/">MatrixBiota</a> | Matrix values valid for biota samples (SampleBiota) | | <a href="MatrixTerrestrial/">MatrixTerrestrial</a> | Matrix values valid for terrestrial samples (SampleTerrestrial) | | <a href="MonitoringActivityType/">MonitoringActivityType</a> | Type of monitoring activity | | <a href="ObservationType/">ObservationType</a> | Type of measurement/observation: i) Chemical concentration in the environment... | | <a href="Parameter.md">Parameter</a> | Parameters measured alongside chemical concentrations in environmental sample... | | <a href="RiverBasin/">RiverBasin</a> | Major European river basins | | <a href="Role.md">Role</a> | Role/function performed by the contact person | | <a href="SamplingMethodAquatic/">SamplingMethodAquatic</a> | Sampling method used to collect aquatic samples (water, sediment) | | <a href="SamplingMethodAtmospheric/">SamplingMethodAtmospheric</a> | Sampling method used to collect atmospheric samples (air, deposition, dust) | | <a href="Sea.md">Sea</a> | Major seas and oceans | | <a href="SoilTypeWRB/">SoilTypeWRB</a> | World Reference Base for Soil Resources (WRB) 2006/2007 Reference Soil Groups... | | <a href="TaxonRankEnum/">TaxonRankEnum</a> | Taxonomic rank of the identified taxon, aligned with GBIF Backbone Taxonomy r... | | <a href="Unit.md">Unit</a> | Units used for chemical concentration and other parameter measurements | | <a href="UNRegionalGroup/">UNRegionalGroup</a> | Regional groups of United Nations member states | | <a href="WaterGeographicalFeature/">WaterGeographicalFeature</a> | Geographical water feature type | | <a href="WaterTreatment/">WaterTreatment</a> | Water treatment status | | <a href="WaterType/">WaterType</a> | Type of water body |</p>
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="AnalyticalMethod/">AnalyticalMethod</a></td>
+<td>Analytical method used to determine the analyte in the sample</td>
+</tr>
+<tr>
+<td><a href="AquaticMatrixFraction/">AquaticMatrixFraction</a></td>
+<td>TBC - might be integrated with the matrix vocabulary</td>
+</tr>
+<tr>
+<td><a href="CompoundGroup/">CompoundGroup</a></td>
+<td>Chemical group classification as used in the PARC WP9 compound list</td>
+</tr>
+<tr>
+<td><a href="CoordinateSystem/">CoordinateSystem</a></td>
+<td>Coordinate reference system used for geographic coordinates</td>
+</tr>
+<tr>
+<td><a href="Country.md">Country</a></td>
+<td>Country codes according to ISO 3166-1 alpha-2 (two-letter uppercase codes)</td>
+</tr>
+<tr>
+<td><a href="Domain.md">Domain</a></td>
+<td>Environmental domain - sample type according to sampled matrix/ environmental...</td>
+</tr>
+<tr>
+<td><a href="EnvironmentalCompartment/">EnvironmentalCompartment</a></td>
+<td>Environmental compartment where a biota organism was sampled from</td>
+</tr>
+<tr>
+<td><a href="Gender.md">Gender</a></td>
+<td>Biological sex of a sampled organism</td>
+</tr>
+<tr>
+<td><a href="GeographicRegion/">GeographicRegion</a></td>
+<td>UN M49 geographic region</td>
+</tr>
+<tr>
+<td><a href="ImplementationLevel/">ImplementationLevel</a></td>
+<td>The geographic scale of the monitoring coverage  (e</td>
+</tr>
+<tr>
+<td><a href="LandUse/">LandUse</a></td>
+<td>CORINE Land Cover (CLC) land use classification</td>
+</tr>
+<tr>
+<td><a href="Language.md">Language</a></td>
+<td>Language codes according to ISO 639-1 (two-letter lowercase codes)</td>
+</tr>
+<tr>
+<td><a href="MatrixAquatic/">MatrixAquatic</a></td>
+<td>Matrix values valid for aquatic samples (SampleAquatic)</td>
+</tr>
+<tr>
+<td><a href="MatrixAtmospheric/">MatrixAtmospheric</a></td>
+<td>Matrix values valid for atmospheric samples (SampleAtmospheric)</td>
+</tr>
+<tr>
+<td><a href="MatrixBiota/">MatrixBiota</a></td>
+<td>Matrix values valid for biota samples (SampleBiota)</td>
+</tr>
+<tr>
+<td><a href="MatrixTerrestrial/">MatrixTerrestrial</a></td>
+<td>Matrix values valid for terrestrial samples (SampleTerrestrial)</td>
+</tr>
+<tr>
+<td><a href="MonitoringActivityType/">MonitoringActivityType</a></td>
+<td>Type of monitoring activity</td>
+</tr>
+<tr>
+<td><a href="ObservationType/">ObservationType</a></td>
+<td>Type of measurement/observation: i) Chemical concentration in the environment...</td>
+</tr>
+<tr>
+<td><a href="Parameter.md">Parameter</a></td>
+<td>Parameters measured alongside chemical concentrations in environmental sample...</td>
+</tr>
+<tr>
+<td><a href="RiverBasin/">RiverBasin</a></td>
+<td>Major European river basins</td>
+</tr>
+<tr>
+<td><a href="Role.md">Role</a></td>
+<td>Role/function performed by the contact person</td>
+</tr>
+<tr>
+<td><a href="SamplingMethodAquatic/">SamplingMethodAquatic</a></td>
+<td>Sampling method used to collect aquatic samples (water, sediment)</td>
+</tr>
+<tr>
+<td><a href="SamplingMethodAtmospheric/">SamplingMethodAtmospheric</a></td>
+<td>Sampling method used to collect atmospheric samples (air, deposition, dust)</td>
+</tr>
+<tr>
+<td><a href="Sea.md">Sea</a></td>
+<td>Major seas and oceans</td>
+</tr>
+<tr>
+<td><a href="SoilTypeWRB/">SoilTypeWRB</a></td>
+<td>World Reference Base for Soil Resources (WRB) 2006/2007 Reference Soil Groups...</td>
+</tr>
+<tr>
+<td><a href="TaxonRankEnum/">TaxonRankEnum</a></td>
+<td>Taxonomic rank of the identified taxon, aligned with GBIF Backbone Taxonomy r...</td>
+</tr>
+<tr>
+<td><a href="Unit.md">Unit</a></td>
+<td>Units used for chemical concentration and other parameter measurements</td>
+</tr>
+<tr>
+<td><a href="UNRegionalGroup/">UNRegionalGroup</a></td>
+<td>Regional groups of United Nations member states</td>
+</tr>
+<tr>
+<td><a href="WaterGeographicalFeature/">WaterGeographicalFeature</a></td>
+<td>Geographical water feature type</td>
+</tr>
+<tr>
+<td><a href="WaterTreatment/">WaterTreatment</a></td>
+<td>Water treatment status</td>
+</tr>
+<tr>
+<td><a href="WaterType/">WaterType</a></td>
+<td>Type of water body</td>
+</tr>
+</tbody>
+</table>
 <h2 id="types">Types</h2>
-<p>| Type | Description | | --- | --- | | <a href="Boolean/">Boolean</a> | A binary (true or false) value | | <a href="Curie/">Curie</a> | a compact URI | | <a href="Date/">Date</a> | a date (year, month and day) in an idealized calendar | | <a href="DateOrDatetime/">DateOrDatetime</a> | Either a date or a datetime | | <a href="Datetime/">Datetime</a> | The combination of a date and time | | <a href="Decimal/">Decimal</a> | A real number with arbitrary precision that conforms to the xsd:decimal speci... | | <a href="DecimalDegree/">DecimalDegree</a> | A decimal degree coordinate value | | <a href="Double/">Double</a> | A real number that conforms to the xsd:double specification | | <a href="EmailAddress/">EmailAddress</a> | A valid email address | | <a href="Float/">Float</a> | A real number that conforms to the xsd:float specification | | <a href="Integer/">Integer</a> | An integer | | <a href="IRI/">IRI</a> | An Internationalized Resource Identifier (IRI) | | <a href="Jsonpath/">Jsonpath</a> | A string encoding a JSON Path | | <a href="Jsonpointer/">Jsonpointer</a> | A string encoding a JSON Pointer | | <a href="Ncname/">Ncname</a> | Prefix part of CURIE | | <a href="Nodeidentifier/">Nodeidentifier</a> | A URI, CURIE or BNODE that represents a node in a model | | <a href="Objectidentifier/">Objectidentifier</a> | A URI or CURIE that represents an object in the model | | <a href="OrcidIdentifier/">OrcidIdentifier</a> | An ORCID identifier in the format 0000-0000-0000-0000 | | <a href="RorIdentifier/">RorIdentifier</a> | A ROR identifier in the format ror | | <a href="Sparqlpath/">Sparqlpath</a> | A string encoding a SPARQL Property Path | | <a href="String/">String</a> | A character string | | <a href="Time/">Time</a> | A time object represents a (local) time of day, independent of any particular... | | <a href="Uri/">Uri</a> | a complete URI | | <a href="Uriorcurie/">Uriorcurie</a> | a URI or a CURIE | | <a href="YearValue/">YearValue</a> | A year value in YYYY format |</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Boolean/">Boolean</a></td>
+<td>A binary (true or false) value</td>
+</tr>
+<tr>
+<td><a href="Curie/">Curie</a></td>
+<td>a compact URI</td>
+</tr>
+<tr>
+<td><a href="Date/">Date</a></td>
+<td>a date (year, month and day) in an idealized calendar</td>
+</tr>
+<tr>
+<td><a href="DateOrDatetime/">DateOrDatetime</a></td>
+<td>Either a date or a datetime</td>
+</tr>
+<tr>
+<td><a href="Datetime/">Datetime</a></td>
+<td>The combination of a date and time</td>
+</tr>
+<tr>
+<td><a href="Decimal/">Decimal</a></td>
+<td>A real number with arbitrary precision that conforms to the xsd:decimal speci...</td>
+</tr>
+<tr>
+<td><a href="DecimalDegree/">DecimalDegree</a></td>
+<td>A decimal degree coordinate value</td>
+</tr>
+<tr>
+<td><a href="Double/">Double</a></td>
+<td>A real number that conforms to the xsd:double specification</td>
+</tr>
+<tr>
+<td><a href="EmailAddress/">EmailAddress</a></td>
+<td>A valid email address</td>
+</tr>
+<tr>
+<td><a href="Float/">Float</a></td>
+<td>A real number that conforms to the xsd:float specification</td>
+</tr>
+<tr>
+<td><a href="Integer/">Integer</a></td>
+<td>An integer</td>
+</tr>
+<tr>
+<td><a href="IRI/">IRI</a></td>
+<td>An Internationalized Resource Identifier (IRI)</td>
+</tr>
+<tr>
+<td><a href="Jsonpath/">Jsonpath</a></td>
+<td>A string encoding a JSON Path</td>
+</tr>
+<tr>
+<td><a href="Jsonpointer/">Jsonpointer</a></td>
+<td>A string encoding a JSON Pointer</td>
+</tr>
+<tr>
+<td><a href="Ncname/">Ncname</a></td>
+<td>Prefix part of CURIE</td>
+</tr>
+<tr>
+<td><a href="Nodeidentifier/">Nodeidentifier</a></td>
+<td>A URI, CURIE or BNODE that represents a node in a model</td>
+</tr>
+<tr>
+<td><a href="Objectidentifier/">Objectidentifier</a></td>
+<td>A URI or CURIE that represents an object in the model</td>
+</tr>
+<tr>
+<td><a href="OrcidIdentifier/">OrcidIdentifier</a></td>
+<td>An ORCID identifier in the format 0000-0000-0000-0000</td>
+</tr>
+<tr>
+<td><a href="RorIdentifier/">RorIdentifier</a></td>
+<td>A ROR identifier in the format ror</td>
+</tr>
+<tr>
+<td><a href="Sparqlpath/">Sparqlpath</a></td>
+<td>A string encoding a SPARQL Property Path</td>
+</tr>
+<tr>
+<td><a href="String/">String</a></td>
+<td>A character string</td>
+</tr>
+<tr>
+<td><a href="Time/">Time</a></td>
+<td>A time object represents a (local) time of day, independent of any particular...</td>
+</tr>
+<tr>
+<td><a href="Uri/">Uri</a></td>
+<td>a complete URI</td>
+</tr>
+<tr>
+<td><a href="Uriorcurie/">Uriorcurie</a></td>
+<td>a URI or a CURIE</td>
+</tr>
+<tr>
+<td><a href="YearValue/">YearValue</a></td>
+<td>A year value in YYYY format</td>
+</tr>
+</tbody>
+</table>
 <h2 id="subsets">Subsets</h2>
-<p>| Subset | Description | | --- | --- | | <a href="Mandatory/">Mandatory</a> | Fields that are required for all record types | | <a href="MandatoryIf/">MandatoryIf</a> | Fields that are required conditionally - see class rules for details |</p>
+<table>
+<thead>
+<tr>
+<th>Subset</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Mandatory/">Mandatory</a></td>
+<td>Fields that are required for all record types</td>
+</tr>
+<tr>
+<td><a href="MandatoryIf/">MandatoryIf</a></td>
+<td>Fields that are required conditionally - see class rules for details</td>
+</tr>
+</tbody>
+</table>
 
 
 
