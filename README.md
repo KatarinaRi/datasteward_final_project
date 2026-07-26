@@ -32,7 +32,7 @@ However, this is not the final product. To ensure that this standard becomes mac
 
 Formalizing the PARC community-agreed metadata schema for environmental chemical monitoring data — developed through expert workshops and currently available as an XLSX artefact — into a machine-actionable format, creating documentation and publishing on GitHub.
 
-## Basic LinkML guidance 
+## Basic LinkML guidance to explain schema structure and content
 
 ### Schema level metadata
 In LinkML specifically it is called **schema metadata** or **schema header** — it is the metadata describing the schema itself, as opposed to the schema content (types, enums, slots, classes). **More broadly in the semantic web and data management world** this kind of self-describing metadata is called **provenance metadata** or **schema-level metadata**.
@@ -117,13 +117,13 @@ More broadly, the imports mechanism in LinkML works like imports in a programmin
 There are **several categories of things one can import:**
 
 1. **LinkML built-in modules.** These are maintained by the LinkML project itself:
-```
+```yaml
 imports:
   linkml:types        # primitive types (string, integer, date, etc.)
   linkml:annotations  # adds annotation capabilities to schema elements
 ```
 2. **Other LinkML schemas developed by the same team.** A large schema can be split into modules and the modules are imported:
-```
+```yaml
 imports:
   linkml:types
   ./compounds         # a local file compounds.yaml in the same folder
@@ -133,7 +133,7 @@ imports:
 This is actually something worth considering for this schema — it is getting large and splitting it into domain-focused modules (compounds, sites, samples, measurements) would make collaborative editing easier, since different domain experts could own different files.
 
 3. **Remote schemas by URI:**
-```
+```yaml
 imports:
   linkml:types
   https://example.org/schemas/some-community-schema
@@ -142,7 +142,7 @@ imports:
 4. **Community and standard schemas**
 Several real-world schemas exist that one could potentially import from: BioLink Model; NMDC; MIxS; SOSA/SSN  
 
-### Notes on individual fields in schema-level metadata
+#### Notes on individual fields in schema-level metadata
 
 - **`id`** — A globally unique, persistent IRI for the schema itself. Should use a persistent namespace (e.g. `w3id.org`, institutional domain) rather than a project website that may disappear.
 - **`version`** — Follow semantic versioning (`MAJOR.MINOR.PATCH`). Increment on every release.
@@ -151,15 +151,15 @@ Several real-world schemas exist that one could potentially import from: BioLink
 - **`contributors`** — A flat list of ORCID or ROR URIs. Does not natively support role attribution (see CRediT section below).
 - **`see_also`** — Links to related resources: the associated dataset, project website, published paper, or documentation. Use DOIs where available.
 
-## Schema Provenance 
+#### Schema Provenance 
 
 Provenance metadata in a LinkML schema documents who created and contributed to the schema, when it was created and modified, under what license it is published, and how it relates to other resources. This information belongs in the **schema header** — the top-level block before `prefixes`, `types`, `slots`, `classes`, and `enums`.
 
-### Standard LinkML Header Provenance Fields
+#### Standard LinkML Header Provenance Fields
 
 LinkML supports the following provenance-relevant fields natively at the schema level:
 
-```
+```yaml
 id: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 name: md_env_outdoor
 title: >-
@@ -187,7 +187,7 @@ see_also:
   - https://www.parc-project.eu
 ```
 
-### CRediT Contributor Roles
+#### CRediT Contributor Roles
 
 The **Contributor Roles Taxonomy (CRediT)** defines 14 standardised roles for research contributions, each with a persistent URI:
 
@@ -208,17 +208,17 @@ The **Contributor Roles Taxonomy (CRediT)** defines 14 standardised roles for re
 | Writing – original draft | `https://credit.niso.org/contributor-roles/writing-original-draft` |
 | Writing – review & editing | `https://credit.niso.org/contributor-roles/writing-review-editing` |
 
-### Limitation in LinkML
+**Limitation in LinkML**
 
 LinkML's built-in `contributors:` field is a **flat list of URIs** — it does not natively support role-typed contributions. CRediT roles must therefore be encoded using either `comments` (human-readable) or `annotations` (machine-readable), or both.
 
-### Encoding CRediT in LinkML
+**Encoding CRediT in LinkML**
 
 1. Option: `comments` (human-readable)
 
 Suitable for documentation generation and human readers. The `comments` field accepts a list of free-text strings.
 
-```
+```yaml
 comments:
   - >-
     CRediT contributor roles (https://credit.niso.org/contributor-roles/):
@@ -234,7 +234,7 @@ comments:
 
 Suitable for downstream tools that can parse structured annotations. Each annotation uses a `tag`/`value` pair.
 
-```
+```yaml
 annotations:
   contributor_conceptualization:
     tag: contributor_conceptualization
@@ -253,15 +253,15 @@ annotations:
     value: "https://credit.niso.org/contributor-roles/"
 ```
 
-### Recommendation
+**Recommendation**
 
 Use **both options together** — `comments` for human readability and documentation rendering, `annotations` for machine parseability. They are complementary, not alternatives.
 
-### Additional Provenance — Funding and Status
+#### Additional Provenance — Funding and Status
 
 Funding acknowledgement and schema status are not natively supported LinkML fields but can be recorded as `annotations`:
 
-```
+```yaml
 annotations:
   funding:
     tag: funding
@@ -276,7 +276,7 @@ annotations:
 
 Common values for `schema_status`: `draft`, `review`, `stable`, `deprecated`.
 
-### Complete Recommended Header Template
+#### Complete Recommended Header Template
 
 ```yaml
 id: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
@@ -347,7 +347,7 @@ annotations:
     tag: schema_status
     value: draft
 ```
-### Summary
+#### Summary
 
 | Information | LinkML field | Format |
 |-------------|-------------|--------|
@@ -364,24 +364,20 @@ annotations:
 | Funding | `annotations` | Free text or structured string |
 | Schema status | `annotations` | Controlled string |
 
----
-
-## Subsets
+### Subsets
 Subsets in LinkML are labels/tags attached to slots to group them by purpose without changing the structure of the schema. They e.g. indicate that slots belong to a particular category or compliance level. They don't enforce validation by themselves — they're metadata that downstream tools or applications can use to decide what to do.
 
-In this schema there are three:
-```
+In this schema there are two:
+```yaml
 subsets:
   mandatory:
     description: Fields that are mandatory for all record types
-  mandatory_for_monitoring:
-    description: Fields mandatory only for monitoring programmes (optional for projects)
-  mandatory_if_exists:
-    description: Fields mandatory if the entity exists (e.g. campaign)
+  mandatory_if:
+    description: Fields mandatory under some condition (set by a rule)
 ```
 
 And then throughout the schema fields are tagged with them:
-```
+```yaml
 compound_name:
   range: string
   required: true
@@ -389,14 +385,9 @@ compound_name:
     - mandatory
 ```
 
-They do not enforce anything by themselves in LinkML. The required: true is what actually enforces validation. The subset tag is metadata about the field, not a constraint. They are useful for:
-- Documentation — immediately clear to a reader which fields are core vs. optional
-- Generating views — one can use LinkML generators to produce a filtered version of the schema showing only mandatory fields, which is useful for producing data entry templates or documentation for different audiences
-- Driving tooling — downstream tools or validators can read subset membership and apply different rules for different submission profiles (e.g. a monitoring programme submission vs. a research project submission)
+They do not enforce anything by themselves in LinkML. The required: true is what actually enforces validation. The subset tag is metadata about the field, not a constraint. 
 
-So in this case they are a lightweight way of encoding the tiered metadata requirements that the domain experts presumably defined — without having to maintain multiple separate schemas for different submission types.
-
-### Practical examples of what one can do with subsets
+**Practical examples of what one can do with subsets**
 
 1. Generate separate documentation: E.g. extract all mandatory fields automatically for a data submission guide.
 2. Drive validation logic. E.g. a custom validator could check: "if record_type = monitoring, then all mandatory_for_monitoring slots must be filled".
@@ -404,7 +395,7 @@ So in this case they are a lightweight way of encoding the tiered metadata requi
 A full template with everything.
 4. Filter fields in a data portal - e.g. show only required fields by default, hide optional ones.
 
-## Types 
+### Types 
 
 There are two levels here — LinkML's built-in types and custom types defined in the schema.
 
@@ -424,7 +415,7 @@ date_or_datetime | either of the above | 024-03-15 or 2024-03-15T10:30:00
 
 2. **Custom types (defined in the types: section of your schema)**
 These are restrictions or refinements of the built-in types. Here, six have been defined:
-```
+```yaml
 types:
   EmailAddress:
     uri: xsd:string
@@ -442,7 +433,7 @@ The custom types are essentially named, validated strings. They are still string
 Type | Based on | Constraint
 ------ |---------| -----------
 EmailAddres | sxsd:string | regex for email format
-URIorCURIE | xsd:anyURI | any URI
+IRI | xsd:anyURI | any URI
 OrcidIdentifier | xsd:string | regex for ORCID format
 RorIdentifier | xsd:string | regex for ROR format
 DecimalDegree | xsd:decimal | used for lat/lon 
@@ -457,11 +448,14 @@ Three **reasons to define custom types:**
 - Describing the format in plain English — e.g. "4 digits, hyphen, 4 digits, hyphen, 4 digits, hyphen, 3 digits and either a digit or X" and using a tool like regex101.com — one pastes a pattern, tests it against example values, and it explains each part in plain English.
 - Looking up existing patterns — for standard identifiers like ORCID, DOI, email, CAS numbers, well-tested patterns already exist online.
 
-## Enums (enumerations)
+### Enums (enumerations)
 Enums (enumerations) are the LinkML way of representing controlled vocabularies or codelists — fields where the value must be one of a fixed set of options. Enums are defined and then a field uses it as its range:
-yamlwater_type:
+
+```yaml
+water_type:
   range: WaterType
   required: false
+```
 
 The key difference from a plain string field:
 | | String | Enum |
@@ -471,11 +465,11 @@ The key difference from a plain string field:
 | Machine readability | Low | High |
 | Interoperability | Low | High |
 
-## Integrating external vocabularies
+#### Integrating external vocabularies
 
 1. Option: Reference external vocabulary. Don't redefine the codelist — just point to it:
 
-```
+```yaml
 slots:
   language:
     range: string
@@ -492,7 +486,7 @@ Cons:
   - No validation against the actual list — just format check via pattern
 
 2. Option: Define as enum with external URIs
-```
+```yaml
 enums:
   LanguageEnum:
     description: Language codes according to ISO 639-1
@@ -500,7 +494,7 @@ enums:
       source_ontology_id: http://id.loc.gov/vocabulary/iso639-1
 ```
 Or with explicit values if you want to restrict to a subset:
-```
+```yaml
 enums:
   LanguageEnum:
     see_also: 
@@ -525,7 +519,7 @@ Need to restrict to specific languages relevant to the domain | Option 2 — exp
 Need for full SKOS integration and semantic linking | Option 2 with meaning: URIs
 
 3. Option Importing it as a LinkML schema (if it is published as LinkML):
-```
+```yaml
 imports:
   - linkml:types
   - https://w3id.org/parc/wp9/analytical-methods  # or a local path
@@ -533,8 +527,8 @@ imports:
 
 
 4. Option - Indicating a placeholder with a comment and todos
-If the vocabulary exists but is not yet ready to integrate, the cleanest way is:
-```
+If the vocabulary exists but is not yet ready to integrate, the cleanest way is (e.g.):
+```yaml
 AnalysisMethod:
   description: >-
     Analytical method used to determine the analyte in the sample.
@@ -546,19 +540,21 @@ AnalysisMethod:
       description: Placeholder — do not use in production.
 ```
 
-Which to choose?
+**Which to choose?**
 It depends on a practical question — who owns and maintains the vocabulary? 
 - If it lives inside this schema → Option A
 - If someone else owns it and maintains it separately → Option B, so changes propagate automatically without one having to manually sync
 - If it is still being finalised → Option C for now, then migrate to A or B once stable
 
-### Slicing a vocabulary per domain
+#### Slicing a vocabulary per domain
 Now there is an **external vocabulary** example of matrices, where all matrices live together. The question is **how to slice it per domain in this schema.**
+
+
 Two main options:
 
 1. Option A — **Keeping separate enums, adding meaning: to link to the vocabulary.**
 Each enum stays domain-specific but each value points to its URI in the external vocabulary:
-```
+```yaml
 AtmosphericMatrix:
   permissible_values:
     ambient_air:
@@ -578,7 +574,7 @@ This keeps the domain constraint enforced by the schema structure, while linking
 
 2. Option B — **One enum for all matrices, constrain per class using rules.**
 One could have a single MatrixType enum with all values, and then use LinkML rules to restrict which values are valid per sample type:
-```
+```yaml
 MatrixType:
   permissible_values:
     ambient_air:
@@ -606,6 +602,7 @@ SampleAtmospheric:
       description: Atmospheric samples cannot have aquatic or terrestrial matrices
 ```
 This is more complex and harder to read — not recommended unless one has a specific reason to keep all matrices in one enum.
+
 Recommendation - Sticking with Option A — separating enums per domain with meaning: linking to the external vocabulary. It is:
 - Cleaner and easier to read
 - Self-documenting — the constraint is obvious from the structure
@@ -620,19 +617,16 @@ This is actually a well established pattern in the semantic web world — vocabu
 
 If the vocabulary is published as an OWL ontology, the relationship between the vocabulary and this schema can be stated explicitly using standard OWL/RDF constructs. This schema (when compiled to OWL) would reference the vocabulary ontology, and a machine could understand the dependency formally, not just from a human-readable note.
 
-## Slots and classes
-**Classes** are the entities — the things one is describing. In this schema:
-- Project
-- Sample
-- ChemicalCompound
-- MeasurementConcentration
-- SiteGIS
+### Slots and classes
+
+**Classes** are the entities — the things one is describing. 
 
 Each class corresponds to a real-world object or concept that has its own identity and a set of properties describing it.
 
 **Slots** are the properties — the fields that describe those entities. **They can be defined in two ways:**
+
 **Shared slots** (defined in the top-level slots: section):
-```
+```yaml
 slots:
   sample_id:
     range: string
@@ -641,7 +635,7 @@ slots:
 These are reusable across multiple classes. Any class can use them.
 
 **Local attributes** (defined inside a class under attributes:):
-```
+```yaml
 classes:
   Sample:
     attributes:
@@ -658,64 +652,14 @@ Defined at | Top level | Inside the class
 Reusable across classes | Yes | No 
 Use when | Same field appears in multiple classes | Field is specific to one class
 
-In this schema for example sample_id is a shared slot because it is used across SampleAtmospheric, SampleAquatic, SampleTerrestrial and SampleBiota — and also in MeasurementConcentration and MeasurementParameter to link measurements back to samples. Defining it once as a shared slot ensures it is consistent everywhere.
+In this schema for example sample_id is a shared slot because it is used across all types of samples (Atmospheric, Aquatic, Terrestrial and Biota) — and also in MeasurementConcentration and MeasurementParameter to link measurements back to samples. Defining it once as a shared slot ensures it is consistent everywhere.
 Whereas matrix is a local attribute because each sample type has its own version with a different range (AtmosphericMatrix, AquaticMatrix etc.) — they are not truly the same field.
 
 In RDF terms: Classes become owl:Class; Slots become owl:ObjectProperty or owl:DatatypeProperty.
 So the distinction maps cleanly onto standard ontology concepts.
 
-A concrete minimal example from this schema:
-**Slots:**
-```
-slots:
 
-  sample_id:
-    description: Unique identifier for the sample
-    range: string
-    required: true
-    identifier: true
-
-  sampling_date_start:
-    description: Start date of sampling in format YYYY-MM-DD
-    range: date
-    required: true
-```
-**Classes:**
-```
-classes:
-
-  SampleAtmospheric:
-    description: A sample from the atmospheric domain
-    slots:
-      - sample_id            # reusing the shared slot as-is
-      - sampling_date_start  # reusing the shared slot as-is
-    attributes:
-      matrix:                # local attribute - specific to this class only
-        description: Matrix type for atmospheric samples
-        range: AtmosphericMatrix
-        required: true
-      sampling_method:       # local attribute - specific to this class only
-        description: Sampling method for atmospheric samples
-        range: AtmosphericSamplingMethod
-        required: true
-
-  SampleAquatic:
-    description: A sample from the aquatic domain
-    slots:
-      - sample_id            # same shared slot reused
-      - sampling_date_start  # same shared slot reused
-    attributes:
-      matrix:                # local attribute - different range than atmospheric
-        description: Matrix type for aquatic samples
-        range: AquaticMatrix
-        required: true
-      fraction:              # local attribute - only aquatic has this
-        description: Sample fraction
-        range: AquaticFraction
-        required: false
-
-```
-## Class vs Slot/Attribute — Modeling Decision Guide for LinkML
+#### Class vs Slot/Attribute — Modeling Decision Guide for LinkML
 
 **The Core Question:**
 
@@ -723,12 +667,12 @@ classes:
 
 This is the fundamental question when deciding whether a concept should be modeled as a **class** or as a **slot/attribute** in a LinkML schema.
 
-### Model as a CLASS when
+**Model as a CLASS when**
 
-#### 1. The concept has multiple attributes of its own
+1. The concept has multiple attributes of its own
 If more than one piece of information needs to be stored about a concept, it warrants a class:
 
-```
+```yaml
 # Site has id, name, country, coordinates, land use... → CLASS
 classes:
   Site:
@@ -740,10 +684,10 @@ classes:
       longitude:
 ```
 
-#### 2. The concept is referenced by multiple other classes
+2. The concept is referenced by multiple other classes
 If several classes need to point to the same concept, it should be a class:
 
-```
+```yaml
 # Multiple samples reference the same Site → CLASS
 classes:
   Sample:
@@ -757,10 +701,10 @@ classes:
         range: Site    # referenced from Campaign too
 ```
 
-#### 3. The concept has its own persistent identifier
+3. The concept has its own persistent identifier
 If a concept has an ID, URI, or code that exists independently of any other object, it should be a class:
 
-```
+```yaml
 # A chemical compound has CAS, InChI, WP9 ID... → CLASS
 classes:
   ChemicalCompound:
@@ -771,20 +715,18 @@ classes:
         identifier: true
 ```
 
-#### 4. The concept can exist independently
+4. The concept can exist independently
 If a concept makes sense to talk about outside the context of another object, it is a class. A `Site` exists independently of any `Sample`. A `Campaign` exists independently of any `Measurement`.
 
-#### 5. The concept has relationships to other classes
+5. The concept has relationships to other classes
 If a concept connects to other things in the domain model — especially bidirectionally — it should be a class.
 
----
+**Model as a SLOT/ATTRIBUTE when**
 
-### Model as a SLOT/ATTRIBUTE when
-
-#### 1. The concept is a simple value
+1. The concept is a simple value
 A string, number, date, boolean, or enum value — not a structured object — is a slot:
 
-```
+```yaml
 attributes:
   temperature:      # just a number → slot
     range: double
@@ -794,27 +736,27 @@ attributes:
     range: CountryEnum
 ```
 
-#### 2. The concept only makes sense in the context of its parent
+2. The concept only makes sense in the context of its parent
 If a concept cannot exist independently and has no identity of its own, it is a slot:
 
-```
+```yaml
 # A concentration value has no meaning without its sample → slot
 attributes:
   concentration:
     range: double
 ```
 
-#### 3. The concept has only one property
+3. The concept has only one property
 If there is only one thing to say about a concept, it does not need to be a class:
 
-```
+```yaml
 # A unit is just a code → slot with enum range, not a class
 attributes:
   unit:
     range: UnitEnum
 ```
 
-### The Grey Zone — When It Could Be Either
+**The Grey Zone — When It Could Be Either**
 
 Some concepts sit in the middle. The deciding factor is usually how much detail is needed:
 
@@ -829,28 +771,9 @@ Some concepts sit in the middle. The deciding factor is usually how much detail 
 When in doubt, start simple (slot) and promote to a class later if additional attributes become necessary. It is easier to promote a slot to a class than to demote a class to a slot.
 
 
-### Applied Example — Environmental Monitoring Schema
+**One-Sentence Rule of Thumb: If a concept would have its own database table, model it as a class. If it would be a column in a table, model it as a slot.**
 
-| Concept | Decision | Reason |
-|---------|----------|--------|
-| `Site` | ✅ Class | Has many attributes; referenced by multiple classes; has its own ID |
-| `Campaign` | ✅ Class | Has its own attributes; links to Site |
-| `Sample` | ✅ Class | Has many attributes; links to Site and Campaign |
-| `ChemicalMeasurement` | ✅ Class | Has value, unit, LOD, LOQ, method, compound |
-| `ParameterMeasurement` | ✅ Class | Has value, unit, parameter name |
-| `ChemicalCompound` | ✅ Class | Has CAS, InChI, WP9 ID, group — multiple attributes with external identifiers |
-| `concentration` | ✅ Slot | A single numeric value on ChemicalMeasurement |
-| `country` | ✅ Slot | A single code from CountryEnum |
-| `matrix` | ✅ Slot | A single code from MatrixEnum |
-| `analysis_method` | ⚠️ Either | If just a name/link → slot; if it has version, reference, parameters → class |
-
-
-### One-Sentence Rule of Thumb
-
-> **If a concept would have its own database table, model it as a class. If it would be a column in a table, model it as a slot.**
-
-
-### Decision Flowchart
+**Decision Flowchart**
 
 ```
 Does the concept have more than one property?
@@ -864,12 +787,11 @@ Does the concept have more than one property?
 └── NO  → SLOT
 ```
 
-
-## Using Classes as Controlled Vocabularies
+### Using Classes as Controlled Vocabularies
 
 A class with `identifier: true` on one of its slots can serve as a controlled vocabulary — effectively behaving like an enum but with the ability to carry multiple attributes per entry. This pattern is sometimes called a **lookup table** or **nominal class**.
 
-### How it works
+**How it works**
 
 The identifier slot value is used as the reference elsewhere in the schema, just like an enum permissible value key:
 
@@ -893,20 +815,7 @@ classes:
         range: SamplingMethod    # referenced by method_id
 ```
 
-### When to use a class vs an enum
-
-| | Enum | Class as lookup table |
-|--|------|----------------------|
-| **Use when** | Simple controlled vocabulary with stable values | Rich codelist with multiple attributes per entry |
-| **Supports descriptions** | ✅ per value | ✅ per instance |
-| **Supports URIs (`meaning:`)** | ✅ | ✅ via slots |
-| **Supports additional attributes** | ❌ | ✅ label, reference, version, etc. |
-| **External identifiers** | ❌ | ✅ CAS, ORCID, ROR, etc. |
-| **Can be referenced by ID** | ✅ by permissible value key | ✅ by `identifier: true` slot |
-| **Suitable size** | Up to ~200 values | Better for large lists (1000+) |
-| **Validation** | Strict — only listed values allowed | Strict — only instances with valid IDs |
-
-### Example — ChemicalCompound as a lookup table
+**Example — ChemicalCompound as a lookup table**
 
 `ChemicalCompound` is an example of this pattern. The schema defines the structure; the actual 1500+ compound instances live in a separate data file that validates against the schema:
 
@@ -933,11 +842,11 @@ classes:
         range: double
 ```
 
-### Key difference from enums
+**Key difference from enums**
 
 With a real enum, permissible values are defined inside the schema itself. With a class-as-lookup-table, the actual instances live outside the schema in a separate data file. The schema defines only the structure and constraints. This makes the pattern well-suited for large codelists — such as compound lists or species registries — where embedding all entries in the schema would be impractical.
 
-## Cardinalities in LinkML
+### Cardinalities in LinkML
 
 Default values are indicated in the table — properties at their default value do not need to be explicitly stated in the schema.
 
@@ -952,7 +861,7 @@ Default values are indicated in the table — properties at their default value 
 | `1..N` | Mandatory, at most N | `true` | `true` | `1` | `N` |
 | `N..N` | Exactly N | `true` | `true` | `N` | `N` |
 
-### Default values
+**Default values**
 
 | Property | Default | Meaning |
 |----------|---------|---------|
@@ -961,36 +870,11 @@ Default values are indicated in the table — properties at their default value 
 | `minimum_cardinality` | none | no minimum enforced — omit unless needed |
 | `maximum_cardinality` | none | no maximum enforced — omit unless needed |
 
-### Rule of thumb — only write what differs from the default
-
-```yaml
-# 0..1 — nothing needed, all defaults
-my_slot:
-  range: string
-
-# 1..1 — only required: true
-my_slot:
-  range: string
-  required: true
-
-# 0..n — only multivalued: true
-my_slot:
-  range: string
-  multivalued: true
-
-# 1..n — required + multivalued + minimum_cardinality
-my_slot:
-  range: string
-  required: true
-  multivalued: true
-  minimum_cardinality: 1
-```
-
-## Rules
+### Rules
 
 Rules follow this structure:
 
-```
+```yaml
 classes:
   MyClass:
     rules:
@@ -1006,13 +890,12 @@ classes:
               required: true
 ```
 
-Think of it as: IF → THEN logic.
+TOne can think of it as: IF → THEN logic.
 
-### The three patterns you'll likely need
-1. Pattern 1 — IF entity exists (your mandatory_if_exists)
-yaml# IF campaign_id is present → THEN these slots are required
+**Patterns likely needed in this schema**
+1. IF entity exists -> THEN these slots are required
 
-```
+```yaml
 rules:
   - preconditions:
       slot_conditions:
@@ -1026,9 +909,8 @@ rules:
           required: true
 ```
 
-2. Pattern 2 — IF record type is monitoring (your mandatory_for_monitoring)
-yaml# IF record_type = "monitoring" → THEN these slots are required
-```
+2. IF record type is (e.g.) monitoring → THEN these slots are required
+```yaml
 rules:
   - preconditions:
       slot_conditions:
@@ -1041,9 +923,8 @@ rules:
         matrix:
           required: true
 ```
-3. Pattern 3 — Multiple triggers
-yaml# IF slot A is present AND slot B is present → THEN slot C is required
-```
+3. Multiple triggers: IF slot A is present AND slot B is present → THEN slot C is required
+```yaml
 rules:
   - preconditions:
       slot_conditions:
@@ -1057,32 +938,15 @@ rules:
           required: true
 ```
 
-Go through each class and ask:
+**Rules are always on the class, not on the slot.**
 
-- Does this class have optional sub-entities? → use Pattern 1
-- Does this class behave differently based on a type/category field? → use Pattern 2
-- Do multiple conditions need to be true together? → use Pattern 3
-
-**Where rules live in the schema**
-Rules are always on the class, not on the slot:
-```
-classes:
-  Campaign:        # <-- rules go here
-    slots:
-      - campaign_id
-      - campaign_name
-      - start_date
-    rules:         # <-- here
-      - preconditions:
-          ...
-```
-## Handling "not relevant" and "not reported" values at schema level
+### Handling "not relevant" and "not reported" values at schema level
 
 The problem with putting them in every enum is that it gets messy and mixes **two different concepts — what something is vs whether it was reported.**
 
 **How to handle it at schema level**
 1. Option: **ifabsent** on the slot
-```
+```yaml
 slots:
   water_type:
     range: WaterType
@@ -1091,8 +955,8 @@ slots:
 ```
 Sets a default value when nothing is provided.
 
-2. Option: Make the slot optional (default in LinkML)
-```
+2. Option: Making the slot optional (default in LinkML)
+```yaml
 slots:
   water_type:
     range: WaterType
@@ -1115,22 +979,20 @@ not_reported → keep in enum OR make slot optional and treat null as not report
 
 This keeps the enum semantically clean — it only contains actual permitted values, not metadata about reporting status.
 
-**But there's a catch**
-Some data systems and databases cannot distinguish between "field was left empty" and "field doesn't exist". In that case, having explicit not_relevant and not_reported values is actually safer for data quality.
-So the question is — how will the data be stored and used? Database, CSV, RDF triples?
+**Some data systems and databases cannot distinguish between "field was left empty" and "field doesn't exist". In that case, having explicit not_relevant and not_reported values is actually safer for data quality.**
 
-## Own URI and mapping, or meaning?
+### Own URI and mapping, or using the meaning?
 **What makes a URI persistent?**
 There are two separate things:
 
- - Technical persistence — the URL keeps resolving (doesn't 404)
+- Technical persistence — the URL keeps resolving (doesn't 404)
 - Semantic stability — the concept behind the URI doesn't change meaning or get deleted
 
 Both can fail independently.
 
 ### How to Assess URI Persistence and Maintenance
 
-When using third-party URIs in your schema, evaluate them against these five criteria:
+When using third-party URIs in the schema, one can evaluate them against these five criteria:
 
 | Assessment criterion | What to look for | Green flag | Red flag |
 |----------------------|-----------------|------------|----------|
@@ -1140,24 +1002,8 @@ When using third-party URIs in your schema, evaluate them against these five cri
 | **Track record** | How long has the vocabulary been maintained and how stable has it been? | 10+ years with documented stability | Recently launched; no history of updates |
 | **Versioning approach** | Are URIs versioned, and is there a resolution/redirect service? | Stable unversioned URIs with archived versions; persistent redirect service (e.g. w3id.org, purl.org) | No versioning; URIs directly tied to a server that could disappear |
 
----
 
-#### Applied to the URI sources used in this schema
-
-| URI source | Persistence policy | Institutional backing | Regulatory mandate | Track record | Versioning | Overall trust |
-|------------|-------------------|----------------------|-------------------|--------------|------------|---------------|
-| **INSPIRE Registry** (EC/JRC) | Implicit in EU regulatory framework | European Commission / JRC | ✅ INSPIRE Directive (EU law) | Since 2007 | Stable unversioned URIs | ⭐⭐⭐⭐⭐ |
-| **AGROVOC** (FAO) | FAO institutional commitment | UN agency (FAO) | No regulatory mandate | Since 1980s | Versioned releases | ⭐⭐⭐⭐ |
-| **Library of Congress** (id.loc.gov) | Explicit LoC persistence policy | US government institution | No regulatory mandate | Since 2000s | Stable | ⭐⭐⭐⭐ |
-| **EU Publications Office NAL** | EU institutional infrastructure | European Commission | EU regulatory context | Since 2000s | Stable, validity periods tracked | ⭐⭐⭐⭐⭐ |
-| **OMG LCC** | Versioned archives; no explicit URI persistence policy | Standards body (OMG, since 1989) | No regulatory mandate | Since 2015 | Versioned URIs | ⭐⭐⭐ |
-| **GloSIS** (w3id.org) | w3id.org community redirect service | FAO/GSP initiative + W3C community redirect | No regulatory mandate | Since ~2020 | w3id.org redirects | ⭐⭐⭐ |
-| **Marine Regions** (marineregions.org) | MRGID explicitly stated as persistent | VLIZ (Belgian research institute) | No regulatory mandate | Since 2009 | MRGIDs guaranteed stable | ⭐⭐⭐ |
-| **UN Stats M49** | No linked data published | UN Statistics Division | No mandate for linked data | N/A — no RDF | No URIs exist | ❌ not available |
-
----
-
-### Practical decision rule
+**Practical decision rule**
 
 When choosing between URI sources for the same concept, prefer in this order:
 
@@ -1169,442 +1015,9 @@ When choosing between URI sources for the same concept, prefer in this order:
 
 Where multiple sources exist for the same concept, use `meaning:` for the highest-trust source and `exact_mappings:` for the others.
 
-**The key signals to look for**
-1. Is there an explicit persistence policy?
+### Inheritance, Abstract Classes and Mixins in LinkML
 
-Good vocabularies publish a URI persistence/stability policy. For example INSPIRE explicitly states URIs are maintained as part of EU regulatory infrastructure. w3id.org states it provides persistent URIs but is community-governed. OMG archives old versions but doesn't explicitly guarantee URI stability forever.
-
-2. Is there an institution with legal/regulatory mandate behind it?
-
-INSPIRE → European Commission mandate. LoC → US government. FAO → UN agency. These are far more reliable than project-funded or community-run efforts.
-3. Are there versioned URIs vs unversioned?
-
-OMG LCC uses versioned URIs (e.g. /20211101/) alongside unversioned ones. Versioned URIs are stable but may point to outdated concepts; unversioned ones may change silently.
-4. How long has it existed and what is the track record?
-
-AGROVOC has existed since the 1980s — strong track record. GloSIS web ontology was published around 2020 — shorter track record.
-5. Is there a redirect/resolution service?
-
-w3id.org (used by GloSIS) is a W3C community project providing persistent redirects — good in principle but depends on volunteer maintenance.
-
-Practical mitigations for your schema
-1. Use exact_mappings rather than putting all eggs in one meaning: basket
-
-If your primary meaning: URI dies, the exact_mappings still provide semantic links to living vocabularies.
-2. Document your URI choices with rationale
-
-In your schema's see_also or a README, record why you chose each URI and what the persistence policy was at time of choice. Future maintainers will know what to update if something breaks.
-3. Prefer institutional over project URIs for meaning:
-
-INSPIRE, FAO, LoC, EU Publications Office — institutional URIs backed by regulatory mandate. OMG, GloSIS — standards/community URIs, good but slightly less guaranteed.
-4. Accept that some drift is inevitable
-
-Even ISO 3166 itself changes — countries are renamed, dissolved, created. No vocabulary is truly frozen. The best practice is to version your schema and note which edition/date of a vocabulary you aligned with.
-
-The honest bottom line
-There is no perfect answer. You're making a trust judgment based on:
-
-Institutional backing
-Track record
-Explicit persistence policy
-Regulatory mandate
-
-For your schema, INSPIRE URIs are probably your safest bet for EU-context concepts (legally mandated infrastructure), followed by FAO/LoC for global concepts. OMG LCC is good but carries slightly more uncertainty than a government-mandated registry.
-
-## Mapping to existing standards/concepts
-
-The distinction matters
-In LinkML:
-```
-meaning:    # ONE URI only — the primary semantic identity
-see_also:   # LIST of URIs — additional references
-exact_mappings:   # semantically equivalent concepts in other vocabularies
-close_mappings:   # closely related but not identical
-broad_mappings:   # broader concept
-narrow_mappings:  # narrower concept
-```
-
-The right approach for the soil WRB case:
-Since all three (INSPIRE, GloSIS, AGROVOC) represent the same WRB concept, they are exact_mappings — semantically equivalent URIs for the same thing:
-
-```
-albeluvisols:
-  description: >-
-    Albeluvisols — soils with a clay-enriched subsoil and albic material
-    intruding into the argic horizon. (WRB 2006)
-  meaning: https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue/Albeluvisols
-  exact_mappings:
-    - http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Albeluvisols
-    - http://aims.fao.org/aos/agrovoc/c_{code}   # verify per term
-```
-
-Why this is better than just see_also
-AnnotationSemantic meaningMachine-readable?meaningThis IS the concept✅ Strongexact_mappingsThis concept is identical to these others✅ Strong — tools can infer owl:sameAssee_alsoRelated link, go look here⚠️ Weak — just a reference, no semantic claimclose_mappingsSimilar but not identical✅ Medium
-exact_mappings is semantically much stronger than see_also — it tells reasoning engines and linked data tools that these URIs refer to the same concept, enabling proper cross-vocabulary interoperability. This is exactly what the semantic web is designed for.
-
-Include all three, but structured properly
-
-```
-albeluvisols:
-  description: >-
-    Albeluvisols — soils with a clay-enriched subsoil and albic material
-    intruding into the argic horizon. (WRB 2006)
-  meaning: https://inspire.ec.europa.eu/codelist/WRBReferenceSoilGroupValue/Albeluvisols
-  exact_mappings:
-    - http://w3id.org/glosis/model/codelists/wrb2006rsgCode-Albeluvisols
-    - http://aims.fao.org/aos/agrovoc/c_{code}
-  see_also:
-    - https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
-```
-
-This gives:
-
-meaning → primary semantic identity (INSPIRE — legally binding, EU-aligned)
-exact_mappings → cross-vocabulary alignment (GloSIS + AGROVOC — for global and multilingual interoperability)
-see_also → human-readable reference to the WRB source document
-
-## Schema validation
-Two steps validation was carried out:
- ### 1. Validation using Claude
- Checking the main issues and consistency before the actual LinkML validaiton
- ### 2. LinkML validation:
-
-**Prerequisites**
-
-- Python installed
-- LinkML virtual environment set up (see LinkML installation guide)
-- Schema file in YAML format (`.yml` or `.yaml`)
-
-#### Step 1 — Open Git Bash
-
-Open Git Bash from the Start menu or from within your code editor.
-
-#### Step 2 — Activate the virtual environment
-
-```bash
-cd /path/to/your/virtualenv
-source linkml-env/Scripts/activate
-```
-
-The prompt will change to show `(linkml-env)` — this confirms the environment is active. The virtual environment stays active regardless of which folder you navigate to afterwards.
-
-#### Step 3 — Navigate to the schema file
-
-```bash
-cd /path/to/your/schema
-```
-
-If you are unsure of the exact filename, list the files first:
-
-```bash
-ls *.yml
-ls *.yaml
-```
-
-
-#### Step 4 — Run the linter
-
-The `PYTHONUTF8=1` prefix is required on Windows to handle Unicode characters in the schema (e.g. special characters in descriptions, language names, ontology URIs).
-
-```bash
-PYTHONUTF8=1 linkml-lint your-schema.yml # only file name (no path needed since I have already been in the path)
-```
-
-
-### Step 5 — Interpret the results
-
-The linter reports two levels of problems:
-
-| Level | Meaning | Action required |
-|-------|---------|-----------------|
-| `error` | Structural problem — schema will not work | Must fix before proceeding |
-| `warning` | Style or convention issue | Schema works fine — fix is optional |
-
-A valid schema has **zero errors**. Warnings do not prevent the schema from being used, loaded, or generating outputs.
-
-Common sources of `standard_naming` warnings that are safe to ignore:
-- Permissible values following external standards (e.g. ISO country codes, language codes)
-- Scientific abbreviations and acronyms used as enum values
-- CamelCase values sourced from external ontologies (e.g. ISO 19115 role codes)
-
-#### Step 6 — Deactivate the environment when done
-
-```bash
-deactivate
-```
-
----
-
-### Common issues and fixes
-
-| Problem | Cause | Fix |
-|---------|-------|-----|
-| `UnicodeDecodeError` | Windows default encoding cannot handle Unicode | Always use `PYTHONUTF8=1` prefix |
-| `Path does not exist` | Wrong file extension (`.yaml` vs `.yml`) | Check exact filename with `ls *.yml` |
-| `date-time` validation error | Date-only format not accepted for datetime fields | Use full ISO 8601 datetime: `"2024-01-15T00:00:00Z"` |
-| `more than one identifier slot` | Two slots with `identifier: true` in the same class | Remove `identifier: true` from all but one slot per class |
-| Empty `description:` field | LinkML requires a value after `description:` | Add at least a short description text |
-| Invalid top-level keyword | Non-standard field used at schema root level | Move into `annotations:` block |
-| Permissible value named `False` | YAML interprets bare `no` or `NO` as boolean false | Quote the value: `"no":` or `"NO":` |
-
-## LinkML Documentation Generation and GitHub Pages Deployment Guide
-
-This guide describes how to generate documentation from a LinkML schema and deploy it to GitHub Pages using MkDocs.
-
-**Prerequisites**
-
-- Python installed
-- LinkML virtual environment set up with LinkML and MkDocs installed
-- Schema file in YAML format (`.yml` or `.yaml`)
-- Git repository connected to GitHub
-
-### Part 1 — Installation
-
-Install MkDocs and the Material theme into your virtual environment:
-
-```bash
-pip install mkdocs mkdocs-material
-```
-
-This only needs to be done once.
-
-
-### Part 2 — Generate Markdown documentation
-
-#### Step 1 — Activate the virtual environment
-
-```bash
-cd /path/to/your/virtualenv
-source linkml-env/Scripts/activate
-```
-
-#### Step 2 — Navigate to your schema folder
-
-```bash
-cd /path/to/your/schema
-```
-
-#### Step 3 — Generate Markdown documentation
-
-```bash
-PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown
-```
-
-This generates one Markdown file per concept (class, slot, enum, type) in the `docs/` folder. The `index.md` file is the main entry point linking all concepts.
-
-### Part 3 — Set up MkDocs
-
-#### Step 4 — Initialise MkDocs (first time only)
-
-```bash
-mkdocs new .
-```
-
-This creates a `mkdocs.yml` configuration file and a `docs/` folder. If `docs/` already exists from Step 3, the existing files are preserved.
-
-#### Step 5 — Configure mkdocs.yml
-
-Open `mkdocs.yml` and replace its contents with:
-
-```yaml
-site_name: Your Schema Name
-site_url: https://yourusername.github.io/your-repo-name/
-theme:
-  name: material
-docs_dir: docs
-```
-
-Replace `Your Schema Name`, `yourusername`, and `your-repo-name` with your actual values.
-
-#### Step 6 — Preview locally (optional)
-
-```bash
-mkdocs serve
-```
-
-Open your browser at `http://localhost:8000` to preview the documentation site. Press `Ctrl+C` to stop the server.
-
-
-### Part 4 — Deploy to GitHub Pages
-
-#### Prerequisites for GitHub Pages
-
-- The GitHub repository must be **public**
-- Git must be configured with your GitHub credentials
-
-#### Step 7 — Deploy
-
-```bash
-mkdocs gh-deploy
-```
-
-This command automatically:
-- Builds the static HTML site
-- Creates or updates a `gh-pages` branch in your repository
-- Pushes the HTML files to GitHub
-
-#### Step 8 — Enable GitHub Pages in repository settings
-
-1. Go to your repository on GitHub
-2. Click **Settings** → **Pages**
-3. Under **Source**, select branch `gh-pages` and folder `/ (root)`
-4. Click **Save**
-
-Your documentation will be live at:
-```
-https://yourusername.github.io/your-repo-name/
-```
-
-It may take a minute or two to appear after the first deployment.
-
-### Part 5 — Update documentation after schema changes
-
-Whenever you update the schema, regenerate and redeploy:
-
-```bash
-# 1. Activate virtual environment
-source linkml-env/Scripts/activate
-
-# 2. Navigate to schema folder
-cd /path/to/your/schema
-
-# 3. Regenerate Markdown docs
-PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown
-
-# 4. Redeploy to GitHub Pages
-mkdocs gh-deploy
-```
-
----
-
-### Summary of commands
-
-| Action | Command |
-|--------|---------|
-| Generate Markdown docs | `PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown` |
-| Preview locally | `mkdocs serve` |
-| Build static HTML | `mkdocs build` |
-| Deploy to GitHub Pages | `mkdocs gh-deploy` |
-
-
-Important note for future updates
-Every time you regenerate the documentation with gen-doc, you'll need to run the fix script before deploying. So your complete update workflow is now:
-bash# 1. Regenerate docs
-PYTHONUTF8=1 gen-doc md_env_outdoor_linkml_v1.1.0.yaml -d ./docs -f markdown
-
-# 2. Re-add schema diagram to index.md
-PYTHONUTF8=1 gen-erdiagram md_env_outdoor_linkml_v1.1.0.yaml >> docs/index.md
-
-# 3. Fix <br/> tags in table cells
-python3 -c "
-import os, re
-fixed = 0
-for f in os.listdir('docs'):
-    if not f.endswith('.md'): continue
-    path = os.path.join('docs', f)
-    with open(path, 'r', encoding='utf-8') as fh:
-        content = fh.read()
-    new = re.sub(r'\s*<br/>\s*', ' ', content)
-    if new != content:
-        with open(path, 'w', encoding='utf-8') as fh:
-            fh.write(new)
-        fixed += 1
-print(f'Fixed {fixed} files')
-"
-
-# 4. Deploy
-mkdocs gh-deploy
-
-# 5. Commit to main
-git add .
-git commit -m "Update documentation"
-git push
-
-# CHANGELOG
-
-A changelog is a file that documents all notable changes made to a project between versions — what was added, changed, fixed, or removed. It's essentially a human-readable history of the project's evolution.
-
-**Why it matters**
-- Users and collaborators can quickly see what changed between versions without reading the full schema
-- Required for FAIR data — provenance and versioning transparency
-- Standard practice for any versioned software or data standard
-- Makes it easy to communicate changes to the (PARC) community
-
-**Standard format — Keep a Changelog**
-The most widely adopted convention is Keep a Changelog (keepachangelog.com). A CHANGELOG.md file looks like this:
-```
-# Changelog
-
-All notable changes to this schema will be documented in this file.
-Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
-### Added
-- Institution, Contact and Funder classes
-- Rules for conditional mandatory fields
-- CRediT contributor roles in schema header
-
-## [1.1.0] - 2026-07-15
-### Added
-- Full country enum with ISO 3166-1 alpha-2 codes and OMG LCC URIs
-- Full language enum with ISO 639-1 codes
-- WRB soil typology enum with INSPIRE URIs
-- CORINE Land Cover enum
-- Sea and river basin enums
-- Parameter enums for air, water, sediment, soil and biota
-- Concentration unit enum aligned with QUDT
-
-### Changed
-- MonitoringActivity class restructured with Campaign subclass
-- name attribute split into name_en and name_original
-
-### Fixed
-- Unicode superscript characters replaced with ASCII equivalents
-
-## [1.0.0] - 2024-01-15
-### Added
-- Initial schema release
-- MonitoringActivity class
-- Basic enums for matrix, sampling method
-
-``` 
-
-**The change categories**
-Category | Use for
----------|--------
-Added | New classes, slots, enums, features
-Changed | Changes to existing classes, slots, enums
-Deprecated | Features that will be removed in future versions
-Removed | Features that were removed
-FixedBug | fixes, corrections
-Security | Security-related changes (less relevant for schemas)
-
-**How to produce it in practice**
-**Option 1 — Manual (simplest, recommended for now)**
-Create a CHANGELOG.md file in your repository root and update it manually every time you make a significant change or release a new version. This is what most data standards do.
-**Option 2 — From git commit messages**
-If you write meaningful git commit messages, tools like git-cliff or conventional-changelog can auto-generate a changelog from them. This requires following a commit message convention like:
-feat: add Institution class
-fix: correct unicode encoding in descriptions
-chore: update ORCID URIs to https
-
-**For your schema right now**
-Since you're still in active development, I'd suggest:
-
-Create CHANGELOG.md in your repo root now
-Add an [Unreleased] section and list everything you've done so far
-When you make your first formal release (v1.0.0), move [Unreleased] items to [1.0.0] with the date
-Keep updating as you go
-
-
-
-
-# is_a vs mixins... 
-
-## Inheritance, Abstract Classes and Mixins in LinkML
-
-### The core concept — is_a
+**The core concept — is_a**
 
 `is_a` expresses an **IS-A relationship** between two classes — a subclass inherits all slots, attributes, rules, and constraints from its parent class. It is the primary mechanism for class hierarchy in LinkML.
 
@@ -1631,7 +1044,7 @@ Every instance of `SampleTerrestrial` is also a valid `Sample` — the relations
 
 ---
 
-### Abstract classes — abstract: true
+**Abstract classes — abstract: true**
 
 Marking a class as `abstract: true` declares that it **cannot be instantiated directly** — no data record can be of that type alone. It exists only to be inherited from. Every actual instance must be one of its concrete subclasses.
 
@@ -1667,15 +1080,13 @@ Invalid data — rejected because Sample is abstract:
 {"sample_id": "S001"}
 ```
 
-#### Why use abstract classes
+**Why use abstract classes**
 
 - Prevents incomplete records — forces depositors to specify the concrete type
 - Documents that the class exists only as a structural concept, not a real entity
 - Enables type-safe polymorphism — a slot with `range: Sample` accepts any subclass instance
 
----
-
-### What subclasses inherit
+**What subclasses inherit**
 
 A subclass defined with `is_a` automatically inherits **everything** from its parent:
 
@@ -1706,7 +1117,7 @@ classes:
         required: true
 ```
 
-#### Overriding inherited slots with slot_usage
+**Overriding inherited slots with slot_usage**
 
 A subclass can override an inherited slot to make it more specific using `slot_usage`:
 
@@ -1725,9 +1136,7 @@ classes:
         required: true      # made mandatory in this subclass only
 ```
 
----
-
-### designates_type — linking enum values to subclasses
+**designates_type — linking enum values to subclasses**
 
 When a parent class has a slot with `designates_type: true`, the value of that slot determines which subclass to instantiate and validate against. The enum values **must match the subclass names exactly**.
 
@@ -1761,9 +1170,8 @@ In data, the `domain` value tells LinkML which subclass to validate against:
 {"sample_id": "S001", "domain": "SampleAtmospheric", "matrix": "AirTotal"}
 ```
 
----
 
-### Multiple levels of inheritance
+**Multiple levels of inheritance**
 
 Abstract classes can themselves inherit from other abstract classes:
 
@@ -1789,9 +1197,8 @@ classes:
         range: ChemicalCompound
 ```
 
----
 
-### Mixins — reusable bundles of slots
+**Mixins — reusable bundles of slots**
 
 Mixins are a complementary pattern to inheritance. A mixin is a reusable bundle of slots that can be added to any class without forming a strict IS-A hierarchy.
 
@@ -1820,9 +1227,7 @@ classes:
         identifier: true
 ```
 
----
-
-### is_a vs mixins — key differences
+**is_a vs mixins — key differences**
 
 | | `is_a` | `mixins` |
 |--|--------|---------|
@@ -1833,7 +1238,7 @@ classes:
 | **Use when** | The subclass IS a type of the parent | Slots are shared across unrelated classes |
 | **Example** | SampleAtmospheric IS-A Sample | Auditable slots shared by Sample, Institution, Campaign |
 
-#### Combining both
+**Combining both**
 
 `is_a` and `mixins` can be used together:
 
@@ -1848,9 +1253,7 @@ classes:
         range: MatrixAtmospheric
 ```
 
----
-
-### Summary
+**Summary**
 
 | Concept | Purpose | Key property |
 |---------|---------|-------------|
@@ -1859,3 +1262,233 @@ classes:
 | `designates_type: true` | Slot value determines which subclass to use | Enum values must match class names |
 | `slot_usage` | Override inherited slot properties per class | Overrides only — does not redefine |
 | `mixin: true` | Reusable slot bundle without type relationship | Multiple mixins allowed |
+
+
+### Schema validation
+Two steps validation was carried out:
+1. Validation using Claude
+ Checking the main issues and consistency before the actual LinkML validation
+2. LinkML validation.
+
+**LinkML validaiton**
+**Prerequisites**
+
+- Python installed
+- LinkML virtual environment set up (see LinkML installation guide)
+- Schema file in YAML format (`.yml` or `.yaml`)
+
+1. **Open Git Bash**
+
+Open Git Bash from the Start menu or from within code editor.
+
+2. **Activate the virtual environment**
+
+```bash
+cd /path/to/virtualenv
+source linkml-env/Scripts/activate
+```
+
+The prompt will change to show `(linkml-env)` — this confirms the environment is active. The virtual environment stays active regardless of which folder you navigate to afterwards.
+
+3. **Navigate to the schema file**
+
+```bash
+cd /path/to/schema
+```
+
+If unsure of the exact filename, list the files first:
+
+```bash
+ls *.yml
+ls *.yaml
+```
+
+4. **Run the linter**
+
+The `PYTHONUTF8=1` prefix is required on Windows to handle Unicode characters in the schema (e.g. special characters in descriptions, language names, ontology URIs).
+
+```bash
+PYTHONUTF8=1 linkml-lint your-schema.yml 
+```
+
+5. **Interpret the results and remove errors if needed**
+
+The linter reports two levels of problems:
+
+| Level | Meaning | Action required |
+|-------|---------|-----------------|
+| `error` | Structural problem — schema will not work | Must fix before proceeding |
+| `warning` | Style or convention issue | Schema works fine — fix is optional |
+
+A valid schema has **zero errors**. Warnings do not prevent the schema from being used, loaded, or generating outputs.
+
+Common sources of `standard_naming` warnings that are safe to ignore:
+- Permissible values following external standards (e.g. ISO country codes, language codes)
+- Scientific abbreviations and acronyms used as enum values
+- CamelCase values sourced from external ontologies (e.g. ISO 19115 role codes)
+
+6. **Deactivate the environment when done**
+
+```bash
+deactivate
+```
+
+---
+
+### LinkML Documentation Generation and GitHub Pages Deployment Guide
+
+**Prerequisites**
+
+- Python installed
+- LinkML virtual environment set up with LinkML and MkDocs installed
+- Schema file in YAML format (`.yml` or `.yaml`)
+- Git repository connected to GitHub
+
+1. **Installation**
+
+Install MkDocs and the Material theme into virtual environment:
+
+```bash
+pip install mkdocs mkdocs-material
+```
+
+This only needs to be done once.
+
+
+2. **Generate Markdown documentation**
+
+Step 1 — Activate the virtual environment
+
+```bash
+cd /path/to/your/virtualenv
+source linkml-env/Scripts/activate
+```
+
+#Step 2 — Navigate to your schema folder
+
+```bash
+cd /path/to/your/schema
+```
+
+Step 3 — Generate Markdown documentation
+
+```bash
+PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown
+```
+
+This generates one Markdown file per concept (class, slot, enum, type) in the `docs/` folder. The `index.md` file is the main entry point linking all concepts.
+
+3. **Set up MkDocs**
+
+Step 4 — Initialise MkDocs (first time only)
+
+```bash
+mkdocs new .
+```
+
+This creates a `mkdocs.yml` configuration file and a `docs/` folder. If `docs/` already exists from Step 3, the existing files are preserved.
+
+Step 5 — Configure mkdocs.yml
+
+Open `mkdocs.yml` and replace its contents with:
+
+```yaml
+site_name: Your Schema Name
+site_url: https://yourusername.github.io/your-repo-name/
+theme:
+  name: material
+docs_dir: docs
+```
+
+Replace `Your Schema Name`, `yourusername`, and `your-repo-name` with your actual values.
+
+Step 6 - Preview locally (optional)
+
+```bash
+mkdocs serve
+```
+
+Open your browser at `http://localhost:8000` to preview the documentation site. Press `Ctrl+C` to stop the server.
+
+
+4. **Deploy to GitHub Pages**
+
+**Prerequisites for GitHub Pages**
+
+- The GitHub repository must be **public**
+- Git must be configured with your GitHub credentials
+
+Step 7 — Deploy
+
+```bash
+mkdocs gh-deploy
+```
+
+This command automatically:
+- Builds the static HTML site
+- Creates or updates a `gh-pages` branch in your repository
+- Pushes the HTML files to GitHub
+
+Step 8 — Enable GitHub Pages in repository settings
+
+1. Go to your repository on GitHub
+2. Click **Settings** → **Pages**
+3. Under **Source**, select branch `gh-pages` and folder `/ (root)`
+4. Click **Save**
+
+Your documentation will be live at:
+```
+https://yourusername.github.io/your-repo-name/
+```
+
+It may take a minute or two to appear after the first deployment.
+
+5. **Update documentation after schema changes**
+
+Whenever you update the schema, regenerate and redeploy:
+
+```bash
+# 1. Activate virtual environment
+source linkml-env/Scripts/activate
+
+# 2. Navigate to schema folder
+cd /path/to/your/schema
+
+# 3. Regenerate Markdown docs
+PYTHONUTF8=1 gen-doc your-schema.yml -d ./docs -f markdown
+
+# 4. Redeploy to GitHub Pages
+mkdocs gh-deploy
+```
+
+## CHANGELOG
+
+A changelog is a file that documents all notable changes made to a project between versions — what was added, changed, fixed, or removed. It's essentially a human-readable history of the project's evolution.
+
+**Why it matters**
+- Users and collaborators can quickly see what changed between versions without reading the full schema
+- Required for FAIR data — provenance and versioning transparency
+- Standard practice for any versioned software or data standard
+- Makes it easy to communicate changes to the (PARC) community
+
+**Standard format — Keep a Changelog**
+The most widely adopted convention is Keep a Changelog (keepachangelog.com). 
+
+**The change categories**
+Category | Use for
+---------|--------
+Added | New classes, slots, enums, features
+Changed | Changes to existing classes, slots, enums
+Deprecated | Features that will be removed in future versions
+Removed | Features that were removed
+FixedBug | fixes, corrections
+Security | Security-related changes (less relevant for schemas)
+
+**How to produce it in practice**
+**Option 1 — Manual (simplest, recommended for now)**
+Create a CHANGELOG.md file in the repository root and update it manually every time a significant change is made or a new version released. 
+**Option 2 — From git commit messages**
+If one writes meaningful git commit messages, tools like git-cliff or conventional-changelog can auto-generate a changelog from them. This requires following a commit message convention like:
+feat: add Institution class
+fix: correct unicode encoding in descriptions
+chore: update ORCID URIs to https
