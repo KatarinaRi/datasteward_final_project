@@ -6,9 +6,7 @@ URI: https://w3id.org/chemical-exposome/schema/chemicals-outdoor
 
 Name: chemicals-outdoor-schema
 
-## Schema Overview
 
-[View full schema diagram](schema_diagram.md)
 
 ## Classes
 

@@ -1197,33 +1197,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../MeasurementBase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Class: MeasurementBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../MeasurementConcentration/" class="md-nav__link">
         
   
@@ -3866,6 +3839,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../observations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../orcid/" class="md-nav__link">
         
   
@@ -4190,6 +4190,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sampling_method/" class="md-nav__link">
         
   
@@ -4387,6 +4414,33 @@
     
   
     Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sites
   
 
     
@@ -4993,7 +5047,8 @@
     class OrganisationMetadata
     click OrganisationMetadata href "../OrganisationMetadata/"
       OrganisationMetadata &lt;|-- Institution
-        click Institution href "../Institution/"       OrganisationMetadata &lt;|-- Funder
+        click Institution href "../Institution/"
+      OrganisationMetadata &lt;|-- Funder
         click Funder href "../Funder/"
 
       OrganisationMetadata : link
@@ -5007,18 +5062,100 @@
 </code></pre>
 <!-- no inheritance hierarchy -->
 <h2 id="class-properties">Class Properties</h2>
-<p>| Property | Value | | --- | --- | | Mixin | Yes |</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mixin</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
-<p>| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | <a href="../name_en/">name_en</a> | 1 <a href="../String/">String</a> | Name or designation in English | direct | | <a href="../name_original/">name_original</a> | 1 <a href="../String/">String</a> | Name of the entity in the original language of the  institution/site/project | direct | | <a href="../ror/">ror</a> | 0..1 <a href="../RorIdentifier/">RorIdentifier</a> | ROR identifier of the institution (format ror | direct | | <a href="../link/">link</a> | 0..1 <a href="../IRI/">IRI</a> | URL with information about the institution | direct |</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../name_en/">name_en</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Name or designation in English</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../name_original/">name_original</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Name of the entity in the original language of the  institution/site/project</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ror/">ror</a></td>
+<td>0..1 <a href="../RorIdentifier/">RorIdentifier</a></td>
+<td>ROR identifier of the institution (format ror</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../link/">link</a></td>
+<td>0..1 <a href="../IRI/">IRI</a></td>
+<td>URL with information about the institution</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixin-usage">Mixin Usage</h2>
-<p>| mixed into | description | | --- | --- | | <a href="../Institution/">Institution</a> | Institution | | <a href="../Funder/">Funder</a> | Funder |</p>
+<table>
+<thead>
+<tr>
+<th>mixed into</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Institution/">Institution</a></td>
+<td>Institution</td>
+</tr>
+<tr>
+<td><a href="../Funder/">Funder</a></td>
+<td>Funder</td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
-<p>| Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:OrganisationMetadata | | native | cenvo:OrganisationMetadata |</p>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>cenvo:OrganisationMetadata</td>
+</tr>
+<tr>
+<td>native</td>
+<td>cenvo:OrganisationMetadata</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>

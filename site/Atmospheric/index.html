@@ -1344,33 +1344,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../MeasurementBase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Class: MeasurementBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../MeasurementConcentration/" class="md-nav__link">
         
   
@@ -3855,6 +3828,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../observations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../orcid/" class="md-nav__link">
         
   
@@ -4179,6 +4179,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sampling_method/" class="md-nav__link">
         
   
@@ -4376,6 +4403,33 @@
     
   
     Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sites
   
 
     
@@ -4997,6 +5051,17 @@
 
 
 
+      Atmospheric : observations
+
+
+
+
+
+        Atmospheric --&gt; "*" Observation : observations
+        click Observation href "../Observation/"
+
+
+
       Atmospheric : sample_id
 
       Atmospheric : sampling_method
@@ -5029,14 +5094,108 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<p>| Name | Cardinality and Range | Description | Inheritance | | ---  | --- | --- | --- | | <a href="../matrix/">matrix</a> | 1 <a href="../MatrixAtmospheric/">MatrixAtmospheric</a> | Sampled matrix | direct | | <a href="../sampling_method/">sampling_method</a> | 1 <a href="../SamplingMethodAtmospheric/">SamplingMethodAtmospheric</a> | Method used to collect the sample | direct | | <a href="../site_name/">site_name</a> | 1 <a href="../String/">String</a> | Name of the monitoring site | <a href="../Sample/">Sample</a> | | <a href="../site_id/">site_id</a> | 1 <a href="../String/">String</a> | Unique identifier of the monitoring site where the sample was collected | <a href="../Sample/">Sample</a> | | <a href="../sample_id/">sample_id</a> | 1 <a href="../String/">String</a> | Unique identifier for the sample | <a href="../Sample/">Sample</a> | | <a href="../start_date/">start_date</a> | 1 <a href="../Date/">Date</a> | Start date in format YYYY-MM-DD | <a href="../Sample/">Sample</a> | | <a href="../end_date/">end_date</a> | 0..1 <a href="../Date/">Date</a> | End date in format YYYY-MM-DD | <a href="../Sample/">Sample</a> | | <a href="../sampling_time_start/">sampling_time_start</a> | 0..1 <a href="../Time/">Time</a> | Sampling start time according to ISO 8601, 24-hour clock | <a href="../Sample/">Sample</a> | | <a href="../sampling_time_end/">sampling_time_end</a> | 0..1 <a href="../Time/">Time</a> | Sampling end time according to ISO 8601 | <a href="../Sample/">Sample</a> | | <a href="../domain/">domain</a> | 1 <a href="Domain.md">Domain</a> | Sample type according to sampled matrix:  Atmospheric for air, particles, pre... | <a href="../Sample/">Sample</a> |</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../matrix/">matrix</a></td>
+<td>1 <a href="../MatrixAtmospheric/">MatrixAtmospheric</a></td>
+<td>Sampled matrix</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sampling_method/">sampling_method</a></td>
+<td>1 <a href="../SamplingMethodAtmospheric/">SamplingMethodAtmospheric</a></td>
+<td>Method used to collect the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../site_name/">site_name</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Name of the monitoring site</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../site_id/">site_id</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Unique identifier of the monitoring site where the sample was collected</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../sample_id/">sample_id</a></td>
+<td>1 <a href="../String/">String</a></td>
+<td>Unique identifier for the sample</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../start_date/">start_date</a></td>
+<td>1 <a href="../Date/">Date</a></td>
+<td>Start date in format YYYY-MM-DD</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../end_date/">end_date</a></td>
+<td>0..1 <a href="../Date/">Date</a></td>
+<td>End date in format YYYY-MM-DD</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../sampling_time_start/">sampling_time_start</a></td>
+<td>0..1 <a href="../Time/">Time</a></td>
+<td>Sampling start time according to ISO 8601, 24-hour clock</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../sampling_time_end/">sampling_time_end</a></td>
+<td>0..1 <a href="../Time/">Time</a></td>
+<td>Sampling end time according to ISO 8601</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../domain/">domain</a></td>
+<td>1 <a href="Domain.md">Domain</a></td>
+<td>Sample type according to sampled matrix:  Atmospheric for air, particles, pre...</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../observations/">observations</a></td>
+<td>* <a href="../Observation/">Observation</a></td>
+<td>Observations (concentration measurements and parameters) associated with this...</td>
+<td><a href="../Sample/">Sample</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/chemical-exposome/schema/chemicals-outdoor</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
-<p>| Mapping Type | Mapped Value | | ---  | ---  | | self | cenvo:Atmospheric | | native | cenvo:Atmospheric |</p>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>cenvo:Atmospheric</td>
+</tr>
+<tr>
+<td>native</td>
+<td>cenvo:Atmospheric</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
@@ -5215,6 +5374,20 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Domain</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">observations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">observations</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observations (concentration measurements and parameters) associated</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">with this sample.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/chemical-exposome/schema/chemicals-outdoor</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Atmospheric</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sample</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Observation</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

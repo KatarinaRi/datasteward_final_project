@@ -1197,33 +1197,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../MeasurementBase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Class: MeasurementBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../MeasurementConcentration/" class="md-nav__link">
         
   
@@ -3827,6 +3800,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../observations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../orcid/" class="md-nav__link">
         
   
@@ -4151,6 +4151,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sampling_method/" class="md-nav__link">
         
   
@@ -4348,6 +4375,33 @@
     
   
     Slot: site_name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slot: sites
   
 
     
@@ -4912,9 +4966,82 @@
 <div>
 <p>URI: <a href="https://w3id.org/chemical-exposome/schema/chemicals-outdoor/TaxonRankEnum">cenvo:TaxonRankEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
-<p>| Value | Meaning | Description | | --- | --- | --- | | KINGDOM | https://api.gbif.org/v1/enumeration/basic/Rank/KINGDOM | Kingdom — highest taxonomic rank | | PHYLUM | https://api.gbif.org/v1/enumeration/basic/Rank/PHYLUM | Phylum | | CLASS | https://api.gbif.org/v1/enumeration/basic/Rank/CLASS | Class | | ORDER | https://api.gbif.org/v1/enumeration/basic/Rank/ORDER | Order | | FAMILY | https://api.gbif.org/v1/enumeration/basic/Rank/FAMILY | Family | | GENUS | https://api.gbif.org/v1/enumeration/basic/Rank/GENUS | Genus | | SPECIES | https://api.gbif.org/v1/enumeration/basic/Rank/SPECIES | Species — most common rank for environmental monitoring | | SUBSPECIES | https://api.gbif.org/v1/enumeration/basic/Rank/SUBSPECIES | Subspecies | | VARIETY | https://api.gbif.org/v1/enumeration/basic/Rank/VARIETY | Variety — used for plants | | FORM | https://api.gbif.org/v1/enumeration/basic/Rank/FORM | Form — lowest commonly used rank |</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KINGDOM</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/KINGDOM</td>
+<td>Kingdom — highest taxonomic rank</td>
+</tr>
+<tr>
+<td>PHYLUM</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/PHYLUM</td>
+<td>Phylum</td>
+</tr>
+<tr>
+<td>CLASS</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/CLASS</td>
+<td>Class</td>
+</tr>
+<tr>
+<td>ORDER</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/ORDER</td>
+<td>Order</td>
+</tr>
+<tr>
+<td>FAMILY</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/FAMILY</td>
+<td>Family</td>
+</tr>
+<tr>
+<td>GENUS</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/GENUS</td>
+<td>Genus</td>
+</tr>
+<tr>
+<td>SPECIES</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/SPECIES</td>
+<td>Species — most common rank for environmental monitoring</td>
+</tr>
+<tr>
+<td>SUBSPECIES</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/SUBSPECIES</td>
+<td>Subspecies</td>
+</tr>
+<tr>
+<td>VARIETY</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/VARIETY</td>
+<td>Variety — used for plants</td>
+</tr>
+<tr>
+<td>FORM</td>
+<td>https://api.gbif.org/v1/enumeration/basic/Rank/FORM</td>
+<td>Form — lowest commonly used rank</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
-<p>| Name | Description | | ---  | --- | | <a href="../taxon_rank/">taxon_rank</a> | Taxonomic rank of the identified taxon |</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../taxon_rank/">taxon_rank</a></td>
+<td>Taxonomic rank of the identified taxon</td>
+</tr>
+</tbody>
+</table>
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><a href="https://www.gbif.org/developer/species#rank">https://www.gbif.org/developer/species#rank</a></li>

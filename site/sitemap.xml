@@ -149,10 +149,6 @@
          <lastmod>2026-07-26</lastmod>
     </url>
     <url>
-         <loc>https://katarinari.github.io/datasteward_final_project/MeasurementBase/</loc>
-         <lastmod>2026-07-26</lastmod>
-    </url>
-    <url>
          <loc>https://katarinari.github.io/datasteward_final_project/MeasurementConcentration/</loc>
          <lastmod>2026-07-26</lastmod>
     </url>
@@ -521,6 +517,10 @@
          <lastmod>2026-07-26</lastmod>
     </url>
     <url>
+         <loc>https://katarinari.github.io/datasteward_final_project/observations/</loc>
+         <lastmod>2026-07-26</lastmod>
+    </url>
+    <url>
          <loc>https://katarinari.github.io/datasteward_final_project/orcid/</loc>
          <lastmod>2026-07-26</lastmod>
     </url>
@@ -569,6 +569,10 @@
          <lastmod>2026-07-26</lastmod>
     </url>
     <url>
+         <loc>https://katarinari.github.io/datasteward_final_project/samples/</loc>
+         <lastmod>2026-07-26</lastmod>
+    </url>
+    <url>
          <loc>https://katarinari.github.io/datasteward_final_project/sampling_method/</loc>
          <lastmod>2026-07-26</lastmod>
     </url>
@@ -598,6 +602,10 @@
     </url>
     <url>
          <loc>https://katarinari.github.io/datasteward_final_project/site_name/</loc>
+         <lastmod>2026-07-26</lastmod>
+    </url>
+    <url>
+         <loc>https://katarinari.github.io/datasteward_final_project/sites/</loc>
          <lastmod>2026-07-26</lastmod>
     </url>
     <url>
