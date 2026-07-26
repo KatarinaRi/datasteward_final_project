@@ -8,10 +8,11 @@
 
 **Supervisor: Mag. (FH) Mag. Monika Bargmann** 
  
-## Literature and resources
--	Literature and resources recommended in Module 3.8 Metadata and Module 3.9 Semantic Web, Ontologies, Linked Open Data DS UNIVIE.
--	P. Alexopoulos: Semantic Modelling for Data. 2020, O’Reilly Media. ISBN: 978-1-492-05427.
--	D. Allemang, J. Hendler, F. Gandon: Semantic Web for the Working Ontologist: Effective Modeling for Linked Data, RDFS, and OWL. 2020, ACM. ISBN: 978-1-4503-7614-3.
+This repository contains source files for final project of the Data Steward Course, elaborated by Katarína Řiháčková under the supervision of Monika Bargmann.
+
+The aim of the project was to formalize a metadata schema for data concerning monitoring of chemicals in the outdoor environment defined by environmental monitoring community of the European Partnership for the Assessment of Risks from Chemicals ([PARC](https://www.eu-parc.eu/)). The source for this work was the schema published in .xlsx file [published on Zenodo](https://doi.org/10.5281/zenodo.17175075). 
+
+The project report has been submitted separately. This README contains the description of the background and related work, as well as basic guidance for use of LinkML. The guidance was generated in collaboration with Claude and it is an edited compilation of Claude responses on authors questions regarding basic use of LinkML. 
 
 ## Background and Related Work
 
@@ -29,78 +30,9 @@ However, this is not the final product. To ensure that this standard becomes mac
 
 ## Project Goal
 
-Formalizing the PARC community-agreed metadata schema for environmental chemical monitoring data — developed through expert workshops and currently available as an XLSX artefact — into a machine-actionable format, creating documentation and publishing on GitHub, thus providing a FAIR-enabling resource to support the findability, interoperability and reusability of data concerning chemicals in the outdoor environment in the context of chemical risk assessment (CRA).
+Formalizing the PARC community-agreed metadata schema for environmental chemical monitoring data — developed through expert workshops and currently available as an XLSX artefact — into a machine-actionable format, creating documentation and publishing on GitHub.
 
-## Project Scope 
 
-### Within scope
--	Formalising the community minimum metadata standard into a machine-actionable schema using [LinkML](https://linkml.io/). That includes identifying entities and properties (relations – object properties and attributes). LinkML is used in PARC project FAIR data community and allows a single source schema to generate multiple serialisations.
--	Validating the schema using the LinkML validator.
--	Generating serialisations from the LinkML schema: e.g.OWL/SKOS graph, JSON-LD, XSD (to be selected and discussed).
--	Creating (human-readable) documentation of the schema, including description of scope, usage and provenance.
--	Review of the human readable documentation.
--	Publishing schema and documentation on GitHub.
-
-### Out of scope
--	Mapping to existing standards and ontologies (such as DataCite, DCAT, DublinCore, ENVO, O&M by OGC, I-ADOPT) — while this is important and planned, it will not be carried out within the scope of this project.
--	Publication as nanopublication — this is planned, but since the final product must be approved by PARC partners, it is not included in the scope of this project. However, if approval is obtained before the project ends, it may be included.
-
-## Project Outcomes
--	A formalised metadata schema in LinkML, serving as the canonical machine-actionable representation of the PARC community standard.
--	Serialisations generated from the LinkML schema: (eg. OWL/SKOS graph).
--	Validation of the schema report using the LinkML validator.
--	Schema documentation including scope, field definitions, usage guidelines and examples.
--	A public GitHub repository bringing together all of the above as a citable, reusable resource.
-
-## Methodology
-The semantic model development steps as defined by **Alexopoulos P. (2020) ADD REF** will be followed. 
-
-1.	### Setting the stage
-Reflexion on the following questions: What are we building? Why are we building it? How are we building it? Who is building it? Who cares?
-
-2.	### Deciding what to build
-lthough some of the questions from stages 1 and 2 have already been addressed by the PARC community, they will be re-evaluated here in the context of semantic model building to determine the required level of expressivity, the scope, which serialisations should be produced to make the schema available for both machines and humans, and what information should be included in the documentation.
-
-**The following approach will be taken:**
-
-- Use of a large language model (LLM) to create an initial SKOS-structured (JSON-LD) serialisation of the taxonomy, given that the source material is already in a well-curated state
-- Input into a SKOS or ontology editor for manual processing, testing and correction, with optional LLM assistance for applying specific SKOS quality metrics such as blank node detection, completeness, consistency in labelling and naming, logical coherence, and other relevant criteria
-- This reflects the approach currently taken by knowledge engineers in the field (Pellegrini (2020), personal communication).
-
-3.	### Building it
-Selecting, defining and assembling the modelling elements that best satisfy the requirements from step 2 (entities, properties, etc.), and building the model and selected serialisations (with the help of LLM to produce the first graph – even this will require knowledge on model elements, as it is crucial to design effective prompt).  
-
-4.	### Ensuring it is good
-Defining and checking quality indicators such as semantic accuracy, completeness, consistency and understandability. 
-
-5.	### Making it useful
-This step is partially outside the scope of this project. It concerns ensuring that the model is actually used by real users. To some extent this will be supported by producing comprehensible documentation with a clearly defined scope and usage guidelines, which will be reviewed project supervisor and consultants, and later by PARC domain experts.
-
-6.	### Making it last
-This step is outside the scope of this project; however, comprehensive documentation may contribute to long-term sustainability.
-
-# Developing the schema
-
-## First draft 
-
-The first draft was generated using Claude AI and existing .xlsx/ .csv schema. I have then reviewed the schema and edited manualy where necessary. Also, to learn and understand the LinkML, I was consulting with Claude and asked for explanation to make sure I understand all solutions or could propose a new one. The information that I found useful or further decision and editing is below.
-
-## Review and editing
-
-## Validaiton:
-Two step validation:
-### Claude validation
-### LinkML validation
-
-## Documentation generation
-
-## Publication
-GitHub + GitHub pages
-
-## Next steps
-- Community review and refinement
-- Mapping to existing  controlled vocabularies and ontologies. 
-- Publishing the ontology and data reporting template.
 
 ## Schema level metadata
 In LinkML specifically it is called **schema metadata** or **schema header** — it is the metadata describing the schema itself, as opposed to the schema content (types, enums, slots, classes). **More broadly in the semantic web and data management world** this kind of self-describing metadata is called **provenance metadata** or **schema-level metadata**.
