@@ -12,7 +12,7 @@ This repository contains source files for final project of the Data Steward Cour
 
 The aim of the project was to formalize a metadata schema for data concerning monitoring of chemicals in the outdoor environment defined by environmental monitoring community of the European Partnership for the Assessment of Risks from Chemicals ([PARC](https://www.eu-parc.eu/)). The source for this work was the schema published in .xlsx file [published on Zenodo](https://doi.org/10.5281/zenodo.17175075). 
 
-The project report has been submitted separately. This README contains the description of the background and related work, as well as basic guidance for use of LinkML. The guidance was generated in collaboration with Claude and it is an edited compilation of Claude responses on authors questions regarding basic use of LinkML. 
+The project report has been submitted separately. This README contains the description of the background and related work, as well as basic guidance for the use of LinkML. The guidance was generated in collaboration with Claude and it is an edited compilation of Claude responses on authors questions regarding basic use of LinkML. 
 
 ## Background and Related Work
 
@@ -26,15 +26,15 @@ One of the domains important for chemical risk assessment is the environmental m
 
 The mapping process revealed that several resources and platforms exist that accommodate data concerning the monitoring of chemicals in the outdoor environment, but no agreement on minimum metadata information standards exists within the community. Therefore, within the PARC project, workshops with domain experts and stakeholders were organised following the [GO FAIR Foundation's M4M concept](https://www.go-fair.org/today/making-fair-metadata/). The domain experts defined the community minimum metadata standard for reporting data concerning chemicals in the outdoor environment, intended to support their findability, interoperability and reusability. The outcome of these workshops is available as .xlsx and .csv files and has been [published on Zenodo](https://doi.org/10.5281/zenodo.17175075).
 
-However, this is not the final product. To ensure that this standard becomes machine-actionable and FAIR, transformation to a machine-actionable format and publication of the resulting graph are needed. This will be carried out within this final project.
+However, this is not the final product. To ensure that this standard becomes machine-actionable and FAIR, transformation to a machine-actionable format and publication of the resulting graph are needed. Part of this will be carried out within this project.
 
 ## Project Goal
 
 Formalizing the PARC community-agreed metadata schema for environmental chemical monitoring data — developed through expert workshops and currently available as an XLSX artefact — into a machine-actionable format, creating documentation and publishing on GitHub.
 
+## Basic LinkML guidance 
 
-
-## Schema level metadata
+### Schema level metadata
 In LinkML specifically it is called **schema metadata** or **schema header** — it is the metadata describing the schema itself, as opposed to the schema content (types, enums, slots, classes). **More broadly in the semantic web and data management world** this kind of self-describing metadata is called **provenance metadata** or **schema-level metadata**.
 
 *id, name, title, description, version, license, see_also, prefixes, default_prefix, default_range, imports*
